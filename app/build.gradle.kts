@@ -34,6 +34,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -42,9 +46,21 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
     implementation("androidx.core:core-ktx:1.3.1")
     implementation("androidx.appcompat:appcompat:1.2.0")
+
+    //Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3")
+
+    //layouts
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+
+    //navigation components
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
+
+    //viewpager2
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("com.google.android.material:material:1.3.0-alpha02")
 }
 
 dependencies {
@@ -58,8 +74,8 @@ dependencies {
     //Third-party dependencies
 
     //OKHTTP
-    implementation("com.squareup.okhttp3:okhttp:4.0.1")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.0.1")
+    implementation("com.squareup.okhttp3:okhttp:4.5.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.7.0")
@@ -70,7 +86,7 @@ dependencies {
     implementation("com.jakewharton.threetenabp:threetenabp:1.2.4")
 
     //GLIDE
-    implementation("com.github.bumptech.glide:glide:4.9.0")
-    kapt("com.github.bumptech.glide:compiler:4.9.0")
+    implementation("com.github.bumptech.glide:glide:4.10.0")
+    kapt("com.github.bumptech.glide:compiler:4.10.0")
 
 }
