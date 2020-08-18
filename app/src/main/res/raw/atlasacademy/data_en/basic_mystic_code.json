@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Mystic Code: Chaldea",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00001.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00002.png"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Mystic Code: Chaldea Combat Uniform",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00021.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00022.png"
+    }
+  },
+  {
+    "id": 30,
+    "name": "Mystic Code: Mage's Association Uniform",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00031.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00032.png"
+    }
+  },
+  {
+    "id": 40,
+    "name": "Mystic Code: Atlas Institute Uniform",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00041.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00042.png"
+    }
+  },
+  {
+    "id": 50,
+    "name": "Anniversary Blonde",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00051.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00052.png"
+    }
+  },
+  {
+    "id": 60,
+    "name": "Royal Brand",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00061.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00062.png"
+    }
+  },
+  {
+    "id": 70,
+    "name": "Brilliant Summer",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00071.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00072.png"
+    }
+  },
+  {
+    "id": 80,
+    "name": "Memories of the Lunar Sea",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00081.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00082.png"
+    }
+  },
+  {
+    "id": 90,
+    "name": "Memories of the Far Side of the Moon",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00091.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00092.png"
+    }
+  },
+  {
+    "id": 100,
+    "name": "A Fragment of 2004",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00101.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00102.png"
+    }
+  },
+  {
+    "id": 110,
+    "name": "Mystic Code: Chaldea Uniform - Arctic",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00111.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00112.png"
+    }
+  },
+  {
+    "id": 120,
+    "name": "Tropical Summer",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00121.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00122.png"
+    }
+  },
+  {
+    "id": 160,
+    "name": "Chaldea Uniform - True Ether",
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00161.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00162.png"
+    }
+  }
+]
