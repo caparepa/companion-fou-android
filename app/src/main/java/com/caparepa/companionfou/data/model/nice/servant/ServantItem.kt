@@ -65,7 +65,7 @@ data class ServantItem(
     @SerializedName("classPassive")
     val classPassive: List<Any?>? = null,
     @SerializedName("noblePhantasms")
-    val noblePhantasms: List<NoblePhantasm?>? = null
+    val noblePhantasms: List<NoblePhantasmItem?>? = null
 ) {
     data class ExtraAssets(
         @SerializedName("charaGraph")
