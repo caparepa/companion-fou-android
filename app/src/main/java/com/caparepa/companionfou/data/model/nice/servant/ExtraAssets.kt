@@ -16,5 +16,11 @@ data class ExtraAssets(
     @SerializedName("status")
     val status: ServantAssetItem? = null,
     @SerializedName("equipFace")
-    val equipFace: ServantAssetItem? = null
+    val equipFace: ServantAssetItem? = null,
+    @SerializedName("item")
+    val masterItem: ServantAssetItem? = null,
+    @SerializedName("masterFace")
+    val masterFace: ServantAssetItem? = null,
+    @SerializedName("masterFigure")
+    val masterFigure: ServantAssetItem? = null
 )
