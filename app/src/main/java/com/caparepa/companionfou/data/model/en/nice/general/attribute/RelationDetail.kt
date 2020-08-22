@@ -3,7 +3,7 @@ package com.caparepa.companionfou.data.model.en.nice.general.attribute
 
 import com.google.gson.annotations.SerializedName
 
-data class Human(
+data class RelationDetail(
     @SerializedName("human")
     val human: Int? = null,
     @SerializedName("sky")
