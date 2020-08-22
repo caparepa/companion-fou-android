@@ -16,19 +16,19 @@ data class FunctionItem(
     @SerializedName("funcPopupIcon")
     val funcPopupIcon: String? = null,
     @SerializedName("functvals")
-    val functvals: List<ValItem?>? = null,
+    val functvals: List<BaseValItem?>? = null,
     @SerializedName("funcquestTvals")
-    val funcquestTvals: List<ValItem?>? = null,
+    val funcquestTvals: List<BaseValItem?>? = null,
     @SerializedName("buffs")
     val buffs: List<BuffItem?>? = null,
     @SerializedName("svals")
-    val svals: List<SvalItem?>? = null,
+    val svals: List<BaseSvalItem?>? = null,
     @SerializedName("svals2")
-    val svals2: List<SvalItem?>? = null,
+    val svals2: List<BaseSvalItem?>? = null,
     @SerializedName("svals3")
-    val svals3: List<SvalItem?>? = null,
+    val svals3: List<BaseSvalItem?>? = null,
     @SerializedName("svals4")
-    val svals4: List<SvalItem?>? = null,
+    val svals4: List<BaseSvalItem?>? = null,
     @SerializedName("svals5")
-    val svals5: List<SvalItem?>? = null
+    val svals5: List<BaseSvalItem?>? = null
 )

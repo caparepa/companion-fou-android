@@ -3,7 +3,7 @@ package com.caparepa.companionfou.data.model.nice.servant
 
 import com.google.gson.annotations.SerializedName
 
-data class SvalItem(
+data class BaseSvalItem(
     @SerializedName("Rate")
     val rate: Int? = null,
     @SerializedName("Turn")

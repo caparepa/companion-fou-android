@@ -16,9 +16,9 @@ data class BuffItem(
     @SerializedName("buffGroup")
     val buffGroup: Int? = null,
     @SerializedName("vals")
-    val vals: List<ValItem?>? = null,
+    val vals: List<BaseValItem?>? = null,
     @SerializedName("tvals")
-    val tvals: List<TvalItem?>? = null,
+    val tvals: List<BaseValItem?>? = null,
     @SerializedName("ckSelfIndv")
     val ckSelfIndv: List<CkSelfIndvItem?>? = null,
     @SerializedName("ckOpIndv")
