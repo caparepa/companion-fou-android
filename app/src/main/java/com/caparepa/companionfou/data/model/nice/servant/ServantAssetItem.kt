@@ -8,5 +8,7 @@ data class ServantAssetItem(
     @SerializedName("costume")
     val costume: Map<Int, String?>? = null,
     @SerializedName("equip")
-    val equip: Map<Int, String?>? = null
+    val equip: Map<Int, String?>? = null,
+    @SerializedName("cc")
+    val cc: Map<Int, String?>? = null
 )
