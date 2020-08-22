@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.data.model.en.nice.general.buffaction
+package com.caparepa.companionfou.data.model.common.nice.general.buffaction
 
 
 import com.google.gson.annotations.SerializedName

@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.data.model.en.nice.general.classrelation
+package com.caparepa.companionfou.data.model.common.nice.general.classrelation
 
 
 import com.google.gson.annotations.SerializedName

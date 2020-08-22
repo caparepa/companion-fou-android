@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.data.model.en.nice.general.attribute
+package com.caparepa.companionfou.data.model.common.nice.general.attribute
 
 
 import com.google.gson.annotations.SerializedName

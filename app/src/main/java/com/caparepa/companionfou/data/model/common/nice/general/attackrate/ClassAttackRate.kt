@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.data.model.en.nice.general.attackrate
+package com.caparepa.companionfou.data.model.common.nice.general.attackrate
 
 
 import com.google.gson.annotations.SerializedName
