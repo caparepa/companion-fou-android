@@ -53,11 +53,11 @@ data class ServantItem(
     @SerializedName("hpGrowth")
     val hpGrowth: List<Int?>? = null,
     @SerializedName("bondGrowth")
-    val bondGrowth: List<Any?>? = null,
+    val bondGrowth: List<Int?>? = null,
     @SerializedName("bondEquip")
     val bondEquip: Int? = null,
     @SerializedName("ascensionMaterials")
-    val ascensionMaterials: AscensionMaterials? = null,
+    val ascensionMaterials: SkillMaterials? = null,
     @SerializedName("skillMaterials")
     val skillMaterials: SkillMaterials? = null,
     @SerializedName("skills")
@@ -66,13 +66,4 @@ data class ServantItem(
     val classPassive: List<ClassPassiveItem?>? = null,
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>? = null
-) {
-
-    class AscensionMaterials(
-    )
-
-    class SkillMaterials(
-    )
-
-
-}
+)
