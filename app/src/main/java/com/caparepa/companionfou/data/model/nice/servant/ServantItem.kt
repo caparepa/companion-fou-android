@@ -67,47 +67,6 @@ data class ServantItem(
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>? = null
 ) {
-    data class ExtraAssets(
-        @SerializedName("charaGraph")
-        val charaGraph: CharaGraph? = null,
-        @SerializedName("faces")
-        val faces: Faces? = null,
-        @SerializedName("narrowFigure")
-        val narrowFigure: NarrowFigure? = null,
-        @SerializedName("charaFigure")
-        val charaFigure: CharaFigure? = null,
-        @SerializedName("commands")
-        val commands: Commands? = null,
-        @SerializedName("status")
-        val status: Status? = null,
-        @SerializedName("equipFace")
-        val equipFace: EquipFace? = null
-    ) {
-        data class CharaGraph(
-            @SerializedName("ascension")
-            val ascension: Map<Int, String?>? = null
-        )
-
-        data class Faces(
-            @SerializedName("ascension")
-            val ascension: Map<Int, String?>? = null
-        )
-
-        class NarrowFigure(
-        )
-
-        class CharaFigure(
-        )
-
-        class Commands(
-        )
-
-        class Status(
-        )
-
-        class EquipFace(
-        )
-    }
 
     class AscensionMaterials(
     )
