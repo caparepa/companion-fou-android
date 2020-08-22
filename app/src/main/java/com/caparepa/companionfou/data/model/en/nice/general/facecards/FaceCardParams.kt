@@ -1,11 +1,10 @@
-package com.caparepa.companionfou.data.model.en.nice.general.cards
-
+package com.caparepa.companionfou.data.model.en.nice.general.facecards
 
 import com.google.gson.annotations.SerializedName
 
 data class FaceCardParams(
     @SerializedName("individuality")
-    val individuality: List<FaceCardIndividuality>? = null,
+    val individuality: List<FaceCardIndividuality?>? = null,
     @SerializedName("adjustAtk")
     val adjustAtk: Int? = null,
     @SerializedName("adjustTdGauge")

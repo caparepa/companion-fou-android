@@ -1,9 +1,8 @@
 package com.caparepa.companionfou.data.model.en.nice.general.classrelation
 
-
 import com.google.gson.annotations.SerializedName
 
-data class ClassRelationParams(
+class ClassRelationDetail(
     @SerializedName("saber")
     val saber: Int? = null,
     @SerializedName("archer")

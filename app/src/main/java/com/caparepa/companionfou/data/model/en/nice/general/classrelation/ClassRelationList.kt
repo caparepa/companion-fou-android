@@ -5,41 +5,41 @@ import com.google.gson.annotations.SerializedName
 
 data class ClassRelationList(
     @SerializedName("saber")
-    val saber: ClassRelationParams? = null,
+    val saber: ClassRelationDetail? = null,
     @SerializedName("archer")
-    val archer: ClassRelationParams? = null,
+    val archer: ClassRelationDetail? = null,
     @SerializedName("lancer")
-    val lancer: ClassRelationParams? = null,
+    val lancer: ClassRelationDetail? = null,
     @SerializedName("rider")
-    val rider: ClassRelationParams? = null,
+    val rider: ClassRelationDetail? = null,
     @SerializedName("caster")
-    val caster: ClassRelationParams? = null,
+    val caster: ClassRelationDetail? = null,
     @SerializedName("assassin")
-    val assassin: ClassRelationParams? = null,
+    val assassin: ClassRelationDetail? = null,
     @SerializedName("berserker")
-    val berserker: ClassRelationParams? = null,
+    val berserker: ClassRelationDetail? = null,
     @SerializedName("shielder")
-    val shielder: ClassRelationParams? = null,
+    val shielder: ClassRelationDetail? = null,
     @SerializedName("ruler")
-    val ruler: ClassRelationParams? = null,
+    val ruler: ClassRelationDetail? = null,
     @SerializedName("alterEgo")
-    val alterEgo: ClassRelationParams? = null,
+    val alterEgo: ClassRelationDetail? = null,
     @SerializedName("avenger")
-    val avenger: ClassRelationParams? = null,
+    val avenger: ClassRelationDetail? = null,
     @SerializedName("demonGodPillar")
-    val demonGodPillar: ClassRelationParams? = null,
+    val demonGodPillar: ClassRelationDetail? = null,
     @SerializedName("beastII")
-    val beastII: ClassRelationParams? = null,
+    val beastII: ClassRelationDetail? = null,
     @SerializedName("beastI")
-    val beastI: ClassRelationParams? = null,
+    val beastI: ClassRelationDetail? = null,
     @SerializedName("moonCancer")
-    val moonCancer: ClassRelationParams? = null,
+    val moonCancer: ClassRelationDetail? = null,
     @SerializedName("beastIIIR")
-    val beastIIIR: ClassRelationParams? = null,
+    val beastIIIR: ClassRelationDetail? = null,
     @SerializedName("foreigner")
-    val foreigner: ClassRelationParams? = null,
+    val foreigner: ClassRelationDetail? = null,
     @SerializedName("beastIIIL")
-    val beastIIIL: ClassRelationParams? = null,
+    val beastIIIL: ClassRelationDetail? = null,
     @SerializedName("beastUnknown")
-    val beastUnknown: ClassRelationParams? = null
+    val beastUnknown: ClassRelationDetail? = null
 )

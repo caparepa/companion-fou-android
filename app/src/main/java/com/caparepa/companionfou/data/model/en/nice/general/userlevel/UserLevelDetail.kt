@@ -3,7 +3,7 @@ package com.caparepa.companionfou.data.model.en.nice.general.userlevel
 
 import com.google.gson.annotations.SerializedName
 
-data class UserLevelParams(
+data class UserLevelDetail(
     @SerializedName("requiredExp")
     val requiredExp: Int? = null,
     @SerializedName("maxAp")

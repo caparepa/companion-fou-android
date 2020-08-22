@@ -1,5 +1,4 @@
-package com.caparepa.companionfou.data.model.en.nice.general.cards
-
+package com.caparepa.companionfou.data.model.en.nice.general.facecards
 
 import com.google.gson.annotations.SerializedName
 
