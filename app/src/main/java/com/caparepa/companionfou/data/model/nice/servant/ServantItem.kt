@@ -27,7 +27,7 @@ data class ServantItem(
     @SerializedName("attribute")
     val attribute: String? = null,
     @SerializedName("traits")
-    val traits: List<Trait?>? = null,
+    val traits: List<TraitItem?>? = null,
     @SerializedName("starAbsorb")
     val starAbsorb: Int? = null,
     @SerializedName("starGen")
@@ -108,24 +108,6 @@ data class ServantItem(
         class EquipFace(
         )
     }
-
-    data class Trait(
-        @SerializedName("id")
-        val id: Int? = null,
-        @SerializedName("name")
-        val name: String? = null
-    )
-
-    data class HitsDistribution(
-        @SerializedName("arts")
-        val arts: List<Int?>? = null,
-        @SerializedName("buster")
-        val buster: List<Int?>? = null,
-        @SerializedName("quick")
-        val quick: List<Int?>? = null,
-        @SerializedName("extra")
-        val extra: List<Int?>? = null
-    )
 
     class AscensionMaterials(
     )
