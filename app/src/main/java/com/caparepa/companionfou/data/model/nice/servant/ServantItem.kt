@@ -61,9 +61,9 @@ data class ServantItem(
     @SerializedName("skillMaterials")
     val skillMaterials: SkillMaterials? = null,
     @SerializedName("skills")
-    val skills: List<Any?>? = null,
+    val skills: List<SkillItem?>? = null,
     @SerializedName("classPassive")
-    val classPassive: List<Any?>? = null,
+    val classPassive: List<ClassPassiveItem?>? = null,
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>? = null
 ) {
