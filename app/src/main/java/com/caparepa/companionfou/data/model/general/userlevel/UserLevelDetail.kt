@@ -1,13 +1,8 @@
 package com.caparepa.companionfou.data.model.general.userlevel
 
-
 import com.google.gson.annotations.SerializedName
-import io.objectbox.annotation.Entity
-import io.objectbox.annotation.Id
 
-@Entity
 data class UserLevelDetail(
-    @Id var _id: Long = 0,
     @SerializedName("requiredExp")
     val requiredExp: Int? = null,
     @SerializedName("maxAp")

@@ -1,12 +1,8 @@
 package com.caparepa.companionfou.data.model.general.facecards
 
 import com.google.gson.annotations.SerializedName
-import io.objectbox.annotation.Entity
-import io.objectbox.annotation.Id
 
-@Entity
 data class FaceCardParams(
-    @Id var _id: Long = 0,
     @SerializedName("individuality")
     val individuality: List<FaceCardIndividuality?>? = null,
     @SerializedName("adjustAtk")

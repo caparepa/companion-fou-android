@@ -1,12 +1,8 @@
 package com.caparepa.companionfou.data.model.general.classrelation
 
 import com.google.gson.annotations.SerializedName
-import io.objectbox.annotation.Entity
-import io.objectbox.annotation.Id
 
-@Entity
 class ClassRelationDetail(
-    @Id var _id: Long = 0,
     @SerializedName("saber")
     val saber: Int? = null,
     @SerializedName("archer")

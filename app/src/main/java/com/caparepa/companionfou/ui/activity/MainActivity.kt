@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             try {
 
                 val theList: ArrayList<ServantItem> =
-                    readRawJson(R.raw.data_en_nice_servant)
+                    readRawJson(R.raw.nice_servant_lore)
 
                 val itemList = theList.filter {
                     it.name?.contains("altria")!!

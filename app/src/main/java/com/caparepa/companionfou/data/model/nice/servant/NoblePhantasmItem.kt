@@ -1,12 +1,8 @@
 package com.caparepa.companionfou.data.model.nice.servant
 
 import com.google.gson.annotations.SerializedName
-import io.objectbox.annotation.Id
-import io.objectbox.annotation.Unique
 
 data class NoblePhantasmItem(
-    @Id var _id: Long = 0,
-    @Unique
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("num")
