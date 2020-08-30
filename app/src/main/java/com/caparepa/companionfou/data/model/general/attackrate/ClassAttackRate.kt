@@ -2,8 +2,12 @@ package com.caparepa.companionfou.data.model.general.attackrate
 
 
 import com.google.gson.annotations.SerializedName
+import io.objectbox.annotation.Entity
+import io.objectbox.annotation.Id
 
+@Entity
 data class ClassAttackRate(
+    @Id var id: Long = 0,
     @SerializedName("saber")
     val saber: Int? = null,
     @SerializedName("archer")
@@ -47,5 +51,5 @@ data class ClassAttackRate(
     @SerializedName("unknown")
     val unknown: Int? = null,
     @SerializedName("ALL")
-    val aLL: Int? = null
+    val all: Int? = null
 )

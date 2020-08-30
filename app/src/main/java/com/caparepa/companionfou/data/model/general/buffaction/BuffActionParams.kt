@@ -1,8 +1,12 @@
 package com.caparepa.companionfou.data.model.general.buffaction
 
 import com.google.gson.annotations.SerializedName
+import io.objectbox.annotation.Entity
+import io.objectbox.annotation.Id
 
+@Entity
 data class BuffActionParams(
+    @Id var id: Long = 0,
     @SerializedName("limit")
     val limit: String? = null,
     @SerializedName("plusTypes")

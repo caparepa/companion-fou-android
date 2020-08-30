@@ -2,8 +2,12 @@ package com.caparepa.companionfou.data.model.general.buffaction
 
 
 import com.google.gson.annotations.SerializedName
+import io.objectbox.annotation.Entity
+import io.objectbox.annotation.Id
 
+@Entity
 data class BuffActionList(
+    @Id var id: Long = 0,
     @SerializedName("commandAtk")
     val commandAtk: BuffActionParams? = null,
     @SerializedName("commandDef")
