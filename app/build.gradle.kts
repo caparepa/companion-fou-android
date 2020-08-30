@@ -3,7 +3,6 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     id("kotlin-android")
-    id("io.objectbox")
 }
 
 android {
@@ -87,13 +86,6 @@ dependencies {
 
     //GLIDE
     implementation("com.github.bumptech.glide:glide:4.10.0")
-    kapt("com.github.bumptech.glide:compiler:4.10.0")
-
-    //objectbox
-    // all below should be added automatically by the plugin
-    implementation("io.objectbox:objectbox-android:2.7.0")
-    kapt("io.objectbox:objectbox-processor:2.7.0")
-    // some useful Kotlin extension functions
-    implementation("io.objectbox:objectbox-kotlin:2.7.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.10.0")
 
 }
