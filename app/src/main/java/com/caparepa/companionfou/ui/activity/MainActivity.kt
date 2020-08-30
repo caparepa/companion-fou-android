@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.data.model.en.basic.servant.BasicServantEn
+import com.caparepa.companionfou.data.model.nice.servant.ServantItem
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,10 +19,14 @@ class MainActivity : AppCompatActivity() {
         theButton.setOnClickListener {
             try {
 
-                /*val theList: ArrayList<NiceServant.NiceServantItem> =
+                val theList: ArrayList<ServantItem> =
                     readRawJson(R.raw.data_en_nice_servant)
 
-                Log.d("TATA", "tttt ${theList.size}")*/
+                val itemList = theList.filter {
+                    it.name?.contains("altria")!!
+                }
+
+                Log.d("TATA", "tttt ${theList.size}")
             } catch (e: Exception){
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
@@ -33,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun createJsonObject(jsonString: String) {
         val gson = Gson()
-        val obj = gson.fromJson(jsonString, BasicServantEn::class.java)
+        val obj = gson.fromJson(jsonString, ServantItem::class.java)
     }
 
     private inline fun <reified T> readRawJson(@RawRes rawResId: Int): T {

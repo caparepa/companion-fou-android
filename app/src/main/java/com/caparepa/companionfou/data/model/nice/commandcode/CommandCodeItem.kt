@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 data class CommandCodeItem(
     @SerializedName("id")
-    val id: Int? = null,
+    val id: Long? = null,
     @SerializedName("collectionNo")
     val collectionNo: Int? = null,
     @SerializedName("name")

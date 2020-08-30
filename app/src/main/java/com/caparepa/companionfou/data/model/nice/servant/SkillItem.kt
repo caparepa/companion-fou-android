@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 
 data class SkillItem(
     @SerializedName("id")
-    val id: Int? = null,
+    val id: Long? = null,
     @SerializedName("num")
     val num: Int? = null,
     @SerializedName("name")
