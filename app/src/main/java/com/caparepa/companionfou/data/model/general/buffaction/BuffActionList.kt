@@ -7,7 +7,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 data class BuffActionList(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("commandAtk")
     val commandAtk: BuffActionParams? = null,
     @SerializedName("commandDef")

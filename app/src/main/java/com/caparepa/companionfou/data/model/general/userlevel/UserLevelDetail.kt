@@ -7,7 +7,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 data class UserLevelDetail(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("requiredExp")
     val requiredExp: Int? = null,
     @SerializedName("maxAp")

@@ -6,7 +6,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 data class FaceCardParams(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("individuality")
     val individuality: List<FaceCardIndividuality?>? = null,
     @SerializedName("adjustAtk")

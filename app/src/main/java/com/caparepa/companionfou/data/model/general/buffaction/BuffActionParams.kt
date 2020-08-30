@@ -6,7 +6,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 data class BuffActionParams(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("limit")
     val limit: String? = null,
     @SerializedName("plusTypes")

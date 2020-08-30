@@ -6,7 +6,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 class UserLevelList(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("1")
     val mLevel_1: UserLevelDetail? = null,
     @SerializedName("2")

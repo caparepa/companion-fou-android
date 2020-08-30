@@ -6,7 +6,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 data class MysticCodeInnerItem(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("male")
     val male: String? = null,
     @SerializedName("female")

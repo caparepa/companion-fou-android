@@ -1,10 +1,17 @@
 package com.caparepa.companionfou.data.model.nice.servant
 
 import com.google.gson.annotations.SerializedName
+import io.objectbox.annotation.Entity
+import io.objectbox.annotation.Id
+import io.objectbox.annotation.Index
+import io.objectbox.annotation.Unique
 
+@Entity
 data class FunctionItem(
+    @Id var _id: Long = 0,
+    @Unique
     @SerializedName("funcId")
-    val funcId: Int? = null,
+    val funcId: Long? = null,
     @SerializedName("funcType")
     val funcType: String? = null,
     @SerializedName("funcTargetType")

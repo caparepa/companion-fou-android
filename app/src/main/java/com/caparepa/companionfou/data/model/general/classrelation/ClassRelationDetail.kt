@@ -6,7 +6,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 class ClassRelationDetail(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("saber")
     val saber: Int? = null,
     @SerializedName("archer")

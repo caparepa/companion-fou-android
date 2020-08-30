@@ -7,7 +7,7 @@ import io.objectbox.annotation.Id
 
 @Entity
 data class FaceCardList(
-    @Id var id: Long = 0,
+    @Id var _id: Long = 0,
     @SerializedName("arts")
     val arts: Map<Int, FaceCardParams?>? = null,
     @SerializedName("buster")
