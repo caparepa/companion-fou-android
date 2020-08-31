@@ -6,7 +6,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 object Coroutines {
-    suspend fun main(work: suspend (() -> Unit)) =
+    fun main(work: suspend (() -> Unit)) =
         CoroutineScope(Dispatchers.Main).launch {
             work()
         }
