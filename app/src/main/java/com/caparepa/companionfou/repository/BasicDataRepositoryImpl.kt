@@ -17,7 +17,8 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     override suspend fun getBasicServants(urlType: String, region: String): List<ServantItem>? =
         withContext(Dispatchers.Main) {
             val response = api.getBasicServants(urlType, region)
-            val stuff = response?.body()?.toJsonString()?.toKotlinObject<List<ServantItem>>()
+            val bodyString = response?.body()?.string()
+            val stuff = bodyString?.toKotlinObject<List<ServantItem>>()
             stuff
         }
 

@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                 val shit = it
                 this@MainActivity.toastLong("HELLO! YES!")
             }
-            this@MainActivity.toastLong("NOOOO!!!!")
         })
     }
 
