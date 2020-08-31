@@ -1,13 +1,8 @@
 package com.caparepa.companionfou.network.api
 
-import com.caparepa.companionfou.utils.REGION_JP
-import com.caparepa.companionfou.utils.REGION_NA
-import com.caparepa.companionfou.utils.URL_EXPORT_DIR
 import okhttp3.ResponseBody
 import retrofit2.Response
-import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface AtlasAcademyEndpoints {
