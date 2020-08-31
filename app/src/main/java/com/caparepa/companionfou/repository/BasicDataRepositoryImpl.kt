@@ -15,7 +15,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     private val api = AtlasApiClient.invoke()
 
     override suspend fun getBasicServants(urlType: String, region: String): List<ServantItem>? =
-        withContext(Dispatchers.Main) {
+        withContext(Dispatchers.IO) {
             val response = api.getBasicServants(urlType, region)
             val bodyString = response?.body()?.string()
             val data = bodyString?.toKotlinObject<List<ServantItem>>()
