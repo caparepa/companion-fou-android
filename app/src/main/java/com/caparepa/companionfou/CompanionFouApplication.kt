@@ -11,9 +11,9 @@ class CompanionFouApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        //initKoin()
-        //CoreModule.init()
-        //AndroidThreeTen.init(this)
+        initKoin()
+        CoreModule.init()
+        AndroidThreeTen.init(this)
     }
 
     private fun initKoin() {
