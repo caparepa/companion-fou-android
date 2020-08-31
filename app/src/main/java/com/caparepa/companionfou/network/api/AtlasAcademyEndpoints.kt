@@ -55,31 +55,31 @@ interface AtlasAcademyEndpoints {
 
     //NA Endpoints
 
-    // https://api.atlasacademy.io/export/NA/nice_servant.json
+    //Get servants
     @GET("/nice_servant.json")
     suspend fun getNiceServants(): Response<ResponseBody>
 
-    // https://api.atlasacademy.io/export/NA/nice_servant_lore.json
+    //Get servants with lore
     @GET("/nice_servant_lore.json")
     suspend fun getNiceServantsWithLore(): Response<ResponseBody>
 
-    // https://api.atlasacademy.io/export/NA/nice_equip.json
+    //Get Craft Essences
     @GET("/nice_equip.json")
     suspend fun getNiceCraftEssences(): Response<ResponseBody>
 
-    // https://api.atlasacademy.io/export/NA/nice_equip_lore.json
+    //Get Craft Essences with lore
     @GET("/nice_equip_lore.json")
     suspend fun getNiceCraftEssencesWithLore(): Response<ResponseBody>
 
-    // https://api.atlasacademy.io/export/NA/nice_command_code.json
+    //Get Command Codes
     @GET("/nice_command_code.json")
     suspend fun getNiceCommandCodes(): Response<ResponseBody>
 
-    // https://api.atlasacademy.io/export/NA/nice_item.json
+    //Get Materials (items, ascension, etc)
     @GET("/nice_item.json")
     suspend fun getNiceMaterials(): Response<ResponseBody>
 
-    // https://api.atlasacademy.io/export/NA/nice_mystic_code.json
+    //Get Mystic Codes
     @GET("/nice_mystic_code.json")
     suspend fun getNiceMysticCodes(): Response<ResponseBody>
 
