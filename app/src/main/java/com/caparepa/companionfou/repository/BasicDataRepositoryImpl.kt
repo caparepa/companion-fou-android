@@ -15,9 +15,10 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
 
     private val api = AtlasApiClient.invoke()
 
-    override suspend fun getBasicServants(urlType: String, region: String): List<ServantItem>? =
+    override suspend fun getBasicServants(urlType: String, region: String): List<ServantItem?>? =
         withContext(Dispatchers.Main) {
-            null
+            val response = api.getBasicServants(urlType, region)
+            response
         }
 
     override suspend fun getBasicServantsEnglishName(

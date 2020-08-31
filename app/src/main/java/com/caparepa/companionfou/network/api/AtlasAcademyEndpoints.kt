@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.network.api
 
+import com.caparepa.companionfou.data.model.basic.ServantItem
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -135,7 +136,7 @@ interface AtlasAcademyEndpoints {
     suspend fun getBasicServants(
         @Path(value = "url_type", encoded = true) urlType: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): List<ServantItem?>?
 
     //Get servants
     @GET("{url_type}/{region}/basic_servant_lang_en.json")
