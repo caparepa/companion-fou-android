@@ -5,13 +5,20 @@ import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.model.nice.servant.ServantItem
+import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), KoinComponent {
+
+    private val basicDataViewModel: BasicDataViewModel by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,12 +34,19 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 Log.d("TATA", "tttt ${theList.size}")
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
             }
         }
 
+    }
+
+    private fun observeBasicDataViewModel() = basicDataViewModel.run {
+        basicServantResponse.observe(this@MainActivity, Observer {
+            it?.let {
+            }
+        })
     }
 
     private fun createJsonObject(jsonString: String) {
@@ -42,14 +56,14 @@ class MainActivity : AppCompatActivity() {
 
     private inline fun <reified T> readRawJson(@RawRes rawResId: Int): T {
         resources.openRawResource(rawResId).bufferedReader().use {
-            return Gson().fromJson<T>(it, object: TypeToken<T>() {}.type)
+            return Gson().fromJson<T>(it, object : TypeToken<T>() {}.type)
         }
     }
 
-    private fun loadJsonFromFile(context: Context):String? {
+    private fun loadJsonFromFile(context: Context): String? {
         try {
             return resources.openRawResource(R.raw.example)
-                .bufferedReader().use{
+                .bufferedReader().use {
                     it.readText()
                 }
 
