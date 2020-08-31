@@ -88,4 +88,27 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.10.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.10.0")
 
+    //Dependency injection
+    implementation("org.koin:koin-android:2.0.1")
+    implementation("org.koin:koin-androidx-scope:2.0.1")
+    implementation("org.koin:koin-androidx-viewmodel:2.0.1")
+
+    //room
+    implementation("androidx.room:room-ktx:2.2.5")
+    annotationProcessor("androidx.room:room-compiler:2.2.5")
+
+    //model mapper
+    implementation("org.modelmapper:modelmapper:2.3.3")
+
+    //threeten
+    api("com.jakewharton.threetenabp:threetenabp:1.2.4")
+
+    //Chrome tabs
+    api("androidx.browser:browser:1.2.0")
+    api("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+
+    //GLIDE
+    api("com.github.bumptech.glide:glide:4.10.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.10.0")
+
 }
