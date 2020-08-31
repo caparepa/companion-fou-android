@@ -1,5 +1,13 @@
 package com.caparepa.companionfou.utils
 
+//url
+const val ATLAS_ACADEMY_BASE_URL = "https://api.atlasacademy.io/"
+const val URL_EXPORT_DIR = "export"
+const val URL_NICE_DIR = "nice"
+const val URL_RAW_DIR = "raw"
+const val REGION_NA = "NA"
+const val REGION_JP = "JP"
+
 //Game constants
 const val ATTACK_RATE = 230
 const val ATTACK_RATE_RANDOM_MAX = 1100
