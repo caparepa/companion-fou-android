@@ -1,0 +1,3117 @@
+[
+  {
+    "id": 1,
+    "name": "QP",
+    "type": "qp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/5.png",
+    "background": "zero"
+  },
+  {
+    "id": 2,
+    "name": "Saint Quartz",
+    "type": "stone",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
+    "background": "gold"
+  },
+  {
+    "id": 3,
+    "name": "Mana Prism",
+    "type": "mana",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7.png",
+    "background": "silver"
+  },
+  {
+    "id": 4,
+    "name": "Friend Point",
+    "type": "friendPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/12.png",
+    "background": "zero"
+  },
+  {
+    "id": 5,
+    "name": "Quest Clear Reward QP",
+    "type": "questRewardQp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/5.png",
+    "background": "questClearQPReward"
+  },
+  {
+    "id": 6,
+    "name": "Saint Quartz",
+    "type": "chargeStone",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
+    "background": "gold"
+  },
+  {
+    "id": 11,
+    "name": "Saint Quartz Fragment",
+    "type": "stoneFragments",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/11.png",
+    "background": "silver"
+  },
+  {
+    "id": 16,
+    "name": "Saint Quartz Fragment",
+    "type": "stoneFragments",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/16.png",
+    "background": "silver"
+  },
+  {
+    "id": 17,
+    "name": "Unregistered Spirit Origin",
+    "type": "anonymous",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/17.png",
+    "background": "gold"
+  },
+  {
+    "id": 18,
+    "name": "Rare Prism",
+    "type": "rarePri",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/18.png",
+    "background": "gold"
+  },
+  {
+    "id": 99,
+    "name": "???",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/99.png",
+    "background": "bronze"
+  },
+  {
+    "id": 100,
+    "name": "Golden Fruit",
+    "type": "apRecover",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/100.png",
+    "background": "gold"
+  },
+  {
+    "id": 101,
+    "name": "Silver Fruit",
+    "type": "apRecover",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/101.png",
+    "background": "silver"
+  },
+  {
+    "id": 102,
+    "name": "Bronze Fruit",
+    "type": "apAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/102.png",
+    "background": "bronze"
+  },
+  {
+    "id": 4001,
+    "name": "Summon Ticket",
+    "type": "gachaTicket",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/4001.png",
+    "background": "gold"
+  },
+  {
+    "id": 5000,
+    "name": "Quick Code Opener",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/5000.png",
+    "background": "gold"
+  },
+  {
+    "id": 5001,
+    "name": "Arts Code Opener",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/5001.png",
+    "background": "gold"
+  },
+  {
+    "id": 5002,
+    "name": "Buster Code Opener",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/5002.png",
+    "background": "gold"
+  },
+  {
+    "id": 5003,
+    "name": "Code Remover",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/5003.png",
+    "background": "gold"
+  },
+  {
+    "id": 6001,
+    "name": "Gem of Saber",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6001.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6002,
+    "name": "Gem of Archer",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6002.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6003,
+    "name": "Gem of Lancer",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6003.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6004,
+    "name": "Gem of Rider",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6004.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6005,
+    "name": "Gem of Caster",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6005.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6006,
+    "name": "Gem of Assassin",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6006.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6007,
+    "name": "Gem of Berserker",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6007.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6101,
+    "name": "Magic Gem of Saber",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6101.png",
+    "background": "silver"
+  },
+  {
+    "id": 6102,
+    "name": "Magic Gem of Archer",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6102.png",
+    "background": "silver"
+  },
+  {
+    "id": 6103,
+    "name": "Magic Gem of Lancer",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6103.png",
+    "background": "silver"
+  },
+  {
+    "id": 6104,
+    "name": "Magic Gem of Rider",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6104.png",
+    "background": "silver"
+  },
+  {
+    "id": 6105,
+    "name": "Magic Gem of Caster",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6105.png",
+    "background": "silver"
+  },
+  {
+    "id": 6106,
+    "name": "Magic Gem of Assassin",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6106.png",
+    "background": "silver"
+  },
+  {
+    "id": 6107,
+    "name": "Magic Gem of Berserker",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6107.png",
+    "background": "silver"
+  },
+  {
+    "id": 6201,
+    "name": "Secret Gem of Saber",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6201.png",
+    "background": "gold"
+  },
+  {
+    "id": 6202,
+    "name": "Secret Gem of Archer",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6202.png",
+    "background": "gold"
+  },
+  {
+    "id": 6203,
+    "name": "Secret Gem of Lancer",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6203.png",
+    "background": "gold"
+  },
+  {
+    "id": 6204,
+    "name": "Secret Gem of Rider",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6204.png",
+    "background": "gold"
+  },
+  {
+    "id": 6205,
+    "name": "Secret Gem of Caster",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6205.png",
+    "background": "gold"
+  },
+  {
+    "id": 6206,
+    "name": "Secret Gem of Assassin",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6206.png",
+    "background": "gold"
+  },
+  {
+    "id": 6207,
+    "name": "Secret Gem of Berserker",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6207.png",
+    "background": "gold"
+  },
+  {
+    "id": 6501,
+    "name": "Phoenix Feather",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
+    "background": "silver"
+  },
+  {
+    "id": 6502,
+    "name": "Seed of Yggdrasil",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+    "background": "silver"
+  },
+  {
+    "id": 6503,
+    "name": "Proof of Hero",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6503.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6505,
+    "name": "Void's Dust",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6506,
+    "name": "Dragon's Reverse Scale",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6506.png",
+    "background": "gold"
+  },
+  {
+    "id": 6507,
+    "name": "Claw of Chaos",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
+    "background": "gold"
+  },
+  {
+    "id": 6508,
+    "name": "Ghost Lantern",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6508.png",
+    "background": "silver"
+  },
+  {
+    "id": 6509,
+    "name": "Serpent Jewel",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6509.png",
+    "background": "silver"
+  },
+  {
+    "id": 6510,
+    "name": "Eternal Gear",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6510.png",
+    "background": "silver"
+  },
+  {
+    "id": 6511,
+    "name": "Forbidden Page",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6511.png",
+    "background": "silver"
+  },
+  {
+    "id": 6512,
+    "name": "Dragon Fang",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6512.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6513,
+    "name": "Meteor Horseshoe",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
+    "background": "silver"
+  },
+  {
+    "id": 6514,
+    "name": "Homunculus Baby",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6514.png",
+    "background": "silver"
+  },
+  {
+    "id": 6515,
+    "name": "Octuplet Crystals",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6515.png",
+    "background": "silver"
+  },
+  {
+    "id": 6516,
+    "name": "Evil Bone",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6517,
+    "name": "Heart of the Foreign God",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6517.png",
+    "background": "gold"
+  },
+  {
+    "id": 6518,
+    "name": "Spirit Root",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6518.png",
+    "background": "gold"
+  },
+  {
+    "id": 6519,
+    "name": "Warhorse's Young Horn",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6519.png",
+    "background": "gold"
+  },
+  {
+    "id": 6520,
+    "name": "Tearstone of Blood",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
+    "background": "gold"
+  },
+  {
+    "id": 6521,
+    "name": "Black Beast Grease",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6521.png",
+    "background": "gold"
+  },
+  {
+    "id": 6522,
+    "name": "Fool's Chain",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6522.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6523,
+    "name": "Lamp of Evil-Sealing",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6523.png",
+    "background": "gold"
+  },
+  {
+    "id": 6524,
+    "name": "Great Knight Medal",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6524.png",
+    "background": "silver"
+  },
+  {
+    "id": 6525,
+    "name": "Scarab of Wisdom",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6525.png",
+    "background": "gold"
+  },
+  {
+    "id": 6526,
+    "name": "Shell of Reminiscence",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6526.png",
+    "background": "silver"
+  },
+  {
+    "id": 6527,
+    "name": "Deadly Poisonous Needle",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6527.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6528,
+    "name": "Primordial Lanugo",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6528.png",
+    "background": "gold"
+  },
+  {
+    "id": 6529,
+    "name": "Cursed Beast Gallstone",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6529.png",
+    "background": "gold"
+  },
+  {
+    "id": 6530,
+    "name": "Mystic Spinal Fluid",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6530.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6531,
+    "name": "Mysterious Divine Wine",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6531.png",
+    "background": "gold"
+  },
+  {
+    "id": 6532,
+    "name": "Refined Magatama",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6532.png",
+    "background": "silver"
+  },
+  {
+    "id": 6533,
+    "name": "Stake of Wailing Night",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6533.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6534,
+    "name": "Mystic Gunpowder",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6534.png",
+    "background": "bronze"
+  },
+  {
+    "id": 6535,
+    "name": "Eternal Ice",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6535.png",
+    "background": "silver"
+  },
+  {
+    "id": 6536,
+    "name": "Aurora Steel",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6536.png",
+    "background": "silver"
+  },
+  {
+    "id": 6537,
+    "name": "Giant's Ring",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6537.png",
+    "background": "silver"
+  },
+  {
+    "id": 6999,
+    "name": "Crystallized Lore",
+    "type": "skillLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png",
+    "background": "gold"
+  },
+  {
+    "id": 7001,
+    "name": "Saber Piece",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7001.png",
+    "background": "silver"
+  },
+  {
+    "id": 7002,
+    "name": "Archer Piece",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7002.png",
+    "background": "silver"
+  },
+  {
+    "id": 7003,
+    "name": "Lancer Piece",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7003.png",
+    "background": "silver"
+  },
+  {
+    "id": 7004,
+    "name": "Rider Piece",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7004.png",
+    "background": "silver"
+  },
+  {
+    "id": 7005,
+    "name": "Caster Piece",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7005.png",
+    "background": "silver"
+  },
+  {
+    "id": 7006,
+    "name": "Assassin Piece",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7006.png",
+    "background": "silver"
+  },
+  {
+    "id": 7007,
+    "name": "Berserker Piece",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7007.png",
+    "background": "silver"
+  },
+  {
+    "id": 7101,
+    "name": "Saber Monument",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7101.png",
+    "background": "gold"
+  },
+  {
+    "id": 7102,
+    "name": "Archer Monument",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7102.png",
+    "background": "gold"
+  },
+  {
+    "id": 7103,
+    "name": "Lancer Monument",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7103.png",
+    "background": "gold"
+  },
+  {
+    "id": 7104,
+    "name": "Rider Monument",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7104.png",
+    "background": "gold"
+  },
+  {
+    "id": 7105,
+    "name": "Caster Monument ",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7105.png",
+    "background": "gold"
+  },
+  {
+    "id": 7106,
+    "name": "Assassin Monument",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7106.png",
+    "background": "gold"
+  },
+  {
+    "id": 7107,
+    "name": "Berserker Monument",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7107.png",
+    "background": "gold"
+  },
+  {
+    "id": 7999,
+    "name": "Holy Grail",
+    "type": "tdLvUp",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7999.png",
+    "background": "gold"
+  },
+  {
+    "id": 8008,
+    "name": "Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/8008.png",
+    "background": "silver"
+  },
+  {
+    "id": 9999,
+    "name": "Exchange Ticket (JUL 2019)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10000,
+    "name": "Exchange Ticket (AUG 2019)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10001,
+    "name": "Exchange Ticket (SEP 2019)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10002,
+    "name": "Exchange Ticket (OCT 2019)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10003,
+    "name": "Exchange Ticket (NOV 2019)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10004,
+    "name": "Exchange Ticket (DEC 2019)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10005,
+    "name": "Exchange Ticket (JAN 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10006,
+    "name": "Exchange Ticket (FEB 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10007,
+    "name": "Exchange Ticket (MAR 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10008,
+    "name": "Exchange Ticket (APR 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10009,
+    "name": "Exchange Ticket (MAY 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10010,
+    "name": "Exchange Ticket (JUN 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10011,
+    "name": "Exchange Ticket (JUL 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 10012,
+    "name": "Exchange Ticket (AUG 2020)",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/10000.png",
+    "background": "silver"
+  },
+  {
+    "id": 15000,
+    "name": "Thanksgiving Exchange Ticket 2019",
+    "type": "itemSelect",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/15000.png",
+    "background": "silver"
+  },
+  {
+    "id": 80059,
+    "name": "Ortinax Wardrobe Key",
+    "type": "costumeRelease",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/23.png",
+    "background": "gold"
+  },
+  {
+    "id": 94000201,
+    "name": "Master Recruitment Campaign Gift Voucher",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/8008.png",
+    "background": "silver"
+  },
+  {
+    "id": 94000301,
+    "name": "Nero Medal [Bronze]",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94000302,
+    "name": "Nero Medal [Silver]",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94000303,
+    "name": "Nero Medal [Gold]",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94000401,
+    "name": "Moon Dumpling",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000401.png",
+    "background": "silver"
+  },
+  {
+    "id": 94000402,
+    "name": "Special Dumpling",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000402.png",
+    "background": "gold"
+  },
+  {
+    "id": 94000501,
+    "name": "Petit Cake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000501.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94000502,
+    "name": "Sweet Candle",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000502.png",
+    "background": "silver"
+  },
+  {
+    "id": 94000503,
+    "name": "Mischievous Bat",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000503.png",
+    "background": "silver"
+  },
+  {
+    "id": 94000504,
+    "name": "Pumpkin Lantern",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000504.png",
+    "background": "gold"
+  },
+  {
+    "id": 94000505,
+    "name": "Twinkle Candy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000505.png",
+    "background": "gold"
+  },
+  {
+    "id": 94000901,
+    "name": "Tsukumo-nasu",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000901.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94000902,
+    "name": "Yohen-tenmoku-chawan",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000902.png",
+    "background": "silver"
+  },
+  {
+    "id": 94000903,
+    "name": "Hira-gumo",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000903.png",
+    "background": "gold"
+  },
+  {
+    "id": 94000904,
+    "name": "Honnoji Point",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000904.png",
+    "background": "silver"
+  },
+  {
+    "id": 94000905,
+    "name": "Golden Skull",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000905.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001201,
+    "name": "Mini Ribbon",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001201.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94001202,
+    "name": "Silver Bell",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001202.png",
+    "background": "silver"
+  },
+  {
+    "id": 94001203,
+    "name": "Gold Star",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001203.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001204,
+    "name": "Magical Stocking",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001204.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001205,
+    "name": "Bucket of Chicken",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001205.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001206,
+    "name": "Special Exchange Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001206.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001501,
+    "name": "Vacuum Tube",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001501.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001502,
+    "name": "All-Purpose Lens",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001502.png",
+    "background": "silver"
+  },
+  {
+    "id": 94001503,
+    "name": "Transistor",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001503.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94001504,
+    "name": "Altrium",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001504.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001801,
+    "name": "Letter from Mash",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001801.png",
+    "background": "silver"
+  },
+  {
+    "id": 94001802,
+    "name": "Baking Chocolate",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001802.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94001803,
+    "name": "Choco Coin of Saber",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001803.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001804,
+    "name": "Choco Coin of Archer",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001804.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001805,
+    "name": "Choco Coin of Lancer",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001805.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001806,
+    "name": "Choco Coin of Rider",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001806.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001807,
+    "name": "Choco Coin of Caster",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001807.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001808,
+    "name": "Choco Coin of Assassin",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001808.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001809,
+    "name": "Choco Coin of Berserker",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001809.png",
+    "background": "gold"
+  },
+  {
+    "id": 94001810,
+    "name": "Choco Coin of All",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001810.png",
+    "background": "gold"
+  },
+  {
+    "id": 94002001,
+    "name": "Hidden Key",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002001.png",
+    "background": "silver"
+  },
+  {
+    "id": 94002002,
+    "name": "Black Cat Figurine",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002002.png",
+    "background": "gold"
+  },
+  {
+    "id": 94002003,
+    "name": "Strawberry Ice Cream",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002003.png",
+    "background": "silver"
+  },
+  {
+    "id": 94002004,
+    "name": "Mineral Water",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002004.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94002005,
+    "name": "Sharp Knife",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002005.png",
+    "background": "gold"
+  },
+  {
+    "id": 94002301,
+    "name": "CBC2018 Special Invitation",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002301.png",
+    "background": "silver"
+  },
+  {
+    "id": 94002801,
+    "name": "Mona Lisa (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
+    "background": "gold"
+  },
+  {
+    "id": 94002802,
+    "name": "Self Portrait (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
+    "background": "silver"
+  },
+  {
+    "id": 94002803,
+    "name": "Vitruvian Man (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94002804,
+    "name": "Manuscript (True)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002804.png",
+    "background": "silver"
+  },
+  {
+    "id": 94002805,
+    "name": "Manuscript (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002805.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003101,
+    "name": "Seal of Saber",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003101.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003102,
+    "name": "Seal of Archer",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003102.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003103,
+    "name": "Seal of Lancer",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003103.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003104,
+    "name": "Seal of Rider",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003104.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003105,
+    "name": "Seal of Caster",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003105.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003106,
+    "name": "Seal of Assassin",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003106.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003107,
+    "name": "Seal of Berserker",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003107.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003108,
+    "name": "Assassin's Mask",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003108.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003109,
+    "name": "Sea Fiend's Appendage",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003109.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003110,
+    "name": "Sorcery Ore Fragment",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003110.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003111,
+    "name": "Treasure Chalice",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003111.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003112,
+    "name": "Crystal Ball",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003112.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003701,
+    "name": "Golden Rice Ball",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003701.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003702,
+    "name": "Oni Gourd",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003703,
+    "name": "Rice Ball of Power",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003703.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003901,
+    "name": "Divine Pill",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003901.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003902,
+    "name": "Immortal Peach",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003902.png",
+    "background": "silver"
+  },
+  {
+    "id": 94003903,
+    "name": "Pork Bun",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003903.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94003904,
+    "name": "Talisman of Merits",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003905,
+    "name": "Grand Lotus",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003905.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003906,
+    "name": "Orb of Merits",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003906.png",
+    "background": "gold"
+  },
+  {
+    "id": 94003907,
+    "name": "3 Million DL Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/8008.png",
+    "background": "silver"
+  },
+  {
+    "id": 94004501,
+    "name": "Dumpling of Courage",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004501.png",
+    "background": "silver"
+  },
+  {
+    "id": 94004502,
+    "name": "Golden Dumpling",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004502.png",
+    "background": "gold"
+  },
+  {
+    "id": 94004503,
+    "name": "Oni's Wicker Basket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004503.png",
+    "background": "gold"
+  },
+  {
+    "id": 94004504,
+    "name": "Roll of Brocade",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004504.png",
+    "background": "silver"
+  },
+  {
+    "id": 94004505,
+    "name": "Dragon Palace Coral",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004505.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94004506,
+    "name": "Swift Dog Bean",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004506.png",
+    "background": "gold"
+  },
+  {
+    "id": 94004507,
+    "name": "Wise Monkey Bean",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004507.png",
+    "background": "gold"
+  },
+  {
+    "id": 94004508,
+    "name": "Tough Pheasant Bean",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004508.png",
+    "background": "gold"
+  },
+  {
+    "id": 94004509,
+    "name": "Golden Bear Lighter",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004509.png",
+    "background": "gold"
+  },
+  {
+    "id": 94005601,
+    "name": "Fresh Water",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005601.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94005602,
+    "name": "Food",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005602.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94005603,
+    "name": "Lumber",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005603.png",
+    "background": "silver"
+  },
+  {
+    "id": 94005604,
+    "name": "Stone",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005604.png",
+    "background": "silver"
+  },
+  {
+    "id": 94005605,
+    "name": "Iron",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005605.png",
+    "background": "silver"
+  },
+  {
+    "id": 94005606,
+    "name": "Bell-Ringing Branch",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005606.png",
+    "background": "gold"
+  },
+  {
+    "id": 94006101,
+    "name": "Oil",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006101.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94006102,
+    "name": "Cement",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006102.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94006103,
+    "name": "Réalta Alloy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006103.png",
+    "background": "silver"
+  },
+  {
+    "id": 94006104,
+    "name": "Éadrom Alloy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006104.png",
+    "background": "silver"
+  },
+  {
+    "id": 94006105,
+    "name": "Uisce Alloy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006105.png",
+    "background": "silver"
+  },
+  {
+    "id": 94006106,
+    "name": "Gáe Bolg Replica",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006106.png",
+    "background": "gold"
+  },
+  {
+    "id": 94006401,
+    "name": "Expensive Pudding",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006401.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94006402,
+    "name": "Magical☆Bushido Musashi",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006402.png",
+    "background": "silver"
+  },
+  {
+    "id": 94006403,
+    "name": "Mr. Lion-Go Toy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006403.png",
+    "background": "gold"
+  },
+  {
+    "id": 94006404,
+    "name": "Heart Bracelet",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006404.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007101,
+    "name": "Nero Medal (Bronze)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94007102,
+    "name": "Nero Medal (Silver)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94007103,
+    "name": "Nero Medal (Gold)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007104,
+    "name": "Crimson Petal",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007104.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007401,
+    "name": "Petit Cake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000501.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94007402,
+    "name": "Sweet Candle",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000502.png",
+    "background": "silver"
+  },
+  {
+    "id": 94007403,
+    "name": "Mischievous Bat",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000503.png",
+    "background": "silver"
+  },
+  {
+    "id": 94007404,
+    "name": "Pumpkin Lantern",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000504.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007701,
+    "name": "Bag of Copper",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007701.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94007702,
+    "name": "Bag of Silver",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007702.png",
+    "background": "silver"
+  },
+  {
+    "id": 94007703,
+    "name": "Bag of Gold",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007703.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007704,
+    "name": "Dragon Orb",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007704.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007705,
+    "name": "Hero's Sword",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007705.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007706,
+    "name": "Hero's Lance",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007706.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007707,
+    "name": "Hero's Bow",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007707.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007708,
+    "name": "Hero's Shield",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007708.png",
+    "background": "gold"
+  },
+  {
+    "id": 94007709,
+    "name": "Hero's Mantle",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007709.png",
+    "background": "gold"
+  },
+  {
+    "id": 94008301,
+    "name": "EXTELLA Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94008301.png",
+    "background": "gold"
+  },
+  {
+    "id": 94008701,
+    "name": "Mini Ribbon",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001201.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94008702,
+    "name": "Silver Bell",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001202.png",
+    "background": "silver"
+  },
+  {
+    "id": 94008703,
+    "name": "Gold Star",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001203.png",
+    "background": "gold"
+  },
+  {
+    "id": 94008704,
+    "name": "Magical Stocking",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001204.png",
+    "background": "gold"
+  },
+  {
+    "id": 94008705,
+    "name": "Special Exchange Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001206.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009001,
+    "name": "Fruitcake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009001.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009002,
+    "name": "Shortcake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009002.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009003,
+    "name": "Cheesecake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009003.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94009004,
+    "name": "Bûche de Noël ",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009004.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009005,
+    "name": "Miracle Stockings",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009005.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009006,
+    "name": "Gilles de Rais Doll",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009006.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009007,
+    "name": "Silver Exchange Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009007.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009601,
+    "name": "Moon Dumpling",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000401.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009602,
+    "name": "Special Dumpling",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000402.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009801,
+    "name": "Letter from Mash",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001801.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009802,
+    "name": "Baking Chocolate",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001802.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94009803,
+    "name": "Choco Coin of Saber",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001803.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009804,
+    "name": "Choco Coin of Archer",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001804.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009805,
+    "name": "Choco Coin of Lancer",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001805.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009806,
+    "name": "Choco Coin of Rider",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001806.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009807,
+    "name": "Choco Coin of Caster",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001807.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009808,
+    "name": "Choco Coin of Assassin",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001808.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009809,
+    "name": "Choco Coin of Berserker",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001809.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009810,
+    "name": "Choco Coin of All",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001810.png",
+    "background": "gold"
+  },
+  {
+    "id": 94009811,
+    "name": "Chocolate Mold: Saber",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009811.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009812,
+    "name": "Chocolate Mold: Archer",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009812.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009813,
+    "name": "Chocolate Mold: Lancer",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009813.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009814,
+    "name": "Chocolate Mold: Rider",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009814.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009815,
+    "name": "Chocolate Mold: Caster",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009815.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009816,
+    "name": "Chocolate Mold: Assassin",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009816.png",
+    "background": "silver"
+  },
+  {
+    "id": 94009817,
+    "name": "Chocolate Mold: Berserker",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009817.png",
+    "background": "silver"
+  },
+  {
+    "id": 94010801,
+    "name": "Revival: CBC2018 Special Invitation",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002301.png",
+    "background": "gold"
+  },
+  {
+    "id": 94010802,
+    "name": "CBC2019 Special Invitation",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94010802.png",
+    "background": "gold"
+  },
+  {
+    "id": 94010901,
+    "name": "Tsukumo-nasu",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000901.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94010902,
+    "name": "Yohen-tenmoku-chawan",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000902.png",
+    "background": "silver"
+  },
+  {
+    "id": 94010903,
+    "name": "Hira-gumo",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000903.png",
+    "background": "gold"
+  },
+  {
+    "id": 94010904,
+    "name": "Honnoji Point",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000904.png",
+    "background": "silver"
+  },
+  {
+    "id": 94011301,
+    "name": "Eiraku Coins",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94011302,
+    "name": "Gold Dust",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94011303,
+    "name": "Koban",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011304,
+    "name": "Shinsengumi Point",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011304.png",
+    "background": "silver"
+  },
+  {
+    "id": 94011305,
+    "name": "Oda Bakufu Point",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011305.png",
+    "background": "silver"
+  },
+  {
+    "id": 94011306,
+    "name": "Piece of Ranjatai",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011306.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011307,
+    "name": "Gold Leaf Sun Fan",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011307.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011901,
+    "name": "Sakura Chip",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011901.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94011902,
+    "name": "Sakura Money",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011902.png",
+    "background": "silver"
+  },
+  {
+    "id": 94011903,
+    "name": "KP",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011903.png",
+    "background": "silver"
+  },
+  {
+    "id": 94011905,
+    "name": "Lip's Key",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011905.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011906,
+    "name": "Melt's Key",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011906.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011907,
+    "name": "Suzuka's Key",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011907.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011908,
+    "name": "Tickle Tickle Hand",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011908.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011909,
+    "name": "Kiara Punisher \"Melt's Death Whip\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011909.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011911,
+    "name": "Nostalgic Ribbon",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011911.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011912,
+    "name": "Kiara Punisher Reset",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011912.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011913,
+    "name": "Gate Key (Elbow)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011914,
+    "name": "Church Key",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011915,
+    "name": "Gate Key (Ankle)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011916,
+    "name": "Gate Key (Cat)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011917,
+    "name": "Gate Key (Separator)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011918,
+    "name": "Gate Key (Kind)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011919,
+    "name": "Gate Key (Nape)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011920,
+    "name": "Gate Key (Station)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011921,
+    "name": "Gate Key (Ray)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011922,
+    "name": "Gate Key (Coaster)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011923,
+    "name": "Gate Key (Jail)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011924,
+    "name": "Gate Key (Dark)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011925,
+    "name": "Kiara Punisher \"Damage Inhibiting Spray\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011926,
+    "name": "Kiara Punisher \"Makeup Remover, DEF\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011927,
+    "name": "Kiara Punisher \"Afterglow Killer Capsule SP\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011928,
+    "name": "Kiara Punisher \"Critical None\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011929,
+    "name": "Kiara Punisher \"Makeup Remover, Debuff Resist\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011930,
+    "name": "Kiara Punisher \"Stun Good Skin\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011931,
+    "name": "Kiara Punisher \"Quick XXX-Accuracy\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011932,
+    "name": "Kiara Punisher \"Arts XXX-Accuracy\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011933,
+    "name": "Kiara Punisher \"Buster XXX-Accuracy\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011934,
+    "name": "Kiara Punisher \"Slip Barrier\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011935,
+    "name": "Kiara Punisher \"Star Safe\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011936,
+    "name": "Kiara Punisher \"Anti-Erotic Agent\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011937,
+    "name": "Kiara Punisher \"Afterglow Killer Capsule EX\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011938,
+    "name": "Kiara Punisher \"Just One Color\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011939,
+    "name": "Kiara Punisher \"Sword of Humanity's Morals\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011940,
+    "name": "Kiara Punisher \"Manuscript of 'The Little Mermaid' \"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011909.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011941,
+    "name": "Kiara Punisher \"Quick X-Accuracy\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011942,
+    "name": "Kiara Punisher \"Arts X-Accuracy\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011943,
+    "name": "Kiara Punisher \"Buster X-Accuracy\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011944,
+    "name": "Kiara Punisher \"Growth Inhibitor Anticell\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94011945,
+    "name": "Kiara Punisher \"NP Seal Guard Mask\"",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011910.png",
+    "background": "gold"
+  },
+  {
+    "id": 94012301,
+    "name": "Golden Rice Ball",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003701.png",
+    "background": "gold"
+  },
+  {
+    "id": 94012302,
+    "name": "Oni Gourd",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+    "background": "silver"
+  },
+  {
+    "id": 94012303,
+    "name": "Rice Ball of Power",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003703.png",
+    "background": "silver"
+  },
+  {
+    "id": 94013001,
+    "name": "Dumpling of Courage",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004501.png",
+    "background": "silver"
+  },
+  {
+    "id": 94013002,
+    "name": "Golden Dumpling",
+    "type": "rpAdd",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004502.png",
+    "background": "gold"
+  },
+  {
+    "id": 94013003,
+    "name": "Oni's Wicker Basket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004503.png",
+    "background": "gold"
+  },
+  {
+    "id": 94013004,
+    "name": "Roll of Brocade",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004504.png",
+    "background": "silver"
+  },
+  {
+    "id": 94013005,
+    "name": "Dragon Palace Coral",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004505.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94013006,
+    "name": "Swift Dog Bean",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004506.png",
+    "background": "gold"
+  },
+  {
+    "id": 94013007,
+    "name": "Wise Monkey Bean",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004507.png",
+    "background": "gold"
+  },
+  {
+    "id": 94013008,
+    "name": "Tough Pheasant Bean",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94004508.png",
+    "background": "gold"
+  },
+  {
+    "id": 94013701,
+    "name": "Fresh Water",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005601.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94013702,
+    "name": "Food",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005602.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94013703,
+    "name": "Lumber",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005603.png",
+    "background": "silver"
+  },
+  {
+    "id": 94013704,
+    "name": "Stone",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005604.png",
+    "background": "silver"
+  },
+  {
+    "id": 94013705,
+    "name": "Iron",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94005605.png",
+    "background": "silver"
+  },
+  {
+    "id": 94013706,
+    "name": "Swimsuit of Everlasting Summer Wardrobe Key",
+    "type": "costumeRelease",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/23.png",
+    "background": "gold"
+  },
+  {
+    "id": 94014001,
+    "name": "Oil",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006101.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94014002,
+    "name": "Cement",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006102.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94014003,
+    "name": "Réalta Alloy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006103.png",
+    "background": "silver"
+  },
+  {
+    "id": 94014004,
+    "name": "Éadrom Alloy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006104.png",
+    "background": "silver"
+  },
+  {
+    "id": 94014005,
+    "name": "Uisce Alloy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94006105.png",
+    "background": "silver"
+  },
+  {
+    "id": 94014701,
+    "name": "FGO 2019 Formal Portrait Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94014701.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015001,
+    "name": "Junk Parts",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015001.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94015002,
+    "name": "Titanium Plate",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015002.png",
+    "background": "silver"
+  },
+  {
+    "id": 94015003,
+    "name": "Mag Wheel",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015003.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015004,
+    "name": "Quick Oil",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015004.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015005,
+    "name": "Arts Nitro",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015005.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015006,
+    "name": "Buster Octane",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015006.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015007,
+    "name": "Golden Reed",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015007.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015301,
+    "name": "Single Candy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94015302,
+    "name": "Instant Noodles",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94015303,
+    "name": "Connacht Coin",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015304,
+    "name": "Critical Star Spoon",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015304.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015305,
+    "name": "Calorie Meat",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015305.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015306,
+    "name": "NP Hammer",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015306.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015307,
+    "name": "Morning Star",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015307.png",
+    "background": "gold"
+  },
+  {
+    "id": 94015308,
+    "name": "Bewitching Prison Warden Look Wardrobe Key",
+    "type": "costumeRelease",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/23.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016101,
+    "name": "Nero Medal (Bronze)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94016102,
+    "name": "Nero Medal (Silver)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94016103,
+    "name": "Nero Medal (Gold)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94000303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016104,
+    "name": "Crimson Petal",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007104.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016801,
+    "name": "7 Million Downloads Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94016801.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016901,
+    "name": "Bag of Copper",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007701.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94016902,
+    "name": "Bag of Silver",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007702.png",
+    "background": "silver"
+  },
+  {
+    "id": 94016903,
+    "name": "Bag of Gold",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007703.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016904,
+    "name": "Hero's Sword",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007705.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016905,
+    "name": "Hero's Lance",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007706.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016906,
+    "name": "Hero's Bow",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007707.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016907,
+    "name": "Hero's Mantle",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007709.png",
+    "background": "gold"
+  },
+  {
+    "id": 94016908,
+    "name": "Hero's Shield",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94007708.png",
+    "background": "gold"
+  },
+  {
+    "id": 94017501,
+    "name": "Drill Gummy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94017501.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94017502,
+    "name": "Missile Ramune",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94017502.png",
+    "background": "silver"
+  },
+  {
+    "id": 94017503,
+    "name": "Beam Cookie",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94017503.png",
+    "background": "gold"
+  },
+  {
+    "id": 94017504,
+    "name": "B Pellet",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94017504.png",
+    "background": "gold"
+  },
+  {
+    "id": 94017505,
+    "name": "E Reactor",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94017505.png",
+    "background": "gold"
+  },
+  {
+    "id": 94017506,
+    "name": "Spare Reactor",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94017506.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018301,
+    "name": "Fruitcake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009001.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018302,
+    "name": "Shortcake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009002.png",
+    "background": "silver"
+  },
+  {
+    "id": 94018303,
+    "name": "Cheesecake",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009003.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94018304,
+    "name": "Bûche de Noël ",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009004.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018305,
+    "name": "Miracle Stockings",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009005.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018307,
+    "name": "Silver Exchange Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94009007.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018801,
+    "name": "Hollow Candle",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94018801.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94018802,
+    "name": "Corpse Bell",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94018802.png",
+    "background": "silver"
+  },
+  {
+    "id": 94018803,
+    "name": "Snow Baby",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94018803.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018804,
+    "name": "Crystal Wreath",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94018804.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018805,
+    "name": "Sand of the Underworld",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94018805.png",
+    "background": "silver"
+  },
+  {
+    "id": 94018806,
+    "name": "Santa Mustache",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94018806.png",
+    "background": "gold"
+  },
+  {
+    "id": 94018807,
+    "name": "War God Exchange Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94018807.png",
+    "background": "gold"
+  },
+  {
+    "id": 94019601,
+    "name": "Mona Lisa (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
+    "background": "gold"
+  },
+  {
+    "id": 94019602,
+    "name": "Self Portrait (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
+    "background": "silver"
+  },
+  {
+    "id": 94019603,
+    "name": "Vitruvian Man (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94019604,
+    "name": "Manuscript (True)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002804.png",
+    "background": "silver"
+  },
+  {
+    "id": 94019605,
+    "name": "Manuscript (Fake)",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002805.png",
+    "background": "silver"
+  },
+  {
+    "id": 94020801,
+    "name": "Fancy Sugar",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94020801.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94020802,
+    "name": "Mystic Milk",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94020802.png",
+    "background": "silver"
+  },
+  {
+    "id": 94020803,
+    "name": "Coo Coo Cacao",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94020803.png",
+    "background": "gold"
+  },
+  {
+    "id": 94020804,
+    "name": "Flavor Boost",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94020804.png",
+    "background": "gold"
+  },
+  {
+    "id": 94020805,
+    "name": "Hanging Gardens Chocolate",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94020805.png",
+    "background": "silver"
+  },
+  {
+    "id": 94020806,
+    "name": "Lock-On Chocolate",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94020806.png",
+    "background": "gold"
+  },
+  {
+    "id": 94020807,
+    "name": "Surprise Chocolate",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94020807.png",
+    "background": "gold"
+  },
+  {
+    "id": 94021301,
+    "name": "Hidden Key",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002001.png",
+    "background": "silver"
+  },
+  {
+    "id": 94021302,
+    "name": "Black Cat Figurine",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002002.png",
+    "background": "gold"
+  },
+  {
+    "id": 94021303,
+    "name": "Strawberry Ice Cream",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002003.png",
+    "background": "silver"
+  },
+  {
+    "id": 94021304,
+    "name": "Mineral Water",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002004.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94022401,
+    "name": "CBC 2019 Special Invitation",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94010802.png",
+    "background": "gold"
+  },
+  {
+    "id": 94022402,
+    "name": "CBC 2020 Special Invitation",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94022402.png",
+    "background": "gold"
+  },
+  {
+    "id": 94022403,
+    "name": "Pure White Rose",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94022403.png",
+    "background": "gold"
+  },
+  {
+    "id": 94022501,
+    "name": "Vacuum Tube",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001501.png",
+    "background": "gold"
+  },
+  {
+    "id": 94022502,
+    "name": "All-Purpose Lens",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001502.png",
+    "background": "silver"
+  },
+  {
+    "id": 94022503,
+    "name": "Transistor",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001503.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94022504,
+    "name": "Altrium",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94001504.png",
+    "background": "gold"
+  },
+  {
+    "id": 94023001,
+    "name": "Divine Pill",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003901.png",
+    "background": "gold"
+  },
+  {
+    "id": 94023002,
+    "name": "Immortal Peach",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003902.png",
+    "background": "silver"
+  },
+  {
+    "id": 94023003,
+    "name": "Pork Bun",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003903.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94023004,
+    "name": "Talisman of Merits",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003904.png",
+    "background": "gold"
+  },
+  {
+    "id": 94023005,
+    "name": "Grand Lotus",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003905.png",
+    "background": "gold"
+  },
+  {
+    "id": 94023006,
+    "name": "Orb of Merits",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003906.png",
+    "background": "gold"
+  },
+  {
+    "id": 94023301,
+    "name": "Hippoplushie",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94023301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94023302,
+    "name": "Fragment of the Iliad",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94023302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94023303,
+    "name": "Sage's Chalk",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94023303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94023304,
+    "name": "Dracul Coin",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94023304.png",
+    "background": "silver"
+  },
+  {
+    "id": 94023305,
+    "name": "Leaf of Remembrance",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94023305.png",
+    "background": "gold"
+  },
+  {
+    "id": 94024001,
+    "name": "Eiraku Coins",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94024002,
+    "name": "Gold Dust",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94024003,
+    "name": "Koban",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94024004,
+    "name": "Shinsengumi Point",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011304.png",
+    "background": "silver"
+  },
+  {
+    "id": 94024005,
+    "name": "Oda Bakufu Point",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011305.png",
+    "background": "silver"
+  },
+  {
+    "id": 94024007,
+    "name": "Gold Leaf Sun Fan",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94011307.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025001,
+    "name": "Frog Handkerchief",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94025001.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94025002,
+    "name": "Frog Netsuke",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94025002.png",
+    "background": "silver"
+  },
+  {
+    "id": 94025003,
+    "name": "Frog Incense Burner",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94025003.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025004,
+    "name": "Kaientai Banner",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94025004.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025401,
+    "name": "Junk Parts",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015001.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94025402,
+    "name": "Titanium Plate",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015002.png",
+    "background": "silver"
+  },
+  {
+    "id": 94025403,
+    "name": "Mag Wheel",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015003.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025404,
+    "name": "Quick Oil",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015004.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025405,
+    "name": "Arts Nitro",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015005.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025406,
+    "name": "Buster Octane",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015006.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025801,
+    "name": "Single Candy",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015301.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94025802,
+    "name": "Instant Noodles",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015302.png",
+    "background": "silver"
+  },
+  {
+    "id": 94025803,
+    "name": "Connacht Coin",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015303.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025804,
+    "name": "Critical Star Spoon",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015304.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025805,
+    "name": "Calorie Meat",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015305.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025806,
+    "name": "NP Hammer",
+    "type": "boostItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015306.png",
+    "background": "gold"
+  },
+  {
+    "id": 94025807,
+    "name": "Morning Star",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94015307.png",
+    "background": "gold"
+  },
+  {
+    "id": 94026901,
+    "name": "Fate/Grand Order 2020 Travel Portrait Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94026901.png",
+    "background": "gold"
+  },
+  {
+    "id": 94027501,
+    "name": "Gil $ Bill",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027501.png",
+    "background": "bronze"
+  },
+  {
+    "id": 94027502,
+    "name": "Fluffy $ Bill",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027502.png",
+    "background": "silver"
+  },
+  {
+    "id": 94027503,
+    "name": "BB $ Bill",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027503.png",
+    "background": "gold"
+  },
+  {
+    "id": 94027504,
+    "name": "Doujin Motivation",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027504.png",
+    "background": "silver"
+  },
+  {
+    "id": 94027505,
+    "name": "Doujin Technique",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027505.png",
+    "background": "silver"
+  },
+  {
+    "id": 94027506,
+    "name": "Doujin Imagination",
+    "type": "eventPoint",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027506.png",
+    "background": "silver"
+  },
+  {
+    "id": 94027507,
+    "name": "Pitch Black Quill",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027507.png",
+    "background": "gold"
+  },
+  {
+    "id": 94042401,
+    "name": "Babylonia Anime Release Campaign Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94042401.png",
+    "background": "gold"
+  },
+  {
+    "id": 94043401,
+    "name": "Babylonia Anime Release Campaign: Part Two Ticket",
+    "type": "eventItem",
+    "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94042401.png",
+    "background": "gold"
+  }
+]

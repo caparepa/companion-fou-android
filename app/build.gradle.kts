@@ -3,7 +3,6 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     id("kotlin-android")
-    id("io.objectbox")
 }
 
 android {
@@ -12,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.caparepa.companionfou"
-        minSdkVersion(23)
+        minSdkVersion(26)
         targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
@@ -87,6 +86,6 @@ dependencies {
 
     //GLIDE
     implementation("com.github.bumptech.glide:glide:4.10.0")
-    kapt("com.github.bumptech.glide:compiler:4.10.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.10.0")
 
 }
