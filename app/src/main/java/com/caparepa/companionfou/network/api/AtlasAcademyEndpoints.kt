@@ -53,7 +53,7 @@ interface AtlasAcademyEndpoints {
     @GET("/nice_trait.json")
     suspend fun getTraitMapping(): Response<ResponseBody>
 
-    //NA Endpoints
+    //Region endpoints
 
     //Get servants
     @GET("/nice_servant.json")
@@ -82,5 +82,25 @@ interface AtlasAcademyEndpoints {
     //Get Mystic Codes
     @GET("/nice_mystic_code.json")
     suspend fun getNiceMysticCodes(): Response<ResponseBody>
+
+    //Basic data for indexing
+    //Get servants
+    @GET("/basic_servant.json")
+    suspend fun getBasicServants(): Response<ResponseBody>
+
+    //Get servants
+    @GET("/basic_servant_lang_en.json")
+    suspend fun getBasicServantsEnglishName(): Response<ResponseBody>
+
+    //Get Craft Essences
+    @GET("/basic_equip.json")
+    suspend fun getBasicCraftEssences(): Response<ResponseBody>
+
+    @GET("/basic_command_code.json")
+    suspend fun getBasicCommandCodes(): Response<ResponseBody>
+
+    //Get Mystic Codes
+    @GET("/basic_mystic_code.json")
+    suspend fun getBasicMysticCodes(): Response<ResponseBody>
 
 }
