@@ -8,6 +8,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface AtlasAcademyEndpoints {
 
@@ -18,89 +19,156 @@ interface AtlasAcademyEndpoints {
     //Export endpoints
 
     //Attribute Affinity
-    @GET("/NiceAttributeRelation.json")
-    suspend fun getNiceAttributeRelation(): Response<ResponseBody>
+    @GET("{url_type}/{region}/NiceAttributeRelation.json")
+    suspend fun getNiceAttributeRelation(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Attack Rate
-    @GET("/NiceClassAttackRate.json")
-    suspend fun getNiceClassAttackRate(): Response<ResponseBody>
+    @GET("{url_type}/{region}/NiceClassAttackRate.json")
+    suspend fun getNiceClassAttackRate(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Class Affinity
-    @GET("/NiceClassRelation.json")
-    suspend fun getNiceClassRelation(): Response<ResponseBody>
+    @GET("{url_type}/{region}/NiceClassRelation.json")
+    suspend fun getNiceClassRelation(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Card Details
-    @GET("/NiceCard.json")
-    suspend fun getNiceCard(): Response<ResponseBody>
+    @GET("{url_type}/{region}/NiceCard.json")
+    suspend fun getNiceCard(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Constants
-    @GET("/NiceConstants.json")
-    suspend fun getNiceConstants(): Response<ResponseBody>
+    @GET("{url_type}/{region}/NiceConstants.json")
+    suspend fun getNiceConstants(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Buff Action Info
-    @GET("/NiceBuffList.ActionList.json.json")
-    suspend fun getNiceBuffActionList(): Response<ResponseBody>
+    @GET("{url_type}/{region}/NiceBuffList.ActionList.json.json")
+    suspend fun getNiceBuffActionList(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Master Level info
-    @GET("/NiceUserLevel.json")
-    suspend fun getNiceUserLevel(): Response<ResponseBody>
+    @GET("{url_type}/{region}/NiceUserLevel.json")
+    suspend fun getNiceUserLevel(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //All enums
-    @GET("/nice_enums.json")
-    suspend fun getAllEnums(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_enums.json")
+    suspend fun getAllEnums(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Trait mapping
-    @GET("/nice_trait.json")
-    suspend fun getTraitMapping(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_trait.json")
+    suspend fun getTraitMapping(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Region endpoints
 
     //Get servants
-    @GET("/nice_servant.json")
-    suspend fun getNiceServants(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_servant.json")
+    suspend fun getNiceServants(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get servants with lore
-    @GET("/nice_servant_lore.json")
-    suspend fun getNiceServantsWithLore(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_servant_lore.json")
+    suspend fun getNiceServantsWithLore(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get Craft Essences
-    @GET("/nice_equip.json")
-    suspend fun getNiceCraftEssences(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_equip.json")
+    suspend fun getNiceCraftEssences(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get Craft Essences with lore
-    @GET("/nice_equip_lore.json")
-    suspend fun getNiceCraftEssencesWithLore(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_equip_lore.json")
+    suspend fun getNiceCraftEssencesWithLore(
+        @Path(
+            value = "url_type",
+            encoded = true
+        ) urlType: String, @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get Command Codes
-    @GET("/nice_command_code.json")
-    suspend fun getNiceCommandCodes(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_command_code.json")
+    suspend fun getNiceCommandCodes(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get Materials (items, ascension, etc)
-    @GET("/nice_item.json")
-    suspend fun getNiceMaterials(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_item.json")
+    suspend fun getNiceMaterials(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get Mystic Codes
-    @GET("/nice_mystic_code.json")
-    suspend fun getNiceMysticCodes(): Response<ResponseBody>
+    @GET("{url_type}/{region}/nice_mystic_code.json")
+    suspend fun getNiceMysticCodes(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Basic data for indexing
     //Get servants
-    @GET("/basic_servant.json")
-    suspend fun getBasicServants(): Response<ResponseBody>
+    @GET("{url_type}/{region}/basic_servant.json")
+    suspend fun getBasicServants(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get servants
-    @GET("/basic_servant_lang_en.json")
-    suspend fun getBasicServantsEnglishName(): Response<ResponseBody>
+    @GET("{url_type}/{region}/basic_servant_lang_en.json")
+    suspend fun getBasicServantsEnglishName(
+        @Path(
+            value = "url_type",
+            encoded = true
+        ) urlType: String, @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get Craft Essences
-    @GET("/basic_equip.json")
-    suspend fun getBasicCraftEssences(): Response<ResponseBody>
+    @GET("{url_type}/{region}/basic_equip.json")
+    suspend fun getBasicCraftEssences(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
-    @GET("/basic_command_code.json")
-    suspend fun getBasicCommandCodes(): Response<ResponseBody>
+    @GET("{url_type}/{region}/basic_command_code.json")
+    suspend fun getBasicCommandCodes(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
     //Get Mystic Codes
-    @GET("/basic_mystic_code.json")
-    suspend fun getBasicMysticCodes(): Response<ResponseBody>
+    @GET("{url_type}/{region}/basic_mystic_code.json")
+    suspend fun getBasicMysticCodes(
+        @Path(value = "url_type", encoded = true) urlType: String,
+        @Path(value = "region", encoded = true) region: String
+    ): Response<ResponseBody>
 
 }
