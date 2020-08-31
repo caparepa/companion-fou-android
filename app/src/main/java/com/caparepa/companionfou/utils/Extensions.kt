@@ -24,6 +24,27 @@ inline fun <reified T : Any> Any?.mapTo(newClass: Class<T>): T? =
     }
 
 /**
+ * Parser extensions
+ */
+fun Any.toJsonString(): String? {
+    justTry {
+        val gson = Gson()
+        return gson.toJson(this)
+    }
+    return null
+}
+
+fun <T> String.objectFromJson(classOfT: Class<T>): Any? {
+    val gson = Gson()
+    return gson.fromJson<Any>(this, classOfT as Class<*>)
+}
+
+inline fun <reified T: Any> String.toKotlinObject() : T {
+    val gson = Gson()
+    return gson.fromJson(this, T::class.java)
+}
+
+/**
  * Context Extensions
  */
 fun Context.toastLong(text: CharSequence) = Toast.makeText(this, text, Toast.LENGTH_LONG).show()

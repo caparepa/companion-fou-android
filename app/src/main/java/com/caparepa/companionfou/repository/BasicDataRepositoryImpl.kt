@@ -5,8 +5,7 @@ import com.caparepa.companionfou.data.model.basic.CraftEssenceItem
 import com.caparepa.companionfou.data.model.basic.MysticCodeItem
 import com.caparepa.companionfou.data.model.basic.ServantItem
 import com.caparepa.companionfou.network.api.AtlasApiClient
-import com.caparepa.companionfou.utils.REGION_NA
-import com.caparepa.companionfou.utils.URL_EXPORT_DIR
+import com.caparepa.companionfou.utils.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
@@ -18,7 +17,8 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     override suspend fun getBasicServants(urlType: String, region: String): List<ServantItem>? =
         withContext(Dispatchers.Main) {
             val response = api.getBasicServants(urlType, region)
-            response
+            val stuff = response?.body()?.toJsonString()?.toKotlinObject<List<ServantItem>>()
+            stuff
         }
 
     override suspend fun getBasicServantsEnglishName(

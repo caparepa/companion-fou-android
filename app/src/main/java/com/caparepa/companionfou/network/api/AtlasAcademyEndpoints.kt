@@ -136,7 +136,7 @@ interface AtlasAcademyEndpoints {
     suspend fun getBasicServants(
         @Path(value = "url_type", encoded = true) urlType: String,
         @Path(value = "region", encoded = true) region: String
-    ): List<ServantItem>?
+    ): Response<ResponseBody>?
 
     //Get servants
     @GET("{url_type}/{region}/basic_servant_lang_en.json")

@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.model.nice.servant.ServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
+import com.caparepa.companionfou.utils.toastLong
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,17 +24,19 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        observeBasicDataViewModel()
         theButton.setOnClickListener {
             try {
 
-                val theList: ArrayList<ServantItem> =
+                /*val theList: ArrayList<ServantItem> =
                     readRawJson(R.raw.nice_servant_lore)
 
                 val itemList = theList.filter {
                     it.name?.contains("altria")!!
                 }
 
-                Log.d("TATA", "tttt ${theList.size}")
+                Log.d("TATA", "tttt ${theList.size}")*/
+                basicDataViewModel.getBasicServantList()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
@@ -45,7 +48,10 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     private fun observeBasicDataViewModel() = basicDataViewModel.run {
         basicServantResponse.observe(this@MainActivity, Observer {
             it?.let {
+                val shit = it
+                this@MainActivity.toastLong("HELLO! YES!")
             }
+            this@MainActivity.toastLong("NOOOO!!!!")
         })
     }
 
