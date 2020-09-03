@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class BasicMysticCode(
     val id: Long? = null,
     val name: String? = null,
-    @Embedded(prefix = "inner_")
+    @Embedded
     val item: BasicMysticCodeItem? = null
 ) {
     @PrimaryKey(autoGenerate = false)
