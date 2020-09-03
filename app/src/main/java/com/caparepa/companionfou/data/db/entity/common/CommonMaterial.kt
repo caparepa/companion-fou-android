@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "material")
-data class MaterialEntity(
+data class CommonMaterial(
     val id: Long? = null,
     val name: String? = null,
     val type: String? = null,
