@@ -15,7 +15,7 @@ interface BasicMysticCodeDao {
     @Query("SELECT * FROM basic_mystic_code")
     suspend fun getMysticCodeList(): List<BasicMysticCodeEntity>
 
-    @Query("SELECT * FROM basic_mystic_code WHERE id = :id")
+    @Query("SELECT * FROM basic_mystic_code WHERE _id = :id")
     suspend fun getMysticCodeById(id: Long): BasicMysticCodeEntity
 
     @Query("SELECT * FROM basic_mystic_code WHERE name LIKE :nameQuery")
