@@ -3,10 +3,10 @@ package com.caparepa.companionfou.data.db.entity.basic
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "basic_servant")
-data class BasicServantEntity(
+@Entity(tableName = "basic_craft_essence")
+data class BasicCraftEssence(
     val id: Long? = null,
-    val collectionNo: Int? = null,
+    val collectionNo: Long? = null,
     val type: String? = null,
     val name: String? = null,
     val className: String? = null,

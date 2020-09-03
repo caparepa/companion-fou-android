@@ -4,37 +4,37 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.caparepa.companionfou.data.db.entity.basic.BasicServantEntity
+import com.caparepa.companionfou.data.db.entity.basic.BasicServant
 
 @Dao
 interface BasicServantDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(servant: BasicServantEntity)
+    suspend fun upsert(servant: BasicServant)
 
     @Query("SELECT * FROM basic_servant")
-    suspend fun getServants(): List<BasicServantEntity>
+    suspend fun getServants(): List<BasicServant>
 
     @Query("SELECT * FROM basic_servant WHERE _id = :id")
-    suspend fun getServantById(id: Long): BasicServantEntity
+    suspend fun getServantById(id: Long): BasicServant
 
     @Query("SELECT * FROM basic_servant WHERE collectionNo = :collectionNo")
-    suspend fun getServantByCollectionNo(collectionNo: Long): BasicServantEntity
+    suspend fun getServantByCollectionNo(collectionNo: Long): BasicServant
 
     @Query("SELECT * FROM basic_servant WHERE className = :className")
-    suspend fun getServantByClass(className: String): List<BasicServantEntity>
+    suspend fun getServantByClass(className: String): List<BasicServant>
 
     @Query("SELECT * FROM basic_servant WHERE rarity = :rarity")
-    suspend fun getServantByRarity(rarity: Int): List<BasicServantEntity>
+    suspend fun getServantByRarity(rarity: Int): List<BasicServant>
 
     @Query("SELECT * FROM basic_servant WHERE type = :servantType")
-    suspend fun getServantByType(servantType: String): List<BasicServantEntity>
+    suspend fun getServantByType(servantType: String): List<BasicServant>
 
     @Query("SELECT * FROM basic_servant WHERE className = :className OR rarity = :rarity OR type = :servantType")
     suspend fun getServantByFilter(
         className: String,
         rarity: Int,
         servantType: String
-    ): List<BasicServantEntity>
+    ): List<BasicServant>
 
 }
