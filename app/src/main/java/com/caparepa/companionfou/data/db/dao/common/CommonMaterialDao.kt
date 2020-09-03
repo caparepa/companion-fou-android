@@ -7,7 +7,7 @@ import androidx.room.Query
 import com.caparepa.companionfou.data.db.entity.common.MaterialEntity
 
 @Dao
-interface MaterialDao {
+interface CommonMaterialDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(materialEntry: MaterialEntity)
