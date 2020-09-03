@@ -25,6 +25,4 @@ interface MaterialDao {
     @Query("SELECT * FROM material WHERE type = :materialType")
     suspend fun getMaterialByType(materialType: String): List<MaterialEntity>
 
-    @Query("DELETE FROM material")
-    suspend fun deteleMaterialTable()
 }
