@@ -28,4 +28,11 @@ interface BasicServantDao {
     @Query("SELECT * FROM basic_servant WHERE type = :servantType")
     suspend fun getServantByType(servantType: String): List<BasicServantEntity>
 
+    @Query("SELECT * FROM basic_servant WHERE className = :className OR rarity = :rarity OR type = :servantType")
+    suspend fun getServantByFilter(
+        className: String,
+        rarity: Int,
+        servantType: String
+    ): List<BasicServantEntity>
+
 }
