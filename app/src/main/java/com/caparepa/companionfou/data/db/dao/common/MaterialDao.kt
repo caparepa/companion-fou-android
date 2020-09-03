@@ -4,19 +4,27 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.caparepa.companionfou.data.db.entity.common.MaterialItem
+import com.caparepa.companionfou.data.db.entity.common.MaterialEntity
 
 @Dao
 interface MaterialDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(materialEntry: MaterialItem)
+    suspend fun upsert(materialEntry: MaterialEntity)
 
-    @Query("SELECT * FROM material_item")
-    suspend fun getAllMaterials(): List<MaterialItem>
+    @Query("SELECT * FROM material")
+    suspend fun getAllMaterials(): List<MaterialEntity>
 
-    @Query("SELECT * FROM material_item WHERE _id = :id")
-    suspend fun getMaterial(id: Long): MaterialItem
+    @Query("SELECT * FROM material WHERE _id = :id")
+    suspend fun getMaterial(id: Long): MaterialEntity
 
+    //TODO: to query with LIKE, the % % has to be added when calling the method, not here
+    @Query("SELECT * FROM material WHERE name LIKE :nameQuery")
+    suspend fun getMaterialByName(nameQuery: String): List<MaterialEntity>
 
+    @Query("SELECT * FROM material WHERE type = :materialType")
+    suspend fun getMaterialByType(materialType: String): List<MaterialEntity>
+
+    @Query("DELETE FROM material")
+    suspend fun deteleMaterialTable()
 }

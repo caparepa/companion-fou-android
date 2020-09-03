@@ -1,16 +1,16 @@
 package com.caparepa.companionfou.data.db.entity.basic
 
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "basic_mystic_code")
-data class BasicMysticCodeItem(
+@Entity(tableName = "basic_command_code")
+data class BasicCommandCodeEntity(
     val id: Long? = null,
+    val collectionNo: Int? = null,
     val name: String? = null,
-    @Embedded(prefix = "inner_")
-    val item: EmbeddedMysticCodeItem? = null
+    val rarity: Int? = null,
+    val face: String? = null
 ) {
     @PrimaryKey(autoGenerate = false)
-    var _id: Long = id!!
+    var _id: Long = collectionNo!!.toLong()
 }

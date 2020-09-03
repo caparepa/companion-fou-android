@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "basic_craft_essence")
-data class BasicCraftEssenceItem(
+data class BasicCraftEssenceEntity(
     val id: Long? = null,
     val collectionNo: Long? = null,
     val type: String? = null,

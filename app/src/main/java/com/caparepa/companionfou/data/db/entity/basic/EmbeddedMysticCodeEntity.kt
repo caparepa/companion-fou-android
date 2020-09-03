@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "basic_embedded_mc_item")
-data class EmbeddedMysticCodeItem(
+data class EmbeddedMysticCodeEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null,
     val male: String? = null,
