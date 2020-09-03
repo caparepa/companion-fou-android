@@ -6,7 +6,7 @@ data class CommandCodeItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("collectionNo")
-    val collectionNo: Int? = null,
+    val collectionNo: Long? = null,
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("rarity")

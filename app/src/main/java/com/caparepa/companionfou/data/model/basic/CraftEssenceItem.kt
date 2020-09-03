@@ -6,7 +6,7 @@ data class CraftEssenceItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("collectionNo")
-    val collectionNo: Int? = null,
+    val collectionNo: Long? = null,
     @SerializedName("type")
     val type: String? = null,
     @SerializedName("name")

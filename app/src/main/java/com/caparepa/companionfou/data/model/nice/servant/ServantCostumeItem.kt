@@ -6,7 +6,7 @@ data class ServantCostumeItem(
     @SerializedName("id")
     val id: Int? = null,
     @SerializedName("costumeCollectionNo")
-    val costumeCollectionNo: Int? = null,
+    val costumecollectionNo: Long? = null,
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("shortName")
