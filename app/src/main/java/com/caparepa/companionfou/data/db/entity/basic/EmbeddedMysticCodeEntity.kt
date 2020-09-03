@@ -10,5 +10,5 @@ data class EmbeddedMysticCodeEntity(
     val female: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = null
+    val _id: Int? = null
 }
