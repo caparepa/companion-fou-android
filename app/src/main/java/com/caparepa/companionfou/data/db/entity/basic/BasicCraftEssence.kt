@@ -14,5 +14,5 @@ data class BasicCraftEssence(
     val face: String? = null
 ) {
     @PrimaryKey(autoGenerate = false)
-    var _id: Long = collectionNo!!.toLong()
+    var mCraftId: Long = collectionNo!!.toLong()
 }

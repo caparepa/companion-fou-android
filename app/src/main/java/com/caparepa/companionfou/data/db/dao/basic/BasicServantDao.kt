@@ -15,7 +15,7 @@ interface BasicServantDao {
     @Query("SELECT * FROM basic_servant")
     suspend fun getServants(): List<BasicServant>
 
-    @Query("SELECT * FROM basic_servant WHERE _id = :id")
+    @Query("SELECT * FROM basic_servant WHERE mServantId = :id")
     suspend fun getServantById(id: Long): BasicServant
 
     @Query("SELECT * FROM basic_servant WHERE collectionNo = :collectionNo")

@@ -13,7 +13,7 @@ interface BasicCraftEssenceDao {
     @Query("SELECT * FROM basic_craft_essence")
     suspend fun getCraftEssences(): List<BasicCraftEssence>
 
-    @Query("SELECT * FROM basic_craft_essence WHERE _id = :id")
+    @Query("SELECT * FROM basic_craft_essence WHERE mCraftId = :id")
     suspend fun getCraftEssenceById(id: Long): BasicCraftEssence
 
     @Query("SELECT * FROM basic_craft_essence WHERE collectionNo = :collectionNo")

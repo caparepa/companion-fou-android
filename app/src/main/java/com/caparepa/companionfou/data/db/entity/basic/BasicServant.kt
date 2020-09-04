@@ -14,5 +14,5 @@ data class BasicServant(
     val face: String? = null
 ) {
     @PrimaryKey(autoGenerate = false)
-    var _id: Long = collectionNo!!.toLong()
+    var mServantId: Long = collectionNo!!.toLong()
 }

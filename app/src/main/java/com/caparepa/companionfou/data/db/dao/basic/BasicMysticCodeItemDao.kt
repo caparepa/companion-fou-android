@@ -4,15 +4,15 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.caparepa.companionfou.data.db.entity.basic.BasicMysticCodeItem
+import com.caparepa.companionfou.data.db.entity.basic.BasicMysticCodeMedia
 
 @Dao
 interface BasicMysticCodeItemDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(innerItem: BasicMysticCodeItem)
+    suspend fun upsert(innerItem: BasicMysticCodeMedia)
 
     @Query("SELECT * FROM basic_mystic_code_item WHERE mcItemId = :id")
-    suspend fun getInnerMysticCodeItem(id: Int): BasicMysticCodeItem
+    suspend fun getInnerMysticCodeItem(id: Int): BasicMysticCodeMedia
 
 }

@@ -12,5 +12,5 @@ data class BasicCommandCode(
     val face: String? = null
 ) {
     @PrimaryKey(autoGenerate = false)
-    var _id: Long = collectionNo!!.toLong()
+    var mCommandId: Long = collectionNo!!.toLong()
 }

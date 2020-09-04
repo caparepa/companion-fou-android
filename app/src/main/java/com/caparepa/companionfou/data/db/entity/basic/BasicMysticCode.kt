@@ -8,9 +8,9 @@ import androidx.room.PrimaryKey
 data class BasicMysticCode(
     val id: Long? = null,
     val name: String? = null,
-    @Embedded
-    val item: BasicMysticCodeItem? = null
+    @Embedded(prefix = "media_")
+    val item: BasicMysticCodeMedia? = null
 ) {
     @PrimaryKey(autoGenerate = false)
-    var mcId: Long = id!!
+    var mCodeId: Long = id!!
 }
