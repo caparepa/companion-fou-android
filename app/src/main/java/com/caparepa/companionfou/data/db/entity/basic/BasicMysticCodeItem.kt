@@ -10,5 +10,5 @@ data class BasicMysticCodeItem(
     val female: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
-    val _id: Int? = null
+    val mcItemId: Int? = null
 }

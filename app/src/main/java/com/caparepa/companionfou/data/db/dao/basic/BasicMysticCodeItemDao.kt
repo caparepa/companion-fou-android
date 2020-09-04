@@ -12,7 +12,7 @@ interface BasicMysticCodeItemDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(innerItem: BasicMysticCodeItem)
 
-    @Query("SELECT * FROM basic_mystic_code_item WHERE _id = :id")
+    @Query("SELECT * FROM basic_mystic_code_item WHERE mcItemId = :id")
     suspend fun getInnerMysticCodeItem(id: Int): BasicMysticCodeItem
 
 }

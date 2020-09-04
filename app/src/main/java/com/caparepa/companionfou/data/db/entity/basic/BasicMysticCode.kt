@@ -12,5 +12,5 @@ data class BasicMysticCode(
     val item: BasicMysticCodeItem? = null
 ) {
     @PrimaryKey(autoGenerate = false)
-    var _id: Long = id!!
+    var mcId: Long = id!!
 }
