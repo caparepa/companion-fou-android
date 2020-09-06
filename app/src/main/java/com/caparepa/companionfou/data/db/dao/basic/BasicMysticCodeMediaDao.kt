@@ -7,7 +7,7 @@ import androidx.room.Query
 import com.caparepa.companionfou.data.db.entity.basic.BasicMysticCodeMedia
 
 @Dao
-interface BasicMysticCodeItemDao {
+interface BasicMysticCodeMediaDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(innerItem: BasicMysticCodeMedia)
