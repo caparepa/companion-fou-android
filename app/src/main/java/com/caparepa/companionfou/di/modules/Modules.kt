@@ -1,6 +1,6 @@
 package com.caparepa.companionfou.di.modules
 
-import com.caparepa.companionfou.network.api.AtlasApiClient
+import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptor
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
 import com.caparepa.companionfou.repository.BasicDataRepository
@@ -11,7 +11,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val networkModule = module {
-    single { AtlasApiClient.invoke() }
+    single { ApiClient.invoke() }
     single<ConnectivityInterceptor> { ConnectivityInterceptorImpl(get()) }
 }
 

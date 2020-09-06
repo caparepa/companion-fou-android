@@ -1,18 +1,17 @@
 package com.caparepa.companionfou.network.api
 
 import com.caparepa.companionfou.BuildConfig
-import com.caparepa.companionfou.utils.ATLAS_ACADEMY_BASE_URL
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class AtlasApiClient {
+class ApiClient {
 
     companion object {
         operator fun invoke(
-        ): AtlasAcademyEndpoints {
+        ): ExportDataEndpoints {
 
             //TODO: add interceptors as required!
             val okHttpClient = OkHttpClient.Builder()
@@ -27,7 +26,7 @@ class AtlasApiClient {
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(AtlasAcademyEndpoints::class.java)
+                .create(ExportDataEndpoints::class.java)
         }
     }
 
