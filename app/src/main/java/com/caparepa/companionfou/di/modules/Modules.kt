@@ -1,5 +1,7 @@
 package com.caparepa.companionfou.di.modules
 
+import com.caparepa.companionfou.data.db.CompanionFouDatabase
+import com.caparepa.companionfou.data.db.dao.basic.*
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptor
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
@@ -24,6 +26,36 @@ val localModule = module {
 }
 
 val databaseModule = module {
+    //Database binding
+    single { CompanionFouDatabase.invoke(androidContext()) }
+
+    //Accessor binding
+    fun provideBasicServantDao(database: CompanionFouDatabase): BasicServantDao {
+        return database.basicServantDao()
+    }
+
+    fun provideBasicCommandCodeDao(database: CompanionFouDatabase): BasicCommandCodeDao {
+        return database.basicCommandCodeDao()
+    }
+
+    fun provideBasicCraftEssenceDao(database: CompanionFouDatabase): BasicCraftEssenceDao {
+        return database.basicCraftEssenceDao()
+    }
+
+    fun provideBasicMysticCodeDao(database: CompanionFouDatabase): BasicMysticCodeDao {
+        return database.basicMysticCodeDao()
+    }
+
+    fun provideBasicMysticCodeMediaDao(database: CompanionFouDatabase): BasicMysticCodeMediaDao {
+        return database.basicMysticCodeMediaDao()
+    }
+
+    //DAO binding
+    single { provideBasicServantDao(get()) }
+    single { provideBasicCommandCodeDao(get()) }
+    single { provideBasicCraftEssenceDao(get()) }
+    single { provideBasicMysticCodeDao(get()) }
+    single { provideBasicMysticCodeMediaDao(get()) }
 
 }
 

@@ -24,7 +24,7 @@ abstract class CompanionFouDatabase : RoomDatabase() {
     abstract fun basicCraftEssenceDao(): BasicCraftEssenceDao
     abstract fun basicMysticCodeDao(): BasicMysticCodeDao
     abstract fun basicMysticCodeMediaDao(): BasicMysticCodeMediaDao
-    abstract fun basicCommandCodDao(): BasicCommandCodeDao
+    abstract fun basicCommandCodeDao(): BasicCommandCodeDao
 
     companion object {
 
