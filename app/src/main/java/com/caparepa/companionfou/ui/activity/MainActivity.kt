@@ -64,17 +64,4 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             return Gson().fromJson<T>(it, object : TypeToken<T>() {}.type)
         }
     }
-
-    private fun loadJsonFromFile(context: Context): String? {
-        try {
-            return resources.openRawResource(R.raw.example)
-                .bufferedReader().use {
-                    it.readText()
-                }
-
-        } catch (ex: Exception) {
-            ex.printStackTrace()
-        }
-        return ""
-    }
 }

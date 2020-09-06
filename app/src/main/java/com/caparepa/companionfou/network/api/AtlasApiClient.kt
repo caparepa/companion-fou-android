@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.network.api
 
+import com.caparepa.companionfou.BuildConfig
 import com.caparepa.companionfou.utils.ATLAS_ACADEMY_BASE_URL
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
@@ -22,7 +23,7 @@ class AtlasApiClient {
 
             return Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl(ATLAS_ACADEMY_BASE_URL)
+                .baseUrl(BuildConfig.BASE_URL)
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

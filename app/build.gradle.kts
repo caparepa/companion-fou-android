@@ -16,17 +16,45 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig = signingConfigs.getByName("debug")
+
+        //Room configuration
+        val annotationArguments = HashMap<String, String>()
+        annotationArguments["room.schemaLocation"] = "$projectDir/schemas"
+        annotationArguments["room.incremental"] = "true"
+        annotationArguments["room.expandProjection"] = "true"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = annotationArguments
+            }
+        }
+
     }
 
     buildTypes {
+        getByName("debug") {
+            buildConfigField("String", "BASE_URL", "\"http://91cd65420e29.ngrok.io/storage/files/data/\"")
+            applicationIdSuffix = ".debug"
+        }
+
+        create("stage") {
+            signingConfigs.getByName("debug")
+            buildConfigField("String", "BASE_URL", "\"http://91cd65420e29.ngrok.io/storage/files/data/\"")
+            applicationIdSuffix = ".stage"
+            isDebuggable = true
+        }
+
         /*getByName("release") {
             signingConfigs.getByName("release")
+            buildConfigField("String", "BASE_URL", "\"https://staging.suggestic.com/api/v1/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }*/
+
     }
 
     compileOptions {
