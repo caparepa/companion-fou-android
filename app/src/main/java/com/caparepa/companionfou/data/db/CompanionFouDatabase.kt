@@ -16,7 +16,8 @@ import com.caparepa.companionfou.data.db.entity.basic.*
         MysticCodeItem::class,
         MysticCodeMediaItem::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class CompanionFouDatabase : RoomDatabase() {
 
@@ -32,7 +33,6 @@ abstract class CompanionFouDatabase : RoomDatabase() {
         private var instance: CompanionFouDatabase? = null
 
         private val LOCK = Any()
-
 
         operator fun invoke(context: Context) = instance
             ?: synchronized(LOCK) {

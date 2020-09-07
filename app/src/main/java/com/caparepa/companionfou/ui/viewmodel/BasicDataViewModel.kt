@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class BasicDataViewModel(val context: Context, val basicDataRepository: BasicDataRepository) :
+class BasicDataViewModel(val context: Context, private val basicDataRepository: BasicDataRepository) :
     BaseViewModel(), KoinComponent {
 
     val basicServantResponse = MutableLiveData<List<ServantItem>?>()
