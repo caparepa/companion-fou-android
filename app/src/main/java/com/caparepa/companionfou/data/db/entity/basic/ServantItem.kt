@@ -1,11 +1,16 @@
 package com.caparepa.companionfou.data.db.entity.basic
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import kotlinx.serialization.Serializable
 
-@Entity(tableName = "basic_servant")
+@Entity(
+    tableName = "basic_servant",
+    indices = [
+        Index(value = ["collectionNo"], unique = true)
+    ]
+)
 data class ServantItem(
     @SerializedName("id")
     val id: Long?,
@@ -22,6 +27,6 @@ data class ServantItem(
     @SerializedName("face")
     val face: String?
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var mServantId: Int = collectionNo!!.toInt()
+    @PrimaryKey(autoGenerate = true)
+    var mServantId: Int = 0
 }

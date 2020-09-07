@@ -1,10 +1,16 @@
 package com.caparepa.companionfou.data.db.entity.basic
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "basic_craft_essence")
+@Entity(
+    tableName = "basic_craft_essence",
+    indices = [
+        Index(value = ["collectionNo"], unique = true)
+    ]
+)
 data class CraftEssenceItem(
     @SerializedName("id")
     val id: Long?,
