@@ -1,5 +1,8 @@
 package com.caparepa.companionfou.repository
 
+import com.caparepa.companionfou.data.db.dao.basic.BasicCommandCodeDao
+import com.caparepa.companionfou.data.db.dao.basic.BasicCraftEssenceDao
+import com.caparepa.companionfou.data.db.dao.basic.BasicMysticCodeDao
 import com.caparepa.companionfou.data.db.dao.basic.BasicServantDao
 import com.caparepa.companionfou.data.db.entity.basic.CommandCodeItem
 import com.caparepa.companionfou.data.db.entity.basic.CraftEssenceItem
@@ -16,6 +19,9 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
 
     private val api = ApiClient.invoke()
     private val basicServantDao: BasicServantDao by inject()
+    private val basicMysticCodeDao: BasicMysticCodeDao by inject()
+    private val basicCommandCodeDao: BasicCommandCodeDao by inject()
+    private val basicCraftEssenceDao: BasicCraftEssenceDao by inject()
 
     //TODO: test this thoroughly!!!
     override suspend fun getBasicServants(currentDate: String, region: String): List<ServantItem>? =
@@ -77,5 +83,17 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
                 basicServantDao.upsert(item)
             }
         }
+    }
+
+    private suspend fun persisBasicMysticCodeList(mcList: List<MysticCodeItem>?) {
+
+    }
+
+    private suspend fun persisBasicCommandCodeList(ccList: List<CommandCodeItem>?) {
+
+    }
+
+    private suspend fun persisBasicCraftEssenceList(ceList: List<CraftEssenceItem>) {
+
     }
 }
