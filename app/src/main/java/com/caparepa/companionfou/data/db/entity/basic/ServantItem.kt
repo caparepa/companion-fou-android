@@ -22,6 +22,6 @@ data class ServantItem(
     @SerializedName("face")
     val face: String?
 ) {
-    @PrimaryKey(autoGenerate = true)
-    var mServantId: Int = 0
+    @PrimaryKey(autoGenerate = false)
+    var mServantId: Int = collectionNo!!.toInt()
 }

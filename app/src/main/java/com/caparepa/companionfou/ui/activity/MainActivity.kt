@@ -27,16 +27,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         observeBasicDataViewModel()
         theButton.setOnClickListener {
             try {
-
-                /*val theList: ArrayList<ServantItem> =
-                    readRawJson(R.raw.nice_servant_lore)
-
-                val itemList = theList.filter {
-                    it.name?.contains("altria")!!
-                }
-
-                Log.d("TATA", "tttt ${theList.size}")*/
-                basicDataViewModel.getBasicServantList()
+                basicDataViewModel.fetchBasicServantList()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
@@ -50,6 +41,16 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             it?.let {
                 val shit = it
                 this@MainActivity.toastLong("HELLO! YES!")
+            }
+        })
+        basicServantList.observe(this@MainActivity, Observer {
+            it?.let {
+                if(it.isEmpty()) {
+                    //if the list from the database is empty, get it from api
+                    this.getBasicServantList()
+                } else {
+                    this@MainActivity.toastLong("JAJAJAJA")
+                }
             }
         })
     }

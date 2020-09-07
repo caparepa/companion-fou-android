@@ -14,10 +14,33 @@ class BasicDataViewModel(val context: Context, private val basicDataRepository: 
     BaseViewModel(), KoinComponent {
 
     val basicServantResponse = MutableLiveData<List<ServantItem>?>()
+    val basicServantList = MutableLiveData<List<ServantItem>?>()
 
     fun getBasicServantList() {
         viewModelScope.launch(Dispatchers.IO) {
             getBasicServantListAsync()
+        }
+    }
+
+    fun fetchBasicServantList() {
+        viewModelScope.launch(Dispatchers.IO) {
+            fetchBasicServantListAsync()
+        }
+    }
+
+    private suspend fun fetchBasicServantListAsync() {
+        val result = kotlin.runCatching {
+            basicDataRepository.fetchBasicServants()
+        }
+        with(result) {
+            onSuccess {
+                it?.let {
+                    basicServantList.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
