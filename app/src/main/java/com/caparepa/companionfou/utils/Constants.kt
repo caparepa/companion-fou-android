@@ -1,12 +1,22 @@
 package com.caparepa.companionfou.utils
 
+import android.util.Log
+
 //url
-const val ATLAS_ACADEMY_BASE_URL = "https://api.atlasacademy.io/"
 const val URL_EXPORT_DIR = "export"
 const val URL_NICE_DIR = "nice"
 const val URL_RAW_DIR = "raw"
-const val REGION_NA = "NA"
-const val REGION_JP = "JP"
+const val REGION_NA = "na"
+const val REGION_JP = "jp"
+
+//
+//Logging constants
+const val LOG_DEBUG = Log.DEBUG
+const val LOG_ERROR = Log.ERROR
+const val LOG_INFO = Log.INFO
+const val LOG_VERBOSE = Log.VERBOSE
+const val LOG_WARN = Log.WARN
+const val LOG_WTF = 0 // arbitrary number, might change
 
 //Game constants
 const val ATTACK_RATE = 230

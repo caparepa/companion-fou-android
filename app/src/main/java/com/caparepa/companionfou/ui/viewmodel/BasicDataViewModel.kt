@@ -24,7 +24,7 @@ class BasicDataViewModel(val context: Context, val basicDataRepository: BasicDat
 
     private suspend fun getBasicServantListAsync() {
         val result = kotlin.runCatching {
-            basicDataRepository.getBasicServants(URL_EXPORT_DIR, REGION_NA)
+            basicDataRepository.getBasicServants("20200905", REGION_NA)
         }
 
         with(result) {

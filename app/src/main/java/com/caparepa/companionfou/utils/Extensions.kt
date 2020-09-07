@@ -14,9 +14,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.caparepa.companionfou.BuildConfig
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
+import java.lang.reflect.Type
 
 inline fun <reified T : Any> Any?.mapTo(newClass: Class<T>): T? =
     Gson().run {
@@ -42,6 +44,11 @@ fun <T> String.objectFromJson(classOfT: Class<T>): Any? {
 inline fun <reified T: Any> String.toKotlinObject() : T {
     val gson = Gson()
     return gson.fromJson(this, T::class.java)
+}
+
+inline fun <reified T> parseArray(json: String, typeToken: Type): T {
+    val gson = GsonBuilder().create()
+    return gson.fromJson<T>(json, typeToken)
 }
 
 /**
