@@ -23,6 +23,31 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     private val basicCommandCodeDao: BasicCommandCodeDao by inject()
     private val basicCraftEssenceDao: BasicCraftEssenceDao by inject()
 
+    override suspend fun fetchBasicServants(): List<ServantItem>? =
+        withContext(Dispatchers.IO) {
+            basicServantDao.getServants()
+        }
+
+    override suspend fun fetchBasicServantsEnglishName(): List<ServantItem>? =
+        withContext(Dispatchers.IO) {
+            null
+        }
+
+    override suspend fun fetchBasicCraftEssences(): List<CraftEssenceItem>? =
+        withContext(Dispatchers.IO) {
+            null
+        }
+
+    override suspend fun fetchBasicCommandCodes(): List<CommandCodeItem>? =
+        withContext(Dispatchers.IO) {
+            null
+        }
+
+    override suspend fun fetchBasicMysticCodes(): List<MysticCodeItem>? =
+        withContext(Dispatchers.IO) {
+            null
+        }
+
     //TODO: test this thoroughly!!!
     override suspend fun getBasicServants(currentDate: String, region: String): List<ServantItem>? =
         withContext(Dispatchers.IO) {
