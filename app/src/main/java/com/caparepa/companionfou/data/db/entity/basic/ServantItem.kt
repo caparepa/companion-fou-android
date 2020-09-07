@@ -3,23 +3,24 @@ package com.caparepa.companionfou.data.db.entity.basic
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 
 @Entity(tableName = "basic_servant")
 data class ServantItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("collectionNo")
-    val collectionNo: Long? = null,
+    val collectionNo: Long?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("className")
-    val className: String? = null,
+    val className: String?,
     @SerializedName("rarity")
-    val rarity: Int? = null,
+    val rarity: Int?,
     @SerializedName("face")
-    val face: String? = null
+    val face: String?
 ) {
     @PrimaryKey(autoGenerate = false)
     var mServantId: Long = collectionNo!!.toLong()

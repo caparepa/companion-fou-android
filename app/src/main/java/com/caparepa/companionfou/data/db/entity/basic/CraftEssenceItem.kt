@@ -7,19 +7,19 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "basic_craft_essence")
 data class CraftEssenceItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("collectionNo")
-    val collectionNo: Long? = null,
+    val collectionNo: Long?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("className")
-    val className: String? = null,
+    val className: String?,
     @SerializedName("rarity")
-    val rarity: Int? = null,
+    val rarity: Int?,
     @SerializedName("face")
-    val face: String? = null
+    val face: String?
 ) {
     @PrimaryKey(autoGenerate = false)
     var mCraftId: Long = collectionNo!!.toLong()

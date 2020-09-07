@@ -7,10 +7,10 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "basic_mystic_code_media")
 data class MysticCodeMediaItem(
     @SerializedName("male")
-    val male: String? = null,
+    val male: String?,
     @SerializedName("female")
-    val female: String? = null
+    val female: String?
 ) {
     @PrimaryKey(autoGenerate = true)
-    val mCodeMediaId: Int? = null
+    var mCodeMediaId: Int? = null
 }

@@ -8,12 +8,12 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "basic_mystic_code")
 data class MysticCodeItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("item")
     @Embedded(prefix = "media_")
-    val item: MysticCodeMediaItem? = null
+    val item: MysticCodeMediaItem?
 ) {
     @PrimaryKey(autoGenerate = false)
     var mCodeId: Long = id!!

@@ -46,7 +46,7 @@ inline fun <reified T: Any> String.toKotlinObject() : T {
     return gson.fromJson(this, T::class.java)
 }
 
-inline fun <reified T> parseArray(json: String, typeToken: Type): T {
+inline fun <reified T: Any> parseArray(json: String, typeToken: Type): T {
     val gson = GsonBuilder().create()
     return gson.fromJson<T>(json, typeToken)
 }

@@ -7,15 +7,15 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "basic_command_code")
 data class CommandCodeItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("collectionNo")
-    val collectionNo: Long? = null,
+    val collectionNo: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("rarity")
-    val rarity: Int? = null,
+    val rarity: Int?,
     @SerializedName("face")
-    val face: String? = null
+    val face: String?
 ) {
     @PrimaryKey(autoGenerate = false)
     var mCommandId: Long = collectionNo!!.toLong()
