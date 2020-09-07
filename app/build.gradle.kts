@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -123,7 +124,7 @@ dependencies {
 
     //room
     implementation("androidx.room:room-ktx:2.2.5")
-    annotationProcessor("androidx.room:room-compiler:2.2.5")
+    kapt("androidx.room:room-compiler:2.2.5")
 
     //model mapper
     implementation("org.modelmapper:modelmapper:2.3.3")
