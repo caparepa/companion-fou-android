@@ -22,6 +22,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             val data = try {
                 val response = api.getBasicServants(currentDate, region)
+                persistBasicServantList(response?.body())
                 response?.body()
             }catch (e: Exception){
                 e.printStackTrace()
@@ -70,7 +71,11 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         data
     }
 
-    private fun persistBasicServantList(servantList: List<ServantItem>?) {
-
+    private suspend fun persistBasicServantList(servantList: List<ServantItem>?) {
+        servantList?.let {
+            it.forEach { item ->
+                basicServantDao.upsert(item)
+            }
+        }
     }
 }
