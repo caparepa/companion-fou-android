@@ -30,7 +30,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
                 val response = api.getBasicServants(currentDate, region)
                 persistBasicServantList(response?.body())
                 response?.body()
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
                 null
             }
