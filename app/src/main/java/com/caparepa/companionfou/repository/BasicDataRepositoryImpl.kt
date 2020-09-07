@@ -20,20 +20,12 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     //TODO: test this thoroughly!!!
     override suspend fun getBasicServants(currentDate: String, region: String): List<ServantItem>? =
         withContext(Dispatchers.IO) {
-            val response = api.getBasicServants(currentDate, region)
-            val bodyString = response?.body()?.string()
-            val data = bodyString?.toKotlinObject<List<ServantItem>>()
-            try {
-                data?.let {
-                    it.forEach {
-                        item ->
-                        basicServantDao.upsert(item)
-                        logger(LOG_DEBUG, "TAGTAG", "YAHALO!")
-                    }
-                }
-            } catch (e: Exception) {
-                logger(LOG_ERROR, "TAGTAG", "FUCK!")
+            val data = try {
+                val response = api.getBasicServants(currentDate, region)
+                response?.body()
+            }catch (e: Exception){
                 e.printStackTrace()
+                null
             }
             data
         }

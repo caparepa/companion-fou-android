@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.network.api
 
+import com.caparepa.companionfou.data.db.entity.basic.ServantItem
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -140,7 +141,7 @@ interface ExportDataEndpoints {
     suspend fun getBasicServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>?
+    ): Response<List<ServantItem>>?
 
     //Get servants
     @GET("{current_date}/{region}/basic_servant_lang_en.json")
