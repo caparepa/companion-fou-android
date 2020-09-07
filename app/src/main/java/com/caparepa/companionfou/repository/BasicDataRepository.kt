@@ -1,9 +1,9 @@
 package com.caparepa.companionfou.repository
 
-import com.caparepa.companionfou.data.model.basic.CommandCodeItem
-import com.caparepa.companionfou.data.model.basic.CraftEssenceItem
-import com.caparepa.companionfou.data.model.basic.MysticCodeItem
-import com.caparepa.companionfou.data.model.basic.ServantItem
+import com.caparepa.companionfou.data.db.entity.basic.CommandCodeItem
+import com.caparepa.companionfou.data.db.entity.basic.CraftEssenceItem
+import com.caparepa.companionfou.data.db.entity.basic.MysticCodeItem
+import com.caparepa.companionfou.data.db.entity.basic.ServantItem
 
 interface BasicDataRepository {
     suspend fun getBasicServants(currentDate: String, region: String): List<ServantItem>?

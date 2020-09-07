@@ -3,13 +3,17 @@ package com.caparepa.companionfou.data.db.entity.basic
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "basic_mystic_code")
-data class BasicMysticCode(
+data class MysticCodeItem(
+    @SerializedName("id")
     val id: Long? = null,
+    @SerializedName("name")
     val name: String? = null,
+    @SerializedName("item")
     @Embedded(prefix = "media_")
-    val item: BasicMysticCodeMedia? = null
+    val item: MysticCodeMediaItem? = null
 ) {
     @PrimaryKey(autoGenerate = false)
     var mCodeId: Long = id!!

@@ -1,8 +1,11 @@
-package com.caparepa.companionfou.data.model.basic
+package com.caparepa.companionfou.data.db.entity.basic
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class CraftEssenceItem(
+@Entity(tableName = "basic_servant")
+data class ServantItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("collectionNo")
@@ -17,4 +20,7 @@ data class CraftEssenceItem(
     val rarity: Int? = null,
     @SerializedName("face")
     val face: String? = null
-)
+) {
+    @PrimaryKey(autoGenerate = false)
+    var mServantId: Long = collectionNo!!.toLong()
+}

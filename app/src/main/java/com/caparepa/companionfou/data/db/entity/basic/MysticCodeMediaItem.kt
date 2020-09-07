@@ -5,8 +5,10 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "basic_mystic_code_media")
-data class BasicMysticCodeMedia(
+data class MysticCodeMediaItem(
+    @SerializedName("male")
     val male: String? = null,
+    @SerializedName("female")
     val female: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
