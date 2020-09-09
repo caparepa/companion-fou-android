@@ -25,10 +25,13 @@ data class FunctionItem(
     val funcPopupText: String? = null,
     @SerializedName("funcPopupIcon")
     val funcPopupIcon: String? = null,
+    @Embedded(prefix = "funct_")
     @SerializedName("functvals")
     val functvals: List<BuffValItem?>? = null,
+    @Embedded(prefix = "funcquest_")
     @SerializedName("funcquestTvals")
     val funcquestTvals: List<BuffValItem?>? = null,
+    @Embedded
     @SerializedName("buffs")
     val buffs: List<BuffItem?>? = null,
     @Embedded(prefix = "svals_")

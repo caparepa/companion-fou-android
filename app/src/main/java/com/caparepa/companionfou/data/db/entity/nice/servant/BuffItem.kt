@@ -25,8 +25,10 @@ data class BuffItem(
     val type: String? = null,
     @SerializedName("buffGroup")
     val buffGroup: Int? = null,
+    @Embedded(prefix = "vals_")
     @SerializedName("vals")
     val vals: List<BuffValItem?>? = null,
+    @Embedded(prefix = "tvals_")
     @SerializedName("tvals")
     val tvals: List<BuffValItem?>? = null,
     @Embedded

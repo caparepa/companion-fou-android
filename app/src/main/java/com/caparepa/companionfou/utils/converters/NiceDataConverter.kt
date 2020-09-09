@@ -109,4 +109,35 @@ object NiceDataConverter {
         return Gson().fromJson<List<CkOpIndvItem>>(list, type)
     }
 
+    /**
+     * BuffValItem
+     */
+    @TypeConverter
+    fun toBuffValItem(list: List<BuffValItem?>?): String? {
+        val type = object : TypeToken<List<BuffValItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromBuffValItem(list: String?): List<BuffValItem>? {
+        val type = object : TypeToken<List<BuffValItem>>() {}.type
+        return Gson().fromJson<List<BuffValItem>>(list, type)
+    }
+
+    /**
+     * BuffItem
+     */
+    @TypeConverter
+    fun toBuffItem(list: List<BuffItem?>?): String? {
+        val type = object : TypeToken<List<BuffItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromBuffItem(list: String?): List<BuffItem>? {
+        val type = object : TypeToken<List<BuffItem>>() {}.type
+        return Gson().fromJson<List<BuffItem>>(list, type)
+    }
+
+
 }
