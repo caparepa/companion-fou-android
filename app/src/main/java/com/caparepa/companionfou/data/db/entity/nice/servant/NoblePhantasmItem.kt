@@ -31,6 +31,7 @@ data class NoblePhantasmItem(
     val detail: String? = null,
     @SerializedName("npGain")
     val npGain: NpGain? = null,
+    @Embedded(prefix = "np_distribution_")
     @SerializedName("npDistribution")
     val npDistribution: List<Int?>? = null,
     @SerializedName("strengthStatus")
