@@ -57,13 +57,10 @@ data class ServantItem(
     val hpMax: Int? = null,
     @SerializedName("growthCurve")
     val growthCurve: Int? = null,
-    @Embedded(prefix = "atk_growth_")
     @SerializedName("atkGrowth")
     val atkGrowth: List<Int?>? = null,
-    @Embedded(prefix = "hp_growth_")
     @SerializedName("hpGrowth")
     val hpGrowth: List<Int?>? = null,
-    @Embedded(prefix = "bond_growth_")
     @SerializedName("bondGrowth")
     val bondGrowth: List<Int?>? = null,
     @SerializedName("bondEquip")
