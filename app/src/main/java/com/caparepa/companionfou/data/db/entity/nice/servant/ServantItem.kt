@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -74,6 +75,7 @@ data class ServantItem(
     val classPassive: List<ClassPassiveItem?>? = null,
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>? = null,
+    @Embedded
     @SerializedName("profile")
     val profile: ServantProfile? = null
 ) {

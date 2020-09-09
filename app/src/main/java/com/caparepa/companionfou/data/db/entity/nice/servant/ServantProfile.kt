@@ -15,11 +15,13 @@ data class ServantProfile(
     val illustrator: String? = null,
     @SerializedName("stats")
     val stats: ServantStats? = null,
+    @Embedded
     @SerializedName("costume")
     val costume: Map<Int, ProfileCostumeItem?>? = null,
     @Embedded
     @SerializedName("comments")
     val comments: List<CommentItem?>? = null,
+    @Embedded
     @SerializedName("voices")
     val voices: List<VoiceItem?>? = null
 ) {
