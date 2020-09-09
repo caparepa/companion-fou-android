@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "base_svan_item"
+    tableName = "base_sval"
 )
 data class BaseSvalItem(
     @SerializedName("Rate")
@@ -27,5 +27,5 @@ data class BaseSvalItem(
     val useRate: Int? = null
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mBaseSvalId: Long = 0
+    var mId: Long = 0
 }

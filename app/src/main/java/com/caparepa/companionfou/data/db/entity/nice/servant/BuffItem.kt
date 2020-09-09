@@ -1,7 +1,16 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(
+    tableName = "buff_item",
+    indices = [
+        Index(value = ["id"], unique = true)
+    ]
+)
 data class BuffItem(
     @SerializedName("id")
     val id: Long? = null,
@@ -25,4 +34,7 @@ data class BuffItem(
     val ckOpIndv: List<CkOpIndvItem?>? = null,
     @SerializedName("maxRate")
     val maxRate: Int? = null
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var mId: Long = 0
+}

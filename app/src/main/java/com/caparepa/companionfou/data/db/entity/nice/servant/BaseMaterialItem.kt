@@ -7,7 +7,7 @@ import com.caparepa.companionfou.data.db.entity.nice.servant.BaseMaterialDetail
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "base_material_item"
+    tableName = "material_item"
 )
 data class BaseMaterialItem(
     @SerializedName("item")
@@ -16,5 +16,5 @@ data class BaseMaterialItem(
     val amount: Int? = null
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mMaterialItemId: Long = 0
+    var mId: Long = 0
 }

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "base_material_detail",
+    tableName = "material_detail",
     indices = [
         Index(value = ["id"], unique = true)
     ]
@@ -24,5 +24,5 @@ data class BaseMaterialDetail(
     val background: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mMaterialDetailId: Long = 0
+    var mId: Long = 0
 }
