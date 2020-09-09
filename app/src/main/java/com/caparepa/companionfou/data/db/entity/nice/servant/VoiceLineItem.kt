@@ -1,9 +1,13 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
-import com.caparepa.companionfou.data.db.entity.nice.servant.ServantVoiceCond
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class ServantVoiceLine(
+@Entity(
+    tableName = "voice_line_item"
+)
+data class VoiceLineItem(
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("condType")
@@ -29,5 +33,8 @@ data class ServantVoiceLine(
     @SerializedName("subtitle")
     val subtitle: String? = null,
     @SerializedName("conds")
-    val conds: List<ServantVoiceCond?>? = null
-)
+    val conds: List<VoiceLineCondItem?>? = null
+) {
+    @PrimaryKey(autoGenerate = true)
+    var mId: Long = 0
+}

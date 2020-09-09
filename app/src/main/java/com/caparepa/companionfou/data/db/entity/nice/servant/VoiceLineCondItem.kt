@@ -1,8 +1,14 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class ServantVoiceCond(
+@Entity(
+    tableName = "voiceline_cond_item"
+)
+data class VoiceLineCondItem(
     @SerializedName("condType")
     val condType: String? = null,
     @SerializedName("value")
@@ -11,4 +17,7 @@ data class ServantVoiceCond(
     val valueList: List<Int?>? = null,
     @SerializedName("eventId")
     val eventId: Int? = null
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var mId: Long = 0
+}

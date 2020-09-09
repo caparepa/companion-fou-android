@@ -19,7 +19,7 @@ data class ServantProfile(
     @SerializedName("comments")
     val comments: List<ProfileCommentItem?>? = null,
     @SerializedName("voices")
-    val voices: List<ServantVoiceItem?>? = null
+    val voices: List<VoiceItem?>? = null
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0
