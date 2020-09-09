@@ -24,13 +24,13 @@ object NiceDataConverter {
     }
 
     @TypeConverter
-    fun toVoiceLineItemList(list: List<VoiceLineItem?>?): String? {
+    fun fromVoiceLineItemList(list: List<VoiceLineItem?>?): String? {
         val type = object : TypeToken<List<VoiceLineCondItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromVoiceLineItemList(list: String?): List<VoiceLineItem>? {
+    fun toVoiceLineItemList(list: String?): List<VoiceLineItem>? {
         val type = object : TypeToken<List<VoiceLineCondItem>>() {}.type
         return Gson().fromJson<List<VoiceLineItem>>(list, type)
     }
@@ -40,13 +40,13 @@ object NiceDataConverter {
      */
 
     @TypeConverter
-    fun toCommentItemList(list: List<CommentItem?>?): String? {
+    fun fromCommentItemList(list: List<CommentItem?>?): String? {
         val type = object : TypeToken<List<CommentItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromCommentItemList(list: String?): List<CommentItem>? {
+    fun toCommentItemList(list: String?): List<CommentItem>? {
         val type = object : TypeToken<List<CommentItem>>() {}.type
         return Gson().fromJson<List<CommentItem>>(list, type)
     }
@@ -55,13 +55,13 @@ object NiceDataConverter {
      * Profile costume item
      */
     @TypeConverter
-    fun toProfileCostumeItem(list: List<ProfileCostumeItem?>?): String? {
+    fun fromProfileCostumeItem(list: List<ProfileCostumeItem?>?): String? {
         val type = object : TypeToken<List<ProfileCostumeItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromProfileCostumeItem(list: String?): List<ProfileCostumeItem>? {
+    fun toProfileCostumeItem(list: String?): List<ProfileCostumeItem>? {
         val type = object : TypeToken<List<ProfileCostumeItem>>() {}.type
         return Gson().fromJson<List<ProfileCostumeItem>>(list, type)
     }
@@ -70,13 +70,13 @@ object NiceDataConverter {
      * Base Sval Item
      */
     @TypeConverter
-    fun toBaseSvalItem(list: List<BaseSvalItem?>?): String? {
+    fun fromBaseSvalItem(list: List<BaseSvalItem?>?): String? {
         val type = object : TypeToken<List<BaseSvalItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromBaseSvalItem(list: String?): List<BaseSvalItem>? {
+    fun toBaseSvalItem(list: String?): List<BaseSvalItem>? {
         val type = object : TypeToken<List<BaseSvalItem>>() {}.type
         return Gson().fromJson<List<BaseSvalItem>>(list, type)
     }
@@ -86,25 +86,25 @@ object NiceDataConverter {
      */
 
     @TypeConverter
-    fun toCkSelfIndvItem(list: List<CkSelfIndvItem?>?): String? {
+    fun fromCkSelfIndvItem(list: List<CkSelfIndvItem?>?): String? {
         val type = object : TypeToken<List<CkSelfIndvItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromCkSelfIndvItem(list: String?): List<CkSelfIndvItem>? {
+    fun toCkSelfIndvItem(list: String?): List<CkSelfIndvItem>? {
         val type = object : TypeToken<List<CkSelfIndvItem>>() {}.type
         return Gson().fromJson<List<CkSelfIndvItem>>(list, type)
     }
 
     @TypeConverter
-    fun toCkOpIndvItem(list: List<CkOpIndvItem?>?): String? {
+    fun fromCkOpIndvItem(list: List<CkOpIndvItem?>?): String? {
         val type = object : TypeToken<List<CkOpIndvItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromCkOpIndvItem(list: String?): List<CkOpIndvItem>? {
+    fun toCkOpIndvItem(list: String?): List<CkOpIndvItem>? {
         val type = object : TypeToken<List<CkOpIndvItem>>() {}.type
         return Gson().fromJson<List<CkOpIndvItem>>(list, type)
     }
@@ -113,13 +113,13 @@ object NiceDataConverter {
      * BuffValItem
      */
     @TypeConverter
-    fun toBuffValItem(list: List<BuffValItem?>?): String? {
+    fun fromBuffValItem(list: List<BuffValItem?>?): String? {
         val type = object : TypeToken<List<BuffValItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromBuffValItem(list: String?): List<BuffValItem>? {
+    fun toBuffValItem(list: String?): List<BuffValItem>? {
         val type = object : TypeToken<List<BuffValItem>>() {}.type
         return Gson().fromJson<List<BuffValItem>>(list, type)
     }
@@ -128,13 +128,13 @@ object NiceDataConverter {
      * BuffItem
      */
     @TypeConverter
-    fun toBuffItem(list: List<BuffItem?>?): String? {
+    fun fromBuffItem(list: List<BuffItem?>?): String? {
         val type = object : TypeToken<List<BuffItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromBuffItem(list: String?): List<BuffItem>? {
+    fun toBuffItem(list: String?): List<BuffItem>? {
         val type = object : TypeToken<List<BuffItem>>() {}.type
         return Gson().fromJson<List<BuffItem>>(list, type)
     }
@@ -143,13 +143,13 @@ object NiceDataConverter {
      * Function item
      */
     @TypeConverter
-    fun toFunctionItem(list: List<FunctionItem?>?): String? {
+    fun fromFunctionItem(list: List<FunctionItem?>?): String? {
         val type = object : TypeToken<List<FunctionItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromFunctionItem(list: String?): List<FunctionItem>? {
+    fun toFunctionItem(list: String?): List<FunctionItem>? {
         val type = object : TypeToken<List<FunctionItem>>() {}.type
         return Gson().fromJson<List<FunctionItem>>(list, type)
     }
@@ -158,13 +158,13 @@ object NiceDataConverter {
      * Individuality item
      */
     @TypeConverter
-    fun toIndividualityItem(list: List<IndividualityItem?>?): String? {
+    fun fromIndividualityItem(list: List<IndividualityItem?>?): String? {
         val type = object : TypeToken<List<IndividualityItem>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromIndividualityItem(list: String?): List<IndividualityItem>? {
+    fun toIndividualityItem(list: String?): List<IndividualityItem>? {
         val type = object : TypeToken<List<IndividualityItem>>() {}.type
         return Gson().fromJson<List<IndividualityItem>>(list, type)
     }
@@ -173,13 +173,13 @@ object NiceDataConverter {
      * NP Distribution
      */
     @TypeConverter
-    fun toNpDistribution(list: List<Int?>?): String? {
+    fun fromIntList(list: List<Int?>?): String? {
         val type = object : TypeToken<List<Int>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
-    fun fromNpDistribution(list: String?): List<Int>? {
+    fun toIntList(list: String?): List<Int>? {
         val type = object : TypeToken<List<Int>>() {}.type
         return Gson().fromJson<List<Int>>(list, type)
     }
