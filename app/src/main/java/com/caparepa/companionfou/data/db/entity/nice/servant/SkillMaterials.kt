@@ -6,7 +6,7 @@ import com.caparepa.companionfou.data.db.entity.nice.servant.BaseMaterialItem
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "skill_materials_item"
+    tableName = "skill_materials"
 )
 data class SkillMaterials(
     @SerializedName("items")
