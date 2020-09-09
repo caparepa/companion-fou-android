@@ -1,6 +1,7 @@
 package com.caparepa.companionfou.utils.converters
 
 import androidx.room.TypeConverter
+import com.caparepa.companionfou.data.db.entity.nice.servant.CommentItem
 import com.caparepa.companionfou.data.db.entity.nice.servant.VoiceLineCondItem
 import com.caparepa.companionfou.data.db.entity.nice.servant.VoiceLineItem
 import com.google.gson.Gson
@@ -34,6 +35,22 @@ object NiceDataConverter {
     fun fromVoiceLineItemList(list: String?): List<VoiceLineItem>? {
         val type = object : TypeToken<List<VoiceLineCondItem>>() {}.type
         return Gson().fromJson<List<VoiceLineItem>>(list, type)
+    }
+
+    /**
+     * Comment item type converter
+     */
+
+    @TypeConverter
+    fun toCommentItemList(list: List<CommentItem?>?): String? {
+        val type = object : TypeToken<List<CommentItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromCommentItemList(list: String?): List<CommentItem>? {
+        val type = object : TypeToken<List<CommentItem>>() {}.type
+        return Gson().fromJson<List<CommentItem>>(list, type)
     }
 
 }

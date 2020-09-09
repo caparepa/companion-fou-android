@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -16,6 +17,7 @@ data class ServantProfile(
     val stats: ServantStats? = null,
     @SerializedName("costume")
     val costume: Map<Int, ProfileCostumeItem?>? = null,
+    @Embedded
     @SerializedName("comments")
     val comments: List<CommentItem?>? = null,
     @SerializedName("voices")
