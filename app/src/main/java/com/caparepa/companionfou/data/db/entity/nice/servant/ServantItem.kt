@@ -71,6 +71,7 @@ data class ServantItem(
     val skillMaterials: Map<Int,SkillMaterials?>? = null,
     @SerializedName("skills")
     val skills: List<SkillItem?>? = null,
+    @Embedded
     @SerializedName("classPassive")
     val classPassive: List<ClassPassiveItem?>? = null,
     @Embedded
