@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -10,6 +11,7 @@ import com.google.gson.annotations.SerializedName
 data class VoiceItem(
     @SerializedName("type")
     val type: String? = null,
+    @Embedded
     @SerializedName("voiceLines")
     val voiceLines: List<VoiceLineItem?>? = null
 ) {

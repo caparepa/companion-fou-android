@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -33,6 +34,7 @@ data class VoiceLineItem(
     @SerializedName("subtitle")
     val subtitle: String? = null,
     @SerializedName("conds")
+    @Embedded
     val conds: List<VoiceLineCondItem?>? = null
 ) {
     @PrimaryKey(autoGenerate = true)
