@@ -23,6 +23,6 @@ data class CommandCodeItem(
     @SerializedName("face")
     val face: String?
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var mCommandId: Long = collectionNo!!.toLong()
+    @PrimaryKey(autoGenerate = true)
+    var mCommandId: Long = 0
 }

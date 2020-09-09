@@ -27,6 +27,6 @@ data class CraftEssenceItem(
     @SerializedName("face")
     val face: String?
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var mCraftId: Long = collectionNo!!.toLong()
+    @PrimaryKey(autoGenerate = true)
+    var mCraftId: Long = 0
 }
