@@ -1,10 +1,20 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.db.entity.nice.servant.FunctionItem
 import com.caparepa.companionfou.data.db.entity.nice.servant.IndividualityItem
 import com.caparepa.companionfou.data.db.entity.nice.servant.Script
 import com.google.gson.annotations.SerializedName
 
+@Entity(
+    tableName = "skill_item",
+    indices = [
+        Index(value = ["id"], unique = true)
+    ]
+)
 data class SkillItem(
     @SerializedName("id")
     val id: Long? = null,
@@ -26,12 +36,19 @@ data class SkillItem(
     val condQuestPhase: Int? = null,
     @SerializedName("icon")
     val icon: String? = null,
+    @Embedded
     @SerializedName("coolDown")
     val coolDown: List<Int?>? = null,
+    @Embedded(prefix = "skill_act_individuality_")
     @SerializedName("actIndividuality")
     val actIndividuality: List<IndividualityItem?>? = null,
+    @Embedded
     @SerializedName("script")
     val script: Script? = null,
+    @Embedded(prefix = "skill_function_")
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var mId: Long = 0
+}
