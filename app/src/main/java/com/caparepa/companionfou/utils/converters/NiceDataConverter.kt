@@ -80,4 +80,33 @@ object NiceDataConverter {
         val type = object : TypeToken<List<BaseSvalItem>>() {}.type
         return Gson().fromJson<List<BaseSvalItem>>(list, type)
     }
+
+    /**
+     * CkSelfIndvItem and CkOpIndvItem
+     */
+
+    @TypeConverter
+    fun toCkSelfIndvItem(list: List<CkSelfIndvItem?>?): String? {
+        val type = object : TypeToken<List<CkSelfIndvItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromCkSelfIndvItem(list: String?): List<CkSelfIndvItem>? {
+        val type = object : TypeToken<List<CkSelfIndvItem>>() {}.type
+        return Gson().fromJson<List<CkSelfIndvItem>>(list, type)
+    }
+
+    @TypeConverter
+    fun toCkOpIndvItem(list: List<CkOpIndvItem?>?): String? {
+        val type = object : TypeToken<List<CkOpIndvItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromCkOpIndvItem(list: String?): List<CkOpIndvItem>? {
+        val type = object : TypeToken<List<CkOpIndvItem>>() {}.type
+        return Gson().fromJson<List<CkOpIndvItem>>(list, type)
+    }
+
 }

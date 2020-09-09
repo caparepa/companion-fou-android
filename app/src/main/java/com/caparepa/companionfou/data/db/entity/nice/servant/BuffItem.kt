@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -28,8 +29,10 @@ data class BuffItem(
     val vals: List<BuffValItem?>? = null,
     @SerializedName("tvals")
     val tvals: List<BuffValItem?>? = null,
+    @Embedded
     @SerializedName("ckSelfIndv")
     val ckSelfIndv: List<CkSelfIndvItem?>? = null,
+    @Embedded
     @SerializedName("ckOpIndv")
     val ckOpIndv: List<CkOpIndvItem?>? = null,
     @SerializedName("maxRate")
