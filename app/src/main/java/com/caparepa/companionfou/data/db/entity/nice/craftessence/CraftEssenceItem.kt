@@ -1,9 +1,18 @@
 package com.caparepa.companionfou.data.db.entity.nice.craftessence
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.db.entity.nice.servant.ExtraAssets
 import com.caparepa.companionfou.data.db.entity.nice.servant.SkillItem
 import com.google.gson.annotations.SerializedName
 
+@Entity(
+    tableName = "nice_craft_essence",
+    indices = [
+        Index(value = ["collectionNo"], unique = true)
+    ]
+)
 data class CraftEssenceItem(
     @SerializedName("id")
     val id: Long? = null,
@@ -37,4 +46,7 @@ data class CraftEssenceItem(
     val hpGrowth: List<Int?>? = null,
     @SerializedName("skills")
     val skills: List<SkillItem?>? = null
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var mCraftId: Long = 0
+}
