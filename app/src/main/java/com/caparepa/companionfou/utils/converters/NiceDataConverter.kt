@@ -1,10 +1,7 @@
 package com.caparepa.companionfou.utils.converters
 
 import androidx.room.TypeConverter
-import com.caparepa.companionfou.data.db.entity.nice.servant.CommentItem
-import com.caparepa.companionfou.data.db.entity.nice.servant.ProfileCostumeItem
-import com.caparepa.companionfou.data.db.entity.nice.servant.VoiceLineCondItem
-import com.caparepa.companionfou.data.db.entity.nice.servant.VoiceLineItem
+import com.caparepa.companionfou.data.db.entity.nice.servant.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -69,4 +66,18 @@ object NiceDataConverter {
         return Gson().fromJson<List<ProfileCostumeItem>>(list, type)
     }
 
+    /**
+     * Base Sval Item
+     */
+    @TypeConverter
+    fun toBaseSvalItem(list: List<BaseSvalItem?>?): String? {
+        val type = object : TypeToken<List<BaseSvalItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromBaseSvalItem(list: String?): List<BaseSvalItem>? {
+        val type = object : TypeToken<List<BaseSvalItem>>() {}.type
+        return Gson().fromJson<List<BaseSvalItem>>(list, type)
+    }
 }

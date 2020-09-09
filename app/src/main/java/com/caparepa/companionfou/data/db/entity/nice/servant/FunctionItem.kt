@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -30,14 +31,19 @@ data class FunctionItem(
     val funcquestTvals: List<BuffValItem?>? = null,
     @SerializedName("buffs")
     val buffs: List<BuffItem?>? = null,
+    @Embedded(prefix = "svals_")
     @SerializedName("svals")
     val svals: List<BaseSvalItem?>? = null,
+    @Embedded(prefix = "svals2_")
     @SerializedName("svals2")
     val svals2: List<BaseSvalItem?>? = null,
+    @Embedded(prefix = "svals3_")
     @SerializedName("svals3")
     val svals3: List<BaseSvalItem?>? = null,
+    @Embedded(prefix = "svals4_")
     @SerializedName("svals4")
     val svals4: List<BaseSvalItem?>? = null,
+    @Embedded(prefix = "svals5_")
     @SerializedName("svals5")
     val svals5: List<BaseSvalItem?>? = null
 ) {
