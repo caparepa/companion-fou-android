@@ -1,13 +1,12 @@
 package com.caparepa.companionfou.ui.activity
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.data.model.nice.servant.ServantItem
+import com.caparepa.companionfou.data.db.entity.nice.servant.ServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
 import com.caparepa.companionfou.utils.toastLong
 import com.google.gson.Gson
