@@ -192,7 +192,7 @@ object NiceDataConverter {
     }
 
     /**
-     * NP Distribution
+     * Primitives
      */
     @TypeConverter
     @JvmStatic
@@ -206,6 +206,20 @@ object NiceDataConverter {
     fun toIntList(list: String?): List<Int>? {
         val type = object : TypeToken<List<Int>>() {}.type
         return Gson().fromJson<List<Int>>(list, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun fromStringList(list: List<String?>?): String? {
+        val type = object : TypeToken<List<String>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toStringList(list: String?): List<String>? {
+        val type = object : TypeToken<List<String>>() {}.type
+        return Gson().fromJson<List<String>>(list, type)
     }
 
     /**
