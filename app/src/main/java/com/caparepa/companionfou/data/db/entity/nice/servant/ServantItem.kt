@@ -57,16 +57,21 @@ data class ServantItem(
     val hpMax: Int? = null,
     @SerializedName("growthCurve")
     val growthCurve: Int? = null,
+    @Embedded(prefix = "atk_growth_")
     @SerializedName("atkGrowth")
     val atkGrowth: List<Int?>? = null,
+    @Embedded(prefix = "hp_growth_")
     @SerializedName("hpGrowth")
     val hpGrowth: List<Int?>? = null,
+    @Embedded(prefix = "bond_growth_")
     @SerializedName("bondGrowth")
     val bondGrowth: List<Int?>? = null,
     @SerializedName("bondEquip")
     val bondEquip: Int? = null,
+    @Embedded(prefix = "ascension_materials_")
     @SerializedName("ascensionMaterials")
     val ascensionMaterials: Map<Int,Materials?>? = null,
+    @Embedded(prefix = "skill_materials_")
     @SerializedName("skillMaterials")
     val skillMaterials: Map<Int,Materials?>? = null,
     @Embedded(prefix = "servant_skill_")
