@@ -6,12 +6,12 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "base_val",
+    tableName = "buff_val_item",
     indices = [
         Index(value = ["id"], unique = true)
     ]
 )
-data class BaseValItem(
+data class BuffValItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("name")

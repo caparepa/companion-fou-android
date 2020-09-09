@@ -1,8 +1,5 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
-import com.caparepa.companionfou.data.db.entity.nice.servant.BaseSvalItem
-import com.caparepa.companionfou.data.db.entity.nice.servant.BaseValItem
-import com.caparepa.companionfou.data.db.entity.nice.servant.BuffItem
 import com.google.gson.annotations.SerializedName
 
 data class FunctionItem(
@@ -19,9 +16,9 @@ data class FunctionItem(
     @SerializedName("funcPopupIcon")
     val funcPopupIcon: String? = null,
     @SerializedName("functvals")
-    val functvals: List<BaseValItem?>? = null,
+    val functvals: List<BuffValItem?>? = null,
     @SerializedName("funcquestTvals")
-    val funcquestTvals: List<BaseValItem?>? = null,
+    val funcquestTvals: List<BuffValItem?>? = null,
     @SerializedName("buffs")
     val buffs: List<BuffItem?>? = null,
     @SerializedName("svals")

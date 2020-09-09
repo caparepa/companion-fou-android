@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "base_sval"
+    tableName = "base_sval_item"
 )
 data class BaseSvalItem(
     @SerializedName("Rate")

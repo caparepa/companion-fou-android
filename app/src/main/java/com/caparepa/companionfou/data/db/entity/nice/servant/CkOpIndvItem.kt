@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "ck_op_indv",
+    tableName = "ck_op_indv_item",
     indices = [
         Index(value = ["id"], unique = true)
     ]
