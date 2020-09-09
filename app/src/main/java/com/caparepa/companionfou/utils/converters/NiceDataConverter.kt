@@ -154,5 +154,34 @@ object NiceDataConverter {
         return Gson().fromJson<List<FunctionItem>>(list, type)
     }
 
+    /**
+     * Individuality item
+     */
+    @TypeConverter
+    fun toIndividualityItem(list: List<IndividualityItem?>?): String? {
+        val type = object : TypeToken<List<IndividualityItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromIndividualityItem(list: String?): List<IndividualityItem>? {
+        val type = object : TypeToken<List<IndividualityItem>>() {}.type
+        return Gson().fromJson<List<IndividualityItem>>(list, type)
+    }
+
+    /**
+     * NP Distribution
+     */
+    @TypeConverter
+    fun toNpDistribution(list: List<Int?>?): String? {
+        val type = object : TypeToken<List<Int>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromNpDistribution(list: String?): List<Int>? {
+        val type = object : TypeToken<List<Int>>() {}.type
+        return Gson().fromJson<List<Int>>(list, type)
+    }
 
 }

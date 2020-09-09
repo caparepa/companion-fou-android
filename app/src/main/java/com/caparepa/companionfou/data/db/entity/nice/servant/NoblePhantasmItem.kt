@@ -41,9 +41,10 @@ data class NoblePhantasmItem(
     val condQuestId: Int? = null,
     @SerializedName("condQuestPhase")
     val condQuestPhase: Int? = null,
+    @Embedded(prefix = "np_individuality_")
     @SerializedName("individuality")
     val individuality: List<IndividualityItem?>? = null,
-    @Embedded
+    @Embedded(prefix = "np_funtion_")
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 ) {
