@@ -1,8 +1,14 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class ServantStats(
+@Entity(
+    tableName = "servant_profile_stats"
+)
+data class ProfileStats(
     @SerializedName("strength")
     val strength: String? = null,
     @SerializedName("endurance")
@@ -15,4 +21,7 @@ data class ServantStats(
     val luck: String? = null,
     @SerializedName("np")
     val np: String? = null
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var mId: Long = 0
+}
