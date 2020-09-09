@@ -184,4 +184,19 @@ object NiceDataConverter {
         return Gson().fromJson<List<Int>>(list, type)
     }
 
+    /**
+     * Noble Phantasm item
+     */
+    @TypeConverter
+    fun fromNoblePhantasmItem(list: List<NoblePhantasmItem?>?): String? {
+        val type = object : TypeToken<List<NoblePhantasmItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun toNoblePhantasmItem(list: String?): List<NoblePhantasmItem>? {
+        val type = object : TypeToken<List<NoblePhantasmItem>>() {}.type
+        return Gson().fromJson<List<NoblePhantasmItem>>(list, type)
+    }
+
 }

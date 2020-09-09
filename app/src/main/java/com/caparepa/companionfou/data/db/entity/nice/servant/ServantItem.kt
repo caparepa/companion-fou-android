@@ -73,6 +73,7 @@ data class ServantItem(
     val skills: List<SkillItem?>? = null,
     @SerializedName("classPassive")
     val classPassive: List<ClassPassiveItem?>? = null,
+    @Embedded
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>? = null,
     @Embedded
