@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.network.api
 
+import com.caparepa.companionfou.data.db.entity.basic.MysticCodeItem
 import com.caparepa.companionfou.data.db.entity.basic.ServantItem
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -170,6 +171,6 @@ interface ExportDataEndpoints {
     suspend fun getBasicMysticCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<MysticCodeItem>>?
 
 }

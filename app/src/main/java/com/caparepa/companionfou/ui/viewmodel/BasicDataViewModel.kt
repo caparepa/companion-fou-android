@@ -3,6 +3,7 @@ package com.caparepa.companionfou.ui.viewmodel
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.caparepa.companionfou.data.db.entity.basic.MysticCodeItem
 import com.caparepa.companionfou.data.db.entity.basic.ServantItem
 import com.caparepa.companionfou.repository.BasicDataRepository
 import com.caparepa.companionfou.utils.REGION_NA
@@ -15,6 +16,8 @@ class BasicDataViewModel(val context: Context, private val basicDataRepository: 
 
     val basicServantResponse = MutableLiveData<List<ServantItem>?>()
     val basicServantList = MutableLiveData<List<ServantItem>?>()
+    val basicMysticCodeResponse = MutableLiveData<List<MysticCodeItem>?>()
+    val basicMysticCodeList = MutableLiveData<List<MysticCodeItem>?>()
 
     fun getBasicServantList() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -25,6 +28,18 @@ class BasicDataViewModel(val context: Context, private val basicDataRepository: 
     fun fetchBasicServantList() {
         viewModelScope.launch(Dispatchers.IO) {
             fetchBasicServantListAsync()
+        }
+    }
+
+    fun getBasicMysticCodeList() {
+        viewModelScope.launch(Dispatchers.IO) {
+            getBasicMysticCodeListAsync()
+        }
+    }
+
+    fun fetchBasicMysticCodeList() {
+        viewModelScope.launch(Dispatchers.IO) {
+            fetchBasicMysticCodeListAsync()
         }
     }
 
@@ -53,6 +68,39 @@ class BasicDataViewModel(val context: Context, private val basicDataRepository: 
             onSuccess {
                 it?.let {
                     basicServantResponse.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    private suspend fun fetchBasicMysticCodeListAsync() {
+        val result = kotlin.runCatching {
+            basicDataRepository.fetchBasicMysticCodes()
+        }
+        with(result) {
+            onSuccess {
+                it?.let {
+                    basicMysticCodeList.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    private suspend fun getBasicMysticCodeListAsync() {
+        val result = kotlin.runCatching {
+            basicDataRepository.getBasicMysticCodes("20200905", REGION_NA)
+        }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+                    basicMysticCodeResponse.postValue(it)
                 }
             }
             onFailure {

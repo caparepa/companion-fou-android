@@ -45,7 +45,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
 
     override suspend fun fetchBasicMysticCodes(): List<MysticCodeItem>? =
         withContext(Dispatchers.IO) {
-            null
+            basicMysticCodeDao.getMysticCodeList()
         }
 
     //TODO: test this thoroughly!!!
@@ -96,10 +96,17 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         currentDate: String,
         region: String
     ): List<MysticCodeItem>? = withContext(Dispatchers.IO) {
-        val response = api.getBasicCommandCodes(currentDate, region)
-        val bodyString = response?.body()?.string()
-        val data = bodyString?.toKotlinObject<List<MysticCodeItem>>()
-        data
+        withContext(Dispatchers.IO) {
+            val data = try {
+                val response = api.getBasicMysticCodes(currentDate, region)
+                persisBasicMysticCodeList(response?.body())
+                response?.body()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
+            data
+        }
     }
 
     private suspend fun persistBasicServantList(servantList: List<ServantItem>?) {
@@ -111,7 +118,11 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     }
 
     private suspend fun persisBasicMysticCodeList(mcList: List<MysticCodeItem>?) {
-
+        mcList?.let {
+            it.forEach { item ->
+                basicMysticCodeDao.upsert(item)
+            }
+        }
     }
 
     private suspend fun persisBasicCommandCodeList(ccList: List<CommandCodeItem>?) {

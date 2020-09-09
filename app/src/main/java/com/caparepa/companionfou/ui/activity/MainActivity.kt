@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         theButton.setOnClickListener {
             try {
                 basicDataViewModel.fetchBasicServantList()
+                basicDataViewModel.fetchBasicMysticCodeList()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
@@ -39,8 +40,8 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     private fun observeBasicDataViewModel() = basicDataViewModel.run {
         basicServantResponse.observe(this@MainActivity, Observer {
             it?.let {
-                val shit = it
                 this@MainActivity.toastLong("HELLO! YES!")
+                tvTest.text = it[0].toString()
             }
         })
         basicServantList.observe(this@MainActivity, Observer {
@@ -50,6 +51,25 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                     this.getBasicServantList()
                 } else {
                     this@MainActivity.toastLong("JAJAJAJA")
+                    tvTest.text = it[0].toString()
+                }
+            }
+        })
+        basicMysticCodeResponse.observe(this@MainActivity, Observer {
+            it?.let {
+                this@MainActivity.toastLong("HELLO! YES!")
+                tvTest2.text = it[0].toString()
+            }
+        })
+        basicMysticCodeList.observe(this@MainActivity, Observer {
+            it?.let {
+                this@MainActivity.toastLong("HELLO! YES!")
+                if(it.isEmpty()) {
+                    //if the list from the database is empty, get it from api
+                    this.getBasicMysticCodeList()
+                } else {
+                    this@MainActivity.toastLong("JAJAJAJA")
+                    tvTest2.text = it[0].toString()
                 }
             }
         })
