@@ -288,4 +288,20 @@ object NiceDataConverter {
         return Gson().fromJson<Map<Int,Materials>>(map, type)
     }
 
+    /**
+     * Traits
+     */
+    @TypeConverter
+    @JvmStatic
+    fun fromTraitItem(list: List<TraitItem?>?): String? {
+        val type = object : TypeToken<List<TraitItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toTraitItem(list: String?): List<TraitItem>? {
+        val type = object : TypeToken<List<TraitItem>>() {}.type
+        return Gson().fromJson<List<TraitItem>>(list, type)
+    }
 }

@@ -35,6 +35,7 @@ data class ServantItem(
     val gender: String? = null,
     @SerializedName("attribute")
     val attribute: String? = null,
+    @Embedded
     @SerializedName("traits")
     val traits: List<TraitItem?>? = null,
     @SerializedName("starAbsorb")
@@ -45,6 +46,7 @@ data class ServantItem(
     val instantDeathChance: Int? = null,
     @SerializedName("cards")
     val cards: List<String?>? = null,
+    @Embedded
     @SerializedName("hitsDistribution")
     val hitsDistribution: HitsDistribution? = null,
     @SerializedName("atkBase")
