@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -42,6 +43,7 @@ data class NoblePhantasmItem(
     val condQuestPhase: Int? = null,
     @SerializedName("individuality")
     val individuality: List<IndividualityItem?>? = null,
+    @Embedded
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 ) {

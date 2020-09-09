@@ -139,5 +139,20 @@ object NiceDataConverter {
         return Gson().fromJson<List<BuffItem>>(list, type)
     }
 
+    /**
+     * Function item
+     */
+    @TypeConverter
+    fun toFunctionItem(list: List<FunctionItem?>?): String? {
+        val type = object : TypeToken<List<FunctionItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    fun fromFunctionItem(list: String?): List<FunctionItem>? {
+        val type = object : TypeToken<List<FunctionItem>>() {}.type
+        return Gson().fromJson<List<FunctionItem>>(list, type)
+    }
+
 
 }
