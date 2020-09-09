@@ -243,4 +243,35 @@ object NiceDataConverter {
         return Gson().fromJson<List<SkillItem>>(list, type)
     }
 
+    /**
+     * Materials
+     */
+    @TypeConverter
+    @JvmStatic
+    fun fromBaseMaterialItem(list: List<BaseMaterialItem?>?): String? {
+        val type = object : TypeToken<List<BaseMaterialItem>>() {}.type
+        return Gson().toJson(list, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toBaseMaterialItem(list: String?): List<BaseMaterialItem>? {
+        val type = object : TypeToken<List<BaseMaterialItem>>() {}.type
+        return Gson().fromJson<List<BaseMaterialItem>>(list, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun fromIntMaterialsMap(map: Map<Int,Materials?>?): String? {
+        val type = object : TypeToken<Map<Int,Materials>>() {}.type
+        return Gson().toJson(map, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toIntMaterialsMap(map: String?): Map<Int,Materials>? {
+        val type = object : TypeToken<Map<Int,Materials>>() {}.type
+        return Gson().fromJson<Map<Int,Materials>>(map, type)
+    }
+
 }
