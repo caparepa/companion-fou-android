@@ -6,12 +6,12 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "servant_profile_comment",
+    tableName = "comment_item",
     indices = [
         Index(value = ["id"], unique = true)
     ]
 )
-data class ProfileCommentItem(
+data class CommentItem(
     @SerializedName("id")
     val id: Int? = null,
     @SerializedName("priority")

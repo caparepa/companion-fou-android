@@ -6,16 +6,17 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "servant_profile_costume",
+    tableName = "profile_costume_item",
     indices = [
-        Index(value = ["id"], unique = true)
+        Index(value = ["id"], unique = true),
+        Index(value = ["costumeCollectionNo"], unique = true)
     ]
 )
 data class ProfileCostumeItem(
     @SerializedName("id")
     val id: Int? = null,
     @SerializedName("costumeCollectionNo")
-    val costumecollectionNo: Long? = null,
+    val costumeCollectionNo: Long? = null,
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("shortName")

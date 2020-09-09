@@ -13,11 +13,11 @@ data class ServantProfile(
     @SerializedName("illustrator")
     val illustrator: String? = null,
     @SerializedName("stats")
-    val stats: ProfileStats? = null,
+    val stats: ServantStats? = null,
     @SerializedName("costume")
     val costume: Map<Int, ProfileCostumeItem?>? = null,
     @SerializedName("comments")
-    val comments: List<ProfileCommentItem?>? = null,
+    val comments: List<CommentItem?>? = null,
     @SerializedName("voices")
     val voices: List<VoiceItem?>? = null
 ) {

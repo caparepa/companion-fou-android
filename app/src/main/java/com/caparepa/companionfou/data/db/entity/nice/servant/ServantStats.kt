@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "servant_profile_stats"
+    tableName = "servant_stats"
 )
-data class ProfileStats(
+data class ServantStats(
     @SerializedName("strength")
     val strength: String? = null,
     @SerializedName("endurance")
