@@ -65,9 +65,9 @@ data class ServantItem(
     @SerializedName("bondEquip")
     val bondEquip: Int? = null,
     @SerializedName("ascensionMaterials")
-    val ascensionMaterials: SkillMaterials? = null,
+    val ascensionMaterials: Map<Int,SkillMaterials?>? = null,
     @SerializedName("skillMaterials")
-    val skillMaterials: SkillMaterials? = null,
+    val skillMaterials: Map<Int,SkillMaterials?>? = null,
     @SerializedName("skills")
     val skills: List<SkillItem?>? = null,
     @SerializedName("classPassive")
