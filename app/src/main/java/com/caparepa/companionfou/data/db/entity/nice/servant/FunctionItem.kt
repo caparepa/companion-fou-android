@@ -1,7 +1,16 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(
+    tableName = "function_item",
+    indices = [
+        Index(value = ["funcId"], unique = true)
+    ]
+)
 data class FunctionItem(
     @SerializedName("funcId")
     val funcId: Long? = null,
@@ -31,4 +40,7 @@ data class FunctionItem(
     val svals4: List<BaseSvalItem?>? = null,
     @SerializedName("svals5")
     val svals5: List<BaseSvalItem?>? = null
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var mId: Long = 0
+}
