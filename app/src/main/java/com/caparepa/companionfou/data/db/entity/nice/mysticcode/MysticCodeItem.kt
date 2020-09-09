@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName
 @Entity(
     tableName = "nice_mystic_code",
     indices = [
-        Index(value = ["collectionNo"], unique = true)
+        Index(value = ["id"], unique = true)
     ]
 )
 data class MysticCodeItem(

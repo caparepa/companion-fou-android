@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
 @Entity(
     tableName = "nice_material_item",
     indices = [
-        Index(value = ["collectionNo"], unique = true)
+        Index(value = ["id"], unique = true)
     ]
 )
 data class MaterialItem(
