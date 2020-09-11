@@ -1,7 +1,8 @@
 package com.caparepa.companionfou.network.api
 
 import com.caparepa.companionfou.data.db.entity.basic.MysticCodeItem
-import com.caparepa.companionfou.data.db.entity.basic.ServantItem
+import com.caparepa.companionfou.data.db.entity.basic.BasicServantItem
+import com.caparepa.companionfou.data.db.entity.nice.servant.NiceServantItem
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -90,7 +91,7 @@ interface ExportDataEndpoints {
     suspend fun getNiceServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<NiceServantItem>?>
 
     //Get servants with lore
     @GET("{current_date}/{region}/nice_servant_lore.json")
@@ -142,7 +143,7 @@ interface ExportDataEndpoints {
     suspend fun getBasicServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<List<ServantItem>>?
+    ): Response<List<BasicServantItem>>?
 
     //Get servants
     @GET("{current_date}/{region}/basic_servant_lang_en.json")

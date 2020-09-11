@@ -7,7 +7,7 @@ import com.caparepa.companionfou.data.db.dao.basic.BasicServantDao
 import com.caparepa.companionfou.data.db.entity.basic.CommandCodeItem
 import com.caparepa.companionfou.data.db.entity.basic.CraftEssenceItem
 import com.caparepa.companionfou.data.db.entity.basic.MysticCodeItem
-import com.caparepa.companionfou.data.db.entity.basic.ServantItem
+import com.caparepa.companionfou.data.db.entity.basic.BasicServantItem
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.utils.*
 import kotlinx.coroutines.Dispatchers
@@ -23,12 +23,12 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     private val basicCommandCodeDao: BasicCommandCodeDao by inject()
     private val basicCraftEssenceDao: BasicCraftEssenceDao by inject()
 
-    override suspend fun fetchBasicServants(): List<ServantItem>? =
+    override suspend fun fetchBasicServants(): List<BasicServantItem>? =
         withContext(Dispatchers.IO) {
             basicServantDao.getServants()
         }
 
-    override suspend fun fetchBasicServantsEnglishName(): List<ServantItem>? =
+    override suspend fun fetchBasicServantsEnglishName(): List<BasicServantItem>? =
         withContext(Dispatchers.IO) {
             null
         }
@@ -49,7 +49,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         }
 
     //TODO: test this thoroughly!!!
-    override suspend fun getBasicServants(currentDate: String, region: String): List<ServantItem>? =
+    override suspend fun getBasicServants(currentDate: String, region: String): List<BasicServantItem>? =
         withContext(Dispatchers.IO) {
             val data = try {
                 val response = api.getBasicServants(currentDate, region)
@@ -65,10 +65,10 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     override suspend fun getBasicServantsEnglishName(
         currentDate: String,
         region: String
-    ): List<ServantItem>? = withContext(Dispatchers.IO) {
+    ): List<BasicServantItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicServantsEnglishName(currentDate, region)
         val bodyString = response?.body()?.string()
-        val data = bodyString?.toKotlinObject<List<ServantItem>>()
+        val data = bodyString?.toKotlinObject<List<BasicServantItem>>()
         data
     }
 
@@ -109,7 +109,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         }
     }
 
-    private suspend fun persistBasicServantList(servantList: List<ServantItem>?) {
+    private suspend fun persistBasicServantList(servantList: List<BasicServantItem>?) {
         servantList?.let {
             it.forEach { item ->
                 basicServantDao.upsert(item)

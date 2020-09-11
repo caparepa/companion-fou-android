@@ -11,7 +11,7 @@ import com.google.gson.annotations.SerializedName
         Index(value = ["collectionNo"], unique = true)
     ]
 )
-data class ServantItem(
+data class BasicServantItem(
     @SerializedName("id")
     val id: Long?,
     @SerializedName("collectionNo")

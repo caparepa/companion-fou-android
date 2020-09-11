@@ -10,7 +10,7 @@ import com.caparepa.companionfou.data.db.entity.basic.*
 @Database(
     entities =
     [
-        ServantItem::class,
+        BasicServantItem::class,
         CommandCodeItem::class,
         CraftEssenceItem::class,
         MysticCodeItem::class,

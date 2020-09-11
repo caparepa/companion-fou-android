@@ -6,7 +6,7 @@ import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.data.db.entity.nice.servant.ServantItem
+import com.caparepa.companionfou.data.db.entity.nice.servant.NiceServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
 import com.caparepa.companionfou.utils.toastLong
 import com.google.gson.Gson
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private fun createJsonObject(jsonString: String) {
         val gson = Gson()
-        val obj = gson.fromJson(jsonString, ServantItem::class.java)
+        val obj = gson.fromJson(jsonString, NiceServantItem::class.java)
     }
 
     private inline fun <reified T> readRawJson(@RawRes rawResId: Int): T {

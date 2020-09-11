@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.basic.MysticCodeItem
-import com.caparepa.companionfou.data.db.entity.basic.ServantItem
+import com.caparepa.companionfou.data.db.entity.basic.BasicServantItem
 import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
@@ -14,8 +14,8 @@ import org.koin.core.KoinComponent
 class BasicDataViewModel(val context: Context, private val basicDataRepository: BasicDataRepository) :
     BaseViewModel(), KoinComponent {
 
-    val basicServantResponse = MutableLiveData<List<ServantItem>?>()
-    val basicServantList = MutableLiveData<List<ServantItem>?>()
+    val basicServantResponse = MutableLiveData<List<BasicServantItem>?>()
+    val basicServantList = MutableLiveData<List<BasicServantItem>?>()
     val basicMysticCodeResponse = MutableLiveData<List<MysticCodeItem>?>()
     val basicMysticCodeList = MutableLiveData<List<MysticCodeItem>?>()
 
