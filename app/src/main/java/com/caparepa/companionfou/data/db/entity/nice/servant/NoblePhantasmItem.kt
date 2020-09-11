@@ -29,6 +29,7 @@ data class NoblePhantasmItem(
     val type: String? = null,
     @SerializedName("detail")
     val detail: String? = null,
+    @Embedded
     @SerializedName("npGain")
     val npGain: NpGain? = null,
     @SerializedName("npDistribution")
@@ -41,10 +42,8 @@ data class NoblePhantasmItem(
     val condQuestId: Int? = null,
     @SerializedName("condQuestPhase")
     val condQuestPhase: Int? = null,
-    @Embedded
     @SerializedName("individuality")
     val individuality: List<IndividualityItem?>? = null,
-    @Embedded
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 ) {

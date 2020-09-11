@@ -34,7 +34,6 @@ data class VoiceLineItem(
     @SerializedName("subtitle")
     val subtitle: String? = null,
     @SerializedName("conds")
-    @Embedded
     val conds: List<VoiceLineCondItem?>? = null
 ) {
     @PrimaryKey(autoGenerate = true)
