@@ -17,6 +17,5 @@ data class BaseMaterialItem(
     val amount: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "matItemId")
-    var mId: Long = 0
+    var nMaterialId: Long = 0
 }

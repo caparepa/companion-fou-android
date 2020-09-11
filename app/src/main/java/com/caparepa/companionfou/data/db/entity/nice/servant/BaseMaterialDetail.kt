@@ -25,6 +25,5 @@ data class BaseMaterialDetail(
     val background: String?
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "matDetId")
-    var mId: Long = 0
+    var nMatDetailId: Long = 0
 }

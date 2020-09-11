@@ -19,6 +19,5 @@ data class CkOpIndvItem(
     val name: String?
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "ckOpId")
-    var mId: Long = 0
+    var nCkOpId: Long = 0
 }

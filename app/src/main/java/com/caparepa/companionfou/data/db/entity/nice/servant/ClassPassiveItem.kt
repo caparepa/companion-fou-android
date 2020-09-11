@@ -34,5 +34,5 @@ data class ClassPassiveItem(
     val functions: List<FunctionItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nPassiveId: Long = 0
 }

@@ -28,6 +28,5 @@ data class BaseSvalItem(
     val useRate: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "svalItemId")
-    var mId: Long = 0
+    var nSvalId: Long = 0
 }

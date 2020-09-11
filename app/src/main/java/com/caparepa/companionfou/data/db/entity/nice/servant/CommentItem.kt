@@ -30,5 +30,5 @@ data class CommentItem(
     val condValue2: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nCommentId: Long = 0
 }

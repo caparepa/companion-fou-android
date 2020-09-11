@@ -19,6 +19,5 @@ data class CkSelfIndvItem(
     val name: String?
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "ckSelfId")
-    var mId: Long = 0
+    var nCkSelfId: Long = 0
 }

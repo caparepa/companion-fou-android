@@ -1,24 +1,20 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(
+    tableName = "costume"
+)
 data class Costume(
+    @Embedded
     @SerializedName("costume")
-    val costume: Map<Int, ServantCostumeItem?>?
+    val costume: Map<Int, CostumeItem?>?
 ) {
-    data class ServantCostumeItem(
-        @SerializedName("id")
-        val id: Int?,
-        @SerializedName("costumeCollectionNo")
-        val costumecollectionNo: Long?,
-        @SerializedName("name")
-        val name: String?,
-        @SerializedName("shortName")
-        val shortName: String?,
-        @SerializedName("detail")
-        val detail: String?,
-        @SerializedName("priority")
-        val priority: Int?
-    )
+    @PrimaryKey(autoGenerate = true)
+    var nCostumeId: Long = 0
 }

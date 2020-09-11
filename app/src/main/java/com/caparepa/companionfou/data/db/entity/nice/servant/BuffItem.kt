@@ -38,6 +38,5 @@ data class BuffItem(
     val maxRate: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "buffItemId")
-    var mId: Long = 0
+    var nBuffId: Long = 0
 }

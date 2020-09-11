@@ -42,5 +42,5 @@ data class ExtraAssets(
     val masterFigure: ServantAssetItem?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nAssetId: Long = 0
 }
