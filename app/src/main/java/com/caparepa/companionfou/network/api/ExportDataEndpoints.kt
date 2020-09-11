@@ -91,7 +91,7 @@ interface ExportDataEndpoints {
     suspend fun getNiceServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<List<NiceServantItem>?>
+    ): Response<List<NiceServantItem>>?
 
     //Get servants with lore
     @GET("{current_date}/{region}/nice_servant_lore.json")

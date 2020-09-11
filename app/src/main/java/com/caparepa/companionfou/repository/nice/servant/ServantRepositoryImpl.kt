@@ -1,6 +1,7 @@
 package com.caparepa.companionfou.repository.nice.servant
 
 import com.caparepa.companionfou.data.db.dao.nice.servant.ServantDao
+import com.caparepa.companionfou.data.db.entity.basic.BasicServantItem
 import com.caparepa.companionfou.data.db.entity.nice.servant.NiceServantItem
 import com.caparepa.companionfou.network.api.ApiClient
 import kotlinx.coroutines.Dispatchers
@@ -40,5 +41,13 @@ class ServantRepositoryImpl : ServantRepository, KoinComponent {
         region: String
     ): List<NiceServantItem>? {
         TODO("Not yet implemented")
+    }
+
+    private suspend fun persistBasicServantList(servantList: List<NiceServantItem>?) {
+        servantList?.let {
+            it.forEach { item ->
+                servantDao.upsert(item)
+            }
+        }
     }
 }
