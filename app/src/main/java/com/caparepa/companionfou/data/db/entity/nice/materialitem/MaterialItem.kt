@@ -13,15 +13,15 @@ import com.google.gson.annotations.SerializedName
 )
 data class MaterialItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("icon")
-    val icon: String? = null,
+    val icon: String?,
     @SerializedName("background")
-    val background: String? = null
+    val background: String?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mItemId: Long = 0

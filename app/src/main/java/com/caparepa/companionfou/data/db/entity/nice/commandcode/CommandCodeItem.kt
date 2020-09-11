@@ -15,19 +15,19 @@ import com.google.gson.annotations.SerializedName
 )
 data class CommandCodeItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("collectionNo")
-    val collectionNo: Long? = null,
+    val collectionNo: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("rarity")
-    val rarity: Int? = null,
+    val rarity: Int?,
     @SerializedName("extraAssets")
-    val extraAssets: ExtraAssets? = null,
+    val extraAssets: ExtraAssets?,
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null,
+    val skills: List<SkillItem?>?,
     @SerializedName("comment")
-    val comment: String? = null
+    val comment: String?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mCommandId: Long = 0

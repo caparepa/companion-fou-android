@@ -15,19 +15,19 @@ import com.google.gson.annotations.SerializedName
 )
 data class MysticCodeItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("detail")
-    val detail: String? = null,
+    val detail: String?,
     @SerializedName("maxLv")
-    val maxLv: Int? = null,
+    val maxLv: Int?,
     @SerializedName("extraAssets")
-    val extraAssets: ExtraAssets? = null,
+    val extraAssets: ExtraAssets?,
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null,
+    val skills: List<SkillItem?>?,
     @SerializedName("expRequired")
-    val expRequired: List<Int?>? = null
+    val expRequired: List<Int?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mCodeId: Long = 0

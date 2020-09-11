@@ -15,37 +15,37 @@ import com.google.gson.annotations.SerializedName
 )
 data class CraftEssenceItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("collectionNo")
-    val collectionNo: Long? = null,
+    val collectionNo: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("rarity")
-    val rarity: Int? = null,
+    val rarity: Int?,
     @SerializedName("cost")
-    val cost: Int? = null,
+    val cost: Int?,
     @SerializedName("lvMax")
-    val lvMax: Int? = null,
+    val lvMax: Int?,
     @SerializedName("extraAssets")
-    val extraAssets: ExtraAssets? = null,
+    val extraAssets: ExtraAssets?,
     @SerializedName("atkBase")
-    val atkBase: Int? = null,
+    val atkBase: Int?,
     @SerializedName("atkMax")
-    val atkMax: Int? = null,
+    val atkMax: Int?,
     @SerializedName("hpBase")
-    val hpBase: Int? = null,
+    val hpBase: Int?,
     @SerializedName("hpMax")
-    val hpMax: Int? = null,
+    val hpMax: Int?,
     @SerializedName("growthCurve")
-    val growthCurve: Int? = null,
+    val growthCurve: Int?,
     @SerializedName("atkGrowth")
-    val atkGrowth: List<Int?>? = null,
+    val atkGrowth: List<Int?>?,
     @SerializedName("hpGrowth")
-    val hpGrowth: List<Int?>? = null,
+    val hpGrowth: List<Int?>?,
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null
+    val skills: List<SkillItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mCraftId: Long = 0
