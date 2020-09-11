@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "noble_phantasm_item",
+    tableName = "noble_phantasm",
     indices = [
         Index(value = ["id"], unique = true)
     ]
@@ -41,10 +41,10 @@ data class NoblePhantasmItem(
     val condQuestId: Int? = null,
     @SerializedName("condQuestPhase")
     val condQuestPhase: Int? = null,
-    @Embedded(prefix = "np_individuality_")
+    @Embedded
     @SerializedName("individuality")
     val individuality: List<IndividualityItem?>? = null,
-    @Embedded(prefix = "np_funtion_")
+    @Embedded
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 ) {

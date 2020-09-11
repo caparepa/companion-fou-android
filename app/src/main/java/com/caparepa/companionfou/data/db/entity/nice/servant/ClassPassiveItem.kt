@@ -23,16 +23,13 @@ data class ClassPassiveItem(
     val type: String? = null,
     @SerializedName("icon")
     val icon: String? = null,
-    @Embedded
     @SerializedName("coolDown")
     val coolDown: List<Int?>? = null,
-    @Embedded(prefix = "class_passive_individuality")
     @SerializedName("actIndividuality")
     val actIndividuality: List<IndividualityItem?>? = null,
     @Embedded
     @SerializedName("script")
     val script: Script? = null,
-    @Embedded(prefix = "class_passive_function_")
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 ) {

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "servant",
+    tableName = "servant_item",
     indices = [
         Index(value = ["collectionNo"], unique = true)
     ]
@@ -36,7 +36,6 @@ data class ServantItem(
     val gender: String? = null,
     @SerializedName("attribute")
     val attribute: String? = null,
-    @Embedded
     @SerializedName("traits")
     val traits: List<TraitItem?>? = null,
     @SerializedName("starAbsorb")
@@ -68,19 +67,16 @@ data class ServantItem(
     val bondGrowth: List<Int?>? = null,
     @SerializedName("bondEquip")
     val bondEquip: Int? = null,
-    @Embedded(prefix = "ascension_materials_")
+    @Embedded(prefix = "ascension_mats_")
     @SerializedName("ascensionMaterials")
     val ascensionMaterials: Map<Int,Materials?>? = null,
-    @Embedded(prefix = "skill_materials_")
+    @Embedded(prefix = "skill_mats_")
     @SerializedName("skillMaterials")
     val skillMaterials: Map<Int,Materials?>? = null,
-    @Embedded(prefix = "servant_skill_")
     @SerializedName("skills")
     val skills: List<SkillItem?>? = null,
-    @Embedded
     @SerializedName("classPassive")
     val classPassive: List<ClassPassiveItem?>? = null,
-    @Embedded
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>? = null,
     @Embedded

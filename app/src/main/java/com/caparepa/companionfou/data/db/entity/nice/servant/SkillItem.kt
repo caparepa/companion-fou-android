@@ -36,16 +36,13 @@ data class SkillItem(
     val condQuestPhase: Int? = null,
     @SerializedName("icon")
     val icon: String? = null,
-    @Embedded
     @SerializedName("coolDown")
     val coolDown: List<Int?>? = null,
-    @Embedded(prefix = "skill_act_individuality_")
     @SerializedName("actIndividuality")
     val actIndividuality: List<IndividualityItem?>? = null,
     @Embedded
     @SerializedName("script")
     val script: Script? = null,
-    @Embedded(prefix = "skill_function_")
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 ) {
