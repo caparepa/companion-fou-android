@@ -1,9 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.Index
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.google.gson.annotations.SerializedName
 
 @Entity(
@@ -41,5 +38,6 @@ data class BuffItem(
     val maxRate: Int? = null
 ) {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "buffItemId")
     var mId: Long = 0
 }

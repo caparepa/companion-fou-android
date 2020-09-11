@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -18,5 +19,6 @@ data class BuffValItem(
     val name: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "buffItemId")
     var mId: Long = 0
 }

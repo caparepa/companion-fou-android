@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -16,5 +17,6 @@ data class BaseMaterialItem(
     val amount: Int? = null
 ) {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "matItemId")
     var mId: Long = 0
 }
