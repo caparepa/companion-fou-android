@@ -36,6 +36,7 @@ data class NiceServantItem(
     val gender: String? = null,
     @SerializedName("attribute")
     val attribute: String? = null,
+    @Embedded
     @SerializedName("traits")
     val traits: List<TraitItem?>? = null,
     @SerializedName("starAbsorb")
@@ -44,6 +45,7 @@ data class NiceServantItem(
     val starGen: Int? = null,
     @SerializedName("instantDeathChance")
     val instantDeathChance: Int? = null,
+    @Embedded
     @SerializedName("cards")
     val cards: List<String?>? = null,
     @Embedded
@@ -59,10 +61,13 @@ data class NiceServantItem(
     val hpMax: Int? = null,
     @SerializedName("growthCurve")
     val growthCurve: Int? = null,
+    @Embedded
     @SerializedName("atkGrowth")
     val atkGrowth: List<Int?>? = null,
+    @Embedded
     @SerializedName("hpGrowth")
     val hpGrowth: List<Int?>? = null,
+    @Embedded
     @SerializedName("bondGrowth")
     val bondGrowth: List<Int?>? = null,
     @SerializedName("bondEquip")
@@ -73,10 +78,13 @@ data class NiceServantItem(
     @Embedded(prefix = "skill_mats_")
     @SerializedName("skillMaterials")
     val skillMaterials: Map<Int,Materials?>? = null,
+    @Embedded
     @SerializedName("skills")
     val skills: List<SkillItem?>? = null,
+    @Embedded
     @SerializedName("classPassive")
     val classPassive: List<ClassPassiveItem?>? = null,
+    @Embedded
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>? = null,
     @Embedded
