@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.caparepa.companionfou.data.db.dao.basic.*
+import com.caparepa.companionfou.data.db.dao.nice.servant.ServantDao
 import com.caparepa.companionfou.data.db.entity.basic.*
 
 @Database(
@@ -26,6 +27,8 @@ abstract class CompanionFouDatabase : RoomDatabase() {
     abstract fun basicMysticCodeDao(): BasicMysticCodeDao
     abstract fun basicMysticCodeMediaDao(): BasicMysticCodeMediaDao
     abstract fun basicCommandCodeDao(): BasicCommandCodeDao
+
+    abstract fun servantDao(): ServantDao
 
     companion object {
 

@@ -2,6 +2,7 @@ package com.caparepa.companionfou.di.modules
 
 import com.caparepa.companionfou.data.db.CompanionFouDatabase
 import com.caparepa.companionfou.data.db.dao.basic.*
+import com.caparepa.companionfou.data.db.dao.nice.servant.ServantDao
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptor
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
@@ -50,12 +51,17 @@ val databaseModule = module {
         return database.basicMysticCodeMediaDao()
     }
 
+    fun provideServantDao(database: CompanionFouDatabase): ServantDao {
+        return database.servantDao()
+    }
+
     //DAO binding
     single { provideBasicServantDao(get()) }
     single { provideBasicCommandCodeDao(get()) }
     single { provideBasicCraftEssenceDao(get()) }
     single { provideBasicMysticCodeDao(get()) }
     single { provideBasicMysticCodeMediaDao(get()) }
+    single { provideServantDao(get()) }
 
 }
 
