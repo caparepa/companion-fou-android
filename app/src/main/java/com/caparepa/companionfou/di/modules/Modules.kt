@@ -8,6 +8,8 @@ import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptor
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
 import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
+import com.caparepa.companionfou.repository.nice.servant.ServantRepository
+import com.caparepa.companionfou.repository.nice.servant.ServantRepositoryImpl
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.ServantDataViewModel
 import org.koin.android.ext.koin.androidContext
@@ -21,6 +23,7 @@ val networkModule = module {
 
 val repositoryModule = module {
     factory<BasicDataRepository> { BasicDataRepositoryImpl() }
+    factory<ServantRepository> { ServantRepositoryImpl() }
 }
 
 val localModule = module {
@@ -32,6 +35,8 @@ val databaseModule = module {
     single { CompanionFouDatabase.invoke(androidContext()) }
 
     //Accessor binding
+
+    //basic
     fun provideBasicServantDao(database: CompanionFouDatabase): BasicServantDao {
         return database.basicServantDao()
     }
@@ -51,6 +56,8 @@ val databaseModule = module {
     fun provideBasicMysticCodeMediaDao(database: CompanionFouDatabase): BasicMysticCodeMediaDao {
         return database.basicMysticCodeMediaDao()
     }
+
+    //Nice
 
     fun provideServantDao(database: CompanionFouDatabase): ServantDao {
         return database.servantDao()
