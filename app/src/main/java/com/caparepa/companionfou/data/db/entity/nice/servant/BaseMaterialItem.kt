@@ -12,9 +12,9 @@ import com.google.gson.annotations.SerializedName
 )
 data class BaseMaterialItem(
     @SerializedName("item")
-    val item: BaseMaterialDetail? = null,
+    val item: BaseMaterialDetail?,
     @SerializedName("amount")
-    val amount: Int? = null
+    val amount: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "matItemId")

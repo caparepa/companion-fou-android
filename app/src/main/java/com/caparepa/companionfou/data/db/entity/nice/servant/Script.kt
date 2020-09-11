@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "skill_script")
 class Script(
-    val id: Long? = null
+    val id: Long?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

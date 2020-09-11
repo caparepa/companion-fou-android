@@ -14,38 +14,38 @@ import com.google.gson.annotations.SerializedName
 )
 data class NoblePhantasmItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("num")
-    val num: Int? = null,
+    val num: Int?,
     @SerializedName("card")
-    val card: String? = null,
+    val card: String?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("icon")
-    val icon: String? = null,
+    val icon: String?,
     @SerializedName("rank")
-    val rank: String? = null,
+    val rank: String?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("detail")
-    val detail: String? = null,
+    val detail: String?,
     @Embedded
     @SerializedName("npGain")
-    val npGain: NpGain? = null,
+    val npGain: NpGain?,
     @SerializedName("npDistribution")
-    val npDistribution: List<Int?>? = null,
+    val npDistribution: List<Int?>?,
     @SerializedName("strengthStatus")
-    val strengthStatus: Int? = null,
+    val strengthStatus: Int?,
     @SerializedName("priority")
-    val priority: Int? = null,
+    val priority: Int?,
     @SerializedName("condQuestId")
-    val condQuestId: Int? = null,
+    val condQuestId: Int?,
     @SerializedName("condQuestPhase")
-    val condQuestPhase: Int? = null,
+    val condQuestPhase: Int?,
     @SerializedName("individuality")
-    val individuality: List<IndividualityItem?>? = null,
+    val individuality: List<IndividualityItem?>?,
     @SerializedName("functions")
-    val functions: List<FunctionItem?>? = null
+    val functions: List<FunctionItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

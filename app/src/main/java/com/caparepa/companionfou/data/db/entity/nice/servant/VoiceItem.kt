@@ -10,9 +10,9 @@ import com.google.gson.annotations.SerializedName
 )
 data class VoiceItem(
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("voiceLines")
-    val voiceLines: List<VoiceLineItem?>? = null
+    val voiceLines: List<VoiceLineItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

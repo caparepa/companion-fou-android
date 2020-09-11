@@ -10,17 +10,17 @@ import com.google.gson.annotations.SerializedName
 )
 data class ServantStats(
     @SerializedName("strength")
-    val strength: String? = null,
+    val strength: String?,
     @SerializedName("endurance")
-    val endurance: String? = null,
+    val endurance: String?,
     @SerializedName("agility")
-    val agility: String? = null,
+    val agility: String?,
     @SerializedName("magic")
-    val magic: String? = null,
+    val magic: String?,
     @SerializedName("luck")
-    val luck: String? = null,
+    val luck: String?,
     @SerializedName("np")
-    val np: String? = null
+    val np: String?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

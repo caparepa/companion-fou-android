@@ -14,9 +14,9 @@ import com.google.gson.annotations.SerializedName
 )
 data class CkOpIndvItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("name")
-    val name: String? = null
+    val name: String?
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ckOpId")

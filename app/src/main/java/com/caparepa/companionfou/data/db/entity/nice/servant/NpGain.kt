@@ -9,17 +9,17 @@ import com.google.gson.annotations.SerializedName
 )
 data class NpGain(
     @SerializedName("buster")
-    val buster: List<Int?>? = null,
+    val buster: List<Int?>?,
     @SerializedName("arts")
-    val arts: List<Int?>? = null,
+    val arts: List<Int?>?,
     @SerializedName("quick")
-    val quick: List<Int?>? = null,
+    val quick: List<Int?>?,
     @SerializedName("extra")
-    val extra: List<Int?>? = null,
+    val extra: List<Int?>?,
     @SerializedName("defence")
-    val defence: List<Int?>? = null,
+    val defence: List<Int?>?,
     @SerializedName("np")
-    val np: List<Int?>? = null
+    val np: List<Int?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

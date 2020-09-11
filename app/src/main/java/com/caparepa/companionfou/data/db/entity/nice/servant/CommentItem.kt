@@ -13,19 +13,19 @@ import com.google.gson.annotations.SerializedName
 )
 data class CommentItem(
     @SerializedName("id")
-    val id: Int? = null,
+    val id: Int?,
     @SerializedName("priority")
-    val priority: Int? = null,
+    val priority: Int?,
     @SerializedName("condMessage")
-    val condMessage: String? = null,
+    val condMessage: String?,
     @SerializedName("comment")
-    val comment: String? = null,
+    val comment: String?,
     @SerializedName("condType")
-    val condType: String? = null,
+    val condType: String?,
     @SerializedName("condValues")
-    val condValues: List<Int?>? = null,
+    val condValues: List<Int?>?,
     @SerializedName("condValue2")
-    val condValue2: Int? = null
+    val condValue2: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

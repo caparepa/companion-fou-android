@@ -11,31 +11,31 @@ import com.google.gson.annotations.SerializedName
 )
 data class BuffItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("detail")
-    val detail: String? = null,
+    val detail: String?,
     @SerializedName("icon")
-    val icon: String? = null,
+    val icon: String?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("buffGroup")
-    val buffGroup: Int? = null,
+    val buffGroup: Int?,
     @Embedded(prefix = "vals_")
     @SerializedName("vals")
-    val vals: List<BuffValItem?>? = null,
+    val vals: List<BuffValItem?>?,
     @Embedded(prefix = "tvals_")
     @SerializedName("tvals")
-    val tvals: List<BuffValItem?>? = null,
+    val tvals: List<BuffValItem?>?,
     @Embedded
     @SerializedName("ckSelfIndv")
-    val ckSelfIndv: List<CkSelfIndvItem?>? = null,
+    val ckSelfIndv: List<CkSelfIndvItem?>?,
     @Embedded
     @SerializedName("ckOpIndv")
-    val ckOpIndv: List<CkOpIndvItem?>? = null,
+    val ckOpIndv: List<CkOpIndvItem?>?,
     @SerializedName("maxRate")
-    val maxRate: Int? = null
+    val maxRate: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "buffItemId")

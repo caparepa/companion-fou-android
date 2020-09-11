@@ -10,13 +10,13 @@ import com.google.gson.annotations.SerializedName
 )
 data class VoiceLineCondItem(
     @SerializedName("condType")
-    val condType: String? = null,
+    val condType: String?,
     @SerializedName("value")
-    val value: Int? = null,
+    val value: Int?,
     @SerializedName("valueList")
-    val valueList: List<Int?>? = null,
+    val valueList: List<Int?>?,
     @SerializedName("eventId")
-    val eventId: Int? = null
+    val eventId: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

@@ -11,16 +11,16 @@ import com.google.gson.annotations.SerializedName
 data class ServantAssetItem(
     @Embedded(prefix = "asset_ascension_")
     @SerializedName("ascension")
-    val ascension: Map<Int, String?>? = null,
+    val ascension: Map<Int, String?>?,
     @Embedded(prefix = "asset_costume_")
     @SerializedName("costume")
-    val costume: Map<Int, String?>? = null,
+    val costume: Map<Int, String?>?,
     @Embedded(prefix = "asset_equip_")
     @SerializedName("equip")
-    val equip: Map<Int, String?>? = null,
+    val equip: Map<Int, String?>?,
     @Embedded(prefix = "asset_cc_")
     @SerializedName("cc")
-    val cc: Map<Int, String?>? = null
+    val cc: Map<Int, String?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

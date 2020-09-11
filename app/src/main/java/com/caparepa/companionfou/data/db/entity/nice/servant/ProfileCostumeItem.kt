@@ -14,17 +14,17 @@ import com.google.gson.annotations.SerializedName
 )
 data class ProfileCostumeItem(
     @SerializedName("id")
-    val id: Int? = null,
+    val id: Int?,
     @SerializedName("costumeCollectionNo")
-    val costumeCollectionNo: Long? = null,
+    val costumeCollectionNo: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("shortName")
-    val shortName: String? = null,
+    val shortName: String?,
     @SerializedName("detail")
-    val detail: String? = null,
+    val detail: String?,
     @SerializedName("priority")
-    val priority: Int? = null
+    val priority: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

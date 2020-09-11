@@ -12,9 +12,9 @@ import com.google.gson.annotations.SerializedName
 data class Materials(
     @Embedded
     @SerializedName("items")
-    val items: List<BaseMaterialItem?>? = null,
+    val items: List<BaseMaterialItem?>?,
     @SerializedName("qp")
-    val qp: Int? = null
+    val qp: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

@@ -10,13 +10,13 @@ import com.google.gson.annotations.SerializedName
 )
 data class HitsDistribution(
     @SerializedName("arts")
-    val arts: List<Int?>? = null,
+    val arts: List<Int?>?,
     @SerializedName("buster")
-    val buster: List<Int?>? = null,
+    val buster: List<Int?>?,
     @SerializedName("quick")
-    val quick: List<Int?>? = null,
+    val quick: List<Int?>?,
     @SerializedName("extra")
-    val extra: List<Int?>? = null
+    val extra: List<Int?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

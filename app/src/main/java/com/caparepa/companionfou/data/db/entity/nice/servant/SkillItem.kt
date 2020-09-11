@@ -17,34 +17,34 @@ import com.google.gson.annotations.SerializedName
 )
 data class SkillItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("num")
-    val num: Int? = null,
+    val num: Int?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("detail")
-    val detail: String? = null,
+    val detail: String?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("strengthStatus")
-    val strengthStatus: Int? = null,
+    val strengthStatus: Int?,
     @SerializedName("priority")
-    val priority: Int? = null,
+    val priority: Int?,
     @SerializedName("condQuestId")
-    val condQuestId: Int? = null,
+    val condQuestId: Int?,
     @SerializedName("condQuestPhase")
-    val condQuestPhase: Int? = null,
+    val condQuestPhase: Int?,
     @SerializedName("icon")
-    val icon: String? = null,
+    val icon: String?,
     @SerializedName("coolDown")
-    val coolDown: List<Int?>? = null,
+    val coolDown: List<Int?>?,
     @SerializedName("actIndividuality")
-    val actIndividuality: List<IndividualityItem?>? = null,
+    val actIndividuality: List<IndividualityItem?>?,
     @Embedded
     @SerializedName("script")
-    val script: Script? = null,
+    val script: Script?,
     @SerializedName("functions")
-    val functions: List<FunctionItem?>? = null
+    val functions: List<FunctionItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

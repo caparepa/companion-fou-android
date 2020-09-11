@@ -12,34 +12,34 @@ import com.google.gson.annotations.SerializedName
 data class ExtraAssets(
     @Embedded(prefix = "asset_char_graph_")
     @SerializedName("charaGraph")
-    val charaGraph: ServantAssetItem? = null,
+    val charaGraph: ServantAssetItem?,
     @Embedded(prefix = "asset_faces_")
     @SerializedName("faces")
-    val faces: ServantAssetItem? = null,
+    val faces: ServantAssetItem?,
     @Embedded(prefix = "asset_narrow_fig_")
     @SerializedName("narrowFigure")
-    val narrowFigure: ServantAssetItem? = null,
+    val narrowFigure: ServantAssetItem?,
     @Embedded(prefix = "asset_chara_fig_")
     @SerializedName("charaFigure")
-    val charaFigure: ServantAssetItem? = null,
+    val charaFigure: ServantAssetItem?,
     @Embedded(prefix = "asset_command_")
     @SerializedName("commands")
-    val commands: ServantAssetItem? = null,
+    val commands: ServantAssetItem?,
     @Embedded(prefix = "asset_status_")
     @SerializedName("status")
-    val status: ServantAssetItem? = null,
+    val status: ServantAssetItem?,
     @Embedded(prefix = "asset_eq_face")
     @SerializedName("equipFace")
-    val equipFace: ServantAssetItem? = null,
+    val equipFace: ServantAssetItem?,
     @Embedded(prefix = "asset_item_")
     @SerializedName("item")
-    val masterItem: ServantAssetItem? = null,
+    val masterItem: ServantAssetItem?,
     @Embedded(prefix = "asset_master_face_")
     @SerializedName("masterFace")
-    val masterFace: ServantAssetItem? = null,
+    val masterFace: ServantAssetItem?,
     @Embedded(prefix = "asset_master_fig_")
     @SerializedName("masterFigure")
-    val masterFigure: ServantAssetItem? = null
+    val masterFigure: ServantAssetItem?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

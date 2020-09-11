@@ -14,24 +14,24 @@ import com.google.gson.annotations.SerializedName
 )
 data class ClassPassiveItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("detail")
-    val detail: String? = null,
+    val detail: String?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("icon")
-    val icon: String? = null,
+    val icon: String?,
     @SerializedName("coolDown")
-    val coolDown: List<Int?>? = null,
+    val coolDown: List<Int?>?,
     @SerializedName("actIndividuality")
-    val actIndividuality: List<IndividualityItem?>? = null,
+    val actIndividuality: List<IndividualityItem?>?,
     @Embedded
     @SerializedName("script")
-    val script: Script? = null,
+    val script: Script?,
     @SerializedName("functions")
-    val functions: List<FunctionItem?>? = null
+    val functions: List<FunctionItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

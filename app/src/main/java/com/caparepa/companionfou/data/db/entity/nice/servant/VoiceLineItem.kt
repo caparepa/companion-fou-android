@@ -10,31 +10,31 @@ import com.google.gson.annotations.SerializedName
 )
 data class VoiceLineItem(
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("condType")
-    val condType: String? = null,
+    val condType: String?,
     @SerializedName("condValue")
-    val condValue: Int? = null,
+    val condValue: Int?,
     @SerializedName("priority")
-    val priority: Int? = null,
+    val priority: Int?,
     @SerializedName("svtVoiceType")
-    val svtVoiceType: String? = null,
+    val svtVoiceType: String?,
     @SerializedName("overwriteName")
-    val overwriteName: String? = null,
+    val overwriteName: String?,
     @SerializedName("id")
-    val id: List<String?>? = null,
+    val id: List<String?>?,
     @SerializedName("delay")
-    val delay: List<Int?>? = null,
+    val delay: List<Int?>?,
     @SerializedName("face")
-    val face: List<Int?>? = null,
+    val face: List<Int?>?,
     @SerializedName("form")
-    val form: List<Int?>? = null,
+    val form: List<Int?>?,
     @SerializedName("text")
-    val text: List<String?>? = null,
+    val text: List<String?>?,
     @SerializedName("subtitle")
-    val subtitle: String? = null,
+    val subtitle: String?,
     @SerializedName("conds")
-    val conds: List<VoiceLineCondItem?>? = null
+    val conds: List<VoiceLineCondItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

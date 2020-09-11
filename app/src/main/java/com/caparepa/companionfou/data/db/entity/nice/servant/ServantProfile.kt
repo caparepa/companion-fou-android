@@ -10,18 +10,18 @@ import com.google.gson.annotations.SerializedName
 )
 data class ServantProfile(
     @SerializedName("cv")
-    val cv: String? = null,
+    val cv: String?,
     @SerializedName("illustrator")
-    val illustrator: String? = null,
+    val illustrator: String?,
     @SerializedName("stats")
-    val stats: ServantStats? = null,
+    val stats: ServantStats?,
     @Embedded
     @SerializedName("costume")
-    val costume: Map<Int, ProfileCostumeItem?>? = null,
+    val costume: Map<Int, ProfileCostumeItem?>?,
     @SerializedName("comments")
-    val comments: List<CommentItem?>? = null,
+    val comments: List<CommentItem?>?,
     @SerializedName("voices")
-    val voices: List<VoiceItem?>? = null
+    val voices: List<VoiceItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0

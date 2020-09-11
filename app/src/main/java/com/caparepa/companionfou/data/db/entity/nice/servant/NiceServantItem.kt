@@ -14,82 +14,82 @@ import com.google.gson.annotations.SerializedName
 )
 data class NiceServantItem(
     @SerializedName("id")
-    val id: Long? = null,
+    val id: Long?,
     @SerializedName("collectionNo")
-    val collectionNo: Long? = null,
+    val collectionNo: Long?,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String?,
     @SerializedName("className")
-    val className: String? = null,
+    val className: String?,
     @SerializedName("type")
-    val type: String? = null,
+    val type: String?,
     @SerializedName("rarity")
-    val rarity: Int? = null,
+    val rarity: Int?,
     @SerializedName("cost")
-    val cost: Int? = null,
+    val cost: Int?,
     @SerializedName("lvMax")
-    val lvMax: Int? = null,
+    val lvMax: Int?,
     @Embedded
     @SerializedName("extraAssets")
-    val extraAssets: ExtraAssets? = null,
+    val extraAssets: ExtraAssets?,
     @SerializedName("gender")
-    val gender: String? = null,
+    val gender: String?,
     @SerializedName("attribute")
-    val attribute: String? = null,
+    val attribute: String?,
     @Embedded
     @SerializedName("traits")
-    val traits: List<TraitItem?>? = null,
+    val traits: List<TraitItem?>?,
     @SerializedName("starAbsorb")
-    val starAbsorb: Int? = null,
+    val starAbsorb: Int?,
     @SerializedName("starGen")
-    val starGen: Int? = null,
+    val starGen: Int?,
     @SerializedName("instantDeathChance")
-    val instantDeathChance: Int? = null,
+    val instantDeathChance: Int?,
     @Embedded
     @SerializedName("cards")
-    val cards: List<String?>? = null,
+    val cards: List<String?>?,
     @Embedded
     @SerializedName("hitsDistribution")
-    val hitsDistribution: HitsDistribution? = null,
+    val hitsDistribution: HitsDistribution?,
     @SerializedName("atkBase")
-    val atkBase: Int? = null,
+    val atkBase: Int?,
     @SerializedName("atkMax")
-    val atkMax: Int? = null,
+    val atkMax: Int?,
     @SerializedName("hpBase")
-    val hpBase: Int? = null,
+    val hpBase: Int?,
     @SerializedName("hpMax")
-    val hpMax: Int? = null,
+    val hpMax: Int?,
     @SerializedName("growthCurve")
-    val growthCurve: Int? = null,
+    val growthCurve: Int?,
     @Embedded
     @SerializedName("atkGrowth")
-    val atkGrowth: List<Int?>? = null,
+    val atkGrowth: List<Int?>?,
     @Embedded
     @SerializedName("hpGrowth")
-    val hpGrowth: List<Int?>? = null,
+    val hpGrowth: List<Int?>?,
     @Embedded
     @SerializedName("bondGrowth")
-    val bondGrowth: List<Int?>? = null,
+    val bondGrowth: List<Int?>?,
     @SerializedName("bondEquip")
-    val bondEquip: Int? = null,
+    val bondEquip: Int?,
     @Embedded(prefix = "ascension_mats_")
     @SerializedName("ascensionMaterials")
-    val ascensionMaterials: Map<Int,Materials?>? = null,
+    val ascensionMaterials: Map<Int,Materials?>?,
     @Embedded(prefix = "skill_mats_")
     @SerializedName("skillMaterials")
-    val skillMaterials: Map<Int,Materials?>? = null,
+    val skillMaterials: Map<Int,Materials?>?,
     @Embedded
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null,
+    val skills: List<SkillItem?>?,
     @Embedded
     @SerializedName("classPassive")
-    val classPassive: List<ClassPassiveItem?>? = null,
+    val classPassive: List<ClassPassiveItem?>?,
     @Embedded
     @SerializedName("noblePhantasms")
-    val noblePhantasms: List<NoblePhantasmItem?>? = null,
+    val noblePhantasms: List<NoblePhantasmItem?>?,
     @Embedded
     @SerializedName("profile")
-    val profile: ServantProfile? = null
+    val profile: ServantProfile?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mId: Long = 0
