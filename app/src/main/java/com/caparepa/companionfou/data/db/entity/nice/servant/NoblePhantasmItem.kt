@@ -48,5 +48,5 @@ data class NoblePhantasmItem(
     val functions: List<FunctionItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nNoblePhantasmId: Long = 0
 }

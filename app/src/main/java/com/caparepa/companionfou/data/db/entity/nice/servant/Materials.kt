@@ -17,5 +17,5 @@ data class Materials(
     val qp: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nMaterialId: Long = 0
 }

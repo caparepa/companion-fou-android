@@ -1,9 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.Index
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.caparepa.companionfou.data.db.entity.nice.servant.FunctionItem
 import com.caparepa.companionfou.data.db.entity.nice.servant.IndividualityItem
 import com.caparepa.companionfou.data.db.entity.nice.servant.Script
@@ -47,5 +44,5 @@ data class SkillItem(
     val functions: List<FunctionItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nSkillId: Long = 0
 }

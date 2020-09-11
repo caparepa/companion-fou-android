@@ -1,9 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.Index
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.google.gson.annotations.SerializedName
 
 @Entity(
@@ -92,5 +89,5 @@ data class NiceServantItem(
     val profile: ServantProfile?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nServantId: Long = 0
 }

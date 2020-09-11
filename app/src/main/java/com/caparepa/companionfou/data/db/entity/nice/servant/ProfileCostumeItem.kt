@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -27,5 +28,5 @@ data class ProfileCostumeItem(
     val priority: Int?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nCostumeId: Long = 0
 }

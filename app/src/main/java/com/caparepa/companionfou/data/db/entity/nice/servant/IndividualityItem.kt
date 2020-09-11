@@ -18,5 +18,5 @@ data class IndividualityItem(
     val name: String?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nIndId: Long = 0
 }

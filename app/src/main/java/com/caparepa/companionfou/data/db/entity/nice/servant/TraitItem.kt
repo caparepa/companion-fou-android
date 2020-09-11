@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -18,5 +19,5 @@ data class TraitItem(
     val name: String?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nTraitId: Long = 0
 }

@@ -24,5 +24,5 @@ data class HitsDistribution(
     val extra: List<Int?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nHitDistId: Long = 0
 }

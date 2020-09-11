@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -23,5 +24,5 @@ data class ServantAssetItem(
     val cc: Map<Int, String?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nAssetId: Long = 0
 }

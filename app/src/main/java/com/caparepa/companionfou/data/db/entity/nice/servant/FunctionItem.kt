@@ -51,5 +51,5 @@ data class FunctionItem(
     val svals5: List<BaseSvalItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nFunctionId: Long = 0
 }

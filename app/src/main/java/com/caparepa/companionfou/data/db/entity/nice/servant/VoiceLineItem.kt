@@ -44,6 +44,5 @@ data class VoiceLineItem(
     val conds: List<VoiceLineCondItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "voiceLineItemId")
-    var mId: Long = 0
+    var nVoiceLineId: Long = 0
 }

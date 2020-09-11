@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -13,6 +14,7 @@ data class ServantProfile(
     val cv: String?,
     @SerializedName("illustrator")
     val illustrator: String?,
+    @Embedded
     @SerializedName("stats")
     val stats: ServantStats?,
     @Embedded
@@ -26,5 +28,5 @@ data class ServantProfile(
     val voices: List<VoiceItem?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nProfileId: Long = 0
 }

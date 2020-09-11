@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,5 +9,5 @@ class Script(
     val id: Long?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mId: Long = 0
+    var nScriptId: Long = 0
 }
