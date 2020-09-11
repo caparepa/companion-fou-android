@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice.servant
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -22,6 +23,7 @@ data class CommentItem(
     val comment: String?,
     @SerializedName("condType")
     val condType: String?,
+    @Embedded
     @SerializedName("condValues")
     val condValues: List<Int?>?,
     @SerializedName("condValue2")

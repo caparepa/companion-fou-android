@@ -18,8 +18,10 @@ data class ServantProfile(
     @Embedded
     @SerializedName("costume")
     val costume: Map<Int, ProfileCostumeItem?>?,
+    @Embedded
     @SerializedName("comments")
     val comments: List<CommentItem?>?,
+    @Embedded
     @SerializedName("voices")
     val voices: List<VoiceItem?>?
 ) {
