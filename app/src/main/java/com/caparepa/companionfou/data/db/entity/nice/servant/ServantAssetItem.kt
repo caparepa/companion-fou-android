@@ -24,5 +24,5 @@ data class ServantAssetItem(
     val cc: Map<Int, String?>?
 ) {
     @PrimaryKey(autoGenerate = true)
-    var nAssetId: Long = 0
+    var nAssetItemId: Long = 0
 }
