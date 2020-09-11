@@ -29,6 +29,7 @@ data class ServantItem(
     val cost: Int? = null,
     @SerializedName("lvMax")
     val lvMax: Int? = null,
+    @Embedded
     @SerializedName("extraAssets")
     val extraAssets: ExtraAssets? = null,
     @SerializedName("gender")
