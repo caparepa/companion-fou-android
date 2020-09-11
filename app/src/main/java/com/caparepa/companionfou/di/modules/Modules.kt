@@ -9,6 +9,7 @@ import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
 import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.ServantDataViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -67,4 +68,5 @@ val databaseModule = module {
 
 val viewModelModule = module {
     viewModel { BasicDataViewModel(androidContext(), get()) }
+    viewModel { ServantDataViewModel(androidContext(), get()) }
 }
