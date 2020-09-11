@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.repository
+package com.caparepa.companionfou.repository.basic
 
 import com.caparepa.companionfou.data.db.dao.basic.BasicCommandCodeDao
 import com.caparepa.companionfou.data.db.dao.basic.BasicCraftEssenceDao

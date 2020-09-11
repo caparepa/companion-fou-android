@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.basic.MysticCodeItem
 import com.caparepa.companionfou.data.db.entity.basic.ServantItem
-import com.caparepa.companionfou.repository.BasicDataRepository
+import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

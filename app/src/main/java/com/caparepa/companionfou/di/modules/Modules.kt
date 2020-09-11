@@ -5,8 +5,8 @@ import com.caparepa.companionfou.data.db.dao.basic.*
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptor
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
-import com.caparepa.companionfou.repository.BasicDataRepository
-import com.caparepa.companionfou.repository.BasicDataRepositoryImpl
+import com.caparepa.companionfou.repository.basic.BasicDataRepository
+import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
