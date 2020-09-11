@@ -14,16 +14,16 @@ class ServantRepositoryImpl : ServantRepository, KoinComponent {
     private val api = ApiClient.invoke()
     private val servantDao: ServantDao by inject()
 
-    override suspend fun fetchBasicServants(): List<NiceServantItem>? =
+    override suspend fun fetchServants(): List<NiceServantItem>? =
         withContext(Dispatchers.IO) {
             servantDao.getServants()
         }
 
-    override suspend fun fetchBasicServantsEnglishName(): List<NiceServantItem>? {
+    override suspend fun fetchServantsEnglishName(): List<NiceServantItem>? {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getBasicServants(currentDate: String, region: String): List<NiceServantItem>? =
+    override suspend fun getServants(currentDate: String, region: String): List<NiceServantItem>? =
         withContext(Dispatchers.IO) {
             val data = try {
                 val response = api.getNiceServants(currentDate, region)
@@ -36,7 +36,7 @@ class ServantRepositoryImpl : ServantRepository, KoinComponent {
             data
         }
 
-    override suspend fun getBasicServantsEnglishName(
+    override suspend fun getServantsEnglishName(
         currentDate: String,
         region: String
     ): List<NiceServantItem>? {
