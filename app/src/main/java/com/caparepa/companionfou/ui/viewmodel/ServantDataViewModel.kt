@@ -16,6 +16,7 @@ class ServantDataViewModel(
 ): BaseViewModel(), KoinComponent {
 
     val servantResponse = MutableLiveData<List<NiceServantItem>?>()
+    val servantList = MutableLiveData<List<NiceServantItem>?>()
 
     fun getServantList() {
         viewModelScope.launch(Dispatchers.IO) {

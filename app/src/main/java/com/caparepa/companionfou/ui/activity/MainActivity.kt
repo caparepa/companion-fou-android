@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.db.entity.nice.servant.NiceServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.ServantDataViewModel
 import com.caparepa.companionfou.utils.toastLong
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -18,6 +19,7 @@ import org.koin.core.inject
 class MainActivity : AppCompatActivity(), KoinComponent {
 
     private val basicDataViewModel: BasicDataViewModel by inject()
+    private val servantViewModel: ServantDataViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +30,30 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             try {
                 basicDataViewModel.fetchBasicServantList()
                 basicDataViewModel.fetchBasicMysticCodeList()
+                servantViewModel.fetchServantList()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
             }
         }
 
+    }
+
+    private fun observeServantDataViewModel() = servantViewModel.run {
+        servantResponse.observe(this@MainActivity, Observer {
+            it?.let {
+                this@MainActivity.toastLong("CHOMOLANGMA!")
+            }
+        })
+        servantList.observe(this@MainActivity, Observer {
+            it?.let {
+                this@MainActivity.toastLong("ASKDJALSKJDLSAJD")
+                if(it.isEmpty())
+                    this.getServantList()
+                else
+                    this@MainActivity.toastLong("sriracha!")
+            }
+        })
     }
 
     private fun observeBasicDataViewModel() = basicDataViewModel.run {
