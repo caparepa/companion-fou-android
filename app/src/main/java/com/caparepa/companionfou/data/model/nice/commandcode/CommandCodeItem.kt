@@ -1,7 +1,7 @@
 package com.caparepa.companionfou.data.model.nice.commandcode
 
-import com.caparepa.companionfou.data.model.nice.servant.ExtraAssets
-import com.caparepa.companionfou.data.model.nice.servant.SkillItem
+import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
+import com.caparepa.companionfou.data.model.nice.common.SkillItem
 import com.google.gson.annotations.SerializedName
 
 data class CommandCodeItem(

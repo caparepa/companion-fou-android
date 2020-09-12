@@ -1,5 +1,7 @@
 package com.caparepa.companionfou.data.model.nice.servant
 
+import com.caparepa.companionfou.data.model.nice.common.FunctionItem
+import com.caparepa.companionfou.data.model.nice.common.IndividualityItem
 import com.google.gson.annotations.SerializedName
 
 data class NoblePhantasmItem(
