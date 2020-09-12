@@ -1,13 +1,12 @@
 package com.caparepa.companionfou.ui.activity
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.data.model.nice.servant.ServantItem
+import com.caparepa.companionfou.data.model.nice.servant.NiceServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
 import com.caparepa.companionfou.utils.toastLong
 import com.google.gson.Gson
@@ -56,7 +55,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private fun createJsonObject(jsonString: String) {
         val gson = Gson()
-        val obj = gson.fromJson(jsonString, ServantItem::class.java)
+        val obj = gson.fromJson(jsonString, NiceServantItem::class.java)
     }
 
     private inline fun <reified T> readRawJson(@RawRes rawResId: Int): T {

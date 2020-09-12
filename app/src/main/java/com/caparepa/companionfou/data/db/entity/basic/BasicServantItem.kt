@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "basic_servant")
-data class BasicServant(
+data class BasicServantItem(
     val id: Long? = null,
     val collectionNo: Long? = null,
     val type: String? = null,
