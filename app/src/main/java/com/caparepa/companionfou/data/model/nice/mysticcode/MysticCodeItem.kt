@@ -16,7 +16,7 @@ data class MysticCodeItem(
     @SerializedName("extraAssets")
     val extraAssets: ExtraAssets? = null,
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null,
+    val skills: List<SkillItem>? = null,
     @SerializedName("expRequired")
-    val expRequired: List<Int?>? = null
+    val expRequired: List<Int>? = null
 )
