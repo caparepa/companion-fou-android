@@ -84,7 +84,7 @@ data class NiceServantItem(
     @Embedded
     @SerializedName("noblePhantasms")
     val noblePhantasms: List<NoblePhantasmItem?>?,
-    @Embedded
+    @Embedded(prefix = "s_profile_")
     @SerializedName("profile")
     val profile: ServantProfile?
 ) {
