@@ -34,13 +34,16 @@ android {
 
     buildTypes {
         getByName("debug") {
-            buildConfigField("String", "BASE_URL", "\"http://c1e1de27ee3d.ngrok.io/storage/files/data/\"")
+            val baseUrl = findProperty("BASE_NGROK_URL")
+            buildConfigField("String", "BASE_URL", "\"http://$baseUrl/storage/files/data/\"")
             applicationIdSuffix = ".debug"
         }
 
         create("stage") {
             signingConfigs.getByName("debug")
-            buildConfigField("String", "BASE_URL", "\"http://c1e1de27ee3d.ngrok.io/storage/files/data/\"")
+            val baseUrl = findProperty("BASE_NGROK_URL")
+
+            buildConfigField("String", "BASE_URL", "\"http://$baseUrl/storage/files/data/\"")
             applicationIdSuffix = ".stage"
             isDebuggable = true
         }
