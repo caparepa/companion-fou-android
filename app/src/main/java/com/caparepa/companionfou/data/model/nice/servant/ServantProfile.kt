@@ -10,9 +10,9 @@ data class ServantProfile(
     @SerializedName("stats")
     val stats: ServantStats? = null,
     @SerializedName("costume")
-    val costume: Map<Int, ServantCostumeItem?>? = null,
+    val costume: Map<Int, CostumeItem?>? = null,
     @SerializedName("comments")
     val comments: List<CommentItem?>? = null,
     @SerializedName("voices")
-    val voices: List<ServantVoiceItem?>? = null
+    val voices: List<VoiceItem?>? = null
 )

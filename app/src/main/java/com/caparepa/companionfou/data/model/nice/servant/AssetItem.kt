@@ -2,7 +2,7 @@ package com.caparepa.companionfou.data.model.nice.servant
 
 import com.google.gson.annotations.SerializedName
 
-data class ServantAssetItem(
+data class AssetItem(
     @SerializedName("ascension")
     val ascension: Map<Int, String?>? = null,
     @SerializedName("costume")

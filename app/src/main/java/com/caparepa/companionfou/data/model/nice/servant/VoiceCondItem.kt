@@ -2,7 +2,7 @@ package com.caparepa.companionfou.data.model.nice.servant
 
 import com.google.gson.annotations.SerializedName
 
-data class ServantVoiceCond(
+data class VoiceCondItem(
     @SerializedName("condType")
     val condType: String? = null,
     @SerializedName("value")

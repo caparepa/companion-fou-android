@@ -2,7 +2,7 @@ package com.caparepa.companionfou.data.model.nice.servant
 
 import com.google.gson.annotations.SerializedName
 
-data class ServantVoiceLine(
+data class VoiceLineItem(
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("condType")
@@ -28,5 +28,5 @@ data class ServantVoiceLine(
     @SerializedName("subtitle")
     val subtitle: String? = null,
     @SerializedName("conds")
-    val conds: List<ServantVoiceCond?>? = null
+    val conds: List<VoiceCondItem?>? = null
 )

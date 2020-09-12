@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class SkillMaterials(
     @SerializedName("items")
-    val items: List<BaseMaterialItem?>? = null,
+    val items: List<MaterialItem?>? = null,
     @SerializedName("qp")
     val qp: Int? = null
 )
