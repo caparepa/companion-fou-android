@@ -14,16 +14,16 @@ data class ServantProfile(
     val cv: String?,
     @SerializedName("illustrator")
     val illustrator: String?,
-    @Embedded
+    @Embedded(prefix = "sp_stats")
     @SerializedName("stats")
     val stats: ServantStats?,
-    @Embedded
+    @Embedded(prefix = "sp_costume_")
     @SerializedName("costume")
     val costume: Map<Int, ProfileCostumeItem?>?,
-    @Embedded
+    @Embedded(prefix = "sp_comments_")
     @SerializedName("comments")
     val comments: List<CommentItem?>?,
-    @Embedded
+    @Embedded(prefix = "sp_voices_")
     @SerializedName("voices")
     val voices: List<VoiceItem?>?
 ) {

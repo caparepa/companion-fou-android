@@ -12,7 +12,7 @@ import com.google.gson.annotations.SerializedName
 data class VoiceItem(
     @SerializedName("type")
     val type: String?,
-    @Embedded
+    @Embedded(prefix = "vi_lines_")
     @SerializedName("voiceLines")
     val voiceLines: List<VoiceLineItem?>?
 ) {

@@ -39,7 +39,7 @@ data class VoiceLineItem(
     val text: List<String?>?,
     @SerializedName("subtitle")
     val subtitle: String?,
-    @Embedded
+    @Embedded(prefix = "vl_conds_")
     @SerializedName("conds")
     val conds: List<VoiceLineCondItem?>?
 ) {
