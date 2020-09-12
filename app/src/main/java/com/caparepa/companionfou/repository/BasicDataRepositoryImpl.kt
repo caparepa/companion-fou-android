@@ -15,49 +15,49 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     private val api = ApiClient.invoke()
 
     //TODO: test this thoroughly!!!
-    override suspend fun getBasicServants(urlType: String, region: String): List<ServantItem>? =
+    override suspend fun getBasicServants(currentDate: String, region: String): List<ServantItem>? =
         withContext(Dispatchers.IO) {
-            val response = api.getBasicServants(urlType, region)
+            val response = api.getBasicServants(currentDate, region)
             val bodyString = response?.body()?.string()
             val data = bodyString?.toKotlinObject<List<ServantItem>>()
             data
         }
 
     override suspend fun getBasicServantsEnglishName(
-        urlType: String,
+        currentDate: String,
         region: String
     ): List<ServantItem>? = withContext(Dispatchers.IO) {
-        val response = api.getBasicServantsEnglishName(urlType, region)
+        val response = api.getBasicServantsEnglishName(currentDate, region)
         val bodyString = response?.body()?.string()
         val data = bodyString?.toKotlinObject<List<ServantItem>>()
         data
     }
 
     override suspend fun getBasicCraftEssences(
-        urlType: String,
+        currentDate: String,
         region: String
     ): List<CraftEssenceItem>? = withContext(Dispatchers.IO) {
-        val response = api.getBasicCraftEssences(urlType, region)
+        val response = api.getBasicCraftEssences(currentDate, region)
         val bodyString = response?.body()?.string()
         val data = bodyString?.toKotlinObject<List<CraftEssenceItem>>()
         data
     }
 
     override suspend fun getBasicCommandCodes(
-        urlType: String,
+        currentDate: String,
         region: String
     ): List<CommandCodeItem>? = withContext(Dispatchers.IO) {
-        val response = api.getBasicCommandCodes(urlType, region)
+        val response = api.getBasicCommandCodes(currentDate, region)
         val bodyString = response?.body()?.string()
         val data = bodyString?.toKotlinObject<List<CommandCodeItem>>()
         data
     }
 
     override suspend fun getBasicMysticCodes(
-        urlType: String,
+        currentDate: String,
         region: String
     ): List<MysticCodeItem>? = withContext(Dispatchers.IO) {
-        val response = api.getBasicCommandCodes(urlType, region)
+        val response = api.getBasicCommandCodes(currentDate, region)
         val bodyString = response?.body()?.string()
         val data = bodyString?.toKotlinObject<List<MysticCodeItem>>()
         data
