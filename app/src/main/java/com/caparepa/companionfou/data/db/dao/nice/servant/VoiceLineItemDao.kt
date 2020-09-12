@@ -11,6 +11,6 @@ interface VoiceLineItemDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(lineItem: VoiceLineItem)
 
-    @Query("SELECT * FROM basic_servant")
+    @Query("SELECT * FROM voice_line_item")
     suspend fun getVoiceLineItems(): List<VoiceLineItem>
 }
