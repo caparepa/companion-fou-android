@@ -11,6 +11,6 @@ interface ProfileCostumeItemDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(condItem: ProfileCostumeItem)
 
-    @Query("SELECT * FROM basic_servant")
+    @Query("SELECT * FROM profile_costume_item")
     suspend fun getProfileCostumeItems(): Map<Int, ProfileCostumeItem>
 }

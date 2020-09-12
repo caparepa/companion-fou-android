@@ -11,25 +11,25 @@ interface ServantDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(servant: NiceServantItem)
 
-    @Query("SELECT * FROM basic_servant")
+    @Query("SELECT * FROM servant_item")
     suspend fun getServants(): List<NiceServantItem>
 
-    @Query("SELECT * FROM basic_servant WHERE mServantId = :id")
+    @Query("SELECT * FROM servant_item WHERE nServantId = :id")
     suspend fun getServantById(id: Long): NiceServantItem
 
-    @Query("SELECT * FROM basic_servant WHERE collectionNo = :collectionNo")
+    @Query("SELECT * FROM servant_item WHERE collectionNo = :collectionNo")
     suspend fun getServantByCollectionNo(collectionNo: Long): NiceServantItem
 
-    @Query("SELECT * FROM basic_servant WHERE className = :className")
+    @Query("SELECT * FROM servant_item WHERE className = :className")
     suspend fun getServantByClass(className: String): List<NiceServantItem>
 
-    @Query("SELECT * FROM basic_servant WHERE rarity = :rarity")
+    @Query("SELECT * FROM servant_item WHERE rarity = :rarity")
     suspend fun getServantByRarity(rarity: Int): List<NiceServantItem>
 
-    @Query("SELECT * FROM basic_servant WHERE type = :servantType")
+    @Query("SELECT * FROM servant_item WHERE type = :servantType")
     suspend fun getServantByType(servantType: String): List<NiceServantItem>
 
-    @Query("SELECT * FROM basic_servant WHERE className = :className OR rarity = :rarity OR type = :servantType")
+    @Query("SELECT * FROM servant_item WHERE className = :className OR rarity = :rarity OR type = :servantType")
     suspend fun getServantByFilter(
         className: String,
         rarity: Int,
