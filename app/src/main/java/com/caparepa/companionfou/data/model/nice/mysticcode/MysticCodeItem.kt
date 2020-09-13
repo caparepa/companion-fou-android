@@ -5,6 +5,7 @@ import com.caparepa.companionfou.data.model.nice.common.SkillItem
 import com.caparepa.companionfou.utils.toJsonString
 import com.caparepa.companionfou.utils.toKotlinObject
 import com.google.gson.JsonArray
+import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
 
@@ -18,7 +19,7 @@ data class MysticCodeItem(
     @SerializedName("maxLv")
     val maxLv: Int? = null,
     @SerializedName("extraAssets")
-    val extraAssets: JsonObject? = null,
+    val extraAssets: JsonElement? = null,
     @SerializedName("skills")
     val skills: JsonArray? = null,
     @SerializedName("expRequired")
