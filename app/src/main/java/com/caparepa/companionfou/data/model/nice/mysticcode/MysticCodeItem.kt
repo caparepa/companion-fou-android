@@ -23,16 +23,4 @@ data class MysticCodeItem(
     val skills: JsonArray? = null,
     @SerializedName("expRequired")
     val expRequired: JsonArray? = null
-) {
-    fun getExtraAssets(): ExtraAssets? {
-        return this.extraAssets?.toKotlinObject()
-    }
-
-    fun getSkills(): List<SkillItem>? {
-        return this.skills?.toKotlinObject()
-    }
-
-    fun getExpRequired(): List<Int>? {
-        return this.expRequired?.toKotlinObject()
-    }
-}
+)
