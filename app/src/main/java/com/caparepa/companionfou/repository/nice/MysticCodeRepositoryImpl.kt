@@ -7,24 +7,23 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 
-class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : MysticCodeRepository, KoinComponent {
+class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : MysticCodeRepository,
+    KoinComponent {
 
     private val api = ApiClient.invoke()
 
     override suspend fun fetchMysticCode(id: Long): MysticCode? {
-        //TODO("Not yet implemented")
-        return null
+        return mysticCodeDao.getMysticCodeById(id)
     }
 
     override suspend fun fetchMysticCodes(): List<MysticCode>? {
-        //TODO("Not yet implemented")
-        return null
+        return mysticCodeDao.getMysticCodeList()
     }
 
     override suspend fun getMysticCodes(
         currentDate: String,
         region: String
-    ): List<MysticCode>? = withContext(Dispatchers.IO){
+    ): List<MysticCode>? = withContext(Dispatchers.IO) {
         try {
             val response = api.getMysticCodes(currentDate, region)
             val body = response.body()
