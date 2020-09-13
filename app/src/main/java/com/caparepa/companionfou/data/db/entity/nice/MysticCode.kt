@@ -13,32 +13,32 @@ import com.google.gson.annotations.SerializedName
 )
 data class MysticCode(
     @SerializedName("id")
-    val id: Long,
+    val id: Long? = null,
     @SerializedName("name")
-    val name: String,
+    val name: String? = null,
     @SerializedName("detail")
-    val detail: String,
+    val detail: String? = null,
     @SerializedName("maxLv")
-    val maxLv: Int,
+    val maxLv: Int? = null,
     @SerializedName("extraAssets")
-    val extraAssets: String,
+    val extraAssets: String? = null,
     @SerializedName("skills")
-    val skills: String,
+    val skills: String? = null,
     @SerializedName("expRequired")
-    val expRequired: String
+    val expRequired: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
     var mcId: Long = 0
 
     fun getExtraAssets(): ExtraAssets? {
-        return this.extraAssets.toKotlinObject()
+        return this.extraAssets?.toKotlinObject()
     }
 
     fun getSkills(): List<SkillItem>? {
-        return this.skills.toKotlinObject()
+        return this.skills?.toKotlinObject()
     }
 
     fun getExpRequired(): List<Int>? {
-        return this.expRequired.toKotlinObject()
+        return this.expRequired?.toKotlinObject()
     }
 }

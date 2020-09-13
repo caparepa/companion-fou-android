@@ -1,10 +1,12 @@
 package com.caparepa.companionfou.data.db.dao.basic
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.caparepa.companionfou.data.db.entity.basic.BasicCraftEssence
 
+@Dao
 interface BasicCraftEssenceDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
