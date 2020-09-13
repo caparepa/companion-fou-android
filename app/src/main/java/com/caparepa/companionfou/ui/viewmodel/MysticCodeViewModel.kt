@@ -19,7 +19,6 @@ class MysticCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
-    val mysticCodeListResponse = MutableLiveData<List<MysticCode>>()
     val mysticCodeListResult = MutableLiveData<List<MysticCode>>()
     val mysticCodeResult = MutableLiveData<MysticCode>()
 
@@ -48,7 +47,7 @@ class MysticCodeViewModel(
         with(result) {
             onSuccess {
                 it?.let {
-                    mysticCodeListResponse.postValue(it)
+                    mysticCodeListResult.postValue(it)
                 }
             }
             onFailure {
@@ -59,21 +58,33 @@ class MysticCodeViewModel(
 
     private suspend fun fetchMysticCodesAsync() {
         val result = kotlin.runCatching {
-
+            mysticCodeRepository.fetchMysticCodes()
         }
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+                    mysticCodeListResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
     private suspend fun fetchMysticCodeAsync(id: Long) {
         val result = kotlin.runCatching {
-
+            mysticCodeRepository.fetchMysticCode(id)
         }
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+                    mysticCodeResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 

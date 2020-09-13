@@ -25,10 +25,15 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
         region: String
     ): List<MysticCode>? = withContext(Dispatchers.IO) {
         try {
-            val response = api.getMysticCodes(currentDate, region)
-            val body = response.body()
-            persistMysticCodeList(body)
-            body
+            val result = fetchMysticCodes()
+            if (result != null)
+                result
+            else {
+                val response = api.getMysticCodes(currentDate, region)
+                val body = response.body()
+                persistMysticCodeList(body)
+                body
+            }
         } catch (e: Exception) {
             e.printStackTrace()
             null
