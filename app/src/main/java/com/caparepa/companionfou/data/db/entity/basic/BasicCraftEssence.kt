@@ -13,6 +13,6 @@ data class BasicCraftEssence(
     val rarity: Int? = null,
     val face: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var mCraftId: Long = collectionNo!!.toLong()
+    @PrimaryKey(autoGenerate = true)
+    var mCraftId: Long = 0
 }

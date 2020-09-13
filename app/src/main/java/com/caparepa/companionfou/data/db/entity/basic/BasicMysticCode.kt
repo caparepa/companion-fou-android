@@ -11,6 +11,6 @@ data class BasicMysticCode(
     @Embedded(prefix = "media_")
     val item: BasicMysticCodeMedia? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var mCodeId: Long = id!!
+    @PrimaryKey(autoGenerate = true)
+    var mCodeId: Long = 0
 }

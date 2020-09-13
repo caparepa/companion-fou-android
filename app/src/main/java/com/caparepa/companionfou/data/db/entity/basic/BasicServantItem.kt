@@ -13,6 +13,6 @@ data class BasicServantItem(
     val rarity: Int? = null,
     val face: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var mServantId: Long = collectionNo!!.toLong()
+    @PrimaryKey(autoGenerate = true)
+    var mServantId: Long = 0
 }

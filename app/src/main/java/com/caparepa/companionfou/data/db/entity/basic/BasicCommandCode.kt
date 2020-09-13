@@ -11,6 +11,6 @@ data class BasicCommandCode(
     val rarity: Int? = null,
     val face: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var mCommandId: Long = collectionNo!!.toLong()
+    @PrimaryKey(autoGenerate = true)
+    var mCommandId: Long = 0
 }
