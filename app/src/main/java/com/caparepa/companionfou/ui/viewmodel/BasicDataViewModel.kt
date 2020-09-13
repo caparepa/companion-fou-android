@@ -4,9 +4,8 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.model.basic.ServantItem
-import com.caparepa.companionfou.repository.BasicDataRepository
+import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.utils.REGION_NA
-import com.caparepa.companionfou.utils.URL_EXPORT_DIR
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent

@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.repository
+package com.caparepa.companionfou.repository.nice
 
 import okhttp3.ResponseBody
 

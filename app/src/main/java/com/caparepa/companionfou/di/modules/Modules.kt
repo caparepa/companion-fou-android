@@ -6,8 +6,8 @@ import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptor
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
-import com.caparepa.companionfou.repository.BasicDataRepository
-import com.caparepa.companionfou.repository.BasicDataRepositoryImpl
+import com.caparepa.companionfou.repository.basic.BasicDataRepository
+import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.repository.nice.MysticCodeRepositoryImpl
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel

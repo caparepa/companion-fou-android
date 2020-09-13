@@ -1,10 +1,11 @@
-package com.caparepa.companionfou.repository
+package com.caparepa.companionfou.repository.basic
 
 import com.caparepa.companionfou.data.model.basic.CommandCodeItem
 import com.caparepa.companionfou.data.model.basic.CraftEssenceItem
 import com.caparepa.companionfou.data.model.basic.MysticCodeItem
 import com.caparepa.companionfou.data.model.basic.ServantItem
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.utils.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

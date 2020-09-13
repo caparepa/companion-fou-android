@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.repository
+package com.caparepa.companionfou.repository.basic
 
 import com.caparepa.companionfou.data.model.basic.CommandCodeItem
 import com.caparepa.companionfou.data.model.basic.CraftEssenceItem
