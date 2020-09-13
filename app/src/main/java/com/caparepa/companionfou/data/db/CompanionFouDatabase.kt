@@ -19,7 +19,7 @@ import com.caparepa.companionfou.data.db.entity.nice.MysticCode
         BasicMysticCodeMedia::class,
         MysticCode::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class CompanionFouDatabase : RoomDatabase() {
