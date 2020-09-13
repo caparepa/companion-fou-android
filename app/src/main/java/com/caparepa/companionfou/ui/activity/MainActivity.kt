@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.caparepa.companionfou.BuildConfig
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.model.nice.servant.NiceServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         observeMysticCodeViewModel()
         theButton.setOnClickListener {
             try {
-                basicDataViewModel.getBasicServantList()
+                //basicDataViewModel.getBasicServantList()
                 mysticCodeViewModel.fetchMysticCodes()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             }
         })
         mysticCodeListResult.observe(this@MainActivity, Observer {
-            if(it != null) {
+            if(!it.isNullOrEmpty()) {
                 this@MainActivity.toastLong("RESULT!")
             } else {
                 this.getMysticCodes()
