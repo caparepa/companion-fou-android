@@ -34,17 +34,14 @@ data class MysticCode(
     var mcId: Long = 0
 
     fun getExtraAssets(): ExtraAssets? {
-        val type = object : TypeToken<ExtraAssets>() {}.type
-        return Gson().fromJson<ExtraAssets>(this.extra_assets, type)
+        return this.extra_assets?.toKotlinObject()
     }
 
     fun getSkills(): List<SkillItem>? {
-        val type = object : TypeToken<ExtraAssets>() {}.type
-        return Gson().fromJson<List<SkillItem>>(this.mc_skills!!.toJsonString(), type)
+        return this.mc_skills?.toKotlinObject()
     }
 
     fun getExpRequired(): List<Int>? {
-        val type = object : TypeToken<ExtraAssets>() {}.type
-        return Gson().fromJson<List<Int>>(this.exp_required!!.toJsonString(), type)
+        return this.exp_required?.toKotlinObject()
     }
 }

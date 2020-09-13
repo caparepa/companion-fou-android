@@ -3,10 +3,12 @@ package com.caparepa.companionfou.data.model.nice.common
 import com.google.gson.annotations.SerializedName
 
 data class ExtraAssets(
+    /*Command Code*/
     @SerializedName("charaGraph")
     val charaGraph: AssetItem? = null,
     @SerializedName("faces")
     val faces: AssetItem? = null,
+    /*Servant*/
     @SerializedName("narrowFigure")
     val narrowFigure: AssetItem? = null,
     @SerializedName("charaFigure")
@@ -17,10 +19,11 @@ data class ExtraAssets(
     val status: AssetItem? = null,
     @SerializedName("equipFace")
     val equipFace: AssetItem? = null,
+    /*Mystic Code*/
     @SerializedName("item")
-    val masterItem: AssetItem? = null,
+    val masterItem: Map<String, String>? = null,
     @SerializedName("masterFace")
-    val masterFace: AssetItem? = null,
+    val masterFace: Map<String, String>? = null,
     @SerializedName("masterFigure")
-    val masterFigure: AssetItem? = null
+    val masterFigure: Map<String, String>? = null
 )
