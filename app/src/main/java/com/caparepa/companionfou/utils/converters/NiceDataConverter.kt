@@ -7,6 +7,8 @@ import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
+import org.json.JSONArray
+import org.json.JSONObject
 
 object NiceDataConverter {
 
@@ -366,5 +368,33 @@ object NiceDataConverter {
     fun toJsonArray(obj: String?): JsonArray? {
         val type = object : TypeToken<JsonArray>() {}.type
         return Gson().fromJson<JsonArray>(obj, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun fromJSONObject(obj: JSONObject?): String? {
+        val type = object : TypeToken<JSONObject>() {}.type
+        return Gson().toJson(obj, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toJSONObject(obj: String?): JSONObject? {
+        val type = object : TypeToken<JSONObject>() {}.type
+        return Gson().fromJson<JSONObject>(obj, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun fromJSONArray(obj: JSONArray?): String? {
+        val type = object : TypeToken<JSONArray>() {}.type
+        return Gson().toJson(obj, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toJSONArray(obj: String?): JSONArray? {
+        val type = object : TypeToken<JSONArray>() {}.type
+        return Gson().fromJson<JSONArray>(obj, type)
     }
 }
