@@ -4,23 +4,23 @@ import com.google.gson.annotations.SerializedName
 
 data class ExtraAssets(
     @SerializedName("charaGraph")
-    val charaGraph: AssetItem? = null,
+    val charaGraph: AssetItem,
     @SerializedName("faces")
-    val faces: AssetItem? = null,
+    val faces: AssetItem,
     @SerializedName("narrowFigure")
-    val narrowFigure: AssetItem? = null,
+    val narrowFigure: AssetItem,
     @SerializedName("charaFigure")
-    val charaFigure: AssetItem? = null,
+    val charaFigure: AssetItem,
     @SerializedName("commands")
-    val commands: AssetItem? = null,
+    val commands: AssetItem,
     @SerializedName("status")
-    val status: AssetItem? = null,
+    val status: AssetItem,
     @SerializedName("equipFace")
-    val equipFace: AssetItem? = null,
+    val equipFace: AssetItem,
     @SerializedName("item")
-    val masterItem: AssetItem? = null,
+    val masterItem: AssetItem,
     @SerializedName("masterFace")
-    val masterFace: AssetItem? = null,
+    val masterFace: AssetItem,
     @SerializedName("masterFigure")
-    val masterFigure: AssetItem? = null
+    val masterFigure: AssetItem
 )

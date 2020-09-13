@@ -4,6 +4,7 @@ import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.nice.MysticCode
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.utils.toJsonString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
@@ -45,9 +46,9 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
                     item.name,
                     item.detail,
                     item.maxLv,
-                    item.extraAssets.toString(),
-                    item.skills.toString(),
-                    item.expRequired.toString()
+                    item.extraAssets?.toJsonString(),
+                    item.skills?.toJsonString(),
+                    item.expRequired?.toJsonString()
                 )
                 mysticCodeDao.upsert(entry)
             }
