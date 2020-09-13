@@ -135,7 +135,7 @@ interface ExportDataEndpoints {
     suspend fun getMysticCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<List<MysticCodeItem>?>
+    ): Response<List<MysticCode>?>
 
     //Basic data for indexing
     //Get servants

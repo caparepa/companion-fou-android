@@ -1,9 +1,16 @@
 package com.caparepa.companionfou.repository.nice
 
+import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.nice.MysticCode
-import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
+import com.caparepa.companionfou.network.api.ApiClient
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.koin.core.KoinComponent
 
-class MysticCodeRepositoryImpl : MysticCodeRepository {
+class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : MysticCodeRepository, KoinComponent {
+
+    private val api = ApiClient.invoke()
+
     override suspend fun fetchMysticCode(id: Long): MysticCode? {
         //TODO("Not yet implemented")
         return null
@@ -17,13 +24,24 @@ class MysticCodeRepositoryImpl : MysticCodeRepository {
     override suspend fun getMysticCodes(
         currentDate: String,
         region: String
-    ): List<MysticCode>? {
-        //TODO("Not yet implemented")
-        return null
+    ): List<MysticCode>? = withContext(Dispatchers.IO){
+        try {
+            val response = api.getMysticCodes(currentDate, region)
+            val body = response.body()
+            persistMysticCodeList(body)
+            body
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
     }
 
-    suspend fun persistMysticCodeList(list: List<MysticCodeItem>?) {
-        //TODO("Not yet implemented")
+    private suspend fun persistMysticCodeList(mcList: List<MysticCode>?) {
+        mcList?.let {
+            it.forEach { item ->
+                mysticCodeDao.upsert(item)
+            }
+        }
     }
 
 }
