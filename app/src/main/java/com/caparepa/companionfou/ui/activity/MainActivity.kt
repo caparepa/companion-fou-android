@@ -8,6 +8,8 @@ import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.model.nice.servant.NiceServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.MysticCodeViewModel
+import com.caparepa.companionfou.utils.REGION_NA
 import com.caparepa.companionfou.utils.toastLong
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -18,15 +20,18 @@ import org.koin.core.inject
 class MainActivity : AppCompatActivity(), KoinComponent {
 
     private val basicDataViewModel: BasicDataViewModel by inject()
+    private val mysticCodeViewModel: MysticCodeViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         observeBasicDataViewModel()
+        observeMysticCodeViewModel()
         theButton.setOnClickListener {
             try {
                 basicDataViewModel.getBasicServantList()
+                mysticCodeViewModel.fetchMysticCodes()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
@@ -44,14 +49,18 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         })
     }
 
-    private fun createJsonObject(jsonString: String) {
-        val gson = Gson()
-        val obj = gson.fromJson(jsonString, NiceServantItem::class.java)
-    }
-
-    private inline fun <reified T> readRawJson(@RawRes rawResId: Int): T {
-        resources.openRawResource(rawResId).bufferedReader().use {
-            return Gson().fromJson<T>(it, object : TypeToken<T>() {}.type)
-        }
+    private fun observeMysticCodeViewModel() = mysticCodeViewModel.run {
+        mysticCodeListResponse.observe(this@MainActivity, Observer {
+            it?.let {
+                this@MainActivity.toastLong("response!")
+            }
+        })
+        mysticCodeListResult.observe(this@MainActivity, Observer {
+            if(it != null) {
+                this@MainActivity.toastLong("RESULT!")
+            } else {
+                this.getMysticCodes()
+            }
+        })
     }
 }
