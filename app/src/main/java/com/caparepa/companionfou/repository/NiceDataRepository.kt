@@ -9,5 +9,5 @@ interface NiceDataRepository {
     suspend fun getCraftEssencesWithLore(currentDate: String, region: String): ResponseBody?
     suspend fun getCommandCodes(currentDate: String, region: String): ResponseBody?
     suspend fun getMaterials(currentDate: String, region: String): ResponseBody?
-    suspend fun getMysticCodes(currentDate: String, region: String): ResponseBody?
+
 }
