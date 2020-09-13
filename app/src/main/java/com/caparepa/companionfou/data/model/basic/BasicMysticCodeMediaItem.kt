@@ -2,7 +2,7 @@ package com.caparepa.companionfou.data.model.basic
 
 import com.google.gson.annotations.SerializedName
 
-data class MysticCodeInnerItem(
+data class BasicMysticCodeMediaItem(
     @SerializedName("male")
     val male: String? = null,
     @SerializedName("female")

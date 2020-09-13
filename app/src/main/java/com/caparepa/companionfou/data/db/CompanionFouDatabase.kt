@@ -24,7 +24,6 @@ import com.caparepa.companionfou.utils.converters.NiceDataConverter
     version = 3,
     exportSchema = false
 )
-@TypeConverters(NiceDataConverter::class)
 abstract class CompanionFouDatabase : RoomDatabase() {
 
     //basic

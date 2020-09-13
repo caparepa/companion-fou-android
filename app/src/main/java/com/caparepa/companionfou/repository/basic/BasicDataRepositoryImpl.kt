@@ -1,11 +1,10 @@
 package com.caparepa.companionfou.repository.basic
 
-import com.caparepa.companionfou.data.model.basic.CommandCodeItem
-import com.caparepa.companionfou.data.model.basic.CraftEssenceItem
-import com.caparepa.companionfou.data.model.basic.MysticCodeItem
-import com.caparepa.companionfou.data.model.basic.ServantItem
+import com.caparepa.companionfou.data.model.basic.BasicCommandCodeItem
+import com.caparepa.companionfou.data.model.basic.BasicCraftEssenceItem
+import com.caparepa.companionfou.data.model.basic.BasicMysticCodeItem
+import com.caparepa.companionfou.data.model.basic.BasicServantItem
 import com.caparepa.companionfou.network.api.ApiClient
-import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.utils.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -16,55 +15,55 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
     private val api = ApiClient.invoke()
 
     //TODO: test this thoroughly!!!
-    override suspend fun getBasicServants(currentDate: String, region: String): List<ServantItem>? =
+    override suspend fun getBasicServants(currentDate: String, region: String): List<BasicServantItem>? =
         withContext(Dispatchers.IO) {
             val response = api.getBasicServants(currentDate, region)
             val bodyString = response?.body()?.string()
-            val data = bodyString?.toKotlinObject<List<ServantItem>>()
+            val data = bodyString?.toKotlinObject<List<BasicServantItem>>()
             data
         }
 
     override suspend fun getBasicServantsEnglishName(
         currentDate: String,
         region: String
-    ): List<ServantItem>? = withContext(Dispatchers.IO) {
+    ): List<BasicServantItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicServantsEnglishName(currentDate, region)
         val bodyString = response.body()?.string()
-        val data = bodyString?.toKotlinObject<List<ServantItem>>()
+        val data = bodyString?.toKotlinObject<List<BasicServantItem>>()
         data
     }
 
     override suspend fun getBasicCraftEssences(
         currentDate: String,
         region: String
-    ): List<CraftEssenceItem>? = withContext(Dispatchers.IO) {
+    ): List<BasicCraftEssenceItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicCraftEssences(currentDate, region)
         val bodyString = response.body()?.string()
-        val data = bodyString?.toKotlinObject<List<CraftEssenceItem>>()
+        val data = bodyString?.toKotlinObject<List<BasicCraftEssenceItem>>()
         data
     }
 
     override suspend fun getBasicCommandCodes(
         currentDate: String,
         region: String
-    ): List<CommandCodeItem>? = withContext(Dispatchers.IO) {
+    ): List<BasicCommandCodeItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicCommandCodes(currentDate, region)
         val bodyString = response.body()?.string()
-        val data = bodyString?.toKotlinObject<List<CommandCodeItem>>()
+        val data = bodyString?.toKotlinObject<List<BasicCommandCodeItem>>()
         data
     }
 
     override suspend fun getBasicMysticCodes(
         currentDate: String,
         region: String
-    ): List<MysticCodeItem>? = withContext(Dispatchers.IO) {
+    ): List<BasicMysticCodeItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicCommandCodes(currentDate, region)
         val bodyString = response.body()?.string()
-        val data = bodyString?.toKotlinObject<List<MysticCodeItem>>()
+        val data = bodyString?.toKotlinObject<List<BasicMysticCodeItem>>()
         data
     }
 
-    private fun persistBasicServantList(servantList: List<ServantItem>?) {
+    private fun persistBasicServantList(servantList: List<BasicServantItem>?) {
 
     }
 }

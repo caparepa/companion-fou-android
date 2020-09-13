@@ -2,7 +2,7 @@ package com.caparepa.companionfou.data.model.basic
 
 import com.google.gson.annotations.SerializedName
 
-data class ServantItem(
+data class BasicServantItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("collectionNo")

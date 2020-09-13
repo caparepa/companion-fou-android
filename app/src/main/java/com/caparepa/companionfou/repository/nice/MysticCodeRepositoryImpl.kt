@@ -2,6 +2,7 @@ package com.caparepa.companionfou.repository.nice
 
 import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.nice.MysticCode
+import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.network.api.ApiClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -24,7 +25,7 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
     override suspend fun getMysticCodes(
         currentDate: String,
         region: String
-    ): List<MysticCode>? = withContext(Dispatchers.IO) {
+    ): List<MysticCodeItem>? = withContext(Dispatchers.IO) {
         try {
             val response = api.getMysticCodes(currentDate, region)
             val body = response.body()
@@ -36,10 +37,19 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
         }
     }
 
-    private suspend fun persistMysticCodeList(mcList: List<MysticCode>?) {
+    private suspend fun persistMysticCodeList(mcList: List<MysticCodeItem>?) {
         mcList?.let {
             it.forEach { item ->
-                mysticCodeDao.upsert(item)
+                val entry = MysticCode (
+                    item.id,
+                    item.name,
+                    item.detail,
+                    item.maxLv,
+                    item.extraAssets.toString(),
+                    item.skills.toString(),
+                    item.expRequired.toString()
+                )
+                mysticCodeDao.upsert(entry)
             }
         }
     }

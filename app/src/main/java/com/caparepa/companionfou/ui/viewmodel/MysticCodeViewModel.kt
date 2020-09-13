@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.nice.MysticCode
+import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,7 @@ class MysticCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
-    val mysticCodeListResponse = MutableLiveData<List<MysticCode>>()
+    val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>>()
     val mysticCodeListResult = MutableLiveData<List<MysticCode>>()
     val mysticCodeResult = MutableLiveData<MysticCode>()
 
