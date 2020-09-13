@@ -1,5 +1,7 @@
 package com.caparepa.companionfou.network.api
 
+import com.caparepa.companionfou.data.db.entity.nice.MysticCode
+import com.caparepa.companionfou.data.model.basic.MysticCodeItem
 import com.caparepa.companionfou.data.model.basic.ServantItem
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -130,10 +132,10 @@ interface ExportDataEndpoints {
 
     //Get Mystic Codes
     @GET("{current_date}/{region}/nice_mystic_code.json")
-    suspend fun getNiceMysticCodes(
+    suspend fun getMysticCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<MysticCodeItem>?>
 
     //Basic data for indexing
     //Get servants

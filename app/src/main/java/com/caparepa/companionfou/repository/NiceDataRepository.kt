@@ -3,11 +3,11 @@ package com.caparepa.companionfou.repository
 import okhttp3.ResponseBody
 
 interface NiceDataRepository {
-    suspend fun getNiceServants(urlType: String, region: String): ResponseBody?
-    suspend fun getNiceServantsWithLore(urlType: String, region: String): ResponseBody?
-    suspend fun getNiceCraftEssences(urlType: String, region: String): ResponseBody?
-    suspend fun getNiceCraftEssencesWithLore(urlType: String, region: String): ResponseBody?
-    suspend fun getNiceCommandCodes(urlType: String, region: String): ResponseBody?
-    suspend fun getNiceMaterials(urlType: String, region: String): ResponseBody?
-    suspend fun getNiceMysticCodes(urlType: String, region: String): ResponseBody?
+    suspend fun getServants(currentDate: String, region: String): ResponseBody?
+    suspend fun getServantsWithLore(currentDate: String, region: String): ResponseBody?
+    suspend fun getCraftEssences(currentDate: String, region: String): ResponseBody?
+    suspend fun getCraftEssencesWithLore(currentDate: String, region: String): ResponseBody?
+    suspend fun getCommandCodes(currentDate: String, region: String): ResponseBody?
+    suspend fun getMaterials(currentDate: String, region: String): ResponseBody?
+    suspend fun getMysticCodes(currentDate: String, region: String): ResponseBody?
 }
