@@ -7,14 +7,19 @@ import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.nice.MysticCode
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
+import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class MysticCodeViewModel(val context: Context, val mysticCodeRepository: MysticCodeRepository, val mysticCodeDao: MysticCodeDao) :
+class MysticCodeViewModel(
+    val context: Context,
+    val mysticCodeRepository: MysticCodeRepository,
+    val mysticCodeDao: MysticCodeDao
+) :
     BaseViewModel(), KoinComponent {
 
-    val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>>()
+    val mysticCodeListResponse = MutableLiveData<List<MysticCode>>()
     val mysticCodeListResult = MutableLiveData<List<MysticCode>>()
     val mysticCodeResult = MutableLiveData<MysticCode>()
 
@@ -38,11 +43,17 @@ class MysticCodeViewModel(val context: Context, val mysticCodeRepository: Mystic
 
     private suspend fun getMysticCodesAsync() {
         val result = kotlin.runCatching {
-
+            mysticCodeRepository.getMysticCodes("20200905", REGION_NA)
         }
         with(result) {
-            onSuccess {  }
-            onFailure {  }
+            onSuccess {
+                it?.let {
+                    mysticCodeListResponse.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -51,8 +62,8 @@ class MysticCodeViewModel(val context: Context, val mysticCodeRepository: Mystic
 
         }
         with(result) {
-            onSuccess {  }
-            onFailure {  }
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -61,8 +72,8 @@ class MysticCodeViewModel(val context: Context, val mysticCodeRepository: Mystic
 
         }
         with(result) {
-            onSuccess {  }
-            onFailure {  }
+            onSuccess { }
+            onFailure { }
         }
     }
 
