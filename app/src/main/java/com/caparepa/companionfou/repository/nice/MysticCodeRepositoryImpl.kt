@@ -17,9 +17,13 @@ class MysticCodeRepositoryImpl : MysticCodeRepository {
     override suspend fun getMysticCodes(
         currentDate: String,
         region: String
-    ): List<MysticCodeItem>? {
+    ): List<MysticCode>? {
         //TODO("Not yet implemented")
         return null
+    }
+
+    suspend fun persistMysticCodeList(list: List<MysticCodeItem>?) {
+        //TODO("Not yet implemented")
     }
 
 }
