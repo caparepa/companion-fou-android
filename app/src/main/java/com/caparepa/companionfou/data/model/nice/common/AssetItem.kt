@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class AssetItem(
     @SerializedName("ascension")
-    val ascension: Map<Int, String?>?,
+    val ascension: Map<Int, String?>? = null,
     @SerializedName("costume")
-    val costume: Map<Int, String?>?,
+    val costume: Map<Int, String?>? = null,
     @SerializedName("equip")
-    val equip: Map<Int, String?>?,
+    val equip: Map<Int, String?>? = null,
     @SerializedName("cc")
-    val cc: Map<Int, String?>?
+    val cc: Map<Int, String?>? = null
 )
