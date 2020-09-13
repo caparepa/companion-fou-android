@@ -4,6 +4,8 @@ import androidx.room.TypeConverter
 import com.caparepa.companionfou.data.model.nice.common.*
 import com.caparepa.companionfou.data.model.nice.servant.*
 import com.google.gson.Gson
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 
 object NiceDataConverter {
@@ -335,5 +337,34 @@ object NiceDataConverter {
     fun toExtraAssets(obj: String?): ExtraAssets? {
         val type = object : TypeToken<ExtraAssets>() {}.type
         return Gson().fromJson<ExtraAssets>(obj, type)
+    }
+
+    //GSON
+    @TypeConverter
+    @JvmStatic
+    fun fromJsonObject(obj: JsonObject?): String? {
+        val type = object : TypeToken<JsonObject>() {}.type
+        return Gson().toJson(obj, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toJsonObject(obj: String?): JsonObject? {
+        val type = object : TypeToken<JsonObject>() {}.type
+        return Gson().fromJson<JsonObject>(obj, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun fromJsonArray(obj: JsonArray?): String? {
+        val type = object : TypeToken<JsonArray>() {}.type
+        return Gson().toJson(obj, type)
+    }
+
+    @TypeConverter
+    @JvmStatic
+    fun toJsonArray(obj: String?): JsonArray? {
+        val type = object : TypeToken<JsonArray>() {}.type
+        return Gson().fromJson<JsonArray>(obj, type)
     }
 }

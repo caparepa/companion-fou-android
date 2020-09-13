@@ -4,10 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.caparepa.companionfou.data.db.dao.basic.*
 import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.basic.*
 import com.caparepa.companionfou.data.db.entity.nice.MysticCode
+import com.caparepa.companionfou.utils.converters.NiceDataConverter
 
 @Database(
     entities =
@@ -22,6 +24,7 @@ import com.caparepa.companionfou.data.db.entity.nice.MysticCode
     version = 2,
     exportSchema = false
 )
+@TypeConverters(NiceDataConverter::class)
 abstract class CompanionFouDatabase : RoomDatabase() {
 
     //basic

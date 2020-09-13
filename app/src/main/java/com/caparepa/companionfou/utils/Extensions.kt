@@ -15,6 +15,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.caparepa.companionfou.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
@@ -49,6 +51,16 @@ inline fun <reified T: Any> String.toKotlinObject() : T {
 inline fun <reified T> parseArray(json: String, typeToken: Type): T {
     val gson = GsonBuilder().create()
     return gson.fromJson<T>(json, typeToken)
+}
+
+inline fun <reified T: Any> JsonObject.toKotlinObject(): T {
+    val gson = Gson()
+    return gson.fromJson(this, T::class.java)
+}
+
+inline fun <reified T: Any> JsonArray.toKotlinObject(): T {
+    val gson = Gson()
+    return gson.fromJson(this, T::class.java)
 }
 
 /**
