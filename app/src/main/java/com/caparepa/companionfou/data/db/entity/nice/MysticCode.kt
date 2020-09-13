@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
@@ -21,24 +22,24 @@ data class MysticCode(
     @SerializedName("maxLv")
     val maxLv: Int?,
     @SerializedName("extraAssets")
-    val extraAssets: String?,
+    val extra_assets: String?,
     @SerializedName("skills")
-    val skills: String?,
+    val mc_skills: String?,
     @SerializedName("expRequired")
-    val expRequired: String?
+    val exp_required: String?
 ) {
     @PrimaryKey(autoGenerate = true)
     var mcId: Long = 0
 
     fun getExtraAssets(): ExtraAssets? {
-        return this.extraAssets?.toKotlinObject()
+        return this.extra_assets?.toKotlinObject()
     }
 
     fun getSkills(): List<SkillItem>? {
-        return this.skills?.toKotlinObject()
+        return this.mc_skills?.toKotlinObject()
     }
 
     fun getExpRequired(): List<Int>? {
-        return this.expRequired?.toKotlinObject()
+        return this.exp_required?.toKotlinObject()
     }
 }
