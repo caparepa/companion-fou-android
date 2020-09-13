@@ -2,6 +2,8 @@ package com.caparepa.companionfou.data.model.nice.craftessence
 
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
 import com.caparepa.companionfou.data.model.nice.common.SkillItem
+import com.google.gson.JsonArray
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 data class CraftEssenceItem(
@@ -19,8 +21,9 @@ data class CraftEssenceItem(
     val cost: Int? = null,
     @SerializedName("lvMax")
     val lvMax: Int? = null,
+    /** ExtraAssets? **/
     @SerializedName("extraAssets")
-    val extraAssets: ExtraAssets? = null,
+    val extraAssets: JsonElement? = null,
     @SerializedName("atkBase")
     val atkBase: Int? = null,
     @SerializedName("atkMax")
@@ -35,6 +38,7 @@ data class CraftEssenceItem(
     val atkGrowth: List<Int?>? = null,
     @SerializedName("hpGrowth")
     val hpGrowth: List<Int?>? = null,
+    /** List<SkillItem?>? **/
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null
+    val skills: JsonArray? = null
 )

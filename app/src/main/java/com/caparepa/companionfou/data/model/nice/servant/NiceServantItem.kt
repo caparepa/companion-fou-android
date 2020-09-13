@@ -2,6 +2,8 @@ package com.caparepa.companionfou.data.model.nice.servant
 
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
 import com.caparepa.companionfou.data.model.nice.common.SkillItem
+import com.google.gson.JsonArray
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 data class NiceServantItem(
@@ -21,14 +23,16 @@ data class NiceServantItem(
     val cost: Int? = null,
     @SerializedName("lvMax")
     val lvMax: Int? = null,
+    /** ExtraAssets? **/
     @SerializedName("extraAssets")
-    val extraAssets: ExtraAssets? = null,
+    val extraAssets: JsonElement? = null,
     @SerializedName("gender")
     val gender: String? = null,
     @SerializedName("attribute")
     val attribute: String? = null,
+    /** List<TraitItem?>? **/
     @SerializedName("traits")
-    val traits: List<TraitItem?>? = null,
+    val traits: JsonArray? = null,
     @SerializedName("starAbsorb")
     val starAbsorb: Int? = null,
     @SerializedName("starGen")
@@ -37,8 +41,9 @@ data class NiceServantItem(
     val instantDeathChance: Int? = null,
     @SerializedName("cards")
     val cards: List<String?>? = null,
+    /** HitsDistribution? **/
     @SerializedName("hitsDistribution")
-    val hitsDistribution: HitsDistribution? = null,
+    val hitsDistribution: JsonElement? = null,
     @SerializedName("atkBase")
     val atkBase: Int? = null,
     @SerializedName("atkMax")
@@ -50,23 +55,32 @@ data class NiceServantItem(
     @SerializedName("growthCurve")
     val growthCurve: Int? = null,
     @SerializedName("atkGrowth")
-    val atkGrowth: List<Int?>? = null,
+    /** List<Int?>? **/
+    val atkGrowth: JsonArray? = null,
     @SerializedName("hpGrowth")
-    val hpGrowth: List<Int?>? = null,
+    /** List<Int?>? **/
+    val hpGrowth: JsonArray? = null,
+    /** List<Int?>? **/
     @SerializedName("bondGrowth")
-    val bondGrowth: List<Int?>? = null,
+    val bondGrowth: JsonArray? = null,
     @SerializedName("bondEquip")
     val bondEquip: Int? = null,
+    /** SkillMaterials? **/
     @SerializedName("ascensionMaterials")
-    val ascensionMaterials: SkillMaterials? = null,
+    val ascensionMaterials: JsonElement? = null,
+    /** SkillMaterials? **/
     @SerializedName("skillMaterials")
-    val skillMaterials: SkillMaterials? = null,
+    val skillMaterials: JsonElement? = null,
+    /** List<SkillItem?>? **/
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null,
+    val skills: JsonArray? = null,
+    /** List<ClassPassiveItem?>? **/
     @SerializedName("classPassive")
-    val classPassive: List<ClassPassiveItem?>? = null,
+    val classPassive: JsonArray? = null,
+    /** List<NoblePhantasmItem?>? **/
     @SerializedName("noblePhantasms")
-    val noblePhantasms: List<NoblePhantasmItem?>? = null,
+    val noblePhantasms: JsonArray? = null,
+    /** ServantProfile? **/
     @SerializedName("profile")
-    val profile: ServantProfile? = null
+    val profile: JsonElement? = null
 )

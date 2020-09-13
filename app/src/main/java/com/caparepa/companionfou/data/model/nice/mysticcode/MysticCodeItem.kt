@@ -20,8 +20,10 @@ data class MysticCodeItem(
     val maxLv: Int? = null,
     @SerializedName("extraAssets")
     val extraAssets: JsonElement? = null,
+    /** List<SkillItem?>? **/
     @SerializedName("skills")
     val skills: JsonArray? = null,
+    /** List<Int?>? **/
     @SerializedName("expRequired")
     val expRequired: JsonArray? = null
 )

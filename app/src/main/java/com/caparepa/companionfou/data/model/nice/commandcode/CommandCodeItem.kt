@@ -2,6 +2,8 @@ package com.caparepa.companionfou.data.model.nice.commandcode
 
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
 import com.caparepa.companionfou.data.model.nice.common.SkillItem
+import com.google.gson.JsonArray
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 data class CommandCodeItem(
@@ -13,10 +15,12 @@ data class CommandCodeItem(
     val name: String? = null,
     @SerializedName("rarity")
     val rarity: Int? = null,
+    /** ExtraAssets? **/
     @SerializedName("extraAssets")
-    val extraAssets: ExtraAssets? = null,
+    val extraAssets: JsonElement? = null,
+    /** List<SkillItem?>? **/
     @SerializedName("skills")
-    val skills: List<SkillItem?>? = null,
+    val skills: JsonArray? = null,
     @SerializedName("comment")
     val comment: String? = null
 )
