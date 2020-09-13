@@ -19,6 +19,7 @@ class MysticCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
+    val mysticCodeListResponse = MutableLiveData<List<MysticCode>>()
     val mysticCodeListResult = MutableLiveData<List<MysticCode>>()
     val mysticCodeResult = MutableLiveData<MysticCode>()
 
@@ -47,7 +48,7 @@ class MysticCodeViewModel(
         with(result) {
             onSuccess {
                 it?.let {
-                    mysticCodeListResult.postValue(it)
+                    mysticCodeListResponse.postValue(it)
                 }
             }
             onFailure {
