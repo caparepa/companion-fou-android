@@ -3,9 +3,7 @@ package com.caparepa.companionfou.ui.viewmodel
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.nice.MysticCode
-import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
@@ -14,8 +12,7 @@ import org.koin.core.KoinComponent
 
 class MysticCodeViewModel(
     val context: Context,
-    val mysticCodeRepository: MysticCodeRepository,
-    val mysticCodeDao: MysticCodeDao
+    val mysticCodeRepository: MysticCodeRepository
 ) :
     BaseViewModel(), KoinComponent {
 
