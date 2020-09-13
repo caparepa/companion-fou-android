@@ -31,14 +31,14 @@ data class MysticCode(
     var mcId: Long = 0
 
     fun getExtraAssets(): ExtraAssets? {
-        return this.extraAssets?.toKotlinObject()
+        return this.extraAssets.toKotlinObject()
     }
 
     fun getSkills(): List<SkillItem>? {
-        return this.skills?.toKotlinObject()
+        return this.skills.toKotlinObject()
     }
 
     fun getExpRequired(): List<Int>? {
-        return this.expRequired?.toKotlinObject()
+        return this.expRequired.toKotlinObject()
     }
 }
