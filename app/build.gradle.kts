@@ -74,16 +74,16 @@ android {
 dependencies {
     //Core dependencies
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.0")
     implementation("androidx.core:core-ktx:1.3.1")
     implementation("androidx.appcompat:appcompat:1.2.0")
 
     //Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8")
 
     //layouts
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.1")
 
     //navigation components
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
@@ -96,9 +96,9 @@ dependencies {
 
 dependencies {
     //Test dependencies
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    testImplementation("junit:junit:4.13")
+    androidTestImplementation("androidx.test.ext:junit:1.1.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
 }
 
 dependencies {
@@ -116,10 +116,6 @@ dependencies {
     //threeten
     implementation("com.jakewharton.threetenabp:threetenabp:1.2.4")
 
-    //GLIDE
-    implementation("com.github.bumptech.glide:glide:4.10.0")
-    kapt("com.github.bumptech.glide:compiler:4.10.0")
-
     //Dependency injection
     implementation("org.koin:koin-android:2.0.1")
     implementation("org.koin:koin-androidx-scope:2.0.1")
@@ -133,10 +129,14 @@ dependencies {
     implementation("org.modelmapper:modelmapper:2.3.3")
 
     //threeten
-    api("com.jakewharton.threetenabp:threetenabp:1.2.4")
+    implementation("com.jakewharton.threetenabp:threetenabp:1.2.4")
 
     //Chrome tabs
-    api("androidx.browser:browser:1.2.0")
-    api("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+    implementation("androidx.browser:browser:1.2.0")
+    implementation("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+
+    //GLIDE
+    implementation("com.github.bumptech.glide:glide:4.10.0")
+    kapt("com.github.bumptech.glide:compiler:4.10.0")
 
 }
