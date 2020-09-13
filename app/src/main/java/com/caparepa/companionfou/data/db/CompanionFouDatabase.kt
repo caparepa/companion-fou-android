@@ -5,7 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.caparepa.companionfou.data.db.dao.basic.*
+import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.basic.*
+import com.caparepa.companionfou.data.db.entity.nice.MysticCode
 
 @Database(
     entities =
@@ -14,17 +16,23 @@ import com.caparepa.companionfou.data.db.entity.basic.*
         BasicCommandCode::class,
         BasicCraftEssence::class,
         BasicMysticCode::class,
-        BasicMysticCodeMedia::class
+        BasicMysticCodeMedia::class,
+        MysticCode::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class CompanionFouDatabase : RoomDatabase() {
 
-    abstract fun basicServantDao(): BasicServantDao
-    abstract fun basicCraftEssenceDao(): BasicCraftEssenceDao
-    abstract fun basicMysticCodeDao(): BasicMysticCodeDao
-    abstract fun basicMysticCodeMediaDao(): BasicMysticCodeMediaDao
-    abstract fun basicCommandCodeDao(): BasicCommandCodeDao
+    //basic
+    abstract fun getBasicServantDao(): BasicServantDao
+    abstract fun getBasicCraftEssenceDao(): BasicCraftEssenceDao
+    abstract fun getBasicMysticCodeDao(): BasicMysticCodeDao
+    abstract fun getBasicMysticCodeMediaDao(): BasicMysticCodeMediaDao
+    abstract fun getBasicCommandCodeDao(): BasicCommandCodeDao
+
+    //nice
+    abstract fun getMysticCodeDao(): MysticCodeDao
 
     companion object {
 

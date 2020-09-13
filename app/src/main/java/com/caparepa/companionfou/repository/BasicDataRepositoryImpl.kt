@@ -28,7 +28,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         region: String
     ): List<ServantItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicServantsEnglishName(currentDate, region)
-        val bodyString = response?.body()?.string()
+        val bodyString = response.body()?.string()
         val data = bodyString?.toKotlinObject<List<ServantItem>>()
         data
     }
@@ -38,7 +38,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         region: String
     ): List<CraftEssenceItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicCraftEssences(currentDate, region)
-        val bodyString = response?.body()?.string()
+        val bodyString = response.body()?.string()
         val data = bodyString?.toKotlinObject<List<CraftEssenceItem>>()
         data
     }
@@ -48,7 +48,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         region: String
     ): List<CommandCodeItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicCommandCodes(currentDate, region)
-        val bodyString = response?.body()?.string()
+        val bodyString = response.body()?.string()
         val data = bodyString?.toKotlinObject<List<CommandCodeItem>>()
         data
     }
@@ -58,7 +58,7 @@ class BasicDataRepositoryImpl : BasicDataRepository, KoinComponent {
         region: String
     ): List<MysticCodeItem>? = withContext(Dispatchers.IO) {
         val response = api.getBasicCommandCodes(currentDate, region)
-        val bodyString = response?.body()?.string()
+        val bodyString = response.body()?.string()
         val data = bodyString?.toKotlinObject<List<MysticCodeItem>>()
         data
     }

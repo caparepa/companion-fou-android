@@ -11,7 +11,7 @@ import com.google.gson.annotations.SerializedName
 @Entity(
     tableName = "mystic_code"
 )
-data class MysticCodeItem(
+data class MysticCode(
     @PrimaryKey
     @SerializedName("id")
     val id: Long? = null,
