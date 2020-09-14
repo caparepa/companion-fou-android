@@ -18,64 +18,40 @@ import com.caparepa.companionfou.utils.toKotlinObject
 data class Servant(
     @PrimaryKey
     val id: Long? = null,
-    @ColumnInfo(name = "collection_no")
-    val collectionNo: Long? = null,
+    val collection_no: Long? = null,
     val name: String? = null,
-    @ColumnInfo(name = "class_name")
-    val className: String? = null,
+    val class_name: String? = null,
     val type: String? = null,
     val rarity: Int? = null,
     val cost: Int? = null,
-    @ColumnInfo(name = "lv_max")
-    val lvMax: Int? = null,
-    @ColumnInfo(name = "extra_assets")
-    val extraAssets: String? = null,
+    val lv_max: Int? = null,
+    val extra_assets: String? = null,
     val gender: String? = null,
     val attribute: String? = null,
     val traits: String? = null,
-    @ColumnInfo(name = "star_absorb")
-    val starAbsorb: Int? = null,
-    @ColumnInfo(name = "star_gen")
-    val starGen: Int? = null,
-    @ColumnInfo(name = "instant_death_chance")
-    val instantDeathChance: Int? = null,
-    @ColumnInfo(name = "")
+    val star_absorb: Int? = null,
+    val star_gen: Int? = null,
+    val instant_death_chance: Int? = null,
     val cards: List<String?>? = null,
-    /** HitsDistribution? **/
-    @ColumnInfo(name = "hits_distribution")
-    val hitsDistribution: String? = null,
-    @ColumnInfo(name = "atk_base")
+    val hits_distribution: String? = null,
     val atkBase: Int? = null,
-    @ColumnInfo(name = "akt_max")
     val atkMax: Int? = null,
-    @ColumnInfo(name = "hp_base")
     val hpBase: Int? = null,
-    @ColumnInfo(name = "hp_max")
-    val hpMax: Int? = null,
-    @ColumnInfo(name = "growth_curve")
-    val growthCurve: Int? = null,
-    @ColumnInfo(name = "atk_growth")
-    val atkGrowth: String? = null,
-    @ColumnInfo(name = "hp_growth")
-    val hpGrowth: String? = null,
-    @ColumnInfo(name = "bond_growth")
-    val bondGrowth: String? = null,
-    @ColumnInfo(name = "bond_equip")
-    val bondEquip: Int? = null,
-    @ColumnInfo(name = "ascension_materials")
-    val ascensionMaterials: String? = null,
-    @ColumnInfo(name = "skill_materials")
-    val skillMaterials: String? = null,
-    @ColumnInfo(name = "skills")
+    val hp_max: Int? = null,
+    val growth_curve: Int? = null,
+    val atk_growth: String? = null,
+    val hp_growth: String? = null,
+    val bond_growth: String? = null,
+    val bond_equip: Int? = null,
+    val ascension_materials: String? = null,
+    val skill_materials: String? = null,
     val skills: String? = null,
-    @ColumnInfo(name = "class_passive")
-    val classPassive: String? = null,
-    @ColumnInfo(name = "noble_phantasms")
-    val noblePhantasms: String? = null,
+    val class_passive: String? = null,
+    val noble_phantasms: String? = null,
     val profile: String? = null
 ) {
     fun getExtraAssets(): ExtraAssets? {
-        return this.extraAssets?.toKotlinObject()
+        return this.extra_assets?.toKotlinObject()
     }
 
     fun getTraits(): List<TraitItem>? {
@@ -83,27 +59,27 @@ data class Servant(
     }
 
     fun getHitsDistribution(): HitsDistribution? {
-        return this.hitsDistribution?.toKotlinObject()
+        return this.hits_distribution?.toKotlinObject()
     }
 
     fun getAtkGrowth(): List<Int>? {
-        return this.atkGrowth?.toKotlinObject()
+        return this.atk_growth?.toKotlinObject()
     }
 
     fun getHpGrowth(): List<Int>? {
-        return this.hpGrowth?.toKotlinObject()
+        return this.hp_growth?.toKotlinObject()
     }
 
     fun getBondGrowth(): List<Int>? {
-        return this.bondGrowth?.toKotlinObject()
+        return this.bond_growth?.toKotlinObject()
     }
 
     fun getAscensionMaterials(): Materials? {
-        return this.ascensionMaterials?.toKotlinObject()
+        return this.ascension_materials?.toKotlinObject()
     }
 
     fun getSkillMaterials(): Materials? {
-        return this.skillMaterials?.toKotlinObject()
+        return this.skill_materials?.toKotlinObject()
     }
 
     fun getSkills(): List<SkillItem>? {
@@ -111,11 +87,11 @@ data class Servant(
     }
 
     fun getClassPassives(): List<ClassPassiveItem>? {
-        return this.classPassive?.toKotlinObject()
+        return this.class_passive?.toKotlinObject()
     }
 
     fun getNoblePhantasms(): List<NoblePhantasmItem>? {
-        return this.noblePhantasms?.toKotlinObject()
+        return this.noble_phantasms?.toKotlinObject()
     }
 
     fun getProfile(): ServantProfile? {

@@ -15,19 +15,12 @@ import com.google.gson.reflect.TypeToken
     tableName = "mystic_code"
 )
 data class MysticCode(
-    @SerializedName("id")
     val id: Long?,
-    @SerializedName("name")
     val name: String?,
-    @SerializedName("detail")
     val detail: String?,
-    @SerializedName("maxLv")
-    val maxLv: Int?,
-    @SerializedName("extraAssets")
+    val max_lv: Int?,
     val extra_assets: String?,
-    @SerializedName("skills")
     val mc_skills: String?,
-    @SerializedName("expRequired")
     val exp_required: String?
 ) {
     @PrimaryKey(autoGenerate = true)
