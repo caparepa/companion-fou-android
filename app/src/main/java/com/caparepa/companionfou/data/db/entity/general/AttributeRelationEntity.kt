@@ -3,7 +3,6 @@ package com.caparepa.companionfou.data.db.entity.general
 import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.general.attribute.RelationDetail
 import com.caparepa.companionfou.utils.toKotlinObject
-import com.google.gson.String
 import com.google.gson.annotations.SerializedName
 
 data class AttributeRelationEntity(
