@@ -6,9 +6,6 @@ import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
 import com.caparepa.companionfou.data.model.nice.common.SkillItem
 import com.caparepa.companionfou.utils.toKotlinObject
-import com.google.gson.JsonArray
-import com.google.gson.JsonElement
-import com.google.gson.annotations.SerializedName
 
 @Entity(
     tableName = "craft_essence",
