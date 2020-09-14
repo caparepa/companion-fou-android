@@ -3,7 +3,7 @@ package com.caparepa.companionfou.data.model.nice.craftessence
 import com.caparepa.companionfou.data.model.common.ExtraAssets
 import com.caparepa.companionfou.data.model.common.SkillItem
 import com.google.gson.JsonArray
-import com.google.gson.JsonElement
+import com.google.gson.String
 import com.google.gson.annotations.SerializedName
 
 data class CraftEssenceItem(
@@ -23,7 +23,7 @@ data class CraftEssenceItem(
     val lvMax: Int? = null,
     /** ExtraAssets? **/
     @SerializedName("extraAssets")
-    val extraAssets: JsonElement? = null,
+    val extraAssets: String? = null,
     @SerializedName("atkBase")
     val atkBase: Int? = null,
     @SerializedName("atkMax")

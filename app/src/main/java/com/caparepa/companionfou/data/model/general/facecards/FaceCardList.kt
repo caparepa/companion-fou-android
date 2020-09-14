@@ -1,6 +1,6 @@
 package com.caparepa.companionfou.data.model.general.facecards
 
-import com.google.gson.JsonElement
+import com.google.gson.String
 import com.google.gson.annotations.SerializedName
 
 data class FaceCardList(
@@ -8,17 +8,17 @@ data class FaceCardList(
      * Map<Int, FaceCardParams?>?
      */
     @SerializedName("arts")
-    val arts: JsonElement? = null,
+    val arts: String? = null,
     @SerializedName("buster")
-    val buster: JsonElement? = null,
+    val buster: String? = null,
     @SerializedName("quick")
-    val quick: JsonElement? = null,
+    val quick: String? = null,
     @SerializedName("extra")
-    val extra: JsonElement? = null,
+    val extra: String? = null,
     @SerializedName("blank")
-    val blank: JsonElement? = null,
+    val blank: String? = null,
     @SerializedName("weak")
-    val weak: JsonElement? = null,
+    val weak: String? = null,
     @SerializedName("strength")
-    val strength: JsonElement? = null
+    val strength: String? = null
 )

@@ -3,7 +3,7 @@ package com.caparepa.companionfou.data.model.nice.servant
 import com.caparepa.companionfou.data.model.common.ExtraAssets
 import com.caparepa.companionfou.data.model.common.SkillItem
 import com.google.gson.JsonArray
-import com.google.gson.JsonElement
+import com.google.gson.String
 import com.google.gson.annotations.SerializedName
 
 data class NiceServantItem(
@@ -25,7 +25,7 @@ data class NiceServantItem(
     val lvMax: Int? = null,
     /** ExtraAssets? **/
     @SerializedName("extraAssets")
-    val extraAssets: JsonElement? = null,
+    val extraAssets: String? = null,
     @SerializedName("gender")
     val gender: String? = null,
     @SerializedName("attribute")
@@ -43,7 +43,7 @@ data class NiceServantItem(
     val cards: List<String?>? = null,
     /** HitsDistribution? **/
     @SerializedName("hitsDistribution")
-    val hitsDistribution: JsonElement? = null,
+    val hitsDistribution: String? = null,
     @SerializedName("atkBase")
     val atkBase: Int? = null,
     @SerializedName("atkMax")
@@ -67,16 +67,16 @@ data class NiceServantItem(
     val bondEquip: Int? = null,
     /** SkillMaterials? **/
     @SerializedName("ascensionMaterials")
-    val ascensionMaterials: JsonElement? = null,
+    val ascensionMaterials: String? = null,
     /** SkillMaterials? **/
     @SerializedName("skillMaterials")
-    val skillMaterials: JsonElement? = null,
+    val skillMaterials: String? = null,
     /** SkillMaterials? **/
     @SerializedName("costumeMaterials")
-    val costumeMaterials: JsonElement? = null,
+    val costumeMaterials: String? = null,
     /** Script? **/
     @SerializedName("script")
-    val script: JsonElement? = null,
+    val script: String? = null,
     /** List<SkillItem?>? **/
     @SerializedName("skills")
     val skills: JsonArray? = null,
@@ -88,5 +88,5 @@ data class NiceServantItem(
     val noblePhantasms: JsonArray? = null,
     /** ServantProfile? **/
     @SerializedName("profile")
-    val profile: JsonElement? = null
+    val profile: String? = null
 )

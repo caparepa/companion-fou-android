@@ -2,305 +2,308 @@ package com.caparepa.companionfou.data.model.general.userlevel
 
 import com.google.gson.annotations.SerializedName
 
-class UserLevelList(
+data class UserLevelList(
+    /**
+     * String?
+     */
     @SerializedName("1")
-    val mLevel_1: UserLevelDetail? = null,
+    val level_1: String? = null,
     @SerializedName("2")
-    val mLevel_2: UserLevelDetail? = null,
+    val level_2: String? = null,
     @SerializedName("3")
-    val mLevel_3: UserLevelDetail? = null,
+    val level_3: String? = null,
     @SerializedName("4")
-    val mLevel_4: UserLevelDetail? = null,
+    val level_4: String? = null,
     @SerializedName("5")
-    val mLevel_5: UserLevelDetail? = null,
+    val level_5: String? = null,
     @SerializedName("6")
-    val mLevel_6: UserLevelDetail? = null,
+    val level_6: String? = null,
     @SerializedName("7")
-    val mLevel_7: UserLevelDetail? = null,
+    val level_7: String? = null,
     @SerializedName("8")
-    val mLevel_8: UserLevelDetail? = null,
+    val level_8: String? = null,
     @SerializedName("9")
-    val mLevel_9: UserLevelDetail? = null,
+    val level_9: String? = null,
     @SerializedName("10")
-    val mLevel_10: UserLevelDetail? = null,
+    val level_10: String? = null,
     @SerializedName("11")
-    val mLevel_11: UserLevelDetail? = null,
+    val level_11: String? = null,
     @SerializedName("12")
-    val mLevel_12: UserLevelDetail? = null,
+    val level_12: String? = null,
     @SerializedName("13")
-    val mLevel_13: UserLevelDetail? = null,
+    val level_13: String? = null,
     @SerializedName("14")
-    val mLevel_14: UserLevelDetail? = null,
+    val level_14: String? = null,
     @SerializedName("15")
-    val mLevel_15: UserLevelDetail? = null,
+    val level_15: String? = null,
     @SerializedName("16")
-    val mLevel_16: UserLevelDetail? = null,
+    val level_16: String? = null,
     @SerializedName("17")
-    val mLevel_17: UserLevelDetail? = null,
+    val level_17: String? = null,
     @SerializedName("18")
-    val mLevel_18: UserLevelDetail? = null,
+    val level_18: String? = null,
     @SerializedName("19")
-    val mLevel_19: UserLevelDetail? = null,
+    val level_19: String? = null,
     @SerializedName("20")
-    val mLevel_20: UserLevelDetail? = null,
+    val level_20: String? = null,
     @SerializedName("21")
-    val mLevel_21: UserLevelDetail? = null,
+    val level_21: String? = null,
     @SerializedName("22")
-    val mLevel_22: UserLevelDetail? = null,
+    val level_22: String? = null,
     @SerializedName("23")
-    val mLevel_23: UserLevelDetail? = null,
+    val level_23: String? = null,
     @SerializedName("24")
-    val mLevel_24: UserLevelDetail? = null,
+    val level_24: String? = null,
     @SerializedName("25")
-    val mLevel_25: UserLevelDetail? = null,
+    val level_25: String? = null,
     @SerializedName("26")
-    val mLevel_26: UserLevelDetail? = null,
+    val level_26: String? = null,
     @SerializedName("27")
-    val mLevel_27: UserLevelDetail? = null,
+    val level_27: String? = null,
     @SerializedName("28")
-    val mLevel_28: UserLevelDetail? = null,
+    val level_28: String? = null,
     @SerializedName("29")
-    val mLevel_29: UserLevelDetail? = null,
+    val level_29: String? = null,
     @SerializedName("30")
-    val mLevel_30: UserLevelDetail? = null,
+    val level_30: String? = null,
     @SerializedName("31")
-    val mLevel_31: UserLevelDetail? = null,
+    val level_31: String? = null,
     @SerializedName("32")
-    val mLevel_32: UserLevelDetail? = null,
+    val level_32: String? = null,
     @SerializedName("33")
-    val mLevel_33: UserLevelDetail? = null,
+    val level_33: String? = null,
     @SerializedName("34")
-    val mLevel_34: UserLevelDetail? = null,
+    val level_34: String? = null,
     @SerializedName("35")
-    val mLevel_35: UserLevelDetail? = null,
+    val level_35: String? = null,
     @SerializedName("36")
-    val mLevel_36: UserLevelDetail? = null,
+    val level_36: String? = null,
     @SerializedName("37")
-    val mLevel_37: UserLevelDetail? = null,
+    val level_37: String? = null,
     @SerializedName("38")
-    val mLevel_38: UserLevelDetail? = null,
+    val level_38: String? = null,
     @SerializedName("39")
-    val mLevel_39: UserLevelDetail? = null,
+    val level_39: String? = null,
     @SerializedName("40")
-    val mLevel_40: UserLevelDetail? = null,
+    val level_40: String? = null,
     @SerializedName("41")
-    val mLevel_41: UserLevelDetail? = null,
+    val level_41: String? = null,
     @SerializedName("42")
-    val mLevel_42: UserLevelDetail? = null,
+    val level_42: String? = null,
     @SerializedName("43")
-    val mLevel_43: UserLevelDetail? = null,
+    val level_43: String? = null,
     @SerializedName("44")
-    val mLevel_44: UserLevelDetail? = null,
+    val level_44: String? = null,
     @SerializedName("45")
-    val mLevel_45: UserLevelDetail? = null,
+    val level_45: String? = null,
     @SerializedName("46")
-    val mLevel_46: UserLevelDetail? = null,
+    val level_46: String? = null,
     @SerializedName("47")
-    val mLevel_47: UserLevelDetail? = null,
+    val level_47: String? = null,
     @SerializedName("48")
-    val mLevel_48: UserLevelDetail? = null,
+    val level_48: String? = null,
     @SerializedName("49")
-    val mLevel_49: UserLevelDetail? = null,
+    val level_49: String? = null,
     @SerializedName("50")
-    val mLevel_50: UserLevelDetail? = null,
+    val level_50: String? = null,
     @SerializedName("51")
-    val mLevel_51: UserLevelDetail? = null,
+    val level_51: String? = null,
     @SerializedName("52")
-    val mLevel_52: UserLevelDetail? = null,
+    val level_52: String? = null,
     @SerializedName("53")
-    val mLevel_53: UserLevelDetail? = null,
+    val level_53: String? = null,
     @SerializedName("54")
-    val mLevel_54: UserLevelDetail? = null,
+    val level_54: String? = null,
     @SerializedName("55")
-    val mLevel_55: UserLevelDetail? = null,
+    val level_55: String? = null,
     @SerializedName("56")
-    val mLevel_56: UserLevelDetail? = null,
+    val level_56: String? = null,
     @SerializedName("57")
-    val mLevel_57: UserLevelDetail? = null,
+    val level_57: String? = null,
     @SerializedName("58")
-    val mLevel_58: UserLevelDetail? = null,
+    val level_58: String? = null,
     @SerializedName("59")
-    val mLevel_59: UserLevelDetail? = null,
+    val level_59: String? = null,
     @SerializedName("60")
-    val mLevel_60: UserLevelDetail? = null,
+    val level_60: String? = null,
     @SerializedName("61")
-    val mLevel_61: UserLevelDetail? = null,
+    val level_61: String? = null,
     @SerializedName("62")
-    val mLevel_62: UserLevelDetail? = null,
+    val level_62: String? = null,
     @SerializedName("63")
-    val mLevel_63: UserLevelDetail? = null,
+    val level_63: String? = null,
     @SerializedName("64")
-    val mLevel_64: UserLevelDetail? = null,
+    val level_64: String? = null,
     @SerializedName("65")
-    val mLevel_65: UserLevelDetail? = null,
+    val level_65: String? = null,
     @SerializedName("66")
-    val mLevel_66: UserLevelDetail? = null,
+    val level_66: String? = null,
     @SerializedName("67")
-    val mLevel_67: UserLevelDetail? = null,
+    val level_67: String? = null,
     @SerializedName("68")
-    val mLevel_68: UserLevelDetail? = null,
+    val level_68: String? = null,
     @SerializedName("69")
-    val mLevel_69: UserLevelDetail? = null,
+    val level_69: String? = null,
     @SerializedName("70")
-    val mLevel_70: UserLevelDetail? = null,
+    val level_70: String? = null,
     @SerializedName("71")
-    val mLevel_71: UserLevelDetail? = null,
+    val level_71: String? = null,
     @SerializedName("72")
-    val mLevel_72: UserLevelDetail? = null,
+    val level_72: String? = null,
     @SerializedName("73")
-    val mLevel_73: UserLevelDetail? = null,
+    val level_73: String? = null,
     @SerializedName("74")
-    val mLevel_74: UserLevelDetail? = null,
+    val level_74: String? = null,
     @SerializedName("75")
-    val mLevel_75: UserLevelDetail? = null,
+    val level_75: String? = null,
     @SerializedName("76")
-    val mLevel_76: UserLevelDetail? = null,
+    val level_76: String? = null,
     @SerializedName("77")
-    val mLevel_77: UserLevelDetail? = null,
+    val level_77: String? = null,
     @SerializedName("78")
-    val mLevel_78: UserLevelDetail? = null,
+    val level_78: String? = null,
     @SerializedName("79")
-    val mLevel_79: UserLevelDetail? = null,
+    val level_79: String? = null,
     @SerializedName("80")
-    val mLevel_80: UserLevelDetail? = null,
+    val level_80: String? = null,
     @SerializedName("81")
-    val mLevel_81: UserLevelDetail? = null,
+    val level_81: String? = null,
     @SerializedName("82")
-    val mLevel_82: UserLevelDetail? = null,
+    val level_82: String? = null,
     @SerializedName("83")
-    val mLevel_83: UserLevelDetail? = null,
+    val level_83: String? = null,
     @SerializedName("84")
-    val mLevel_84: UserLevelDetail? = null,
+    val level_84: String? = null,
     @SerializedName("85")
-    val mLevel_85: UserLevelDetail? = null,
+    val level_85: String? = null,
     @SerializedName("86")
-    val mLevel_86: UserLevelDetail? = null,
+    val level_86: String? = null,
     @SerializedName("87")
-    val mLevel_87: UserLevelDetail? = null,
+    val level_87: String? = null,
     @SerializedName("88")
-    val mLevel_88: UserLevelDetail? = null,
+    val level_88: String? = null,
     @SerializedName("89")
-    val mLevel_89: UserLevelDetail? = null,
+    val level_89: String? = null,
     @SerializedName("90")
-    val mLevel_90: UserLevelDetail? = null,
+    val level_90: String? = null,
     @SerializedName("91")
-    val mLevel_91: UserLevelDetail? = null,
+    val level_91: String? = null,
     @SerializedName("92")
-    val mLevel_92: UserLevelDetail? = null,
+    val level_92: String? = null,
     @SerializedName("93")
-    val mLevel_93: UserLevelDetail? = null,
+    val level_93: String? = null,
     @SerializedName("94")
-    val mLevel_94: UserLevelDetail? = null,
+    val level_94: String? = null,
     @SerializedName("95")
-    val mLevel_95: UserLevelDetail? = null,
+    val level_95: String? = null,
     @SerializedName("96")
-    val mLevel_96: UserLevelDetail? = null,
+    val level_96: String? = null,
     @SerializedName("97")
-    val mLevel_97: UserLevelDetail? = null,
+    val level_97: String? = null,
     @SerializedName("98")
-    val mLevel_98: UserLevelDetail? = null,
+    val level_98: String? = null,
     @SerializedName("99")
-    val mLevel_99: UserLevelDetail? = null,
+    val level_99: String? = null,
     @SerializedName("100")
-    val mLevel_100: UserLevelDetail? = null,
+    val level_100: String? = null,
     @SerializedName("101")
-    val mLevel_101: UserLevelDetail? = null,
+    val level_101: String? = null,
     @SerializedName("102")
-    val mLevel_102: UserLevelDetail? = null,
+    val level_102: String? = null,
     @SerializedName("103")
-    val mLevel_103: UserLevelDetail? = null,
+    val level_103: String? = null,
     @SerializedName("104")
-    val mLevel_104: UserLevelDetail? = null,
+    val level_104: String? = null,
     @SerializedName("105")
-    val mLevel_105: UserLevelDetail? = null,
+    val level_105: String? = null,
     @SerializedName("106")
-    val mLevel_106: UserLevelDetail? = null,
+    val level_106: String? = null,
     @SerializedName("107")
-    val mLevel_107: UserLevelDetail? = null,
+    val level_107: String? = null,
     @SerializedName("108")
-    val mLevel_108: UserLevelDetail? = null,
+    val level_108: String? = null,
     @SerializedName("109")
-    val mLevel_109: UserLevelDetail? = null,
+    val level_109: String? = null,
     @SerializedName("110")
-    val mLevel_110: UserLevelDetail? = null,
+    val level_110: String? = null,
     @SerializedName("111")
-    val mLevel_111: UserLevelDetail? = null,
+    val level_111: String? = null,
     @SerializedName("112")
-    val mLevel_112: UserLevelDetail? = null,
+    val level_112: String? = null,
     @SerializedName("113")
-    val mLevel_113: UserLevelDetail? = null,
+    val level_113: String? = null,
     @SerializedName("114")
-    val mLevel_114: UserLevelDetail? = null,
+    val level_114: String? = null,
     @SerializedName("115")
-    val mLevel_115: UserLevelDetail? = null,
+    val level_115: String? = null,
     @SerializedName("116")
-    val mLevel_116: UserLevelDetail? = null,
+    val level_116: String? = null,
     @SerializedName("117")
-    val mLevel_117: UserLevelDetail? = null,
+    val level_117: String? = null,
     @SerializedName("118")
-    val mLevel_118: UserLevelDetail? = null,
+    val level_118: String? = null,
     @SerializedName("119")
-    val mLevel_119: UserLevelDetail? = null,
+    val level_119: String? = null,
     @SerializedName("120")
-    val mLevel_120: UserLevelDetail? = null,
+    val level_120: String? = null,
     @SerializedName("121")
-    val mLevel_121: UserLevelDetail? = null,
+    val level_121: String? = null,
     @SerializedName("122")
-    val mLevel_122: UserLevelDetail? = null,
+    val level_122: String? = null,
     @SerializedName("123")
-    val mLevel_123: UserLevelDetail? = null,
+    val level_123: String? = null,
     @SerializedName("124")
-    val mLevel_124: UserLevelDetail? = null,
+    val level_124: String? = null,
     @SerializedName("125")
-    val mLevel_125: UserLevelDetail? = null,
+    val level_125: String? = null,
     @SerializedName("126")
-    val mLevel_126: UserLevelDetail? = null,
+    val level_126: String? = null,
     @SerializedName("127")
-    val mLevel_127: UserLevelDetail? = null,
+    val level_127: String? = null,
     @SerializedName("128")
-    val mLevel_128: UserLevelDetail? = null,
+    val level_128: String? = null,
     @SerializedName("129")
-    val mLevel_129: UserLevelDetail? = null,
+    val level_129: String? = null,
     @SerializedName("130")
-    val mLevel_130: UserLevelDetail? = null,
+    val level_130: String? = null,
     @SerializedName("131")
-    val mLevel_131: UserLevelDetail? = null,
+    val level_131: String? = null,
     @SerializedName("132")
-    val mLevel_132: UserLevelDetail? = null,
+    val level_132: String? = null,
     @SerializedName("133")
-    val mLevel_133: UserLevelDetail? = null,
+    val level_133: String? = null,
     @SerializedName("134")
-    val mLevel_134: UserLevelDetail? = null,
+    val level_134: String? = null,
     @SerializedName("135")
-    val mLevel_135: UserLevelDetail? = null,
+    val level_135: String? = null,
     @SerializedName("136")
-    val mLevel_136: UserLevelDetail? = null,
+    val level_136: String? = null,
     @SerializedName("137")
-    val mLevel_137: UserLevelDetail? = null,
+    val level_137: String? = null,
     @SerializedName("138")
-    val mLevel_138: UserLevelDetail? = null,
+    val level_138: String? = null,
     @SerializedName("139")
-    val mLevel_139: UserLevelDetail? = null,
+    val level_139: String? = null,
     @SerializedName("140")
-    val mLevel_140: UserLevelDetail? = null,
+    val level_140: String? = null,
     @SerializedName("141")
-    val mLevel_141: UserLevelDetail? = null,
+    val level_141: String? = null,
     @SerializedName("142")
-    val mLevel_142: UserLevelDetail? = null,
+    val level_142: String? = null,
     @SerializedName("143")
-    val mLevel_143: UserLevelDetail? = null,
+    val level_143: String? = null,
     @SerializedName("144")
-    val mLevel_144: UserLevelDetail? = null,
+    val level_144: String? = null,
     @SerializedName("145")
-    val mLevel_145: UserLevelDetail? = null,
+    val level_145: String? = null,
     @SerializedName("146")
-    val mLevel_146: UserLevelDetail? = null,
+    val level_146: String? = null,
     @SerializedName("147")
-    val mLevel_147: UserLevelDetail? = null,
+    val level_147: String? = null,
     @SerializedName("148")
-    val mLevel_148: UserLevelDetail? = null,
+    val level_148: String? = null,
     @SerializedName("149")
-    val mLevel_149: UserLevelDetail? = null,
+    val level_149: String? = null,
     @SerializedName("150")
-    val mLevel_150: UserLevelDetail? = null
+    val level_150: String? = null
 )

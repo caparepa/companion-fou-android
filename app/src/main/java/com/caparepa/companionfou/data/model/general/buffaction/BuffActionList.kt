@@ -1,163 +1,163 @@
 package com.caparepa.companionfou.data.model.general.buffaction
 
-import com.google.gson.JsonElement
+import com.google.gson.String
 import com.google.gson.annotations.SerializedName
 
 data class BuffActionList(
     @SerializedName("commandAtk")
-    val commandAtk: JsonElement? = null,
+    val commandAtk: String? = null,
     @SerializedName("commandDef")
-    val commandDef: JsonElement? = null,
+    val commandDef: String? = null,
     @SerializedName("atk")
-    val atk: JsonElement? = null,
+    val atk: String? = null,
     @SerializedName("defence")
-    val defence: JsonElement? = null,
+    val defence: String? = null,
     @SerializedName("defencePierce")
-    val defencePierce: JsonElement? = null,
+    val defencePierce: String? = null,
     @SerializedName("specialdefence")
-    val specialdefence: JsonElement? = null,
+    val specialdefence: String? = null,
     @SerializedName("damage")
-    val damage: JsonElement? = null,
+    val damage: String? = null,
     @SerializedName("damageIndividuality")
-    val damageIndividuality: JsonElement? = null,
+    val damageIndividuality: String? = null,
     @SerializedName("damageIndividualityActiveonly")
-    val damageIndividualityActiveonly: JsonElement? = null,
+    val damageIndividualityActiveonly: String? = null,
     @SerializedName("selfdamage")
-    val selfdamage: JsonElement? = null,
+    val selfdamage: String? = null,
     @SerializedName("criticalDamage")
-    val criticalDamage: JsonElement? = null,
+    val criticalDamage: String? = null,
     @SerializedName("npdamage")
-    val npdamage: JsonElement? = null,
+    val npdamage: String? = null,
     @SerializedName("givenDamage")
-    val givenDamage: JsonElement? = null,
+    val givenDamage: String? = null,
     @SerializedName("receiveDamage")
-    val receiveDamage: JsonElement? = null,
+    val receiveDamage: String? = null,
     @SerializedName("pierceInvincible")
-    val pierceInvincible: JsonElement? = null,
+    val pierceInvincible: String? = null,
     @SerializedName("invincible")
-    val invincible: JsonElement? = null,
+    val invincible: String? = null,
     @SerializedName("breakAvoidance")
-    val breakAvoidance: JsonElement? = null,
+    val breakAvoidance: String? = null,
     @SerializedName("avoidance")
-    val avoidance: JsonElement? = null,
+    val avoidance: String? = null,
     @SerializedName("overwriteBattleclass")
-    val overwriteBattleclass: JsonElement? = null,
+    val overwriteBattleclass: String? = null,
     @SerializedName("overwriteClassrelatioAtk")
-    val overwriteClassrelatioAtk: JsonElement? = null,
+    val overwriteClassrelatioAtk: String? = null,
     @SerializedName("overwriteClassrelatioDef")
-    val overwriteClassrelatioDef: JsonElement? = null,
+    val overwriteClassrelatioDef: String? = null,
     @SerializedName("commandNpAtk")
-    val commandNpAtk: JsonElement? = null,
+    val commandNpAtk: String? = null,
     @SerializedName("commandNpDef")
-    val commandNpDef: JsonElement? = null,
+    val commandNpDef: String? = null,
     @SerializedName("dropNp")
-    val dropNp: JsonElement? = null,
+    val dropNp: String? = null,
     @SerializedName("dropNpDamage")
-    val dropNpDamage: JsonElement? = null,
+    val dropNpDamage: String? = null,
     @SerializedName("commandStarAtk")
-    val commandStarAtk: JsonElement? = null,
+    val commandStarAtk: String? = null,
     @SerializedName("commandStarDef")
-    val commandStarDef: JsonElement? = null,
+    val commandStarDef: String? = null,
     @SerializedName("criticalPoint")
-    val criticalPoint: JsonElement? = null,
+    val criticalPoint: String? = null,
     @SerializedName("starweight")
-    val starweight: JsonElement? = null,
+    val starweight: String? = null,
     @SerializedName("turnendNp")
-    val turnendNp: JsonElement? = null,
+    val turnendNp: String? = null,
     @SerializedName("turnendStar")
-    val turnendStar: JsonElement? = null,
+    val turnendStar: String? = null,
     @SerializedName("turnendHpRegain")
-    val turnendHpRegain: JsonElement? = null,
+    val turnendHpRegain: String? = null,
     @SerializedName("turnendHpReduce")
-    val turnendHpReduce: JsonElement? = null,
+    val turnendHpReduce: String? = null,
     @SerializedName("gainHp")
-    val gainHp: JsonElement? = null,
+    val gainHp: String? = null,
     @SerializedName("turnvalNp")
-    val turnvalNp: JsonElement? = null,
+    val turnvalNp: String? = null,
     @SerializedName("grantState")
-    val grantState: JsonElement? = null,
+    val grantState: String? = null,
     @SerializedName("resistanceState")
-    val resistanceState: JsonElement? = null,
+    val resistanceState: String? = null,
     @SerializedName("avoidState")
-    val avoidState: JsonElement? = null,
+    val avoidState: String? = null,
     @SerializedName("donotAct")
-    val donotAct: JsonElement? = null,
+    val donotAct: String? = null,
     @SerializedName("donotSkill")
-    val donotSkill: JsonElement? = null,
+    val donotSkill: String? = null,
     @SerializedName("donotNoble")
-    val donotNoble: JsonElement? = null,
+    val donotNoble: String? = null,
     @SerializedName("donotRecovery")
-    val donotRecovery: JsonElement? = null,
+    val donotRecovery: String? = null,
     @SerializedName("individualityAdd")
-    val individualityAdd: JsonElement? = null,
+    val individualityAdd: String? = null,
     @SerializedName("individualitySub")
-    val individualitySub: JsonElement? = null,
+    val individualitySub: String? = null,
     @SerializedName("hate")
-    val hate: JsonElement? = null,
+    val hate: String? = null,
     @SerializedName("criticalRate")
-    val criticalRate: JsonElement? = null,
+    val criticalRate: String? = null,
     @SerializedName("avoidInstantdeath")
-    val avoidInstantdeath: JsonElement? = null,
+    val avoidInstantdeath: String? = null,
     @SerializedName("resistInstantdeath")
-    val resistInstantdeath: JsonElement? = null,
+    val resistInstantdeath: String? = null,
     @SerializedName("nonresistInstantdeath")
-    val nonresistInstantdeath: JsonElement? = null,
+    val nonresistInstantdeath: String? = null,
     @SerializedName("regainNpUsedNoble")
-    val regainNpUsedNoble: JsonElement? = null,
+    val regainNpUsedNoble: String? = null,
     @SerializedName("functionDead")
-    val functionDead: JsonElement? = null,
+    val functionDead: String? = null,
     @SerializedName("maxhpRate")
-    val maxhpRate: JsonElement? = null,
+    val maxhpRate: String? = null,
     @SerializedName("maxhpValue")
-    val maxhpValue: JsonElement? = null,
+    val maxhpValue: String? = null,
     @SerializedName("functionWavestart")
-    val functionWavestart: JsonElement? = null,
+    val functionWavestart: String? = null,
     @SerializedName("functionSelfturnend")
-    val functionSelfturnend: JsonElement? = null,
+    val functionSelfturnend: String? = null,
     @SerializedName("giveGainHp")
-    val giveGainHp: JsonElement? = null,
+    val giveGainHp: String? = null,
     @SerializedName("functionCommandattack")
-    val functionCommandattack: JsonElement? = null,
+    val functionCommandattack: String? = null,
     @SerializedName("functionDeadattack")
-    val functionDeadattack: JsonElement? = null,
+    val functionDeadattack: String? = null,
     @SerializedName("functionEntry")
-    val functionEntry: JsonElement? = null,
+    val functionEntry: String? = null,
     @SerializedName("chagetd")
-    val chagetd: JsonElement? = null,
+    val chagetd: String? = null,
     @SerializedName("grantSubstate")
-    val grantSubstate: JsonElement? = null,
+    val grantSubstate: String? = null,
     @SerializedName("toleranceSubstate")
-    val toleranceSubstate: JsonElement? = null,
+    val toleranceSubstate: String? = null,
     @SerializedName("grantInstantdeath")
-    val grantInstantdeath: JsonElement? = null,
+    val grantInstantdeath: String? = null,
     @SerializedName("functionDamage")
-    val functionDamage: JsonElement? = null,
+    val functionDamage: String? = null,
     @SerializedName("functionReflection")
-    val functionReflection: JsonElement? = null,
+    val functionReflection: String? = null,
     @SerializedName("multiattack")
-    val multiattack: JsonElement? = null,
+    val multiattack: String? = null,
     @SerializedName("giveNp")
-    val giveNp: JsonElement? = null,
+    val giveNp: String? = null,
     @SerializedName("resistanceDelayNpturn")
-    val resistanceDelayNpturn: JsonElement? = null,
+    val resistanceDelayNpturn: String? = null,
     @SerializedName("pierceDefence")
-    val pierceDefence: JsonElement? = null,
+    val pierceDefence: String? = null,
     @SerializedName("gutsHp")
-    val gutsHp: JsonElement? = null,
+    val gutsHp: String? = null,
     @SerializedName("funcgainNp")
-    val funcgainNp: JsonElement? = null,
+    val funcgainNp: String? = null,
     @SerializedName("funcHpReduce")
-    val funcHpReduce: JsonElement? = null,
+    val funcHpReduce: String? = null,
     @SerializedName("functionNpattack")
-    val functionNpattack: JsonElement? = null,
+    val functionNpattack: String? = null,
     @SerializedName("fixCommandcard")
-    val fixCommandcard: JsonElement? = null,
+    val fixCommandcard: String? = null,
     @SerializedName("donotGainnp")
-    val donotGainnp: JsonElement? = null,
+    val donotGainnp: String? = null,
     @SerializedName("fieldIndividuality")
-    val fieldIndividuality: JsonElement? = null,
+    val fieldIndividuality: String? = null,
     @SerializedName("donotActCommandtype")
-    val donotActCommandtype: JsonElement? = null,
+    val donotActCommandtype: String? = null,
     @SerializedName("damageEventPoint")
-    val damageEventPoint: JsonElement? = null
+    val damageEventPoint: String? = null
 )
