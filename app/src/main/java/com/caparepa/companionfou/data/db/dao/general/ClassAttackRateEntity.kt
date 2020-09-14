@@ -1,8 +1,7 @@
-package com.caparepa.companionfou.data.db.dao.common
+package com.caparepa.companionfou.data.db.dao.general
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 
 @Entity(
     tableName = "class_attack_rate"
