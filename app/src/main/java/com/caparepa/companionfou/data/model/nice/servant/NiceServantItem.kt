@@ -71,6 +71,12 @@ data class NiceServantItem(
     /** SkillMaterials? **/
     @SerializedName("skillMaterials")
     val skillMaterials: JsonElement? = null,
+    /** SkillMaterials? **/
+    @SerializedName("costumeMaterials")
+    val costumeMaterials: JsonElement? = null,
+    /** Script? **/
+    @SerializedName("script")
+    val script: JsonElement? = null,
     /** List<SkillItem?>? **/
     @SerializedName("skills")
     val skills: JsonArray? = null,
