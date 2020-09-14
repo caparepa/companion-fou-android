@@ -2,7 +2,7 @@ package com.caparepa.companionfou.data.model.nice.servant
 
 import com.caparepa.companionfou.data.model.nice.common.FunctionItem
 import com.caparepa.companionfou.data.model.nice.common.IndividualityItem
-import com.caparepa.companionfou.data.model.nice.common.Script
+import com.caparepa.companionfou.data.model.nice.common.ScriptObj
 import com.google.gson.annotations.SerializedName
 
 data class ClassPassiveItem(
@@ -21,7 +21,7 @@ data class ClassPassiveItem(
     @SerializedName("actIndividuality")
     val actIndividuality: List<IndividualityItem?>? = null,
     @SerializedName("script")
-    val script: Script? = null,
+    val script: ScriptObj? = null,
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 )

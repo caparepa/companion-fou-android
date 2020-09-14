@@ -1,10 +1,10 @@
 package com.caparepa.companionfou.data.db.entity.nice
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
+import com.caparepa.companionfou.data.model.nice.common.ScriptObj
 import com.caparepa.companionfou.data.model.nice.common.SkillItem
 import com.caparepa.companionfou.data.model.nice.servant.*
 import com.caparepa.companionfou.utils.toKotlinObject
@@ -45,6 +45,8 @@ data class Servant(
     val bond_equip: Int? = null,
     val ascension_materials: String? = null,
     val skill_materials: String? = null,
+    val costume_materials: String? = null,
+    val script: String? = null,
     val skills: String? = null,
     val class_passive: String? = null,
     val noble_phantasms: String? = null,
@@ -80,6 +82,14 @@ data class Servant(
 
     fun getSkillMaterials(): Materials? {
         return this.skill_materials?.toKotlinObject()
+    }
+
+    fun getCostumeMaterials(): Materials? {
+        return this.costume_materials?.toKotlinObject()
+    }
+
+    fun getScript(): ScriptObj? {
+        return this.script?.toKotlinObject()
     }
 
     fun getSkills(): List<SkillItem>? {

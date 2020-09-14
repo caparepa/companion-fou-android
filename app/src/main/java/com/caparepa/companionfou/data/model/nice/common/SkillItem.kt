@@ -28,7 +28,7 @@ data class SkillItem(
     @SerializedName("actIndividuality")
     val actIndividuality: List<IndividualityItem?>? = null,
     @SerializedName("script")
-    val script: Script? = null,
+    val script: ScriptObj? = null,
     @SerializedName("functions")
     val functions: List<FunctionItem?>? = null
 )
