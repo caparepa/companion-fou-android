@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.dao.general
 
+import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.general.attribute.RelationDetail
 import com.caparepa.companionfou.utils.toKotlinObject
 import com.google.gson.JsonElement
@@ -13,6 +14,9 @@ data class AttributeRelationEntity(
     val star: String? = null,
     val beast: String? = null
 ) {
+    @PrimaryKey(autoGenerate = false)
+    var id: Int = 0
+
     fun String.getRelationDetail(): RelationDetail {
         return this.toKotlinObject()
     }

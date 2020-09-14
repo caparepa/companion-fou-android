@@ -1,162 +1,163 @@
 package com.caparepa.companionfou.data.model.general.buffaction
 
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 data class BuffActionList(
     @SerializedName("commandAtk")
-    val commandAtk: BuffActionParams? = null,
+    val commandAtk: JsonElement? = null,
     @SerializedName("commandDef")
-    val commandDef: BuffActionParams? = null,
+    val commandDef: JsonElement? = null,
     @SerializedName("atk")
-    val atk: BuffActionParams? = null,
+    val atk: JsonElement? = null,
     @SerializedName("defence")
-    val defence: BuffActionParams? = null,
+    val defence: JsonElement? = null,
     @SerializedName("defencePierce")
-    val defencePierce: BuffActionParams? = null,
+    val defencePierce: JsonElement? = null,
     @SerializedName("specialdefence")
-    val specialdefence: BuffActionParams? = null,
+    val specialdefence: JsonElement? = null,
     @SerializedName("damage")
-    val damage: BuffActionParams? = null,
+    val damage: JsonElement? = null,
     @SerializedName("damageIndividuality")
-    val damageIndividuality: BuffActionParams? = null,
+    val damageIndividuality: JsonElement? = null,
     @SerializedName("damageIndividualityActiveonly")
-    val damageIndividualityActiveonly: BuffActionParams? = null,
+    val damageIndividualityActiveonly: JsonElement? = null,
     @SerializedName("selfdamage")
-    val selfdamage: BuffActionParams? = null,
+    val selfdamage: JsonElement? = null,
     @SerializedName("criticalDamage")
-    val criticalDamage: BuffActionParams? = null,
+    val criticalDamage: JsonElement? = null,
     @SerializedName("npdamage")
-    val npdamage: BuffActionParams? = null,
+    val npdamage: JsonElement? = null,
     @SerializedName("givenDamage")
-    val givenDamage: BuffActionParams? = null,
+    val givenDamage: JsonElement? = null,
     @SerializedName("receiveDamage")
-    val receiveDamage: BuffActionParams? = null,
+    val receiveDamage: JsonElement? = null,
     @SerializedName("pierceInvincible")
-    val pierceInvincible: BuffActionParams? = null,
+    val pierceInvincible: JsonElement? = null,
     @SerializedName("invincible")
-    val invincible: BuffActionParams? = null,
+    val invincible: JsonElement? = null,
     @SerializedName("breakAvoidance")
-    val breakAvoidance: BuffActionParams? = null,
+    val breakAvoidance: JsonElement? = null,
     @SerializedName("avoidance")
-    val avoidance: BuffActionParams? = null,
+    val avoidance: JsonElement? = null,
     @SerializedName("overwriteBattleclass")
-    val overwriteBattleclass: BuffActionParams? = null,
+    val overwriteBattleclass: JsonElement? = null,
     @SerializedName("overwriteClassrelatioAtk")
-    val overwriteClassrelatioAtk: BuffActionParams? = null,
+    val overwriteClassrelatioAtk: JsonElement? = null,
     @SerializedName("overwriteClassrelatioDef")
-    val overwriteClassrelatioDef: BuffActionParams? = null,
+    val overwriteClassrelatioDef: JsonElement? = null,
     @SerializedName("commandNpAtk")
-    val commandNpAtk: BuffActionParams? = null,
+    val commandNpAtk: JsonElement? = null,
     @SerializedName("commandNpDef")
-    val commandNpDef: BuffActionParams? = null,
+    val commandNpDef: JsonElement? = null,
     @SerializedName("dropNp")
-    val dropNp: BuffActionParams? = null,
+    val dropNp: JsonElement? = null,
     @SerializedName("dropNpDamage")
-    val dropNpDamage: BuffActionParams? = null,
+    val dropNpDamage: JsonElement? = null,
     @SerializedName("commandStarAtk")
-    val commandStarAtk: BuffActionParams? = null,
+    val commandStarAtk: JsonElement? = null,
     @SerializedName("commandStarDef")
-    val commandStarDef: BuffActionParams? = null,
+    val commandStarDef: JsonElement? = null,
     @SerializedName("criticalPoint")
-    val criticalPoint: BuffActionParams? = null,
+    val criticalPoint: JsonElement? = null,
     @SerializedName("starweight")
-    val starweight: BuffActionParams? = null,
+    val starweight: JsonElement? = null,
     @SerializedName("turnendNp")
-    val turnendNp: BuffActionParams? = null,
+    val turnendNp: JsonElement? = null,
     @SerializedName("turnendStar")
-    val turnendStar: BuffActionParams? = null,
+    val turnendStar: JsonElement? = null,
     @SerializedName("turnendHpRegain")
-    val turnendHpRegain: BuffActionParams? = null,
+    val turnendHpRegain: JsonElement? = null,
     @SerializedName("turnendHpReduce")
-    val turnendHpReduce: BuffActionParams? = null,
+    val turnendHpReduce: JsonElement? = null,
     @SerializedName("gainHp")
-    val gainHp: BuffActionParams? = null,
+    val gainHp: JsonElement? = null,
     @SerializedName("turnvalNp")
-    val turnvalNp: BuffActionParams? = null,
+    val turnvalNp: JsonElement? = null,
     @SerializedName("grantState")
-    val grantState: BuffActionParams? = null,
+    val grantState: JsonElement? = null,
     @SerializedName("resistanceState")
-    val resistanceState: BuffActionParams? = null,
+    val resistanceState: JsonElement? = null,
     @SerializedName("avoidState")
-    val avoidState: BuffActionParams? = null,
+    val avoidState: JsonElement? = null,
     @SerializedName("donotAct")
-    val donotAct: BuffActionParams? = null,
+    val donotAct: JsonElement? = null,
     @SerializedName("donotSkill")
-    val donotSkill: BuffActionParams? = null,
+    val donotSkill: JsonElement? = null,
     @SerializedName("donotNoble")
-    val donotNoble: BuffActionParams? = null,
+    val donotNoble: JsonElement? = null,
     @SerializedName("donotRecovery")
-    val donotRecovery: BuffActionParams? = null,
+    val donotRecovery: JsonElement? = null,
     @SerializedName("individualityAdd")
-    val individualityAdd: BuffActionParams? = null,
+    val individualityAdd: JsonElement? = null,
     @SerializedName("individualitySub")
-    val individualitySub: BuffActionParams? = null,
+    val individualitySub: JsonElement? = null,
     @SerializedName("hate")
-    val hate: BuffActionParams? = null,
+    val hate: JsonElement? = null,
     @SerializedName("criticalRate")
-    val criticalRate: BuffActionParams? = null,
+    val criticalRate: JsonElement? = null,
     @SerializedName("avoidInstantdeath")
-    val avoidInstantdeath: BuffActionParams? = null,
+    val avoidInstantdeath: JsonElement? = null,
     @SerializedName("resistInstantdeath")
-    val resistInstantdeath: BuffActionParams? = null,
+    val resistInstantdeath: JsonElement? = null,
     @SerializedName("nonresistInstantdeath")
-    val nonresistInstantdeath: BuffActionParams? = null,
+    val nonresistInstantdeath: JsonElement? = null,
     @SerializedName("regainNpUsedNoble")
-    val regainNpUsedNoble: BuffActionParams? = null,
+    val regainNpUsedNoble: JsonElement? = null,
     @SerializedName("functionDead")
-    val functionDead: BuffActionParams? = null,
+    val functionDead: JsonElement? = null,
     @SerializedName("maxhpRate")
-    val maxhpRate: BuffActionParams? = null,
+    val maxhpRate: JsonElement? = null,
     @SerializedName("maxhpValue")
-    val maxhpValue: BuffActionParams? = null,
+    val maxhpValue: JsonElement? = null,
     @SerializedName("functionWavestart")
-    val functionWavestart: BuffActionParams? = null,
+    val functionWavestart: JsonElement? = null,
     @SerializedName("functionSelfturnend")
-    val functionSelfturnend: BuffActionParams? = null,
+    val functionSelfturnend: JsonElement? = null,
     @SerializedName("giveGainHp")
-    val giveGainHp: BuffActionParams? = null,
+    val giveGainHp: JsonElement? = null,
     @SerializedName("functionCommandattack")
-    val functionCommandattack: BuffActionParams? = null,
+    val functionCommandattack: JsonElement? = null,
     @SerializedName("functionDeadattack")
-    val functionDeadattack: BuffActionParams? = null,
+    val functionDeadattack: JsonElement? = null,
     @SerializedName("functionEntry")
-    val functionEntry: BuffActionParams? = null,
+    val functionEntry: JsonElement? = null,
     @SerializedName("chagetd")
-    val chagetd: BuffActionParams? = null,
+    val chagetd: JsonElement? = null,
     @SerializedName("grantSubstate")
-    val grantSubstate: BuffActionParams? = null,
+    val grantSubstate: JsonElement? = null,
     @SerializedName("toleranceSubstate")
-    val toleranceSubstate: BuffActionParams? = null,
+    val toleranceSubstate: JsonElement? = null,
     @SerializedName("grantInstantdeath")
-    val grantInstantdeath: BuffActionParams? = null,
+    val grantInstantdeath: JsonElement? = null,
     @SerializedName("functionDamage")
-    val functionDamage: BuffActionParams? = null,
+    val functionDamage: JsonElement? = null,
     @SerializedName("functionReflection")
-    val functionReflection: BuffActionParams? = null,
+    val functionReflection: JsonElement? = null,
     @SerializedName("multiattack")
-    val multiattack: BuffActionParams? = null,
+    val multiattack: JsonElement? = null,
     @SerializedName("giveNp")
-    val giveNp: BuffActionParams? = null,
+    val giveNp: JsonElement? = null,
     @SerializedName("resistanceDelayNpturn")
-    val resistanceDelayNpturn: BuffActionParams? = null,
+    val resistanceDelayNpturn: JsonElement? = null,
     @SerializedName("pierceDefence")
-    val pierceDefence: BuffActionParams? = null,
+    val pierceDefence: JsonElement? = null,
     @SerializedName("gutsHp")
-    val gutsHp: BuffActionParams? = null,
+    val gutsHp: JsonElement? = null,
     @SerializedName("funcgainNp")
-    val funcgainNp: BuffActionParams? = null,
+    val funcgainNp: JsonElement? = null,
     @SerializedName("funcHpReduce")
-    val funcHpReduce: BuffActionParams? = null,
+    val funcHpReduce: JsonElement? = null,
     @SerializedName("functionNpattack")
-    val functionNpattack: BuffActionParams? = null,
+    val functionNpattack: JsonElement? = null,
     @SerializedName("fixCommandcard")
-    val fixCommandcard: BuffActionParams? = null,
+    val fixCommandcard: JsonElement? = null,
     @SerializedName("donotGainnp")
-    val donotGainnp: BuffActionParams? = null,
+    val donotGainnp: JsonElement? = null,
     @SerializedName("fieldIndividuality")
-    val fieldIndividuality: BuffActionParams? = null,
+    val fieldIndividuality: JsonElement? = null,
     @SerializedName("donotActCommandtype")
-    val donotActCommandtype: BuffActionParams? = null,
+    val donotActCommandtype: JsonElement? = null,
     @SerializedName("damageEventPoint")
-    val damageEventPoint: BuffActionParams? = null
+    val damageEventPoint: JsonElement? = null
 )
