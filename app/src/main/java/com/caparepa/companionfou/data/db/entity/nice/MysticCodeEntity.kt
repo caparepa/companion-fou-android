@@ -5,34 +5,39 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
 import com.caparepa.companionfou.data.model.nice.common.SkillItem
-import com.caparepa.companionfou.utils.toJsonString
 import com.caparepa.companionfou.utils.toKotlinObject
-import com.google.gson.Gson
-import com.google.gson.annotations.SerializedName
-import com.google.gson.reflect.TypeToken
 
 @Entity(
     tableName = "mystic_code"
 )
 data class MysticCodeEntity(
     @PrimaryKey
-    val id: Long?,
-    val name: String?,
-    val detail: String?,
-    val max_lv: Int?,
-    val extra_assets: String?,
-    val mc_skills: String?,
-    val exp_required: String?
+    @ColumnInfo(name = "id")
+    val id: Long? = null,
+    @ColumnInfo(name = "name")
+    val name: String? = null,
+    @ColumnInfo(name = "detail")
+    val detail: String? = null,
+    @ColumnInfo(name = "max_lv")
+    val maxLv: Int? = null,
+    @ColumnInfo(name = "extra_assets")
+    val extraAssets: String? = null,
+    /** List<SkillItem?>? **/
+    @ColumnInfo(name = "skills")
+    val skills: String? = null,
+    /** List<Int?>? **/
+    @ColumnInfo(name = "exp_required")
+    val expRequired: String? = null
 ) {
     fun getExtraAssets(): ExtraAssets? {
-        return this.extra_assets?.toKotlinObject()
+        return this.extraAssets?.toKotlinObject()
     }
 
     fun getSkills(): List<SkillItem>? {
-        return this.mc_skills?.toKotlinObject()
+        return this.skills?.toKotlinObject()
     }
 
     fun getExpRequired(): List<Int>? {
-        return this.exp_required?.toKotlinObject()
+        return this.expRequired?.toKotlinObject()
     }
 }
