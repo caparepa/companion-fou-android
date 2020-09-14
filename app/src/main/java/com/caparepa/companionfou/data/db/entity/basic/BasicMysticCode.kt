@@ -7,13 +7,11 @@ import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(tableName = "basic_mystic_code")
 data class BasicMysticCode(
+    @PrimaryKey
     val id: Long? = null,
     val name: String? = null,
     val item: String? = null
 ) {
-    @PrimaryKey(autoGenerate = true)
-    var mCodeId: Long = 0
-
     fun getBasicMysticCodeMedia(): BasicMysticCodeMedia? {
         return this.item?.toKotlinObject()
     }

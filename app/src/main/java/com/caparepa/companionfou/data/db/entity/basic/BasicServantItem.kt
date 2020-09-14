@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "basic_servant")
 data class BasicServantItem(
+    @PrimaryKey
     val id: Long? = null,
     val collectionNo: Long? = null,
     val type: String? = null,
@@ -12,7 +13,4 @@ data class BasicServantItem(
     val className: String? = null,
     val rarity: Int? = null,
     val face: String? = null
-) {
-    @PrimaryKey(autoGenerate = true)
-    var mServantId: Long = 0
-}
+)

@@ -10,5 +10,5 @@ data class BasicMysticCodeMedia(
     val female: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
-    var mCodeMediaId: Long = 0
+    var id: Long = 0
 }
