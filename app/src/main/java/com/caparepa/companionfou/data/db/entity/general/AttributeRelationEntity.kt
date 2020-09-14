@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.data.db.dao.general
+package com.caparepa.companionfou.data.db.entity.general
 
 import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.general.attribute.RelationDetail

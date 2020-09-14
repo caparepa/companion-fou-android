@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.data.db.dao.general
+package com.caparepa.companionfou.data.db.entity.general
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
