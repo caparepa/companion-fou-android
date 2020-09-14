@@ -1,42 +1,38 @@
 package com.caparepa.companionfou.data.db.entity.nice
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
+@Entity(
+    tableName = "craft_essence",
+    indices = [
+        Index(value = ["collection_no"], unique = true)
+    ]
+)
 data class CraftEssence(
-    @SerializedName("id")
+    @PrimaryKey
     val id: Long? = null,
-    @SerializedName("collectionNo")
-    val collectionNo: Long? = null,
-    @SerializedName("name")
+    val collection_no: Long? = null,
     val name: String? = null,
-    @SerializedName("type")
     val type: String? = null,
-    @SerializedName("rarity")
     val rarity: Int? = null,
-    @SerializedName("cost")
     val cost: Int? = null,
-    @SerializedName("lvMax")
-    val lvMax: Int? = null,
+    val lv_max: Int? = null,
     /** ExtraAssets? **/
-    @SerializedName("extraAssets")
-    val extraAssets: JsonElement? = null,
-    @SerializedName("atkBase")
-    val atkBase: Int? = null,
-    @SerializedName("atkMax")
-    val atkMax: Int? = null,
-    @SerializedName("hpBase")
-    val hpBase: Int? = null,
-    @SerializedName("hpMax")
-    val hpMax: Int? = null,
-    @SerializedName("growthCurve")
-    val growthCurve: Int? = null,
-    @SerializedName("atkGrowth")
-    val atkGrowth: List<Int?>? = null,
-    @SerializedName("hpGrowth")
-    val hpGrowth: List<Int?>? = null,
+    val extra_assets: JsonElement? = null,
+    val atk_base: Int? = null,
+    val atk_max: Int? = null,
+    val hp_base: Int? = null,
+    val hp_max: Int? = null,
+    val growth_curve: Int? = null,
+    /** List<Int?>? **/
+    val atk_growth: JsonArray? = null,
+    /** List<Int?>? **/
+    val hp_growth: JsonArray? = null,
     /** List<SkillItem?>? **/
-    @SerializedName("skills")
     val skills: JsonArray? = null
 )
