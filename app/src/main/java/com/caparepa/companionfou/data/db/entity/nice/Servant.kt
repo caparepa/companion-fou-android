@@ -5,9 +5,8 @@ import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
-import com.caparepa.companionfou.data.model.nice.servant.HitsDistribution
-import com.caparepa.companionfou.data.model.nice.servant.Materials
-import com.caparepa.companionfou.data.model.nice.servant.TraitItem
+import com.caparepa.companionfou.data.model.nice.common.SkillItem
+import com.caparepa.companionfou.data.model.nice.servant.*
 import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(
@@ -63,22 +62,16 @@ data class Servant(
     val bondGrowth: String? = null,
     @ColumnInfo(name = "bond_equip")
     val bondEquip: Int? = null,
-    /** SkillMaterials? **/
     @ColumnInfo(name = "ascension_materials")
     val ascensionMaterials: String? = null,
-    /** SkillMaterials? **/
     @ColumnInfo(name = "skill_materials")
     val skillMaterials: String? = null,
-    /** List<SkillItem?>? **/
     @ColumnInfo(name = "skills")
     val skills: String? = null,
-    /** List<ClassPassiveItem?>? **/
     @ColumnInfo(name = "class_passive")
     val classPassive: String? = null,
-    /** List<NoblePhantasmItem?>? **/
     @ColumnInfo(name = "noble_phantasms")
     val noblePhantasms: String? = null,
-    /** ServantProfile? **/
     val profile: String? = null
 ) {
     fun getExtraAssets(): ExtraAssets? {
@@ -111,5 +104,21 @@ data class Servant(
 
     fun getSkillMaterials(): Materials? {
         return this.skillMaterials?.toKotlinObject()
+    }
+
+    fun getSkills(): List<SkillItem>? {
+        return this.skills?.toKotlinObject()
+    }
+
+    fun getClassPassives(): List<ClassPassiveItem>? {
+        return this.classPassive?.toKotlinObject()
+    }
+
+    fun getNoblePhantasms(): List<NoblePhantasmItem>? {
+        return this.noblePhantasms?.toKotlinObject()
+    }
+
+    fun getProfile(): ServantProfile? {
+        return this.profile?.toKotlinObject()
     }
 }
