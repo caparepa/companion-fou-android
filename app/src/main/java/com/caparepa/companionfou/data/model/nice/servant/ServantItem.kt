@@ -6,7 +6,7 @@ import com.google.gson.JsonArray
 
 import com.google.gson.annotations.SerializedName
 
-data class NiceServantItem(
+data class ServantItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("collectionNo")

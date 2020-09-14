@@ -2,18 +2,12 @@ package com.caparepa.companionfou.ui.activity
 
 import android.os.Bundle
 import android.util.Log
-import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.caparepa.companionfou.BuildConfig
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.data.model.nice.servant.NiceServantItem
 import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.MysticCodeViewModel
-import com.caparepa.companionfou.utils.REGION_NA
 import com.caparepa.companionfou.utils.toastLong
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.core.KoinComponent
 import org.koin.core.inject
