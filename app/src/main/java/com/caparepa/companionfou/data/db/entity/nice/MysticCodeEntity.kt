@@ -22,10 +22,8 @@ data class MysticCodeEntity(
     val maxLv: Int? = null,
     @ColumnInfo(name = "extra_assets")
     val extraAssets: String? = null,
-    /** List<SkillItem?>? **/
     @ColumnInfo(name = "skills")
     val skills: String? = null,
-    /** List<Int?>? **/
     @ColumnInfo(name = "exp_required")
     val expRequired: String? = null
 ) {
@@ -33,11 +31,11 @@ data class MysticCodeEntity(
         return this.extraAssets?.toKotlinObject()
     }
 
-    fun getSkills(): List<SkillItem>? {
+    fun getSkillsObj(): List<SkillItem>? {
         return this.skills?.toKotlinObject()
     }
 
-    fun getExpRequired(): List<Int>? {
+    fun getExpRequiredObj(): List<Int>? {
         return this.expRequired?.toKotlinObject()
     }
 }

@@ -1,7 +1,7 @@
 package com.caparepa.companionfou.data.model.general.classrelation
 
 
-import com.google.gson.String
+
 import com.google.gson.annotations.SerializedName
 
 data class ClassRelationList(

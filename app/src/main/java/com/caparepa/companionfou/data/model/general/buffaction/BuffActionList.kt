@@ -1,6 +1,6 @@
 package com.caparepa.companionfou.data.model.general.buffaction
 
-import com.google.gson.String
+
 import com.google.gson.annotations.SerializedName
 
 data class BuffActionList(

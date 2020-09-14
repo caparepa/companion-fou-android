@@ -1,6 +1,5 @@
 package com.caparepa.companionfou.data.model.general.attribute
 
-import com.google.gson.String
 import com.google.gson.annotations.SerializedName
 
 data class AttributeRelation(

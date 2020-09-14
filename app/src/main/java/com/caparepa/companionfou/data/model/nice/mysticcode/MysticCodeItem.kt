@@ -3,6 +3,8 @@ package com.caparepa.companionfou.data.model.nice.mysticcode
 import com.caparepa.companionfou.data.model.common.ExtraAssets
 import com.caparepa.companionfou.data.model.common.SkillItem
 import com.caparepa.companionfou.utils.toKotlinObject
+import com.google.gson.JsonArray
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 data class MysticCodeItem(
@@ -15,21 +17,11 @@ data class MysticCodeItem(
     @SerializedName("maxLv")
     val maxLv: Int? = null,
     @SerializedName("extraAssets")
-    val extraAssets: String? = null,
+    val extraAssets: JsonElement? = null,
+    /** List<SkillItem?>? **/
     @SerializedName("skills")
-    val skills: String? = null,
+    val skills: JsonArray? = null,
+    /** List<Int?>? **/
     @SerializedName("expRequired")
-    val expRequired: String? = null
-) {
-    fun getExtraAssets(): ExtraAssets? {
-        return this.extraAssets?.toKotlinObject()
-    }
-
-    fun getSkills(): List<SkillItem>? {
-        return this.skills?.toKotlinObject()
-    }
-
-    fun getExpRequired(): List<Int>? {
-        return this.expRequired?.toKotlinObject()
-    }
-}
+    val expRequired: JsonArray? = null
+)

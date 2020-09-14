@@ -9,7 +9,6 @@ import com.caparepa.companionfou.utils.toKotlinObject
 data class BasicMysticCode(
     val id: Long? = null,
     val name: String? = null,
-    @Embedded(prefix = "media_")
     val item: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
