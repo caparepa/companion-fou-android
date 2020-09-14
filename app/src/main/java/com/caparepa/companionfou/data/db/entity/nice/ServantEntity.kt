@@ -15,7 +15,7 @@ import com.caparepa.companionfou.utils.toKotlinObject
         Index(value = ["collectionNo"], unique = true)
     ]
 )
-data class Servant(
+data class ServantEntity(
     @PrimaryKey
     val id: Long? = null,
     val collection_no: Long? = null,

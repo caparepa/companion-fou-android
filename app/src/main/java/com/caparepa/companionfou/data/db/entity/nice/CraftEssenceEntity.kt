@@ -13,7 +13,7 @@ import com.caparepa.companionfou.utils.toKotlinObject
         Index(value = ["collection_no"], unique = true)
     ]
 )
-data class CraftEssence(
+data class CraftEssenceEntity(
     @PrimaryKey
     val id: Long? = null,
     val collection_no: Long? = null,

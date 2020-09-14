@@ -3,7 +3,7 @@ package com.caparepa.companionfou.ui.viewmodel
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.caparepa.companionfou.data.db.entity.nice.MysticCode
+import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.utils.REGION_NA
@@ -18,8 +18,8 @@ class MysticCodeViewModel(
     BaseViewModel(), KoinComponent {
 
     val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>>()
-    val mysticCodeListResult = MutableLiveData<List<MysticCode>>()
-    val mysticCodeResult = MutableLiveData<MysticCode>()
+    val mysticCodeListResult = MutableLiveData<List<MysticCodeEntity>>()
+    val mysticCodeResult = MutableLiveData<MysticCodeEntity>()
 
     fun getMysticCodes() {
         viewModelScope.launch(Dispatchers.IO) {

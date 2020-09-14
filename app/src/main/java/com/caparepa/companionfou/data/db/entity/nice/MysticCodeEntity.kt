@@ -14,7 +14,7 @@ import com.google.gson.reflect.TypeToken
 @Entity(
     tableName = "mystic_code"
 )
-data class MysticCode(
+data class MysticCodeEntity(
     @PrimaryKey
     val id: Long?,
     val name: String?,

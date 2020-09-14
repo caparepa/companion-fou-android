@@ -1,7 +1,7 @@
 package com.caparepa.companionfou.repository.nice
 
 import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
-import com.caparepa.companionfou.data.db.entity.nice.MysticCode
+import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.utils.toJsonString
@@ -14,12 +14,12 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
 
     private val api = ApiClient.invoke()
 
-    override suspend fun fetchMysticCode(id: Long): MysticCode? {
+    override suspend fun fetchMysticCode(id: Long): MysticCodeEntity? {
         return mysticCodeDao.getMysticCodeById(id)
     }
 
     //TODO: beware of pagination!!!
-    override suspend fun fetchMysticCodes(): List<MysticCode>? {
+    override suspend fun fetchMysticCodes(): List<MysticCodeEntity>? {
         return mysticCodeDao.getMysticCodeList()
     }
 
@@ -41,7 +41,7 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
     private suspend fun persistMysticCodeList(mcList: List<MysticCodeItem>?) {
         mcList?.let {
             it.forEach { item ->
-                val entry = MysticCode (
+                val entry = MysticCodeEntity (
                     item.id,
                     item.name,
                     item.detail,

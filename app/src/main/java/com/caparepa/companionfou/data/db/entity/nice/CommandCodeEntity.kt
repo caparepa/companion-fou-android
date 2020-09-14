@@ -12,7 +12,7 @@ import com.caparepa.companionfou.utils.toKotlinObject
         Index(value = ["collectionNo"], unique = true)
     ]
 )
-data class CommandCode(
+data class CommandCodeEntity(
     val id: Long? = null,
     val collectionNo: Long? = null,
     val name: String? = null,

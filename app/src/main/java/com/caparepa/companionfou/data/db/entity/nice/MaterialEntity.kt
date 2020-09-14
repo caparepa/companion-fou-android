@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "material"
 )
-data class Material(
+data class MaterialEntity(
     @PrimaryKey
     val id: Long? = null,
     val name: String? = null,
