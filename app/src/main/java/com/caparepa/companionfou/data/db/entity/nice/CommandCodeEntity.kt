@@ -3,8 +3,8 @@ package com.caparepa.companionfou.data.db.entity.nice
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
-import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
-import com.caparepa.companionfou.data.model.nice.common.SkillItem
+import com.caparepa.companionfou.data.model.common.ExtraAssets
+import com.caparepa.companionfou.data.model.common.SkillItem
 import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(

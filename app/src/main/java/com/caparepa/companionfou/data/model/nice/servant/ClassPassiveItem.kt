@@ -1,8 +1,8 @@
 package com.caparepa.companionfou.data.model.nice.servant
 
-import com.caparepa.companionfou.data.model.nice.common.FunctionItem
-import com.caparepa.companionfou.data.model.nice.common.IndividualityItem
-import com.caparepa.companionfou.data.model.nice.common.ScriptObj
+import com.caparepa.companionfou.data.model.common.FunctionItem
+import com.caparepa.companionfou.data.model.common.IndividualityItem
+import com.caparepa.companionfou.data.model.common.ScriptObj
 import com.google.gson.annotations.SerializedName
 
 data class ClassPassiveItem(

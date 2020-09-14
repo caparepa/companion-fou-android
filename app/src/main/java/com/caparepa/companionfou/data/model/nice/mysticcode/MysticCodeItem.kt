@@ -1,7 +1,7 @@
 package com.caparepa.companionfou.data.model.nice.mysticcode
 
-import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
-import com.caparepa.companionfou.data.model.nice.common.SkillItem
+import com.caparepa.companionfou.data.model.common.ExtraAssets
+import com.caparepa.companionfou.data.model.common.SkillItem
 import com.caparepa.companionfou.utils.toKotlinObject
 import com.google.gson.annotations.SerializedName
 

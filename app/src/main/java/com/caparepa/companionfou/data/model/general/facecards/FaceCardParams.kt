@@ -1,10 +1,11 @@
 package com.caparepa.companionfou.data.model.general.facecards
 
+import com.caparepa.companionfou.data.model.common.IndividualityItem
 import com.google.gson.annotations.SerializedName
 
 data class FaceCardParams(
     @SerializedName("individuality")
-    val individuality: List<FaceCardIndividuality?>? = null,
+    val individuality: List<IndividualityItem?>? = null,
     @SerializedName("adjustAtk")
     val adjustAtk: Int? = null,
     @SerializedName("adjustTdGauge")

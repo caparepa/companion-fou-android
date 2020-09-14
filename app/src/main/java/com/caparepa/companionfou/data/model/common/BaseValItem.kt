@@ -1,8 +1,8 @@
-package com.caparepa.companionfou.data.model.general.facecards
+package com.caparepa.companionfou.data.model.common
 
 import com.google.gson.annotations.SerializedName
 
-data class FaceCardIndividuality(
+data class BaseValItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("name")

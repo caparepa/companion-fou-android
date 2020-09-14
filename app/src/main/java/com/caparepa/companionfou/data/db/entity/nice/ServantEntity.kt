@@ -4,9 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
-import com.caparepa.companionfou.data.model.nice.common.ScriptObj
-import com.caparepa.companionfou.data.model.nice.common.SkillItem
+import com.caparepa.companionfou.data.model.common.ExtraAssets
+import com.caparepa.companionfou.data.model.common.ScriptObj
+import com.caparepa.companionfou.data.model.common.SkillItem
 import com.caparepa.companionfou.data.model.nice.servant.*
 import com.caparepa.companionfou.utils.toKotlinObject
 
