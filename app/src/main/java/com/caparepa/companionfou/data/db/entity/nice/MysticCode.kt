@@ -15,6 +15,7 @@ import com.google.gson.reflect.TypeToken
     tableName = "mystic_code"
 )
 data class MysticCode(
+    @PrimaryKey
     val id: Long?,
     val name: String?,
     val detail: String?,
@@ -23,9 +24,6 @@ data class MysticCode(
     val mc_skills: String?,
     val exp_required: String?
 ) {
-    @PrimaryKey(autoGenerate = true)
-    var mcId: Long = 0
-
     fun getExtraAssets(): ExtraAssets? {
         return this.extra_assets?.toKotlinObject()
     }
