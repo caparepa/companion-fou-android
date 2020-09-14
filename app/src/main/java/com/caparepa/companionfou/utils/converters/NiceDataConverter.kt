@@ -2,7 +2,6 @@ package com.caparepa.companionfou.utils.converters
 
 import androidx.room.TypeConverter
 import com.caparepa.companionfou.data.model.common.*
-import com.caparepa.companionfou.data.model.nice.common.*
 import com.caparepa.companionfou.data.model.nice.servant.*
 import com.google.gson.Gson
 import com.google.gson.JsonArray
