@@ -34,10 +34,12 @@ data class CraftEssenceItem(
     val hpMax: Int? = null,
     @SerializedName("growthCurve")
     val growthCurve: Int? = null,
+    /** List<Int?>? **/
     @SerializedName("atkGrowth")
-    val atkGrowth: List<Int?>? = null,
+    val atkGrowth: JsonArray? = null,
+    /** List<Int?>? **/
     @SerializedName("hpGrowth")
-    val hpGrowth: List<Int?>? = null,
+    val hpGrowth: JsonArray? = null,
     /** List<SkillItem?>? **/
     @SerializedName("skills")
     val skills: JsonArray? = null
