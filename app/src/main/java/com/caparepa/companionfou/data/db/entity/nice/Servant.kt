@@ -4,8 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.google.gson.JsonArray
-import com.google.gson.JsonElement
+import com.caparepa.companionfou.data.model.nice.common.ExtraAssets
+import com.caparepa.companionfou.data.model.nice.servant.HitsDistribution
+import com.caparepa.companionfou.data.model.nice.servant.Materials
+import com.caparepa.companionfou.data.model.nice.servant.TraitItem
+import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(
     tableName = "servant",
@@ -26,12 +29,10 @@ data class Servant(
     val cost: Int? = null,
     @ColumnInfo(name = "lv_max")
     val lvMax: Int? = null,
-    /** ExtraAssets? **/
     @ColumnInfo(name = "extra_assets")
     val extraAssets: String? = null,
     val gender: String? = null,
     val attribute: String? = null,
-    /** List<TraitItem?>? **/
     val traits: String? = null,
     @ColumnInfo(name = "star_absorb")
     val starAbsorb: Int? = null,
@@ -43,7 +44,7 @@ data class Servant(
     val cards: List<String?>? = null,
     /** HitsDistribution? **/
     @ColumnInfo(name = "hits_distribution")
-    val hitsDistribution: JsonElement? = null,
+    val hitsDistribution: String? = null,
     @ColumnInfo(name = "atk_base")
     val atkBase: Int? = null,
     @ColumnInfo(name = "akt_max")
@@ -54,13 +55,10 @@ data class Servant(
     val hpMax: Int? = null,
     @ColumnInfo(name = "growth_curve")
     val growthCurve: Int? = null,
-    /** List<Int?>? **/
     @ColumnInfo(name = "atk_growth")
     val atkGrowth: String? = null,
-    /** List<Int?>? **/
     @ColumnInfo(name = "hp_growth")
     val hpGrowth: String? = null,
-    /** List<Int?>? **/
     @ColumnInfo(name = "bond_growth")
     val bondGrowth: String? = null,
     @ColumnInfo(name = "bond_equip")
@@ -82,4 +80,36 @@ data class Servant(
     val noblePhantasms: String? = null,
     /** ServantProfile? **/
     val profile: String? = null
-)
+) {
+    fun getExtraAssets(): ExtraAssets? {
+        return this.extraAssets?.toKotlinObject()
+    }
+
+    fun getTraits(): List<TraitItem>? {
+        return this.traits?.toKotlinObject()
+    }
+
+    fun getHitsDistribution(): HitsDistribution? {
+        return this.hitsDistribution?.toKotlinObject()
+    }
+
+    fun getAtkGrowth(): List<Int>? {
+        return this.atkGrowth?.toKotlinObject()
+    }
+
+    fun getHpGrowth(): List<Int>? {
+        return this.hpGrowth?.toKotlinObject()
+    }
+
+    fun getBondGrowth(): List<Int>? {
+        return this.bondGrowth?.toKotlinObject()
+    }
+
+    fun getAscensionMaterials(): Materials? {
+        return this.ascensionMaterials?.toKotlinObject()
+    }
+
+    fun getSkillMaterials(): Materials? {
+        return this.skillMaterials?.toKotlinObject()
+    }
+}
