@@ -39,8 +39,9 @@ data class ServantItem(
     val starGen: Int? = null,
     @SerializedName("instantDeathChance")
     val instantDeathChance: Int? = null,
+    /** List<String?> **/
     @SerializedName("cards")
-    val cards: List<String?>? = null,
+    val cards: JsonArray? = null,
     /** HitsDistribution? **/
     @SerializedName("hitsDistribution")
     val hitsDistribution: String? = null,

@@ -51,7 +51,7 @@ data class ServantEntity(
     @ColumnInfo(name ="instant_death_chance")
     val instantDeathChance: Int? = null,
     @ColumnInfo(name ="cards")
-    val cards: List<String?>? = null,
+    val cards: String? = null,
     /** HitsDistribution? **/
     @ColumnInfo(name ="hits_distribution")
     val hitsDistribution: String? = null,
@@ -107,6 +107,10 @@ data class ServantEntity(
 
     fun getTraits(): List<TraitItem>? {
         return this.traits?.toKotlinObject()
+    }
+
+    fun getFaceCards(): List<String>? {
+        return this.cards?.toKotlinObject()
     }
 
     fun getHitsDistribution(): HitsDistribution? {
