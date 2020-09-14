@@ -1,45 +1,47 @@
 package com.caparepa.companionfou.data.model.general.classrelation
 
 
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 data class ClassRelationList(
+    /** ClassRelationDetail? **/
     @SerializedName("saber")
-    val saber: ClassRelationDetail? = null,
+    val saber: JsonElement? = null,
     @SerializedName("archer")
-    val archer: ClassRelationDetail? = null,
+    val archer: JsonElement? = null,
     @SerializedName("lancer")
-    val lancer: ClassRelationDetail? = null,
+    val lancer: JsonElement? = null,
     @SerializedName("rider")
-    val rider: ClassRelationDetail? = null,
+    val rider: JsonElement? = null,
     @SerializedName("caster")
-    val caster: ClassRelationDetail? = null,
+    val caster: JsonElement? = null,
     @SerializedName("assassin")
-    val assassin: ClassRelationDetail? = null,
+    val assassin: JsonElement? = null,
     @SerializedName("berserker")
-    val berserker: ClassRelationDetail? = null,
+    val berserker: JsonElement? = null,
     @SerializedName("shielder")
-    val shielder: ClassRelationDetail? = null,
+    val shielder: JsonElement? = null,
     @SerializedName("ruler")
-    val ruler: ClassRelationDetail? = null,
+    val ruler: JsonElement? = null,
     @SerializedName("alterEgo")
-    val alterEgo: ClassRelationDetail? = null,
+    val alterEgo: JsonElement? = null,
     @SerializedName("avenger")
-    val avenger: ClassRelationDetail? = null,
+    val avenger: JsonElement? = null,
     @SerializedName("demonGodPillar")
-    val demonGodPillar: ClassRelationDetail? = null,
+    val demonGodPillar: JsonElement? = null,
     @SerializedName("beastII")
-    val beastII: ClassRelationDetail? = null,
+    val beastII: JsonElement? = null,
     @SerializedName("beastI")
-    val beastI: ClassRelationDetail? = null,
+    val beastI: JsonElement? = null,
     @SerializedName("moonCancer")
-    val moonCancer: ClassRelationDetail? = null,
+    val moonCancer: JsonElement? = null,
     @SerializedName("beastIIIR")
-    val beastIIIR: ClassRelationDetail? = null,
+    val beastIIIR: JsonElement? = null,
     @SerializedName("foreigner")
-    val foreigner: ClassRelationDetail? = null,
+    val foreigner: JsonElement? = null,
     @SerializedName("beastIIIL")
-    val beastIIIL: ClassRelationDetail? = null,
+    val beastIIIL: JsonElement? = null,
     @SerializedName("beastUnknown")
-    val beastUnknown: ClassRelationDetail? = null
+    val beastUnknown: JsonElement? = null
 )
