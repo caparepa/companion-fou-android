@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.caparepa.companionfou.data.db.dao.basic.*
 import com.caparepa.companionfou.data.db.dao.general.*
-import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
+import com.caparepa.companionfou.data.db.dao.nice.*
 import com.caparepa.companionfou.data.db.entity.basic.*
 import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 
@@ -43,7 +43,11 @@ abstract class CompanionFouDatabase : RoomDatabase() {
     abstract fun getUserLevelDao(): UserLevelDao
 
     //nice
+    abstract fun getCommandCodeDao(): CommandCodeDao
+    abstract fun getCraftEssenceDao(): CraftEssenceDao
+    abstract fun getMaterialDao(): MaterialDao
     abstract fun getMysticCodeDao(): MysticCodeDao
+    abstract fun getServantDao(): ServantDao
 
     companion object {
 
