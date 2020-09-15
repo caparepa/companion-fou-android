@@ -8,7 +8,8 @@ import com.caparepa.companionfou.data.db.dao.basic.*
 import com.caparepa.companionfou.data.db.dao.general.*
 import com.caparepa.companionfou.data.db.dao.nice.*
 import com.caparepa.companionfou.data.db.entity.basic.*
-import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
+import com.caparepa.companionfou.data.db.entity.general.*
+import com.caparepa.companionfou.data.db.entity.nice.*
 
 @Database(
     entities =
@@ -18,9 +19,21 @@ import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
         BasicCraftEssence::class,
         BasicMysticCode::class,
         BasicMysticCodeMedia::class,
-        MysticCodeEntity::class
+        AllTraitsEntity::class,
+        AttributeRelationEntity::class,
+        BuffActionListEntity::class,
+        ClassAttackRateEntity::class,
+        ClassRelationEntity::class,
+        FaceCardEntity::class,
+        GameEnumsEntity::class,
+        UserLevelEntity::class,
+        CommandCodeEntity::class,
+        CraftEssenceEntity::class,
+        MaterialEntity::class,
+        MysticCodeEntity::class,
+        ServantEntity::class
     ],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 abstract class CompanionFouDatabase : RoomDatabase() {
