@@ -11,6 +11,6 @@ interface BuffActionListDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: BuffActionListEntity)
 
-    @Query("SELECT * FROM buff_action_list WHERE id = :id")
-    suspend fun getBuffActionListData(id: Long): BuffActionListEntity?
+    @Query("SELECT * FROM buff_action_list WHERE id = 0")
+    suspend fun getBuffActionListData(): BuffActionListEntity?
 }

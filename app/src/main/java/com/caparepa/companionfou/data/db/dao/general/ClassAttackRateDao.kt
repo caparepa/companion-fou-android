@@ -11,6 +11,6 @@ interface ClassAttackRateDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: ClassAttackRateEntity)
 
-    @Query("SELECT * FROM class_attack_rate WHERE id = :id")
-    suspend fun getClassAttackRateData(id: Long): ClassAttackRateEntity?
+    @Query("SELECT * FROM class_attack_rate WHERE id = 0")
+    suspend fun getClassAttackRateData(): ClassAttackRateEntity?
 }

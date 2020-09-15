@@ -11,6 +11,6 @@ interface FaceCardDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: FaceCardEntity)
 
-    @Query("SELECT * FROM face_card WHERE id = :id")
-    suspend fun getFaceCardData(id: Long): FaceCardEntity?
+    @Query("SELECT * FROM face_card WHERE id = 0")
+    suspend fun getFaceCardData(): FaceCardEntity?
 }

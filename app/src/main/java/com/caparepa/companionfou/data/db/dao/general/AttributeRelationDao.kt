@@ -11,6 +11,6 @@ interface AttributeRelationDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: AttributeRelationEntity)
 
-    @Query("SELECT * FROM attribute_relation WHERE id = :id")
-    suspend fun getAttributeRelationData(id: Long): AttributeRelationEntity?
+    @Query("SELECT * FROM attribute_relation WHERE id = 0")
+    suspend fun getAttributeRelationData(): AttributeRelationEntity?
 }

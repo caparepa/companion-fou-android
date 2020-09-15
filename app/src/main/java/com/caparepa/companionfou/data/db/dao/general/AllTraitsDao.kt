@@ -13,5 +13,5 @@ interface AllTraitsDao {
     suspend fun upsert(item: AllTraitsEntity)
 
     @Query("SELECT * FROM all_traits WHERE id = 0")
-    suspend fun getTrait(): String?
+    suspend fun getTraitsData(): String?
 }

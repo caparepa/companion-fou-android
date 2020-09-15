@@ -12,7 +12,7 @@ interface GameEnumsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: GameEnumsEntity)
 
-    @Query("SELECT * FROM user_level WHERE id = 0")
-    suspend fun getGameEnums(): GameEnumsEntity?
+    @Query("SELECT * FROM game_enums WHERE id = 0")
+    suspend fun getGameEnumsData(): GameEnumsEntity?
 
 }
