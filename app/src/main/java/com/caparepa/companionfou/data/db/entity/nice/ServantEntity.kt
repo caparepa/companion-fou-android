@@ -101,63 +101,63 @@ data class ServantEntity(
     @ColumnInfo(name ="profile")
     val profile: String? = null
 ) {
-    fun getExtraAssets(): ExtraAssets? {
+    fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }
 
-    fun getTraits(): List<TraitItem>? {
+    fun getTraitsObj(): List<TraitItem>? {
         return this.traits?.toKotlinObject()
     }
 
-    fun getFaceCards(): List<String>? {
+    fun getFaceCardsObj(): List<String>? {
         return this.cards?.toKotlinObject()
     }
 
-    fun getHitsDistribution(): HitsDistribution? {
+    fun getHitsDistributionObj(): HitsDistribution? {
         return this.hitsDistribution?.toKotlinObject()
     }
 
-    fun getAtkGrowth(): List<Int>? {
+    fun getAtkGrowthObj(): List<Int>? {
         return this.atkGrowth?.toKotlinObject()
     }
 
-    fun getHpGrowth(): List<Int>? {
+    fun getHpGrowthObj(): List<Int>? {
         return this.hpGrowth?.toKotlinObject()
     }
 
-    fun getBondGrowth(): List<Int>? {
+    fun getBondGrowthObj(): List<Int>? {
         return this.bondGrowth?.toKotlinObject()
     }
 
-    fun getAscensionMaterials(): Materials? {
+    fun getAscensionMaterialsObj(): Materials? {
         return this.ascensionMaterials?.toKotlinObject()
     }
 
-    fun getSkillMaterials(): Materials? {
+    fun getSkillMaterialsObj(): Materials? {
         return this.skillMaterials?.toKotlinObject()
     }
 
-    fun getCostumeMaterials(): Materials? {
+    fun getCostumeMaterialsObj(): Materials? {
         return this.costumeMaterials?.toKotlinObject()
     }
 
-    fun getScript(): ScriptObj? {
+    fun getScriptObj(): ScriptObj? {
         return this.script?.toKotlinObject()
     }
 
-    fun getSkills(): List<SkillItem>? {
+    fun getSkillsObj(): List<SkillItem>? {
         return this.skills?.toKotlinObject()
     }
 
-    fun getClassPassives(): List<ClassPassiveItem>? {
+    fun getClassPassivesObj(): List<ClassPassiveItem>? {
         return this.classPassive?.toKotlinObject()
     }
 
-    fun getNoblePhantasms(): List<NoblePhantasmItem>? {
+    fun getNoblePhantasmsObj(): List<NoblePhantasmItem>? {
         return this.noblePhantasms?.toKotlinObject()
     }
 
-    fun getProfile(): ServantProfile? {
+    fun getProfileObj(): ServantProfile? {
         return this.profile?.toKotlinObject()
     }
 }

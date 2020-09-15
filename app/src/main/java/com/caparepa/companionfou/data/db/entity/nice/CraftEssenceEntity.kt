@@ -49,19 +49,19 @@ data class CraftEssenceEntity(
     @ColumnInfo(name = "skills")
     val skills: String? = null
 ) {
-    fun getExtraAssets(): ExtraAssets? {
+    fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }
 
-    fun getAtkGrowth(): List<Int>? {
+    fun getAtkGrowthObj(): List<Int>? {
         return this.atkGrowth?.toKotlinObject()
     }
 
-    fun getHpGrowth(): List<Int>? {
+    fun getHpGrowthObj(): List<Int>? {
         return this.hpGrowth?.toKotlinObject()
     }
 
-    fun getSkills(): List<SkillItem>? {
+    fun getSkillsObj(): List<SkillItem>? {
         return this.skills?.toKotlinObject()
     }
 }

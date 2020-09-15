@@ -27,15 +27,15 @@ data class MysticCodeEntity(
     @ColumnInfo(name = "exp_required")
     val expRequired: String? = null
 ) {
-    fun getMcExtraAssets(): ExtraAssets? {
+    fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }
 
-    fun getMcSkills(): List<SkillItem>? {
+    fun getSkillsObj(): List<SkillItem>? {
         return this.skills?.toKotlinObject()
     }
 
-    fun getMcExpRequired(): List<Int>? {
+    fun getExpRequiredObj(): List<Int>? {
         return this.expRequired?.toKotlinObject()
     }
 }

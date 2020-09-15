@@ -2,21 +2,23 @@ package com.caparepa.companionfou.data.db.entity.general
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(
-    tableName = "all_traits"
+    tableName = "all_traits",
+    indices = [
+        Index(value = ["trait_id"], unique = true)
+    ]
 )
 class AllTraitsEntity(
-    /** Map<Int, String>**/
-    @ColumnInfo(name = "trait_map")
-    val traitMapValue: String? = null
+    @ColumnInfo(name = "trait_id")
+    val traitId: Long? = null,
+    @ColumnInfo(name = "trait_value")
+    val traitValue: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var id: Long? = 0
+    //TODO: the original response must be processed from a Map<Int, String>
 
-    fun getAllTraits(): HashMap<Int, String>? {
-        return this.traitMapValue?.toKotlinObject()
-    }
+    @PrimaryKey(autoGenerate = true)
+    var id: Long? = 0
 }

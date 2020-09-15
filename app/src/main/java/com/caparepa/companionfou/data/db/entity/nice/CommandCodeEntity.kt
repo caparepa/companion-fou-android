@@ -3,6 +3,7 @@ package com.caparepa.companionfou.data.db.entity.nice
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.caparepa.companionfou.data.model.common.ExtraAssets
 import com.caparepa.companionfou.data.model.common.SkillItem
 import com.caparepa.companionfou.utils.toKotlinObject
@@ -10,10 +11,11 @@ import com.caparepa.companionfou.utils.toKotlinObject
 @Entity(
     tableName = "command_code",
     indices = [
-        Index(value = ["collectionNo"], unique = true)
+        Index(value = ["collection_no"], unique = true)
     ]
 )
 data class CommandCodeEntity(
+    @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Long? = null,
     @ColumnInfo(name = "collection_no")
@@ -29,11 +31,11 @@ data class CommandCodeEntity(
     @ColumnInfo(name = "comment")
     val comment: String? = null
 ) {
-    fun getExtraAssets(): ExtraAssets? {
+    fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }
 
-    fun getSkills(): List<SkillItem>? {
+    fun getSkillsObj(): List<SkillItem>? {
         return this.skills?.toKotlinObject()
     }
 }
