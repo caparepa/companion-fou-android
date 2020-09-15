@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 
 data class GameEnums(
     /**
-     * JsonElement
+     * JsonElement is Map<Int, String>
      */
     @SerializedName("NiceSvtType")
     val niceSvtType: JsonElement? = null,
