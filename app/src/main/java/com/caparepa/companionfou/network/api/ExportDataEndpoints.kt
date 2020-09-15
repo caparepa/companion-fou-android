@@ -1,17 +1,23 @@
 package com.caparepa.companionfou.network.api
 
-import com.caparepa.companionfou.data.model.basic.BasicMysticCodeItem
+import com.caparepa.companionfou.data.model.general.attackrate.ClassAttackRate
+import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
+import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
+import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
+import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
+import com.caparepa.companionfou.data.model.general.other.GameEnums
+import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
+import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
+import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
+import com.caparepa.companionfou.data.model.nice.servant.MaterialItem
+import com.caparepa.companionfou.data.model.nice.servant.ServantItem
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ExportDataEndpoints {
-
-    /**
-     * JSON Download endpoints
-     */
 
     //Export endpoints
 
@@ -22,112 +28,113 @@ interface ExportDataEndpoints {
 
     //Attribute Affinity
     @GET("{current_date}/{region}/NiceAttributeRelation.json")
-    suspend fun getNiceAttributeRelation(
+    suspend fun getAttributeRelation(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<AttributeRelation>
 
     //Attack Rate
     @GET("{current_date}/{region}/NiceClassAttackRate.json")
-    suspend fun getNiceClassAttackRate(
+    suspend fun getClassAttackRate(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<ClassAttackRate>
 
     //Class Affinity
     @GET("{current_date}/{region}/NiceClassRelation.json")
-    suspend fun getNiceClassRelation(
+    suspend fun getClassRelation(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<ClassRelationList>
 
     //Card Details
     @GET("{current_date}/{region}/NiceCard.json")
-    suspend fun getNiceCard(
+    suspend fun getFaceCard(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<FaceCardList>
 
     //Constants
     @GET("{current_date}/{region}/NiceConstants.json")
-    suspend fun getNiceConstants(
+    suspend fun getConstants(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
     ): Response<ResponseBody>
 
     //Buff Action Info
     @GET("{current_date}/{region}/NiceBuffList.ActionList.json.json")
-    suspend fun getNiceBuffActionList(
+    suspend fun getBuffActionList(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<BuffActionList>
 
     //Master Level info
     @GET("{current_date}/{region}/NiceUserLevel.json")
-    suspend fun getNiceUserLevel(
+    suspend fun getUserLevel(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<UserLevelList>
 
     //All enums
     @GET("{current_date}/{region}/nice_enums.json")
     suspend fun getAllEnums(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<GameEnums>
 
     //Trait mapping
+    //TODO: the response is a Map<Int, String>?
     @GET("{current_date}/{region}/nice_trait.json")
     suspend fun getTraitMapping(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<Map<Int, String>?>
 
     //Region endpoints
 
     //Get servants
     @GET("{current_date}/{region}/nice_servant.json")
-    suspend fun getNiceServants(
+    suspend fun getServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<ServantItem>?>
 
     //Get servants with lore
     @GET("{current_date}/{region}/nice_servant_lore.json")
-    suspend fun getNiceServantsWithLore(
+    suspend fun getServantsWithLore(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<ServantItem>?>
 
     //Get Craft Essences
     @GET("{current_date}/{region}/nice_equip.json")
-    suspend fun getNiceCraftEssences(
+    suspend fun getCraftEssences(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<CraftEssenceItem>?>
 
     //Get Craft Essences with lore
     @GET("{current_date}/{region}/nice_equip_lore.json")
-    suspend fun getNiceCraftEssencesWithLore(
+    suspend fun getCraftEssencesWithLore(
         @Path(
             value = "current_date",
             encoded = true
         ) currentDate: String, @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<CraftEssenceItem>?>
 
     //Get Command Codes
     @GET("{current_date}/{region}/nice_command_code.json")
-    suspend fun getNiceCommandCodes(
+    suspend fun getCommandCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<CommandCodeItem>?>
 
     //Get Materials (items, ascension, etc)
     @GET("{current_date}/{region}/nice_item.json")
-    suspend fun getNiceMaterials(
+    suspend fun getMaterials(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<ResponseBody>
+    ): Response<List<MaterialItem>?>
 
     //Get Mystic Codes
     @GET("{current_date}/{region}/nice_mystic_code.json")
