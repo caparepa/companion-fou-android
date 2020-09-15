@@ -14,5 +14,4 @@ class AllTraitsEntity(
     /**
      * TODO: map the response to this entity via a forEach
      */
-
 }
