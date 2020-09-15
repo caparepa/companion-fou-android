@@ -12,9 +12,6 @@ interface AllTraitsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: AllTraitsEntity)
 
-    @Query("SELECT * FROM all_traits")
-    suspend fun getAllTraits(): List<String>?
-
-    @Query("SELECT * FROM all_traits WHERE id = :id")
+    @Query("SELECT * FROM all_traits WHERE id = :0")
     suspend fun getTraitById(id: Long): String?
 }
