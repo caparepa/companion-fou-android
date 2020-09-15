@@ -13,6 +13,6 @@ interface GameEnumsDao {
     suspend fun upsert(item: GameEnumsEntity)
 
     @Query("SELECT * FROM user_level WHERE id = 0")
-    suspend fun getUserLevelData(): GameEnumsEntity?
+    suspend fun getGameEnums(): GameEnumsEntity?
 
 }
