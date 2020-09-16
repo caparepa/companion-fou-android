@@ -267,30 +267,30 @@ object NiceDataConverter {
      */
     @TypeConverter
     @JvmStatic
-    fun fromMaterialItemList(list: List<MaterialItem?>?): String? {
-        val type = object : TypeToken<List<MaterialItem>>() {}.type
+    fun fromMaterialItemList(list: List<ServantMaterial?>?): String? {
+        val type = object : TypeToken<List<ServantMaterial>>() {}.type
         return Gson().toJson(list, type)
     }
 
     @TypeConverter
     @JvmStatic
-    fun toMaterialItemList(list: String?): List<MaterialItem>? {
-        val type = object : TypeToken<List<MaterialItem>>() {}.type
-        return Gson().fromJson<List<MaterialItem>>(list, type)
+    fun toMaterialItemList(list: String?): List<ServantMaterial>? {
+        val type = object : TypeToken<List<ServantMaterial>>() {}.type
+        return Gson().fromJson<List<ServantMaterial>>(list, type)
     }
 
     @TypeConverter
     @JvmStatic
-    fun fromIntMaterialsMap(map: Map<Int, MaterialItem?>?): String? {
-        val type = object : TypeToken<Map<Int, MaterialItem>>() {}.type
+    fun fromIntMaterialsMap(map: Map<Int, ServantMaterial?>?): String? {
+        val type = object : TypeToken<Map<Int, ServantMaterial>>() {}.type
         return Gson().toJson(map, type)
     }
 
     @TypeConverter
     @JvmStatic
-    fun toIntMaterialItemMap(map: String?): Map<Int, MaterialItem>? {
-        val type = object : TypeToken<Map<Int, MaterialItem>>() {}.type
-        return Gson().fromJson<Map<Int, MaterialItem>>(map, type)
+    fun toIntMaterialItemMap(map: String?): Map<Int, ServantMaterial>? {
+        val type = object : TypeToken<Map<Int, ServantMaterial>>() {}.type
+        return Gson().fromJson<Map<Int, ServantMaterial>>(map, type)
     }
 
     /**

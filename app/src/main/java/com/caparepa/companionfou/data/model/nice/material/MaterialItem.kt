@@ -1,8 +1,8 @@
-package com.caparepa.companionfou.data.model.nice.servant
+package com.caparepa.companionfou.data.model.nice.material
 
 import com.google.gson.annotations.SerializedName
 
-data class MaterialDetail(
+data class MaterialItem(
     @SerializedName("id")
     val id: Long? = null,
     @SerializedName("name")
