@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.repository.general
 
+import com.caparepa.companionfou.data.db.entity.general.*
 import com.caparepa.companionfou.data.model.general.attackrate.ClassAttackRate
 import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
 import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
@@ -10,6 +11,18 @@ import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import okhttp3.ResponseBody
 
 interface GeneralDataRepository {
+
+    suspend fun fetchGeneralInfo(): ResponseBody?
+    suspend fun fetchAttributeRelation(): AttributeRelationEntity?
+    suspend fun fetchClassAttackRate(): ClassAttackRateEntity?
+    suspend fun fetchClassRelation(): ClassRelationEntity?
+    suspend fun fetchFaceCard(): FaceCardEntity?
+    suspend fun fetchConstants(): ResponseBody?
+    suspend fun fetchBuffActionList(): BuffActionListEntity?
+    suspend fun fetchUserLevel(): UserLevelEntity?
+    suspend fun fetchAllEnums(): GameEnumsEntity?
+    suspend fun fetchTraitMapping(): ResponseBody?
+
     suspend fun getGeneralInfo(currentDate: String, region: String): ResponseBody?
     suspend fun getAttributeRelation(currentDate: String, region: String): AttributeRelation?
     suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate?
