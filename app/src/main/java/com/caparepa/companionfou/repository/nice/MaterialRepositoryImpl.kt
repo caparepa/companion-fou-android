@@ -24,11 +24,14 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
     override suspend fun getMaterialList(currentDate: String, region: String): List<MaterialItem>? =
         withContext(Dispatchers.IO) {
             try {
-
+                val response = api.getMaterials(currentDate, region)
+                val body = response.body()
+                persistMaterialList(body)
+                body
             } catch (e: Exception) {
-
+                e.printStackTrace()
+                null
             }
-            TODO("Not yet implemented")
         }
 
     private suspend fun persistMaterialList(mList: List<MaterialItem>?) {

@@ -9,6 +9,7 @@ import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
 import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
+import com.caparepa.companionfou.data.model.nice.material.MaterialItem
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.data.model.nice.servant.ServantMaterial
 import com.caparepa.companionfou.data.model.nice.servant.ServantItem
@@ -134,7 +135,7 @@ interface ExportDataEndpoints {
     suspend fun getMaterials(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "region", encoded = true) region: String
-    ): Response<List<ServantMaterial>?>
+    ): Response<List<MaterialItem>?>
 
     //Get Mystic Codes
     @GET("{current_date}/{region}/nice_mystic_code.json")
