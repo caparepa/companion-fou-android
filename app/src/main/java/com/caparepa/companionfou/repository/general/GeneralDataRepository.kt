@@ -10,13 +10,14 @@ import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import okhttp3.ResponseBody
 
 interface GeneralDataRepository {
-    suspend fun getAttributeRelation(urlType: String, region: String): AttributeRelation?
-    suspend fun getClassAttackRate(urlType: String, region: String): ClassAttackRate?
-    suspend fun getClassRelation(urlType: String, region: String): ClassRelationList?
-    suspend fun getFaceCard(urlType: String, region: String): FaceCardList?
-    suspend fun getConstants(urlType: String, region: String): ResponseBody?
-    suspend fun getBuffActionList(urlType: String, region: String): BuffActionList?
-    suspend fun getUserLevel(urlType: String, region: String): UserLevelList?
-    suspend fun getAllEnums(urlType: String, region: String): GameEnums?
-    suspend fun getTraitMapping(urlType: String, region: String): ResponseBody?
+    suspend fun getGeneralInfo(currentDate: String, region: String): ResponseBody?
+    suspend fun getAttributeRelation(currentDate: String, region: String): AttributeRelation?
+    suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate?
+    suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList?
+    suspend fun getFaceCard(currentDate: String, region: String): FaceCardList?
+    suspend fun getConstants(currentDate: String, region: String): ResponseBody?
+    suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList?
+    suspend fun getUserLevel(currentDate: String, region: String): UserLevelList?
+    suspend fun getAllEnums(currentDate: String, region: String): GameEnums?
+    suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody?
 }
