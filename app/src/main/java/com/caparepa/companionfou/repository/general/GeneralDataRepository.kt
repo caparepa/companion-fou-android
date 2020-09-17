@@ -43,9 +43,9 @@ interface GeneralDataRepository {
     suspend fun persistUserLevel(item: Map<Int, UserLevelDetail>?)
     suspend fun fetchUserLevel(): UserLevelEntity?
 
-    suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody?
-    suspend fun persistTraitMapping(list: List<TraitItem>?)
-    suspend fun fetchTraitMapping(): List<TraitEntity>?
+    suspend fun getTraitMapping(currentDate: String, region: String): Map<Int, String>?
+    suspend fun persistTraitMapping(list: Map<Int, String>?)
+    suspend fun fetchTraitMapping(): TraitEntity?
 
     suspend fun getAllEnums(currentDate: String, region: String): GameEnums?
     suspend fun persistAllEnums(item: GameEnums?)

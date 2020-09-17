@@ -3,6 +3,7 @@ package com.caparepa.companionfou.data.db.entity.general
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.caparepa.companionfou.utils.toKotlinObject
 import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
@@ -62,4 +63,8 @@ data class GameEnumsEntity(
 ) {
     @PrimaryKey(autoGenerate = false)
     var id: Long = 0
+
+    fun String.getEnumValue(): Map<Int, String>? {
+        return this.toKotlinObject()
+    }
 }

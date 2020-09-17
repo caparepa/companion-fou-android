@@ -19,7 +19,6 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import com.caparepa.companionfou.utils.mapTo
 import com.caparepa.companionfou.utils.toJsonString
-import com.caparepa.companionfou.utils.toKotlinObject
 
 class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
@@ -339,33 +338,38 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         return userLevelDao.getUserLevelData()
     }
 
-    override suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody? =
+    override suspend fun getTraitMapping(currentDate: String, region: String): Map<Int, String>? =
         withContext(Dispatchers.IO) {
             try {
-                TODO("fou")
-
+                val response = api.getTraitMapping(currentDate)
+                val body = response.body()
+                body
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
-    override suspend fun persistTraitMapping(list: List<TraitItem>?) {
+    override suspend fun persistTraitMapping(list: Map<Int,String>?) {
         list?.let {
-
+            val entity = it.toJsonString()
+            allTraitsDao.upsert(entity!!)
         }
     }
 
-    override suspend fun fetchTraitMapping(): List<TraitEntity>? {
+    override suspend fun fetchTraitMapping(): TraitEntity? {
         return allTraitsDao.getAllTraitsData()
     }
 
     override suspend fun getAllEnums(currentDate: String, region: String): GameEnums? =
         withContext(Dispatchers.IO) {
             try {
-                TODO("fou")
-
+                val response = api.getAllEnums(currentDate)
+                val body = response.body()
+                body
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
