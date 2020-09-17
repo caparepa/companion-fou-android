@@ -13,35 +13,30 @@ import okhttp3.ResponseBody
 interface GeneralDataRepository {
 
     suspend fun fetchApiInfo(): ApiInfoEntity?
-    suspend fun fetchAttributeRelation(): AttributeRelationEntity?
-    suspend fun fetchClassAttackRate(): ClassAttackRateEntity?
-    suspend fun fetchClassRelation(): ClassRelationEntity?
-    suspend fun fetchFaceCard(): FaceCardEntity?
-    suspend fun fetchConstants(): ResponseBody?
-    suspend fun fetchBuffActionList(): BuffActionListEntity?
-    suspend fun fetchUserLevel(): UserLevelEntity?
-    suspend fun fetchAllEnums(): GameEnumsEntity?
-    suspend fun fetchTraitMapping(): AllTraitsEntity?
-
     suspend fun getApiInfo(currentDate: String, region: String): ResponseBody?
+
+    suspend fun fetchAttributeRelation(): AttributeRelationEntity?
     suspend fun getAttributeRelation(currentDate: String, region: String): AttributeRelation?
+
+    suspend fun fetchClassAttackRate(): ClassAttackRateEntity?
     suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate?
+
+    suspend fun fetchClassRelation(): ClassRelationEntity?
     suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList?
+
+    suspend fun fetchFaceCard(): FaceCardEntity?
     suspend fun getFaceCard(currentDate: String, region: String): FaceCardList?
-    suspend fun getConstants(currentDate: String, region: String): ResponseBody?
+
     suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList?
+    suspend fun fetchBuffActionList(): BuffActionListEntity?
+
+    suspend fun fetchUserLevel(): UserLevelEntity?
     suspend fun getUserLevel(currentDate: String, region: String): UserLevelList?
-    suspend fun getAllEnums(currentDate: String, region: String): GameEnums?
+
+    suspend fun fetchTraitMapping(): AllTraitsEntity?
     suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody?
 
-    suspend fun persistApiInfo()
-    suspend fun persistAttributeRelation()
-    suspend fun persistClassAttackRate()
-    suspend fun persistClassRelation()
-    suspend fun persistFaceCard()
-    suspend fun persistConstants()
-    suspend fun persistBuffActionList()
-    suspend fun persistUserLevel()
-    suspend fun persistAllEnums()
-    suspend fun persistTraitMapping()
+    suspend fun fetchAllEnums(): GameEnumsEntity?
+    suspend fun getAllEnums(currentDate: String, region: String): GameEnums?
+ 
 }
