@@ -315,10 +315,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getUserLevel(currentDate: String, region: String): UserLevelList? =
         withContext(Dispatchers.IO) {
             try {
-                TODO("fou")
+                val response = api.getUserLevel(currentDate)
+                val body = response.body()
+                body?.let{
 
+                }
+                body
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
