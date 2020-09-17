@@ -1,4 +1,4 @@
-package com.caparepa.companionfou.ui.viewmodel
+package com.caparepa.companionfou.ui.viewmodel.nice
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
+import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -41,7 +42,7 @@ class MysticCodeViewModel(
 
     private suspend fun getMysticCodesAsync() {
         val result = kotlin.runCatching {
-            mysticCodeRepository.getMysticCodes("20200905", REGION_NA)
+            mysticCodeRepository.getMysticCodeList("20200905", REGION_NA)
         }
         with(result) {
             onSuccess {
@@ -57,7 +58,7 @@ class MysticCodeViewModel(
 
     private suspend fun fetchMysticCodesAsync() {
         val result = kotlin.runCatching {
-            mysticCodeRepository.fetchMysticCodes()
+            mysticCodeRepository.fetchMysticCodeList()
         }
         with(result) {
             onSuccess {

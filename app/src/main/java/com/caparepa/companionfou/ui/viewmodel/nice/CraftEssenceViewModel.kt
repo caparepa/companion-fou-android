@@ -1,10 +1,11 @@
-package com.caparepa.companionfou.ui.viewmodel
+package com.caparepa.companionfou.ui.viewmodel.nice
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.nice.CraftEssenceEntity
 import com.caparepa.companionfou.repository.nice.CraftEssenceRepository
+import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent

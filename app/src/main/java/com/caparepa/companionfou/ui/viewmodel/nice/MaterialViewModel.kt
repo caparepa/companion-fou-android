@@ -1,39 +1,40 @@
-package com.caparepa.companionfou.ui.viewmodel
+package com.caparepa.companionfou.ui.viewmodel.nice
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
-import com.caparepa.companionfou.repository.nice.ServantRepository
+import com.caparepa.companionfou.data.db.entity.nice.MaterialEntity
+import com.caparepa.companionfou.repository.nice.MaterialRepository
+import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class ServantViewModel(val context: Context, val servantRepository: ServantRepository) :
+class MaterialViewModel(val context: Context, val materialRepository: MaterialRepository) :
     BaseViewModel(), KoinComponent {
 
-    val servantListResult = MutableLiveData<List<ServantEntity>>()
-    val servantItemResult = MutableLiveData<ServantEntity>()
+    val materialListResult = MutableLiveData<List<MaterialEntity>>()
+    val materialItemResult = MutableLiveData<MaterialEntity>()
 
-    fun getServants()  {
+    fun getMaterials()  {
         viewModelScope.launch(Dispatchers.IO) {
-            getServantsAsync()
+            getMaterialsAsync()
         }
     }
 
-    fun fetchServants() {
+    fun fetchMaterials() {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchServantsAsync()
+            fetchMaterialsAsync()
         }
     }
 
-    fun fetchServantById(id: Long) {
+    fun fetchMaterialById(id: Long) {
         viewModelScope.launch(Dispatchers.IO) {
 
         }
     }
 
-    private suspend fun getServantsAsync() {
+    private suspend fun getMaterialsAsync() {
         val result = kotlin.runCatching {
 
         }
@@ -43,7 +44,7 @@ class ServantViewModel(val context: Context, val servantRepository: ServantRepos
         }
     }
 
-    private suspend fun fetchServantsAsync() {
+    private suspend fun fetchMaterialsAsync() {
         val result = kotlin.runCatching {
 
         }
@@ -53,7 +54,7 @@ class ServantViewModel(val context: Context, val servantRepository: ServantRepos
         }
     }
 
-    private suspend fun fetchServantByIdAsync(id: Long) {
+    private suspend fun fetchMaterialByIdAsync(id: Long) {
         val result = kotlin.runCatching {
 
         }
@@ -62,4 +63,5 @@ class ServantViewModel(val context: Context, val servantRepository: ServantRepos
             onFailure {  }
         }
     }
+
 }

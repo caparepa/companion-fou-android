@@ -5,8 +5,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
-import com.caparepa.companionfou.ui.viewmodel.MysticCodeViewModel
+import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
 import com.caparepa.companionfou.utils.toastLong
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.core.KoinComponent

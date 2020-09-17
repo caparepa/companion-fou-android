@@ -1,39 +1,40 @@
-package com.caparepa.companionfou.ui.viewmodel
+package com.caparepa.companionfou.ui.viewmodel.nice
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.caparepa.companionfou.data.db.entity.nice.CommandCodeEntity
-import com.caparepa.companionfou.repository.nice.CommandCodeRepository
+import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
+import com.caparepa.companionfou.repository.nice.ServantRepository
+import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class CommandCodeViewModel(val context: Context, val commandcodeRepository: CommandCodeRepository) :
+class ServantViewModel(val context: Context, val servantRepository: ServantRepository) :
     BaseViewModel(), KoinComponent {
 
-    val commandCodeListResult = MutableLiveData<List<CommandCodeEntity>>()
-    val commandCodeItemResult = MutableLiveData<CommandCodeEntity>()
+    val servantListResult = MutableLiveData<List<ServantEntity>>()
+    val servantItemResult = MutableLiveData<ServantEntity>()
 
-    fun getCommandCodes()  {
+    fun getServants()  {
         viewModelScope.launch(Dispatchers.IO) {
-            getCommandCodesAsync()
+            getServantsAsync()
         }
     }
 
-    fun fetchCommandCodes() {
+    fun fetchServants() {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchCommandCodesAsync()
+            fetchServantsAsync()
         }
     }
 
-    fun fetchCommandCodeById(id: Long) {
+    fun fetchServantById(id: Long) {
         viewModelScope.launch(Dispatchers.IO) {
 
         }
     }
 
-    private suspend fun getCommandCodesAsync() {
+    private suspend fun getServantsAsync() {
         val result = kotlin.runCatching {
 
         }
@@ -43,7 +44,7 @@ class CommandCodeViewModel(val context: Context, val commandcodeRepository: Comm
         }
     }
 
-    private suspend fun fetchCommandCodesAsync() {
+    private suspend fun fetchServantsAsync() {
         val result = kotlin.runCatching {
 
         }
@@ -53,7 +54,7 @@ class CommandCodeViewModel(val context: Context, val commandcodeRepository: Comm
         }
     }
 
-    private suspend fun fetchCommandCodeByIdAsync(id: Long) {
+    private suspend fun fetchServantByIdAsync(id: Long) {
         val result = kotlin.runCatching {
 
         }

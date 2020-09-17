@@ -11,8 +11,8 @@ import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.repository.nice.MysticCodeRepositoryImpl
-import com.caparepa.companionfou.ui.viewmodel.BasicDataViewModel
-import com.caparepa.companionfou.ui.viewmodel.MysticCodeViewModel
+import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

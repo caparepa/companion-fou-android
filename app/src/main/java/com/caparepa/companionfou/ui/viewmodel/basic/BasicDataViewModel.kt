@@ -1,10 +1,11 @@
-package com.caparepa.companionfou.ui.viewmodel
+package com.caparepa.companionfou.ui.viewmodel.basic
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.model.basic.BasicServantItem
 import com.caparepa.companionfou.repository.basic.BasicDataRepository
+import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

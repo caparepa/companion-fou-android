@@ -19,11 +19,11 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
     }
 
     //TODO: beware of pagination!!!
-    override suspend fun fetchMysticCodes(): List<MysticCodeEntity>? {
+    override suspend fun fetchMysticCodeList(): List<MysticCodeEntity>? {
         return mysticCodeDao.getMysticCodeList()
     }
 
-    override suspend fun getMysticCodes(
+    override suspend fun getMysticCodeList(
         currentDate: String,
         region: String
     ): List<MysticCodeItem>? = withContext(Dispatchers.IO) {
@@ -38,8 +38,8 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
         }
     }
 
-    private suspend fun persistMysticCodeList(mcList: List<MysticCodeItem>?) {
-        mcList?.let {
+    override suspend fun persistMysticCodeList(list: List<MysticCodeItem>?) {
+        list?.let {
             it.forEach { item ->
                 val entry = MysticCodeEntity (
                     item.id,

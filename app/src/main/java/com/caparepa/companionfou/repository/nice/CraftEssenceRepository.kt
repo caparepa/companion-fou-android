@@ -5,6 +5,7 @@ import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 
 interface CraftEssenceRepository {
     suspend fun fetchCraftEssence(id: Long): CraftEssenceEntity?
-    suspend fun fetchCraftEssences(): List<CraftEssenceEntity>?
+    suspend fun fetchCraftEssenceList(): List<CraftEssenceEntity>?
     suspend fun getCraftEssenceList(currentDate: String, region: String): List<CraftEssenceItem>?
+    suspend fun persistCraftEssenceList(list: List<CraftEssenceItem>?)
 }
