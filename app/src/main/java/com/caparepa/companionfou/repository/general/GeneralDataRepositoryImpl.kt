@@ -17,6 +17,7 @@ import kotlinx.coroutines.withContext
 import okhttp3.ResponseBody
 import org.koin.core.KoinComponent
 import org.koin.core.inject
+import com.caparepa.companionfou.utils.mapTo
 
 class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
@@ -53,12 +54,13 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistApiInfo(item: ApiInfo?) {
         item?.let {
-
+            val entity: ApiInfoEntity? = it.mapTo(ApiInfoEntity::class.java)
+            apiInfoDao.upsert(entity!!)
         }
     }
 
     override suspend fun fetchApiInfo(): ApiInfoEntity? {
-        TODO("Not yet implemented")
+        return apiInfoDao.getApiInfo()
     }
 
     override suspend fun getAttributeRelation(
