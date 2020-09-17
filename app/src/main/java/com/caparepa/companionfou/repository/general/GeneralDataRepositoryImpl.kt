@@ -60,7 +60,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchApiInfo(): ApiInfoEntity? {
-        return apiInfoDao.getApiInfo()
+        return apiInfoDao.getApiInfoData()
     }
 
     override suspend fun getAttributeRelation(
@@ -82,7 +82,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchAttributeRelation(): AttributeRelationEntity? {
-        TODO("Not yet implemented")
+        return attributeRelationDao.getAttributeRelationData()
     }
 
     override suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate? =
@@ -102,7 +102,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchClassAttackRate(): ClassAttackRateEntity? {
-        TODO("Not yet implemented")
+        return classAttackRateDao.getClassAttackRateData()
     }
 
     override suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList? =
@@ -122,7 +122,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchClassRelation(): ClassRelationEntity? {
-        TODO("Not yet implemented")
+        return classRelationDao.getClassAttackRateData()
     }
 
     override suspend fun getFaceCard(currentDate: String, region: String): FaceCardList? =
@@ -142,7 +142,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchFaceCard(): FaceCardEntity? {
-        TODO("Not yet implemented")
+        return faceCardDao.getFaceCardData()
     }
 
     override suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList? =
@@ -162,7 +162,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchBuffActionList(): BuffActionListEntity? {
-        TODO("Not yet implemented")
+        return buffActionListDao.getBuffActionListData()
     }
 
     override suspend fun getUserLevel(currentDate: String, region: String): UserLevelList? =
@@ -182,7 +182,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchUserLevel(): UserLevelEntity? {
-        TODO("Not yet implemented")
+        return userLevelDao.getUserLevelData()
     }
 
     override suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody? =
@@ -201,8 +201,8 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun fetchTraitMapping(): AllTraitsEntity? {
-        TODO("Not yet implemented")
+    override suspend fun fetchTraitMapping(): List<TraitEntity>? {
+        return allTraitsDao.getAllTraitsData()
     }
 
     override suspend fun getAllEnums(currentDate: String, region: String): GameEnums? =

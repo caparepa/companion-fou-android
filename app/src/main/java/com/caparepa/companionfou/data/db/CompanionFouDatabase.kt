@@ -19,7 +19,7 @@ import com.caparepa.companionfou.data.db.entity.nice.*
         BasicCraftEssence::class,
         BasicMysticCode::class,
         BasicMysticCodeMedia::class,
-        AllTraitsEntity::class,
+        TraitEntity::class,
         AttributeRelationEntity::class,
         BuffActionListEntity::class,
         ClassAttackRateEntity::class,

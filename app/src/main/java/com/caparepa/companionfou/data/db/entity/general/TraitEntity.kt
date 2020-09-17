@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
         Index(value = ["trait_id"], unique = true)
     ]
 )
-class AllTraitsEntity(
+class TraitEntity(
     @ColumnInfo(name = "trait_id")
     val traitId: Long? = null,
     @ColumnInfo(name = "trait_value")

@@ -12,5 +12,5 @@ interface ApiInfoDao {
     suspend fun upsert(item: ApiInfoEntity)
 
     @Query("SELECT * FROM api_info WHERE id = 0")
-    suspend fun getApiInfo(): ApiInfoEntity?
+    suspend fun getApiInfoData(): ApiInfoEntity?
 }
