@@ -9,7 +9,7 @@ import com.caparepa.companionfou.data.db.entity.general.ServantTraitEntity
 @Dao
 interface ServantTraitsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(item: String)
+    suspend fun upsert(item: ServantTraitEntity)
 
     @Query("SELECT * FROM servant_traits WHERE id = 0")
     suspend fun getAllTraitsData(): ServantTraitEntity?

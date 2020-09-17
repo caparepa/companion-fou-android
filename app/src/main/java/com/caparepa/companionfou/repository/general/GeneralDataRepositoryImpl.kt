@@ -324,8 +324,8 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistUserLevel(item: Map<Int, UserLevelDetail>?) {
         item?.let {
-            val entity = item.toJsonString()
-            userLevelDao.upsert(entity!!)
+            val entity = UserLevelEntity(item.toJsonString())
+            userLevelDao.upsert(entity)
         }
     }
 
@@ -347,8 +347,8 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistTraitMapping(list: Map<Int, String>?) {
         list?.let {
-            val entity = it.toJsonString()
-            servantTraitsDao.upsert(entity!!)
+            val entity = ServantTraitEntity(it.toJsonString())
+            servantTraitsDao.upsert(entity)
         }
     }
 
