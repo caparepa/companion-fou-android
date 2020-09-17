@@ -32,65 +32,56 @@ interface ExportDataEndpoints {
     //Attribute Affinity
     @GET("{current_date}/{region}/NiceAttributeRelation.json")
     suspend fun getAttributeRelation(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<AttributeRelation>
 
     //Attack Rate
     @GET("{current_date}/{region}/NiceClassAttackRate.json")
     suspend fun getClassAttackRate(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<ClassAttackRate>
 
     //Class Affinity
     @GET("{current_date}/{region}/NiceClassRelation.json")
     suspend fun getClassRelation(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<ClassRelationList>
 
     //Card Details
     @GET("{current_date}/{region}/NiceCard.json")
     suspend fun getFaceCard(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<FaceCardList>
 
     //Constants
     @GET("{current_date}/{region}/NiceConstants.json")
     suspend fun getConstants(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<ResponseBody>
 
     //Buff Action Info
     @GET("{current_date}/{region}/NiceBuffList.ActionList.json.json")
     suspend fun getBuffActionList(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<BuffActionList>
 
     //Master Level info
     @GET("{current_date}/{region}/NiceUserLevel.json")
     suspend fun getUserLevel(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<UserLevelList>
 
     //All enums
     @GET("{current_date}/{region}/nice_enums.json")
     suspend fun getAllEnums(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<GameEnums>
 
     //Trait mapping
     //TODO: the response is a Map<Int, String>?
     @GET("{current_date}/{region}/nice_trait.json")
     suspend fun getTraitMapping(
-        @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<Map<Int, String>?>
 
     //Region endpoints

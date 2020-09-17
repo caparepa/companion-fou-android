@@ -68,8 +68,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         region: String
     ): AttributeRelation? = withContext(Dispatchers.IO) {
         try {
-            TODO("fou")
-
+            val response = api.getAttributeRelation(currentDate)
+            val body = response.body()
+            body?.let {
+                persistAttributeRelation(it)
+            }
+            body
         } catch (e: Exception) {
             TODO("fou")
         }
