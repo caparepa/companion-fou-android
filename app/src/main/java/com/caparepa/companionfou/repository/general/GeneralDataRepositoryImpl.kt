@@ -10,11 +10,9 @@ import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
-import com.caparepa.companionfou.data.model.nice.servant.TraitItem
 import com.caparepa.companionfou.network.api.ApiClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.ResponseBody
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import com.caparepa.companionfou.utils.mapTo
@@ -211,9 +209,6 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             try {
                 val response = api.getBuffActionList(currentDate)
                 val body = response.body()
-                body?.let {
-                    persistBuffActionList(it)
-                }
                 body
 
             } catch (e: Exception) {
@@ -312,14 +307,14 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         return buffActionListDao.getBuffActionListData()
     }
 
-    override suspend fun getUserLevel(currentDate: String, region: String): Map<Int, UserLevelDetail>? =
+    override suspend fun getUserLevel(
+        currentDate: String,
+        region: String
+    ): Map<Int, UserLevelDetail>? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getUserLevel(currentDate)
                 val body = response.body()
-                body?.let {
-                    persistUserLevel(it)
-                }
                 body
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -350,7 +345,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistTraitMapping(list: Map<Int,String>?) {
+    override suspend fun persistTraitMapping(list: Map<Int, String>?) {
         list?.let {
             val entity = it.toJsonString()
             allTraitsDao.upsert(entity!!)
@@ -375,13 +370,37 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistAllEnums(item: GameEnums?) {
         item?.let {
-
+            val entity = GameEnumsEntity(
+                it.niceSvtType?.toJsonString(),
+                it.niceSvtFlag?.toJsonString(),
+                it.niceSkillType?.toJsonString(),
+                it.niceFuncType?.toJsonString(),
+                it.funcApplyTarget?.toJsonString(),
+                it.niceFuncTargetType?.toJsonString(),
+                it.niceBuffType?.toJsonString(),
+                it.niceBuffAction?.toJsonString(),
+                it.niceBuffLimit?.toJsonString(),
+                it.niceClassRelationOverwriteType?.toJsonString(),
+                it.niceItemType?.toJsonString(),
+                it.niceItemBGType?.toJsonString(),
+                it.niceCardType?.toJsonString(),
+                it.gender?.toJsonString(),
+                it.attribute?.toJsonString(),
+                it.svtClass?.toJsonString(),
+                it.niceStatusRank?.toJsonString(),
+                it.niceCondType?.toJsonString(),
+                it.niceVoiceCondType?.toJsonString(),
+                it.niceSvtVoiceType?.toJsonString(),
+                it.niceQuestType?.toJsonString(),
+                it.niceConsumeType?.toJsonString(),
+                it.trait?.toJsonString()
+            )
+            gameEnumsDao.upsert(entity)
         }
     }
 
     override suspend fun fetchAllEnums(): GameEnumsEntity? {
-        TODO("Not yet implemented")
+        return gameEnumsDao.getGameEnumsData()
     }
-
 
 }
