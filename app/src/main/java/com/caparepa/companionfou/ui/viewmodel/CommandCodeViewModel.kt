@@ -11,6 +11,7 @@ import org.koin.core.KoinComponent
 
 class CommandCodeViewModel(val context: Context, val commandcodeRepository: CommandCodeRepository) :
     BaseViewModel(), KoinComponent {
+
     val commandCodeListResult = MutableLiveData<List<CommandCodeEntity>>()
     val commandCodeItemResult = MutableLiveData<CommandCodeEntity>()
 

@@ -5,6 +5,7 @@ import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
 import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
 import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
+import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
@@ -13,6 +14,7 @@ import com.caparepa.companionfou.data.model.nice.material.MaterialItem
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.data.model.nice.servant.ServantMaterial
 import com.caparepa.companionfou.data.model.nice.servant.ServantItem
+import com.google.gson.JsonElement
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -23,9 +25,9 @@ interface ExportDataEndpoints {
     //Export endpoints
 
     @GET("{current_date}/general/info.json")
-    suspend fun getDataInfo(
+    suspend fun getApiInfo(
         @Path(value = "current_date", encoded = true) currentDate: String
-    ): Response<ResponseBody>
+    ): Response<JsonElement>
 
     //Attribute Affinity
     @GET("{current_date}/{region}/NiceAttributeRelation.json")
