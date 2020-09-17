@@ -57,7 +57,11 @@ val databaseModule = module {
     }
 
     //general
-    fun provideAllTraitsDao(database: CompanionFouDatabase): ServantTraitsDao {
+    fun provideApiInfoDao(database: CompanionFouDatabase): ApiInfoDao {
+        return database.getApiInfoDao()
+    }
+
+    fun provideServantTraitsDao(database: CompanionFouDatabase): ServantTraitsDao {
         return database.getAllTraitsDao()
     }
 
@@ -120,7 +124,8 @@ val databaseModule = module {
     single { provideBasicMysticCodeMediaDao(get()) }
 
     //general
-    single { provideAllTraitsDao(get()) }
+    single { provideApiInfoDao((get())) }
+    single { provideServantTraitsDao(get()) }
     single { provideAttributeRelationDao(get()) }
     single { provideBuffActionListDao(get()) }
     single { provideClassAttackRateDao(get()) }
