@@ -12,7 +12,7 @@ import okhttp3.ResponseBody
 
 interface GeneralDataRepository {
 
-    suspend fun fetchGeneralInfo(): ResponseBody?
+    suspend fun fetchApiInfo(): ApiInfoEntity?
     suspend fun fetchAttributeRelation(): AttributeRelationEntity?
     suspend fun fetchClassAttackRate(): ClassAttackRateEntity?
     suspend fun fetchClassRelation(): ClassRelationEntity?
@@ -21,9 +21,9 @@ interface GeneralDataRepository {
     suspend fun fetchBuffActionList(): BuffActionListEntity?
     suspend fun fetchUserLevel(): UserLevelEntity?
     suspend fun fetchAllEnums(): GameEnumsEntity?
-    suspend fun fetchTraitMapping(): ResponseBody?
+    suspend fun fetchTraitMapping(): AllTraitsEntity?
 
-    suspend fun getGeneralInfo(currentDate: String, region: String): ResponseBody?
+    suspend fun getApiInfo(currentDate: String, region: String): ResponseBody?
     suspend fun getAttributeRelation(currentDate: String, region: String): AttributeRelation?
     suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate?
     suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList?
@@ -33,4 +33,15 @@ interface GeneralDataRepository {
     suspend fun getUserLevel(currentDate: String, region: String): UserLevelList?
     suspend fun getAllEnums(currentDate: String, region: String): GameEnums?
     suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody?
+
+    suspend fun persistApiInfo()
+    suspend fun persistAttributeRelation()
+    suspend fun persistClassAttackRate()
+    suspend fun persistClassRelation()
+    suspend fun persistFaceCard()
+    suspend fun persistConstants()
+    suspend fun persistBuffActionList()
+    suspend fun persistUserLevel()
+    suspend fun persistAllEnums()
+    suspend fun persistTraitMapping()
 }
