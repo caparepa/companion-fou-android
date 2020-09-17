@@ -10,9 +10,6 @@ import com.caparepa.companionfou.utils.toKotlinObject
     tableName = "user_level"
 )
 data class UserLevelEntity(
-    /**
-     * Map<Int, UserLevelDetail>?
-     */
     @ColumnInfo(name = "user_level_map")
     val user_level_map: String? = null
 

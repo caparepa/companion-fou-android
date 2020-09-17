@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(
-    tableName = "all_traits"
+    tableName = "servant_traits"
 )
 class TraitEntity(
     @ColumnInfo(name = "trait_map_value")
@@ -15,7 +15,7 @@ class TraitEntity(
     @PrimaryKey(autoGenerate = true)
     var id: Long? = 0
 
-    fun getAllTraitsValue(): Map<Int, String>? {
+    fun getTraitMapValue(): Map<Int, String>? {
         return this.trait_map_value?.toKotlinObject()
     }
 }
