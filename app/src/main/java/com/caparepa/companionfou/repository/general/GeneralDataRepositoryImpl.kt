@@ -9,7 +9,7 @@ import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationL
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
-import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
+import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
 import com.caparepa.companionfou.data.model.nice.servant.TraitItem
 import com.caparepa.companionfou.network.api.ApiClient
 import kotlinx.coroutines.Dispatchers
@@ -19,6 +19,7 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import com.caparepa.companionfou.utils.mapTo
 import com.caparepa.companionfou.utils.toJsonString
+import com.caparepa.companionfou.utils.toKotlinObject
 
 class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
@@ -312,13 +313,13 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         return buffActionListDao.getBuffActionListData()
     }
 
-    override suspend fun getUserLevel(currentDate: String, region: String): UserLevelList? =
+    override suspend fun getUserLevel(currentDate: String, region: String): Map<Int, UserLevelDetail>? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getUserLevel(currentDate)
                 val body = response.body()
-                body?.let{
-
+                body?.let {
+                    persistUserLevel(it)
                 }
                 body
             } catch (e: Exception) {
@@ -327,9 +328,10 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistUserLevel(item: UserLevelList?) {
+    override suspend fun persistUserLevel(item: Map<Int, UserLevelDetail>?) {
         item?.let {
-
+            val entity = item.toJsonString()
+            userLevelDao.upsert(entity!!)
         }
     }
 

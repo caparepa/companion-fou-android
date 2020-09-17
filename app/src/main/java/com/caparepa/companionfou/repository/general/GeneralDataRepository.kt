@@ -8,6 +8,7 @@ import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationL
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
+import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import com.caparepa.companionfou.data.model.nice.servant.TraitItem
 import okhttp3.ResponseBody
@@ -38,8 +39,8 @@ interface GeneralDataRepository {
     suspend fun persistBuffActionList(item: BuffActionList?)
     suspend fun fetchBuffActionList(): BuffActionListEntity?
 
-    suspend fun getUserLevel(currentDate: String, region: String): UserLevelList?
-    suspend fun persistUserLevel(item: UserLevelList?)
+    suspend fun getUserLevel(currentDate: String, region: String): Map<Int, UserLevelDetail>?
+    suspend fun persistUserLevel(item: Map<Int, UserLevelDetail>?)
     suspend fun fetchUserLevel(): UserLevelEntity?
 
     suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody?

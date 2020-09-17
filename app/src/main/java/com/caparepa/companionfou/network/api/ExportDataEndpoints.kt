@@ -7,14 +7,12 @@ import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationL
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
-import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
+import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
 import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
 import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 import com.caparepa.companionfou.data.model.nice.material.MaterialItem
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
-import com.caparepa.companionfou.data.model.nice.servant.ServantMaterial
 import com.caparepa.companionfou.data.model.nice.servant.ServantItem
-import com.google.gson.JsonElement
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -69,7 +67,7 @@ interface ExportDataEndpoints {
     @GET("{current_date}/{region}/NiceUserLevel.json")
     suspend fun getUserLevel(
         @Path(value = "current_date", encoded = true) currentDate: String
-    ): Response<UserLevelList>
+    ): Response<Map<Int, UserLevelDetail>>
 
     //All enums
     @GET("{current_date}/{region}/nice_enums.json")

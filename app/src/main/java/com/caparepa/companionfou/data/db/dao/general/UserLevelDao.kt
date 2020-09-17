@@ -9,7 +9,7 @@ import com.caparepa.companionfou.data.db.entity.general.UserLevelEntity
 @Dao
 interface UserLevelDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(item: UserLevelEntity)
+    suspend fun upsert(item: String)
 
     @Query("SELECT * FROM user_level WHERE id = 0")
     suspend fun getUserLevelData(): UserLevelEntity?
