@@ -37,7 +37,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistApiInfo(item: ApiInfoEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+            apiInfoDao.upsert(it)
+        }
     }
 
     override suspend fun fetchApiInfo(): ApiInfoEntity? {
@@ -52,7 +54,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistAttributeRelation(item: AttributeRelationEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchAttributeRelation(): AttributeRelationEntity? {
@@ -64,7 +68,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistClassAttackRate(item: ClassAttackRateEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchClassAttackRate(): ClassAttackRateEntity? {
@@ -76,7 +82,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistClassRelation(item: ClassRelationEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchClassRelation(): ClassRelationEntity? {
@@ -88,7 +96,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistFaceCard(item: FaceCardEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchFaceCard(): FaceCardEntity? {
@@ -100,7 +110,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistBuffActionList(item: BuffActionListEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchBuffActionList(): BuffActionListEntity? {
@@ -112,7 +124,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistUserLevel(item: UserLevelEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchUserLevel(): UserLevelEntity? {
@@ -124,7 +138,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistTraitMapping(item: AllTraitsEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchTraitMapping(): AllTraitsEntity? {
@@ -136,7 +152,9 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun persistAllEnums(item: GameEnumsEntity?) {
-        TODO("Not yet implemented")
+        item?.let {
+
+        }
     }
 
     override suspend fun fetchAllEnums(): GameEnumsEntity? {
