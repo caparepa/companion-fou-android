@@ -75,13 +75,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
             body
         } catch (e: Exception) {
-            TODO("fou")
+            e.printStackTrace()
+            null
         }
     }
 
     override suspend fun persistAttributeRelation(item: AttributeRelation?) {
         item?.let {
-
+            val entity = AttributeRelationEntity(it.human, it.sky, it.earth, it.beast)
+            attributeRelationDao.upsert(entity)
         }
     }
 
