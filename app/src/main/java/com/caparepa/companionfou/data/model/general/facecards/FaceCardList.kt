@@ -1,6 +1,5 @@
 package com.caparepa.companionfou.data.model.general.facecards
 
-
 import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 

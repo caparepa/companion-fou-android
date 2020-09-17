@@ -209,16 +209,102 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList? =
         withContext(Dispatchers.IO) {
             try {
-                TODO("fou")
+                val response = api.getBuffActionList(currentDate)
+                val body = response.body()
+                body?.let {
+                    persistBuffActionList(it)
+                }
+                body
 
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
     override suspend fun persistBuffActionList(item: BuffActionList?) {
         item?.let {
-
+            val entity = BuffActionListEntity(
+                it.commandAtk?.toJsonString(),
+                it.commandDef?.toJsonString(),
+                it.atk?.toJsonString(),
+                it.defence?.toJsonString(),
+                it.defencePierce?.toJsonString(),
+                it.specialdefence?.toJsonString(),
+                it.damage?.toJsonString(),
+                it.damageIndividuality?.toJsonString(),
+                it.damageIndividualityActiveonly?.toJsonString(),
+                it.selfdamage?.toJsonString(),
+                it.criticalDamage?.toJsonString(),
+                it.npdamage?.toJsonString(),
+                it.givenDamage?.toJsonString(),
+                it.receiveDamage?.toJsonString(),
+                it.pierceInvincible?.toJsonString(),
+                it.invincible?.toJsonString(),
+                it.breakAvoidance?.toJsonString(),
+                it.avoidance?.toJsonString(),
+                it.overwriteBattleclass?.toJsonString(),
+                it.overwriteClassrelatioAtk?.toJsonString(),
+                it.overwriteClassrelatioDef?.toJsonString(),
+                it.commandNpAtk?.toJsonString(),
+                it.commandNpDef?.toJsonString(),
+                it.dropNp?.toJsonString(),
+                it.dropNpDamage?.toJsonString(),
+                it.commandStarAtk?.toJsonString(),
+                it.commandStarDef?.toJsonString(),
+                it.criticalPoint?.toJsonString(),
+                it.starweight?.toJsonString(),
+                it.turnendNp?.toJsonString(),
+                it.turnendStar?.toJsonString(),
+                it.turnendHpRegain?.toJsonString(),
+                it.turnendHpReduce?.toJsonString(),
+                it.gainHp?.toJsonString(),
+                it.turnvalNp?.toJsonString(),
+                it.grantState?.toJsonString(),
+                it.resistanceState?.toJsonString(),
+                it.avoidState?.toJsonString(),
+                it.donotAct?.toJsonString(),
+                it.donotSkill?.toJsonString(),
+                it.donotNoble?.toJsonString(),
+                it.donotRecovery?.toJsonString(),
+                it.individualityAdd?.toJsonString(),
+                it.individualitySub?.toJsonString(),
+                it.hate?.toJsonString(),
+                it.criticalRate?.toJsonString(),
+                it.avoidInstantdeath?.toJsonString(),
+                it.resistInstantdeath?.toJsonString(),
+                it.nonresistInstantdeath?.toJsonString(),
+                it.regainNpUsedNoble?.toJsonString(),
+                it.functionDead?.toJsonString(),
+                it.maxhpRate?.toJsonString(),
+                it.maxhpValue?.toJsonString(),
+                it.functionWavestart?.toJsonString(),
+                it.functionSelfturnend?.toJsonString(),
+                it.giveGainHp?.toJsonString(),
+                it.functionCommandattack?.toJsonString(),
+                it.functionDeadattack?.toJsonString(),
+                it.functionEntry?.toJsonString(),
+                it.chagetd?.toJsonString(),
+                it.grantSubstate?.toJsonString(),
+                it.toleranceSubstate?.toJsonString(),
+                it.grantInstantdeath?.toJsonString(),
+                it.functionDamage?.toJsonString(),
+                it.functionReflection?.toJsonString(),
+                it.multiattack?.toJsonString(),
+                it.giveNp?.toJsonString(),
+                it.resistanceDelayNpturn?.toJsonString(),
+                it.pierceDefence?.toJsonString(),
+                it.gutsHp?.toJsonString(),
+                it.funcgainNp?.toJsonString(),
+                it.funcHpReduce?.toJsonString(),
+                it.functionNpattack?.toJsonString(),
+                it.fixCommandcard?.toJsonString(),
+                it.donotGainnp?.toJsonString(),
+                it.fieldIndividuality?.toJsonString(),
+                it.donotActCommandtype?.toJsonString(),
+                it.damageEventPoint?.toJsonString()
+            )
+            buffActionListDao.upsert(entity)
         }
     }
 
