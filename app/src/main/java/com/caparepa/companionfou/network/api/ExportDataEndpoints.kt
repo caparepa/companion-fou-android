@@ -27,7 +27,7 @@ interface ExportDataEndpoints {
     @GET("{current_date}/general/info.json")
     suspend fun getApiInfo(
         @Path(value = "current_date", encoded = true) currentDate: String
-    ): Response<JsonElement>
+    ): Response<ApiInfo>
 
     //Attribute Affinity
     @GET("{current_date}/{region}/NiceAttributeRelation.json")

@@ -10,6 +10,7 @@ import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
+import com.caparepa.companionfou.data.model.nice.servant.TraitItem
 import com.caparepa.companionfou.network.api.ApiClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -35,14 +36,24 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     //Function override
 
-    override suspend fun getApiInfo(currentDate: String, region: String): ApiInfo? =
+    override suspend fun getApiInfo(currentDate: String): ApiInfo? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                val response = api.getApiInfo(currentDate)
+                val body = response.body()
+                body?.let {
+
+                }
+                body
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistApiInfo(item: ApiInfoEntity?) {
+    override suspend fun persistApiInfo(item: ApiInfo?) {
         item?.let {
-            apiInfoDao.upsert(it)
+
         }
     }
 
@@ -54,10 +65,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         currentDate: String,
         region: String
     ): AttributeRelation? = withContext(Dispatchers.IO) {
-        TODO("Not yet implemented")
+        try {
+            TODO("fou")
+
+        } catch (e: Exception) {
+            TODO("fou")
+        }
     }
 
-    override suspend fun persistAttributeRelation(item: AttributeRelationEntity?) {
+    override suspend fun persistAttributeRelation(item: AttributeRelation?) {
         item?.let {
 
         }
@@ -69,10 +85,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                TODO("fou")
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistClassAttackRate(item: ClassAttackRateEntity?) {
+    override suspend fun persistClassAttackRate(item: ClassAttackRate?) {
         item?.let {
 
         }
@@ -84,10 +105,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                TODO("fou")
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistClassRelation(item: ClassRelationEntity?) {
+    override suspend fun persistClassRelation(item: ClassRelationList?) {
         item?.let {
 
         }
@@ -99,10 +125,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun getFaceCard(currentDate: String, region: String): FaceCardList? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                TODO("fou")
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistFaceCard(item: FaceCardEntity?) {
+    override suspend fun persistFaceCard(item: FaceCardList?) {
         item?.let {
 
         }
@@ -114,10 +145,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                TODO("fou")
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistBuffActionList(item: BuffActionListEntity?) {
+    override suspend fun persistBuffActionList(item: BuffActionList?) {
         item?.let {
 
         }
@@ -129,10 +165,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun getUserLevel(currentDate: String, region: String): UserLevelList? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                TODO("fou")
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistUserLevel(item: UserLevelEntity?) {
+    override suspend fun persistUserLevel(item: UserLevelList?) {
         item?.let {
 
         }
@@ -144,11 +185,16 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                TODO("fou")
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistTraitMapping(item: AllTraitsEntity?) {
-        item?.let {
+    override suspend fun persistTraitMapping(list: List<TraitItem>?) {
+        list?.let {
 
         }
     }
@@ -159,10 +205,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun getAllEnums(currentDate: String, region: String): GameEnums? =
         withContext(Dispatchers.IO) {
-            TODO("Not yet implemented")
+            try {
+                TODO("fou")
+
+            } catch (e: Exception) {
+                TODO("fou")
+            }
         }
 
-    override suspend fun persistAllEnums(item: GameEnumsEntity?) {
+    override suspend fun persistAllEnums(item: GameEnums?) {
         item?.let {
 
         }
