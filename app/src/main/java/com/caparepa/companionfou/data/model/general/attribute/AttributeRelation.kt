@@ -1,17 +1,18 @@
 package com.caparepa.companionfou.data.model.general.attribute
 
+import com.google.gson.JsonElement
 import com.google.gson.annotations.SerializedName
 
 data class AttributeRelation(
     /** RelationDetail **/
     @SerializedName("human")
-    val human: String? = null,
+    val human: JsonElement? = null,
     @SerializedName("sky")
-    val sky: String? = null,
+    val sky: JsonElement? = null,
     @SerializedName("earth")
-    val earth: String? = null,
+    val earth: JsonElement? = null,
     @SerializedName("star")
-    val star: String? = null,
+    val star: JsonElement? = null,
     @SerializedName("beast")
-    val beast: String? = null
+    val beast: JsonElement? = null
 )

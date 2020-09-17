@@ -18,6 +18,7 @@ import okhttp3.ResponseBody
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import com.caparepa.companionfou.utils.mapTo
+import com.caparepa.companionfou.utils.toJsonString
 
 class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
@@ -43,19 +44,23 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
                 val response = api.getApiInfo(currentDate)
                 val body = response.body()
                 body?.let {
-
+                    persistApiInfo(it)
                 }
                 body
 
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
     override suspend fun persistApiInfo(item: ApiInfo?) {
         item?.let {
-            val entity: ApiInfoEntity? = it.mapTo(ApiInfoEntity::class.java)
-            apiInfoDao.upsert(entity!!)
+            val entity = ApiInfoEntity(
+                it.na?.toJsonString(),
+                it.jp?.toJsonString()
+            )
+            apiInfoDao.upsert(entity)
         }
     }
 
@@ -82,7 +87,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistAttributeRelation(item: AttributeRelation?) {
         item?.let {
-            val entity = AttributeRelationEntity(it.human, it.sky, it.earth, it.beast)
+            val entity = AttributeRelationEntity(
+                it.human?.toJsonString(),
+                it.sky?.toJsonString(),
+                it.earth?.toJsonString(),
+                it.beast?.toJsonString()
+            )
             attributeRelationDao.upsert(entity)
         }
     }
@@ -94,16 +104,22 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate? =
         withContext(Dispatchers.IO) {
             try {
-                TODO("fou")
-
+                val response = api.getClassAttackRate(currentDate)
+                val body = response.body()
+                body?.let {
+                    persistClassAttackRate(it)
+                }
+                body
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
     override suspend fun persistClassAttackRate(item: ClassAttackRate?) {
         item?.let {
-
+            val entity = it.mapTo(ClassAttackRateEntity::class.java)
+            classAttackRateDao.upsert(entity!!)
         }
     }
 
@@ -114,16 +130,42 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList? =
         withContext(Dispatchers.IO) {
             try {
-                TODO("fou")
-
+                val response = api.getClassRelation(currentDate)
+                val body = response.body()
+                body?.let {
+                    persistClassRelation(it)
+                }
+                body
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
     override suspend fun persistClassRelation(item: ClassRelationList?) {
         item?.let {
-
+            val entity = ClassRelationEntity(
+                it.saber?.toJsonString(),
+                it.archer?.toJsonString(),
+                it.lancer?.toJsonString(),
+                it.rider?.toJsonString(),
+                it.caster?.toJsonString(),
+                it.assassin?.toJsonString(),
+                it.berserker?.toJsonString(),
+                it.shielder?.toJsonString(),
+                it.ruler?.toJsonString(),
+                it.alterEgo?.toJsonString(),
+                it.avenger?.toJsonString(),
+                it.demonGodPillar?.toJsonString(),
+                it.beastII?.toJsonString(),
+                it.beastI?.toJsonString(),
+                it.moonCancer?.toJsonString(),
+                it.beastIIIR?.toJsonString(),
+                it.foreigner?.toJsonString(),
+                it.beastIIIL?.toJsonString(),
+                it.beastUnknown?.toJsonString()
+            )
+            classRelationDao.upsert(entity)
         }
     }
 
