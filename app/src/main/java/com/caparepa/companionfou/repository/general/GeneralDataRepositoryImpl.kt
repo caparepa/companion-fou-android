@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.repository.general
 
+import com.caparepa.companionfou.data.db.dao.general.*
 import com.caparepa.companionfou.data.db.entity.general.*
 import com.caparepa.companionfou.data.model.general.attackrate.ClassAttackRate
 import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
@@ -8,14 +9,34 @@ import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationL
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
+import com.caparepa.companionfou.network.api.ApiClient
 import okhttp3.ResponseBody
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
-class GeneralDataRepositoryImpl : GeneralDataRepository {
+class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
+
+    //Api
+    private val api = ApiClient.invoke()
+
+    //DAOs
+    private val allTraitsDao: AllTraitsDao by inject()
+    private val apiInfoDao: ApiInfoDao by inject()
+    private val attributeRelationDao: AttributeRelationDao by inject()
+    private val buffActionListDao: BuffActionListDao by inject()
+    private val classAttackRateDao: ClassAttackRateDao by inject()
+    private val classRelationDao: ClassRelationDao by inject()
+    private val faceCardDao: FaceCardDao by inject()
+    private val gameEnumsDao: GameEnumsDao by inject()
+    private val userLevelDao: UserLevelDao by inject()
+
+    //Function override
+
     override suspend fun getApiInfo(currentDate: String, region: String): ResponseBody? {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persistApiInfo(item: ApiInfoEntity) {
+    override suspend fun persistApiInfo(item: ApiInfoEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -30,7 +51,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: AttributeRelationEntity) {
+    override suspend fun persistAttributeRelation(item: AttributeRelationEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -42,7 +63,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: ClassAttackRateEntity) {
+    override suspend fun persistClassAttackRate(item: ClassAttackRateEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -54,7 +75,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: ClassRelationEntity) {
+    override suspend fun persistClassRelation(item: ClassRelationEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -66,7 +87,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: FaceCardEntity) {
+    override suspend fun persistFaceCard(item: FaceCardEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -78,7 +99,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: BuffActionListEntity) {
+    override suspend fun persistBuffActionList(item: BuffActionListEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -86,7 +107,11 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: UserLevelEntity) {
+    override suspend fun getUserLevel(currentDate: String, region: String): UserLevelList? {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun persistUserLevel(item: UserLevelEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -94,15 +119,11 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getUserLevel(currentDate: String, region: String): UserLevelList? {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun getTraitMapping(currentDate: String, region: String): ResponseBody? {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: AllTraitsEntity) {
+    override suspend fun persistTraitMapping(item: AllTraitsEntity?) {
         TODO("Not yet implemented")
     }
 
@@ -114,11 +135,13 @@ class GeneralDataRepositoryImpl : GeneralDataRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun persist(item: GameEnumsEntity) {
+    override suspend fun persistAllEnums(item: GameEnumsEntity?) {
         TODO("Not yet implemented")
     }
 
     override suspend fun fetchAllEnums(): GameEnumsEntity? {
         TODO("Not yet implemented")
     }
+
+
 }

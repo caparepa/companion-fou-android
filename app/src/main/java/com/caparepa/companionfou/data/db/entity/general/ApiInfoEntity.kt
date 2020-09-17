@@ -12,7 +12,7 @@ import com.caparepa.companionfou.utils.toKotlinObject
 data class ApiInfoEntity(
     @ColumnInfo(name = "na")
     val na: String? = null,
-    @ColumnInfo(name = "na")
+    @ColumnInfo(name = "jp")
     val jp: String? = null
 ) {
     @PrimaryKey(autoGenerate = false)
