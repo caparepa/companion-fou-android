@@ -6,13 +6,14 @@ import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
 import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
 import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
+import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import okhttp3.ResponseBody
 
 interface GeneralDataRepository {
 
-    suspend fun getApiInfo(currentDate: String, region: String): ResponseBody?
+    suspend fun getApiInfo(currentDate: String, region: String): ApiInfo?
     suspend fun persistApiInfo(item: ApiInfoEntity?)
     suspend fun fetchApiInfo(): ApiInfoEntity?
 

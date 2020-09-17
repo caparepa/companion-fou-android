@@ -7,6 +7,7 @@ import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
 import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
 import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
+import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import com.caparepa.companionfou.network.api.ApiClient
@@ -32,7 +33,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     //Function override
 
-    override suspend fun getApiInfo(currentDate: String, region: String): ResponseBody? {
+    override suspend fun getApiInfo(currentDate: String, region: String): ApiInfo? {
         TODO("Not yet implemented")
     }
 
