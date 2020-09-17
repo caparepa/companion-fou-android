@@ -176,16 +176,29 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getFaceCard(currentDate: String, region: String): FaceCardList? =
         withContext(Dispatchers.IO) {
             try {
-                TODO("fou")
-
+                val response = api.getFaceCard(currentDate)
+                val body = response.body()
+                body?.let {
+                    persistFaceCard(it)
+                }
+                body
             } catch (e: Exception) {
-                TODO("fou")
+                e.printStackTrace()
+                null
             }
         }
 
     override suspend fun persistFaceCard(item: FaceCardList?) {
         item?.let {
-
+            val entity = FaceCardEntity(
+                it.arts?.toJsonString(),
+                it.buster?.toJsonString(),
+                it.quick?.toJsonString(),
+                it.extra?.toJsonString(),
+                it.blank?.toJsonString(),
+                it.weak?.toJsonString(),
+                it.strength?.toJsonString()
+            )
         }
     }
 
