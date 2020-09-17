@@ -57,7 +57,7 @@ val databaseModule = module {
     }
 
     //general
-    fun provideAllTraitsDao(database: CompanionFouDatabase): AllTraitsDao {
+    fun provideAllTraitsDao(database: CompanionFouDatabase): ServantTraitsDao {
         return database.getAllTraitsDao()
     }
 

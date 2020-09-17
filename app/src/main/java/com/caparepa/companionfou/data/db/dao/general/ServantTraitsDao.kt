@@ -4,13 +4,13 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.caparepa.companionfou.data.db.entity.general.TraitEntity
+import com.caparepa.companionfou.data.db.entity.general.ServantTraitEntity
 
 @Dao
-interface AllTraitsDao {
+interface ServantTraitsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: String)
 
-    @Query("SELECT * FROM all_traits WHERE id = 0")
-    suspend fun getAllTraitsData(): TraitEntity?
+    @Query("SELECT * FROM servant_traits WHERE id = 0")
+    suspend fun getAllTraitsData(): ServantTraitEntity?
 }

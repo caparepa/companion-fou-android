@@ -8,7 +8,7 @@ import com.caparepa.companionfou.utils.toKotlinObject
 @Entity(
     tableName = "servant_traits"
 )
-class TraitEntity(
+class ServantTraitEntity(
     @ColumnInfo(name = "trait_map_value")
     val trait_map_value: String? = null
 ) {

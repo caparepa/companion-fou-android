@@ -19,13 +19,14 @@ import com.caparepa.companionfou.data.db.entity.nice.*
         BasicCraftEssence::class,
         BasicMysticCode::class,
         BasicMysticCodeMedia::class,
-        TraitEntity::class,
+        ApiInfoEntity::class,
         AttributeRelationEntity::class,
         BuffActionListEntity::class,
         ClassAttackRateEntity::class,
         ClassRelationEntity::class,
         FaceCardEntity::class,
         GameEnumsEntity::class,
+        ServantTraitEntity::class,
         UserLevelEntity::class,
         CommandCodeEntity::class,
         CraftEssenceEntity::class,
@@ -33,7 +34,7 @@ import com.caparepa.companionfou.data.db.entity.nice.*
         MysticCodeEntity::class,
         ServantEntity::class
     ],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 abstract class CompanionFouDatabase : RoomDatabase() {
@@ -46,7 +47,8 @@ abstract class CompanionFouDatabase : RoomDatabase() {
     abstract fun getBasicCommandCodeDao(): BasicCommandCodeDao
 
     //general data
-    abstract fun getAllTraitsDao(): AllTraitsDao
+    abstract fun getApiInfoDao(): ApiInfoDao
+    abstract fun getAllTraitsDao(): ServantTraitsDao
     abstract fun getAttributeRelationDao(): AttributeRelationDao
     abstract fun getBuffActionListDao(): BuffActionListDao
     abstract fun getClassAttackRateDao(): ClassAttackRateDao

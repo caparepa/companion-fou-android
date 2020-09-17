@@ -24,7 +24,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     private val api = ApiClient.invoke()
 
     //DAOs
-    private val allTraitsDao: AllTraitsDao by inject()
+    private val servantTraitsDao: ServantTraitsDao by inject()
     private val apiInfoDao: ApiInfoDao by inject()
     private val attributeRelationDao: AttributeRelationDao by inject()
     private val buffActionListDao: BuffActionListDao by inject()
@@ -348,12 +348,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun persistTraitMapping(list: Map<Int, String>?) {
         list?.let {
             val entity = it.toJsonString()
-            allTraitsDao.upsert(entity!!)
+            servantTraitsDao.upsert(entity!!)
         }
     }
 
-    override suspend fun fetchTraitMapping(): TraitEntity? {
-        return allTraitsDao.getAllTraitsData()
+    override suspend fun fetchTraitMapping(): ServantTraitEntity? {
+        return servantTraitsDao.getAllTraitsData()
     }
 
     override suspend fun getAllEnums(currentDate: String, region: String): GameEnums? =

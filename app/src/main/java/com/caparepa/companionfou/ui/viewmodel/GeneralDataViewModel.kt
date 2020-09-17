@@ -21,7 +21,7 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     val buffActionListResult = MutableLiveData<BuffActionListEntity>()
     val userLevelResult = MutableLiveData<UserLevelEntity>()
     val allEnumsResult = MutableLiveData<GameEnumsEntity>()
-    val traitMappingResult = MutableLiveData<TraitEntity>()
+    val traitMappingResult = MutableLiveData<ServantTraitEntity>()
 
     fun fetchGeneralInfo() {
         viewModelScope.launch(Dispatchers.Main) {

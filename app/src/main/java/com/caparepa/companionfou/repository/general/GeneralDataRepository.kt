@@ -9,9 +9,6 @@ import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
-import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
-import com.caparepa.companionfou.data.model.nice.servant.TraitItem
-import okhttp3.ResponseBody
 
 interface GeneralDataRepository {
 
@@ -45,7 +42,7 @@ interface GeneralDataRepository {
 
     suspend fun getTraitMapping(currentDate: String, region: String): Map<Int, String>?
     suspend fun persistTraitMapping(list: Map<Int, String>?)
-    suspend fun fetchTraitMapping(): TraitEntity?
+    suspend fun fetchTraitMapping(): ServantTraitEntity?
 
     suspend fun getAllEnums(currentDate: String, region: String): GameEnums?
     suspend fun persistAllEnums(item: GameEnums?)
