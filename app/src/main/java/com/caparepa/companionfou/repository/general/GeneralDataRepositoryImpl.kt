@@ -40,12 +40,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getApiInfo(currentDate)
-                val body = response.body()
-                body?.let {
-                    persistApiInfo(it)
-                }
-                body
-
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
@@ -72,11 +67,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     ): AttributeRelation? = withContext(Dispatchers.IO) {
         try {
             val response = api.getAttributeRelation(currentDate)
-            val body = response.body()
-            body?.let {
-                persistAttributeRelation(it)
-            }
-            body
+            response.body()
         } catch (e: Exception) {
             e.printStackTrace()
             null
@@ -103,11 +94,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getClassAttackRate(currentDate)
-                val body = response.body()
-                body?.let {
-                    persistClassAttackRate(it)
-                }
-                body
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
@@ -129,11 +116,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getClassRelation(currentDate)
-                val body = response.body()
-                body?.let {
-                    persistClassRelation(it)
-                }
-                body
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
@@ -176,10 +159,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             try {
                 val response = api.getFaceCard(currentDate)
                 val body = response.body()
-                body?.let {
-                    persistFaceCard(it)
-                }
-                body
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
@@ -208,9 +188,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getBuffActionList(currentDate)
-                val body = response.body()
-                body
-
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
@@ -314,8 +292,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getUserLevel(currentDate)
-                val body = response.body()
-                body
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
@@ -337,8 +314,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getTraitMapping(currentDate)
-                val body = response.body()
-                body
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
@@ -360,8 +336,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getAllEnums(currentDate)
-                val body = response.body()
-                body
+                response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
