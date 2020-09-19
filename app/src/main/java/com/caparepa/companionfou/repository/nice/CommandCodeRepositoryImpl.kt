@@ -15,11 +15,11 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
     val api = ApiClient.invoke()
 
     override suspend fun fetchCommandCode(id: Long): CommandCodeEntity? {
-        TODO("Not yet implemented")
+        return commandCodeDao.getCommandCodeById(id)
     }
 
     override suspend fun fetchCommandCodeList(): List<CommandCodeEntity>? {
-        TODO("Not yet implemented")
+        return commandCodeDao.getCommandCodes()
     }
 
     override suspend fun getCommandCodeList(

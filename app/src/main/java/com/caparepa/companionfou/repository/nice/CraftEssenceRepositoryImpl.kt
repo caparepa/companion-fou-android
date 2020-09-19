@@ -1,17 +1,23 @@
 package com.caparepa.companionfou.repository.nice
 
+import com.caparepa.companionfou.data.db.dao.nice.CraftEssenceDao
 import com.caparepa.companionfou.data.db.entity.nice.CraftEssenceEntity
 import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
+import com.caparepa.companionfou.network.api.ApiClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import org.koin.core.KoinComponent
 
-class CraftEssenceRepositoryImpl : CraftEssenceRepository {
+class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) : CraftEssenceRepository, KoinComponent {
+
+    private val api = ApiClient.invoke()
+
     override suspend fun fetchCraftEssence(id: Long): CraftEssenceEntity? {
-        TODO("Not yet implemented")
+        return craftEssenceDao.getCraftEssenceById(id)
     }
 
     override suspend fun fetchCraftEssenceList(): List<CraftEssenceEntity>? {
-        TODO("Not yet implemented")
+        return craftEssenceDao.getCraftEssences()
     }
 
     override suspend fun getCraftEssenceList(
