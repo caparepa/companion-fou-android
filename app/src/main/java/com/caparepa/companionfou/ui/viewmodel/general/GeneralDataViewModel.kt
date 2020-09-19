@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class GeneralDataViewModel(val context: Context, val generalDataRepository: GeneralDataRepository) :
+class GeneralDataViewModel(val context: Context, private val generalDataRepository: GeneralDataRepository) :
     BaseViewModel(), KoinComponent {
 
     val generalInfoResult = MutableLiveData<ApiInfoEntity>()
