@@ -10,15 +10,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralDataRepository) :
+class GeneralDataViewModel(val context: Context, val generalDataRepository: GeneralDataRepository) :
     BaseViewModel(), KoinComponent {
 
-    val generalInfoResult = MutableLiveData<Any>()
+    val generalInfoResult = MutableLiveData<ApiInfoEntity>()
     val attributeRelationResult = MutableLiveData<AttributeRelationEntity>()
     val classAttackRateResult = MutableLiveData<ClassAttackRateEntity>()
     val classRelationResult = MutableLiveData<ClassRelationEntity>()
     val faceCardResult = MutableLiveData<FaceCardEntity>()
-    val constantsResult = MutableLiveData<Any>()
+    val constantsResult = MutableLiveData<GameEnumsEntity>()
     val buffActionListResult = MutableLiveData<BuffActionListEntity>()
     val userLevelResult = MutableLiveData<UserLevelEntity>()
     val allEnumsResult = MutableLiveData<GameEnumsEntity>()
@@ -31,11 +31,19 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchGeneralInfoAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching {
+            generalDataRepository.fetchApiInfo()
+        }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess {
+                it?.let {
+                    generalInfoResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -46,11 +54,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchAttributeRelationAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -61,11 +69,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchClassAttackRateAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -76,11 +84,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchClassRelationAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -91,11 +99,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchFaceCardAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -106,11 +114,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchConstantsAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -121,11 +129,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchBuffActionListAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -136,11 +144,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchUserLevelAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -151,11 +159,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchAllEnumsAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -166,11 +174,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun fetchTraitMappingAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -181,11 +189,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getGeneralInfoAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -196,11 +204,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getAttributeRelationAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -211,11 +219,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getClassAttackRateAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -226,11 +234,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getClassRelationAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -241,11 +249,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getFaceCardAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -256,11 +264,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getConstantsAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -271,11 +279,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getBuffActionListAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -286,11 +294,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getUserLevelAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -301,11 +309,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getAllEnumsAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
@@ -316,11 +324,11 @@ class GeneralDataViewModel(val context: Context, generalDataRepository: GeneralD
     }
 
     suspend fun getTraitMappingAsync() {
-        val result = kotlin.runCatching {  }
+        val result = kotlin.runCatching { }
 
-        with(result){
-            onSuccess {  }
-            onFailure {  }
+        with(result) {
+            onSuccess { }
+            onFailure { }
         }
     }
 
