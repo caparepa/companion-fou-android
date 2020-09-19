@@ -4,6 +4,7 @@ import com.caparepa.companionfou.data.db.dao.nice.MaterialDao
 import com.caparepa.companionfou.data.db.entity.nice.MaterialEntity
 import com.caparepa.companionfou.data.model.nice.material.MaterialItem
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.utils.mapTo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
@@ -32,6 +33,11 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
         }
 
     override suspend fun persistMaterialList(list: List<MaterialItem>?) {
-        TODO("Not yet implemented")
+        list?.let {
+            it.forEach { item ->
+                val entity = item.mapTo(MaterialEntity::class.java)
+                materialDao.upsert(entity!!)
+            }
+        }
     }
 }
