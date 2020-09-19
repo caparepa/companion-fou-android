@@ -44,7 +44,7 @@ interface GeneralDataRepository {
     suspend fun persistTraitMapping(list: Map<Int, String>?)
     suspend fun fetchTraitMapping(): ServantTraitEntity?
 
-    suspend fun getAllEnums(currentDate: String, region: String): GameEnums?
-    suspend fun persistAllEnums(item: GameEnums?)
-    suspend fun fetchAllEnums(): GameEnumsEntity?
+    suspend fun getGameEnums(currentDate: String, region: String): GameEnums?
+    suspend fun persistGameEnums(item: GameEnums?)
+    suspend fun fetchGameEnums(): GameEnumsEntity?
 }

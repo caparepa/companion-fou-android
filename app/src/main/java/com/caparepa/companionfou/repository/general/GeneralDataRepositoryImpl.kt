@@ -356,7 +356,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         return servantTraitsDao.getAllTraitsData()
     }
 
-    override suspend fun getAllEnums(currentDate: String, region: String): GameEnums? =
+    override suspend fun getGameEnums(currentDate: String, region: String): GameEnums? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getAllEnums(currentDate)
@@ -368,7 +368,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistAllEnums(item: GameEnums?) {
+    override suspend fun persistGameEnums(item: GameEnums?) {
         item?.let {
             val entity = GameEnumsEntity(
                 it.niceSvtType?.toJsonString(),
@@ -399,7 +399,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun fetchAllEnums(): GameEnumsEntity? {
+    override suspend fun fetchGameEnums(): GameEnumsEntity? {
         return gameEnumsDao.getGameEnumsData()
     }
 

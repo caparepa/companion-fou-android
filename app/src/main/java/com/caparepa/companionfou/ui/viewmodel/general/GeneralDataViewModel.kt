@@ -24,13 +24,17 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
     val allEnumsResult = MutableLiveData<GameEnumsEntity>()
     val traitMappingResult = MutableLiveData<ServantTraitEntity>()
 
-    fun fetchGeneralInfo() {
+    /**
+     * Api Info
+     */
+
+    fun fetchApiInfo() {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchGeneralInfoAsync()
+            fetchApiInfoAsync()
         }
     }
 
-    private suspend fun fetchGeneralInfoAsync() {
+    private suspend fun fetchApiInfoAsync() {
         val result = kotlin.runCatching {
             generalDataRepository.fetchApiInfo()
         }
@@ -47,6 +51,31 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
+    fun getApiInfo() {
+        viewModelScope.launch(Dispatchers.Main) {
+            getApiInfoAsync()
+        }
+    }
+
+    private suspend fun getApiInfoAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    /**
+     * Attribute Relation
+     */
+
     fun fetchAttributeRelation() {
         viewModelScope.launch(Dispatchers.Main) {
             fetchAttributeRelationAsync()
@@ -62,197 +91,6 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
             onSuccess {
                 it?.let {
                     attributeRelationResult.postValue(it)
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchClassAttackRate() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchClassAttackRateAsync()
-        }
-    }
-
-    private suspend fun fetchClassAttackRateAsync() {
-        val result = kotlin.runCatching {
-            generalDataRepository.fetchClassAttackRate()
-        }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-                    classAttackRateResult.postValue(it)
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchClassRelation() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchClassRelationAsync()
-        }
-    }
-
-    private suspend fun fetchClassRelationAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchFaceCard() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchFaceCardAsync()
-        }
-    }
-
-    private suspend fun fetchFaceCardAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchConstants() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchConstantsAsync()
-        }
-    }
-
-    private suspend fun fetchConstantsAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchBuffActionList() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchBuffActionListAsync()
-        }
-    }
-
-    private suspend fun fetchBuffActionListAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchUserLevel() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchUserLevelAsync()
-        }
-    }
-
-    private suspend fun fetchUserLevelAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchAllEnums() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchAllEnumsAsync()
-        }
-    }
-
-    private suspend fun fetchAllEnumsAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun fetchTraitMapping() {
-        viewModelScope.launch(Dispatchers.Main) {
-            fetchTraitMappingAsync()
-        }
-    }
-
-    private suspend fun fetchTraitMappingAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
-                }
-            }
-            onFailure {
-                onError.postValue(it.message)
-            }
-        }
-    }
-
-    fun getGeneralInfo() {
-        viewModelScope.launch(Dispatchers.Main) {
-            getGeneralInfoAsync()
-        }
-    }
-
-    private suspend fun getGeneralInfoAsync() {
-        val result = kotlin.runCatching { }
-
-        with(result) {
-            onSuccess {
-                it?.let {
-
                 }
             }
             onFailure {
@@ -282,6 +120,33 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
+    /**
+     * Class Attack Rate
+     */
+
+    fun fetchClassAttackRate() {
+        viewModelScope.launch(Dispatchers.Main) {
+            fetchClassAttackRateAsync()
+        }
+    }
+
+    private suspend fun fetchClassAttackRateAsync() {
+        val result = kotlin.runCatching {
+            generalDataRepository.fetchClassAttackRate()
+        }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+                    classAttackRateResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
     fun getClassAttackRate() {
         viewModelScope.launch(Dispatchers.Main) {
             getClassAttackRateAsync()
@@ -289,6 +154,31 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
     }
 
     private suspend fun getClassAttackRateAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    /**
+     * Class Relation
+     */
+
+    fun fetchClassRelation() {
+        viewModelScope.launch(Dispatchers.Main) {
+            fetchClassRelationAsync()
+        }
+    }
+
+    private suspend fun fetchClassRelationAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -324,6 +214,31 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
+    /**
+     * Face Card
+     */
+
+    fun fetchFaceCard() {
+        viewModelScope.launch(Dispatchers.Main) {
+            fetchFaceCardAsync()
+        }
+    }
+
+    private suspend fun fetchFaceCardAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
     fun getFaceCard() {
         viewModelScope.launch(Dispatchers.Main) {
             getFaceCardAsync()
@@ -331,6 +246,31 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
     }
 
     private suspend fun getFaceCardAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    /**
+     * Game Constants
+     */
+
+    fun fetchConstants() {
+        viewModelScope.launch(Dispatchers.Main) {
+            fetchConstantsAsync()
+        }
+    }
+
+    private suspend fun fetchConstantsAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -366,6 +306,31 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
+    /**
+     * Buff Action List
+     */
+
+    fun fetchBuffActionList() {
+        viewModelScope.launch(Dispatchers.Main) {
+            fetchBuffActionListAsync()
+        }
+    }
+
+    private suspend fun fetchBuffActionListAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
     fun getBuffActionList() {
         viewModelScope.launch(Dispatchers.Main) {
             getBuffActionListAsync()
@@ -373,6 +338,31 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
     }
 
     private suspend fun getBuffActionListAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    /**
+     * User Level List
+     */
+
+    fun fetchUserLevel() {
+        viewModelScope.launch(Dispatchers.Main) {
+            fetchUserLevelAsync()
+        }
+    }
+
+    private suspend fun fetchUserLevelAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -408,13 +398,63 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    fun getAllEnums() {
+    /**
+     * Game Enums
+     */
+
+    fun fetchGameEnums() {
         viewModelScope.launch(Dispatchers.Main) {
-            getAllEnumsAsync()
+            fetchGameEnumsAsync()
         }
     }
 
-    private suspend fun getAllEnumsAsync() {
+    private suspend fun fetchGameEnumsAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    fun getGameEnums() {
+        viewModelScope.launch(Dispatchers.Main) {
+            getGameEnumsAsync()
+        }
+    }
+
+    private suspend fun getGameEnumsAsync() {
+        val result = kotlin.runCatching { }
+
+        with(result) {
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
+        }
+    }
+
+    /**
+     * Trait Mapping
+     */
+
+    fun fetchTraitMapping() {
+        viewModelScope.launch(Dispatchers.Main) {
+            fetchTraitMappingAsync()
+        }
+    }
+
+    private suspend fun fetchTraitMappingAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
