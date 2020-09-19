@@ -5,6 +5,8 @@ import com.caparepa.companionfou.data.db.entity.nice.CommandCodeEntity
 import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.utils.toJsonString
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 
 class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : CommandCodeRepository,
@@ -23,8 +25,13 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
     override suspend fun getCommandCodeList(
         currentDate: String,
         region: String
-    ): List<CommandCodeItem>? {
-        TODO("Not yet implemented")
+    ): List<CommandCodeItem>? = withContext(Dispatchers.IO) {
+        try {
+            null
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
     }
 
     override suspend fun persistCommandCodeList(list: List<CommandCodeItem>?) {
