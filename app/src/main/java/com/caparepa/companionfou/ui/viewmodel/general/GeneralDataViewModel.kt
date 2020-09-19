@@ -30,7 +30,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchGeneralInfoAsync() {
+    private suspend fun fetchGeneralInfoAsync() {
         val result = kotlin.runCatching {
             generalDataRepository.fetchApiInfo()
         }
@@ -53,7 +53,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchAttributeRelationAsync() {
+    private suspend fun fetchAttributeRelationAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -68,7 +68,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchClassAttackRateAsync() {
+    private suspend fun fetchClassAttackRateAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -83,7 +83,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchClassRelationAsync() {
+    private suspend fun fetchClassRelationAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -98,7 +98,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchFaceCardAsync() {
+    private suspend fun fetchFaceCardAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -113,7 +113,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchConstantsAsync() {
+    private suspend fun fetchConstantsAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -128,7 +128,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchBuffActionListAsync() {
+    private suspend fun fetchBuffActionListAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -143,7 +143,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchUserLevelAsync() {
+    private suspend fun fetchUserLevelAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -158,7 +158,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchAllEnumsAsync() {
+    private suspend fun fetchAllEnumsAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -173,7 +173,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun fetchTraitMappingAsync() {
+    private suspend fun fetchTraitMappingAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -188,7 +188,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getGeneralInfoAsync() {
+    private suspend fun getGeneralInfoAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -203,7 +203,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getAttributeRelationAsync() {
+    private suspend fun getAttributeRelationAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -218,7 +218,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getClassAttackRateAsync() {
+    private suspend fun getClassAttackRateAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -233,7 +233,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getClassRelationAsync() {
+    private suspend fun getClassRelationAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -248,7 +248,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getFaceCardAsync() {
+    private suspend fun getFaceCardAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -263,7 +263,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getConstantsAsync() {
+    private suspend fun getConstantsAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -278,7 +278,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getBuffActionListAsync() {
+    private suspend fun getBuffActionListAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -293,7 +293,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getUserLevelAsync() {
+    private suspend fun getUserLevelAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -308,7 +308,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getAllEnumsAsync() {
+    private suspend fun getAllEnumsAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -323,7 +323,7 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         }
     }
 
-    suspend fun getTraitMappingAsync() {
+    private suspend fun getTraitMappingAsync() {
         val result = kotlin.runCatching { }
 
         with(result) {
