@@ -54,11 +54,19 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
     }
 
     private suspend fun fetchAttributeRelationAsync() {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.fetchAttributeRelation()
+        }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+                    attributeRelationResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -69,11 +77,19 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
     }
 
     private suspend fun fetchClassAttackRateAsync() {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.fetchClassAttackRate()
+        }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+                    classAttackRateResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -87,8 +103,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -102,8 +124,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -117,8 +145,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -132,8 +166,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -147,8 +187,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -162,8 +208,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -177,8 +229,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -192,8 +250,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -207,8 +271,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -222,8 +292,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -237,8 +313,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -252,8 +334,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -267,8 +355,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -282,8 +376,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -297,8 +397,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -312,8 +418,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
@@ -327,8 +439,14 @@ class GeneralDataViewModel(val context: Context, val generalDataRepository: Gene
         val result = kotlin.runCatching { }
 
         with(result) {
-            onSuccess { }
-            onFailure { }
+            onSuccess {
+                it?.let {
+
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
