@@ -24,12 +24,15 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        observeBasicDataViewModel()
-        observeMysticCodeViewModel()
+        observeGeneralDataViewModel()
+        //observeBasicDataViewModel()
+        //observeMysticCodeViewModel()
+
         theButton.setOnClickListener {
             try {
                 //basicDataViewModel.getBasicServantList()
-                mysticCodeViewModel.fetchMysticCodes()
+                //mysticCodeViewModel.fetchMysticCodes()
+                generalDataViewModel.fetchApiInfo()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
                 e.printStackTrace()
@@ -40,14 +43,19 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private fun observeGeneralDataViewModel() = generalDataViewModel.run {
         apiInfoResult.observe(this@MainActivity, Observer {
-
+            it?.let {
+               this@MainActivity.toastLong(it.toString())
+            }
         })
         onError.observe(this@MainActivity, Observer{
-
+            it?.let {
+                this@MainActivity.toastLong(it)
+            }
         })
         onGetSuccess.observe(this@MainActivity, Observer{
             it?.let {
-
+                if(it.containsKey(API_INFO) && it.get(API_INFO) == true)
+                    generalDataViewModel.fetchApiInfo()
             }
         })
     }
