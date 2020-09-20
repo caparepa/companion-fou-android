@@ -16,8 +16,6 @@ import org.koin.core.inject
 
 class MainActivity : AppCompatActivity(), KoinComponent {
 
-    private val basicDataViewModel: BasicDataViewModel by inject()
-    private val mysticCodeViewModel: MysticCodeViewModel by inject()
     private val generalDataViewModel: GeneralDataViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +23,9 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         setContentView(R.layout.activity_main)
 
         observeGeneralDataViewModel()
-        //observeBasicDataViewModel()
-        //observeMysticCodeViewModel()
 
         theButton.setOnClickListener {
             try {
-                //basicDataViewModel.getBasicServantList()
-                //mysticCodeViewModel.fetchMysticCodes()
                 generalDataViewModel.fetchApiInfo()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
@@ -60,27 +54,4 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         })
     }
 
-    private fun observeBasicDataViewModel() = basicDataViewModel.run {
-        basicServantResponse.observe(this@MainActivity, Observer {
-            it?.let {
-                tvTest.text = it.toString()
-                this@MainActivity.toastLong("HELLO! YES!")
-            }
-        })
-    }
-
-    private fun observeMysticCodeViewModel() = mysticCodeViewModel.run {
-        mysticCodeListResponse.observe(this@MainActivity, Observer {
-            it?.let {
-                this@MainActivity.toastLong("response!")
-            }
-        })
-        mysticCodeListResult.observe(this@MainActivity, Observer {
-            if(!it.isNullOrEmpty()) {
-                this@MainActivity.toastLong("RESULT!")
-            } else {
-                this.getMysticCodes()
-            }
-        })
-    }
 }
