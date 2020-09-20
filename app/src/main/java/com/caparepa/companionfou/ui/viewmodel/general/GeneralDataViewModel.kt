@@ -13,7 +13,7 @@ import org.koin.core.KoinComponent
 class GeneralDataViewModel(val context: Context, private val generalDataRepository: GeneralDataRepository) :
     BaseViewModel(), KoinComponent {
 
-    val generalInfoResult = MutableLiveData<ApiInfoEntity>()
+    val apiInfoResult = MutableLiveData<ApiInfoEntity>()
     val attributeRelationResult = MutableLiveData<AttributeRelationEntity>()
     val classAttackRateResult = MutableLiveData<ClassAttackRateEntity>()
     val classRelationResult = MutableLiveData<ClassRelationEntity>()
@@ -42,7 +42,7 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
         with(result) {
             onSuccess {
                 it?.let {
-                    generalInfoResult.postValue(it)
+                    apiInfoResult.postValue(it)
                 }
             }
             onFailure {
