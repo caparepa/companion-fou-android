@@ -53,15 +53,14 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, "TAGTAG",it.toString())
+                logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, "TAGTAG","HAY DATA!")
+                    logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> Hay data!")
                     apiInfoResult.postValue(it)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, "TAGTAG","VERGA NO HAY DATA!")
-
+                logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> No hay data! Error!")
                 onError.postValue(it.message)
             }
         }
@@ -80,15 +79,14 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, "TAGTAG","NO HAY RESULTAO!")
-                logger(LOG_DEBUG, "TAGTAG","${it.toString()}")
+                logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, "TAGTAG","HAY RESULTAO!")
+                    logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> Hay data de API!")
                     onGetSuccess.postValue(mapOf(API_INFO to true))
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, "TAGTAG","NO HAY RESULTAO!")
+                logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> No hay data de API! Error!")
                 onError.postValue(it.message)
             }
         }

@@ -40,11 +40,11 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     private fun observeGeneralDataViewModel() = generalDataViewModel.run {
         apiInfoResult.observe(this@MainActivity, Observer {
             if (it != null) {
-                logger(LOG_DEBUG, "TAGTAG", "HAY INFO!")
+                logger(LOG_DEBUG, "TAGTAG", "Hay info de DB!")
                 logger(LOG_DEBUG, "TAGTAG",it.toString())
 
             } else {
-                logger(LOG_DEBUG, "TAGTAG", "HAY QUE JALAR INFO DE API!")
+                logger(LOG_DEBUG, "TAGTAG", "No hay info de DB! Hay que jalar de APAI!")
                 generalDataViewModel.getApiInfo()
             }
         })
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         onGetSuccess.observe(this@MainActivity, Observer {
             it?.let {
                 if (it.containsKey(API_INFO) && it.get(API_INFO) == true) {
-                    logger(LOG_DEBUG, "TAGTAG", "YA JALO LA DATA! $it")
+                    logger(LOG_DEBUG, "TAGTAG", "Ya jalo data de API! $it")
                     generalDataViewModel.fetchApiInfo()
                 }
             }
