@@ -28,6 +28,14 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
      * Api Info
      */
 
+    /**
+     * General flow
+     * call fetch -> if in DB, postvalue in livedata
+     * if not in DB, call get & persist
+     * then call fetch again and return data
+     * (all this in the view!)
+     */
+
     fun fetchApiInfo() {
         viewModelScope.launch(Dispatchers.Main) {
             fetchApiInfoAsync()
