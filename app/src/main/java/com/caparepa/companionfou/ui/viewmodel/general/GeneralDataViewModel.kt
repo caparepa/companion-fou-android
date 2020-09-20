@@ -14,7 +14,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class GeneralDataViewModel(val context: Context, private val generalDataRepository: GeneralDataRepository) :
+class GeneralDataViewModel(
+    val context: Context,
+    private val generalDataRepository: GeneralDataRepository
+) :
     BaseViewModel(), KoinComponent {
 
     val apiInfoResult = MutableLiveData<ApiInfoEntity>()
@@ -55,14 +58,12 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
         with(result) {
             onSuccess {
                 loadingState.postValue(false)
-                logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> $it")
-                it?.let {
-                    logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> Hay data!")
-                    apiInfoResult.postValue(it)
-                }
+                logger(LOG_DEBUG, "TAGTAG", "fetchApiInfoAsync -> $it")
+                logger(LOG_DEBUG, "TAGTAG", "fetchApiInfoAsync -> Hay data!")
+                apiInfoResult.postValue(it)
             }
             onFailure {
-                logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> No hay data! Error!")
+                logger(LOG_DEBUG, "TAGTAG", "fetchApiInfoAsync -> No hay data! Error!")
                 onError.postValue(it.message)
             }
         }
@@ -83,14 +84,17 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
         with(result) {
             onSuccess {
                 loadingState.postValue(false)
-                logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> $it")
-                it?.let {
-                    logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> Hay data de API!")
+                logger(LOG_DEBUG, "TAGTAG", "getApiInfoAsync -> $it")
+                if(it != null) {
+                    logger(LOG_DEBUG, "TAGTAG", "getApiInfoAsync -> Hay data de API!")
                     onGetSuccess.postValue(mapOf(API_INFO to true))
+                } else {
+                    logger(LOG_DEBUG, "TAGTAG", "getApiInfoAsync -> NO hay data de API!")
+                    onGetSuccess.postValue(mapOf(API_INFO to false))
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> No hay data de API! Error!")
+                logger(LOG_DEBUG, "TAGTAG", "getApiInfoAsync -> No hay data de API! Error!")
                 onError.postValue(it.message)
             }
         }
