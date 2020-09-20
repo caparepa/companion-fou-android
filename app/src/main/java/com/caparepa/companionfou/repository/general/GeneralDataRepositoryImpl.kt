@@ -11,6 +11,8 @@ import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
@@ -39,10 +41,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getApiInfo(currentDate: String): ApiInfo? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, "TAGTAG", "JALANDO DATA!")
                 val response = api.getApiInfo(currentDate)
                 persistApiInfo(response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, "TAGTAG", "NO JALO DATA!")
                 e.printStackTrace()
                 null
             }
@@ -50,6 +54,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistApiInfo(item: ApiInfo?) {
         item?.let {
+            logger(LOG_DEBUG, "TAGTAG", "METIENDO DATA!")
             val entity = ApiInfoEntity(
                 it.na?.toJsonString(),
                 it.jp?.toJsonString()

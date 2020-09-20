@@ -9,6 +9,8 @@ import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
 import com.caparepa.companionfou.utils.API_INFO
+import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.logger
 import com.caparepa.companionfou.utils.toastLong
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.core.KoinComponent
@@ -38,21 +40,22 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     private fun observeGeneralDataViewModel() = generalDataViewModel.run {
         apiInfoResult.observe(this@MainActivity, Observer {
             if (it != null) {
-                this@MainActivity.toastLong("HAY INFO!")
+                logger(LOG_DEBUG, "TAGTAG", "HAY INFO!")
             } else {
-                this@MainActivity.toastLong("HAY QUE JALAR INFO DE API!")
+                logger(LOG_DEBUG, "TAGTAG", "HAY QUE JALAR INFO DE API!")
                 generalDataViewModel.getApiInfo()
             }
         })
         onError.observe(this@MainActivity, Observer {
             it?.let {
-                this@MainActivity.toastLong(it)
+                logger(LOG_DEBUG, "TAGTAG", "onError $it")
+
             }
         })
         onGetSuccess.observe(this@MainActivity, Observer {
             it?.let {
                 if (it.containsKey(API_INFO) && it.get(API_INFO) == true) {
-                    this@MainActivity.toastLong("YA JALO LA DATA!")
+                    logger(LOG_DEBUG, "TAGTAG", "YA JALO LA DATA!")
                     generalDataViewModel.fetchApiInfo()
                 }
             }
