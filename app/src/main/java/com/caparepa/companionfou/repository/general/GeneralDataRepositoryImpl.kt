@@ -40,6 +40,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getApiInfo(currentDate)
+                persistApiInfo(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -67,6 +68,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     ): AttributeRelation? = withContext(Dispatchers.IO) {
         try {
             val response = api.getAttributeRelation(currentDate)
+            persistAttributeRelation(response.body())
             response.body()
         } catch (e: Exception) {
             e.printStackTrace()
@@ -94,6 +96,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getClassAttackRate(currentDate)
+                persistClassAttackRate(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -116,6 +119,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getClassRelation(currentDate)
+                persistClassRelation(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -158,7 +162,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getFaceCard(currentDate)
-                val body = response.body()
+                persistFaceCard(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -188,6 +192,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getBuffActionList(currentDate)
+                persistBuffActionList(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -292,6 +297,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getUserLevel(currentDate)
+                persistUserLevel(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -314,6 +320,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getTraitMapping(currentDate)
+                persistTraitMapping(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -336,6 +343,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getAllEnums(currentDate)
+                persistGameEnums(response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
