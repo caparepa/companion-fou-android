@@ -48,11 +48,13 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
 
     private suspend fun fetchApiInfoAsync() {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.fetchApiInfo()
         }
 
         with(result) {
             onSuccess {
+                loadingState.postValue(false)
                 logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, "TAGTAG","fetchApiInfoAsync -> Hay data!")
@@ -74,11 +76,13 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
 
     private suspend fun getApiInfoAsync(currentDate: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.getApiInfo(currentDate)
         }
 
         with(result) {
             onSuccess {
+                loadingState.postValue(false)
                 logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, "TAGTAG","getApiInfoAsync -> Hay data de API!")

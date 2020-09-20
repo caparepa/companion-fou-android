@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
@@ -20,14 +21,19 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private val generalDataViewModel: GeneralDataViewModel by inject()
 
+    private lateinit var loadingDialog: LoadingDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        loadingDialog = LoadingDialog(this)
 
         observeGeneralDataViewModel()
 
         theButton.setOnClickListener {
             try {
+                loadingDialog.show()
                 generalDataViewModel.fetchApiInfo()
             } catch (e: Exception) {
                 Log.e("TATA", "nonono")
@@ -41,7 +47,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         apiInfoResult.observe(this@MainActivity, Observer {
             if (it != null) {
                 logger(LOG_DEBUG, "TAGTAG", "Hay info de DB!")
-                logger(LOG_DEBUG, "TAGTAG",it.toString())
+                logger(LOG_DEBUG, "TAGTAG", it.toString())
 
             } else {
                 logger(LOG_DEBUG, "TAGTAG", "No hay info de DB! Hay que jalar de APAI!")
@@ -60,6 +66,15 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                     logger(LOG_DEBUG, "TAGTAG", "Ya jalo data de API! $it")
                     generalDataViewModel.fetchApiInfo()
                 }
+            }
+        })
+
+        loadingState.observe(this@MainActivity, Observer {
+            if (it) {
+                loadingDialog.setCanceledOnTouchOutside(false)
+                loadingDialog.show()
+            } else {
+                loadingDialog.dismiss()
             }
         })
     }

@@ -139,4 +139,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.10.0")
     kapt("com.github.bumptech.glide:compiler:4.10.0")
 
+    //loading
+    implementation("com.github.ybq:Android-SpinKit:1.4.0")
+
 }
