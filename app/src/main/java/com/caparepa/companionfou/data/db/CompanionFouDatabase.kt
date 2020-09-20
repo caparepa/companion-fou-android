@@ -34,7 +34,7 @@ import com.caparepa.companionfou.data.db.entity.nice.*
         MysticCodeEntity::class,
         ServantEntity::class
     ],
-    version = 5,
+    version = 1,
     exportSchema = false
 )
 abstract class CompanionFouDatabase : RoomDatabase() {

@@ -9,6 +9,8 @@ import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptor
 import com.caparepa.companionfou.network.interceptor.ConnectivityInterceptorImpl
 import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
+import com.caparepa.companionfou.repository.general.GeneralDataRepository
+import com.caparepa.companionfou.repository.general.GeneralDataRepositoryImpl
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.repository.nice.MysticCodeRepositoryImpl
 import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
@@ -26,6 +28,7 @@ val networkModule = module {
 val repositoryModule = module {
     factory<BasicDataRepository> { BasicDataRepositoryImpl() }
     factory<MysticCodeRepository> { MysticCodeRepositoryImpl(get()) }
+    factory<GeneralDataRepository> { GeneralDataRepositoryImpl() }
 }
 
 val localModule = module {

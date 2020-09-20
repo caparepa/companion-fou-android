@@ -37,19 +37,24 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private fun observeGeneralDataViewModel() = generalDataViewModel.run {
         apiInfoResult.observe(this@MainActivity, Observer {
-            it?.let {
-               this@MainActivity.toastLong(it.toString())
+            if (it != null) {
+                this@MainActivity.toastLong("HAY INFO!")
+            } else {
+                this@MainActivity.toastLong("HAY QUE JALAR INFO DE API!")
+                generalDataViewModel.getApiInfo()
             }
         })
-        onError.observe(this@MainActivity, Observer{
+        onError.observe(this@MainActivity, Observer {
             it?.let {
                 this@MainActivity.toastLong(it)
             }
         })
-        onGetSuccess.observe(this@MainActivity, Observer{
+        onGetSuccess.observe(this@MainActivity, Observer {
             it?.let {
-                if(it.containsKey(API_INFO) && it.get(API_INFO) == true)
+                if (it.containsKey(API_INFO) && it.get(API_INFO) == true) {
+                    this@MainActivity.toastLong("YA JALO LA DATA!")
                     generalDataViewModel.fetchApiInfo()
+                }
             }
         })
     }
