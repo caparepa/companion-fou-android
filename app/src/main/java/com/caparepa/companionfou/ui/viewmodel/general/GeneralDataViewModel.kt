@@ -8,6 +8,8 @@ import com.caparepa.companionfou.repository.general.GeneralDataRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.API_INFO
 import com.caparepa.companionfou.utils.CURRENT_DATE
+import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
@@ -51,11 +53,15 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
 
         with(result) {
             onSuccess {
+                logger(LOG_DEBUG, "TAGTAG",it.toString())
                 it?.let {
+                    logger(LOG_DEBUG, "TAGTAG","HAY DATA!")
                     apiInfoResult.postValue(it)
                 }
             }
             onFailure {
+                logger(LOG_DEBUG, "TAGTAG","VERGA NO HAY DATA!")
+
                 onError.postValue(it.message)
             }
         }
@@ -74,11 +80,15 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
 
         with(result) {
             onSuccess {
+                logger(LOG_DEBUG, "TAGTAG","NO HAY RESULTAO!")
+                logger(LOG_DEBUG, "TAGTAG","${it.toString()}")
                 it?.let {
+                    logger(LOG_DEBUG, "TAGTAG","HAY RESULTAO!")
                     onGetSuccess.postValue(mapOf(API_INFO to true))
                 }
             }
             onFailure {
+                logger(LOG_DEBUG, "TAGTAG","NO HAY RESULTAO!")
                 onError.postValue(it.message)
             }
         }

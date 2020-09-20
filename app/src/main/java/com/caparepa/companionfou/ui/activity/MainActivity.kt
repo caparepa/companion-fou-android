@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         apiInfoResult.observe(this@MainActivity, Observer {
             if (it != null) {
                 logger(LOG_DEBUG, "TAGTAG", "HAY INFO!")
+                logger(LOG_DEBUG, "TAGTAG",it.toString())
+
             } else {
                 logger(LOG_DEBUG, "TAGTAG", "HAY QUE JALAR INFO DE API!")
                 generalDataViewModel.getApiInfo()
@@ -55,7 +57,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         onGetSuccess.observe(this@MainActivity, Observer {
             it?.let {
                 if (it.containsKey(API_INFO) && it.get(API_INFO) == true) {
-                    logger(LOG_DEBUG, "TAGTAG", "YA JALO LA DATA!")
+                    logger(LOG_DEBUG, "TAGTAG", "YA JALO LA DATA! $it")
                     generalDataViewModel.fetchApiInfo()
                 }
             }
