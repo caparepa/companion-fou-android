@@ -13,6 +13,8 @@ import org.koin.core.KoinComponent
 class GeneralDataViewModel(val context: Context, private val generalDataRepository: GeneralDataRepository) :
     BaseViewModel(), KoinComponent {
 
+    val CURRENT_DATE = "20200905"
+
     val apiInfoResult = MutableLiveData<ApiInfoEntity>()
     val attributeRelationResult = MutableLiveData<AttributeRelationEntity>()
     val classAttackRateResult = MutableLiveData<ClassAttackRateEntity>()
@@ -61,17 +63,19 @@ class GeneralDataViewModel(val context: Context, private val generalDataReposito
 
     fun getApiInfo() {
         viewModelScope.launch(Dispatchers.Main) {
-            getApiInfoAsync()
+            getApiInfoAsync(CURRENT_DATE)
         }
     }
 
-    private suspend fun getApiInfoAsync() {
-        val result = kotlin.runCatching { }
+    private suspend fun getApiInfoAsync(currentDate: String) {
+        val result = kotlin.runCatching {
+            generalDataRepository.getApiInfo(currentDate)
+        }
 
         with(result) {
             onSuccess {
                 it?.let {
-
+                    onGetSuccess.postValue(mapOf("API_INFO" to true))
                 }
             }
             onFailure {
