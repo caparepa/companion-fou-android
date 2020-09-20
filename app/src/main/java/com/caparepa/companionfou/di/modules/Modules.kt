@@ -12,6 +12,7 @@ import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.repository.nice.MysticCodeRepositoryImpl
 import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -145,4 +146,5 @@ val databaseModule = module {
 val viewModelModule = module {
     viewModel { BasicDataViewModel(androidContext(), get()) }
     viewModel { MysticCodeViewModel(androidContext(), get()) }
+    viewModel { GeneralDataViewModel(androidContext(), get()) }
 }

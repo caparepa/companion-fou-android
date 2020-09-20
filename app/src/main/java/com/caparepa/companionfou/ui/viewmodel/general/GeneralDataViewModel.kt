@@ -7,14 +7,13 @@ import com.caparepa.companionfou.data.db.entity.general.*
 import com.caparepa.companionfou.repository.general.GeneralDataRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.API_INFO
+import com.caparepa.companionfou.utils.CURRENT_DATE
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
 class GeneralDataViewModel(val context: Context, private val generalDataRepository: GeneralDataRepository) :
     BaseViewModel(), KoinComponent {
-
-    val CURRENT_DATE = "20200905"
 
     val apiInfoResult = MutableLiveData<ApiInfoEntity>()
     val attributeRelationResult = MutableLiveData<AttributeRelationEntity>()
