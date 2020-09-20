@@ -6,9 +6,9 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 
 open class BaseViewModel : ViewModel() {
     val loadingState = MutableLiveData<Boolean>()
-    val onFetchSuccess = MutableLiveData<Any>()
-    val onGetSuccess = MutableLiveData<Any>()
-    val onPersistSuccess = MutableLiveData<Any>()
+    val onFetchSuccess = MutableLiveData<Map<String, Boolean>>()
+    val onGetSuccess = MutableLiveData<Map<String, Boolean>>()
+    val onPersistSuccess = MutableLiveData<Map<String, Boolean>>()
     val onSuccess = MutableLiveData<Any>()
     val onError = MutableLiveData<String>()
 

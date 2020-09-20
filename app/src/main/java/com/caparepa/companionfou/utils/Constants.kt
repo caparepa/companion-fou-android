@@ -2,6 +2,21 @@ package com.caparepa.companionfou.utils
 
 import android.util.Log
 
+//VIEWMODEL CONSTANTS
+const val CURRENT_DATE = "20200905"
+const val CURRENT_REGION = "NA"
+
+const val API_INFO = "API_INFO"
+const val ATTRIBUTE_RELATION = "ATTRIBUTE_RELATION"
+const val CLASS_ATTACK_RATE = "CLASS_ATTACK_RATE"
+const val CLASS_RELATION = "CLASS_RELATION"
+const val FACE_CARD = "FACE_CARD"
+const val GAME_CONSTANTS = "GAME_CONSTANTS"
+const val BUFF_ACTION_LIST = "BUFF_ACTION_LIST"
+const val USER_LEVEL = "USER_LEVEL"
+const val ALL_ENUMS = "ALL_ENUMS"
+const val TRAIT_MAPPING = "TRAIT_MAPPING"
+
 //url
 const val URL_EXPORT_DIR = "export"
 const val URL_NICE_DIR = "nice"

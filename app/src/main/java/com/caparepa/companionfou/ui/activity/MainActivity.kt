@@ -8,6 +8,7 @@ import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
+import com.caparepa.companionfou.utils.API_INFO
 import com.caparepa.companionfou.utils.toastLong
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.core.KoinComponent
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         })
         onError.observe(this@MainActivity, Observer{
 
+        })
+        onGetSuccess.observe(this@MainActivity, Observer{
+            it?.let {
+
+            }
         })
     }
 
