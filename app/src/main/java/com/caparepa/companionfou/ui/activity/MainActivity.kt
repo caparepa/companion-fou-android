@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
 import com.caparepa.companionfou.utils.toastLong
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private val basicDataViewModel: BasicDataViewModel by inject()
     private val mysticCodeViewModel: MysticCodeViewModel by inject()
+    private val generalDataViewModel: GeneralDataViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,15 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             }
         }
 
+    }
+
+    private fun observeGeneralDataViewModel() = generalDataViewModel.run {
+        apiInfoResult.observe(this@MainActivity, Observer {
+
+        })
+        onError.observe(this@MainActivity, Observer{
+
+        })
     }
 
     private fun observeBasicDataViewModel() = basicDataViewModel.run {
