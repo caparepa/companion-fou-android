@@ -77,6 +77,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.0")
     implementation("androidx.core:core-ktx:1.3.1")
     implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     //Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
