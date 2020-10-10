@@ -4,6 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
+import androidx.navigation.Navigation
+import androidx.navigation.ui.setupWithNavController
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
@@ -19,50 +23,35 @@ import org.koin.core.inject
 
 class MainActivity : AppCompatActivity(), KoinComponent {
 
-    private val generalDataViewModel: GeneralDataViewModel by inject()
-
     private lateinit var loadingDialog: LoadingDialog
+    private lateinit var navController: NavController
+    var fragment: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        initBottomNavigationView()
     }
 
-    private fun observeGeneralDataViewModel() = generalDataViewModel.run {
-        apiInfoResult.observe(this@MainActivity, Observer {
-            if (it != null) {
-                logger(LOG_DEBUG, "TAGTAG", "Hay info de DB!")
-                logger(LOG_DEBUG, "TAGTAG", it.toString())
-
-            } else {
-                logger(LOG_DEBUG, "TAGTAG", "No hay info de DB! Hay que jalar de APAI!")
-                generalDataViewModel.getApiInfo()
+    private fun initBottomNavigationView() {
+        navController =
+            Navigation.findNavController(this@MainActivity, R.id.home_nav_host_fragment)
+        bottom_navigation?.inflateMenu(R.menu.bottom_menu)
+        this.let { it ->
+            bottom_navigation?.setupWithNavController(navController)
+            bottom_navigation?.setOnNavigationItemReselectedListener {
+                // Do nothing to ignore the reselection
             }
-        })
-        onError.observe(this@MainActivity, Observer {
-            it?.let {
-                logger(LOG_DEBUG, "TAGTAG", "onError $it")
+            navController.addOnDestinationChangedListener { _, destination, _ ->
 
-            }
-        })
-        onGetSuccess.observe(this@MainActivity, Observer {
-            it?.let {
-                if (it.containsKey(API_INFO) && it.get(API_INFO) == true) {
-                    logger(LOG_DEBUG, "TAGTAG", "Ya jalo data de API! $it")
-                    generalDataViewModel.fetchApiInfo()
                 }
-            }
-        })
+        }
+        //TODO: DO SHENANIGANS HERE FOR NAVIGATION!!!
+        /*when(screen){
+            "foodLog" -> Navigation.findNavController(requireActivity(),R.id.home_nav_host_fragment).navigate(R.id.foodLogFragment)
+            "programs" -> Navigation.findNavController(requireActivity(),R.id.home_nav_host_fragment).navigate(R.id.programFragment)
+            else -> {}
+        }*/
 
-        loadingState.observe(this@MainActivity, Observer {
-            if (it) {
-                loadingDialog.setCanceledOnTouchOutside(false)
-                loadingDialog.show()
-            } else {
-                loadingDialog.dismiss()
-            }
-        })
     }
-
 }

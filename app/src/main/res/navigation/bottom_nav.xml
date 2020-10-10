@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bottom_nav">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/accountHubFragment">
+    <fragment
+        android:id="@+id/accountHubFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.home.AccountHubFragment"
+        android:label="fragment_account_hub"
+        tools:layout="@layout/fragment_account_hub" />
+    <fragment
+        android:id="@+id/materialHubFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.materials.MaterialHubFragment"
+        android:label="fragment_material_hub"
+        tools:layout="@layout/fragment_material_hub" />
+    <fragment
+        android:id="@+id/servantListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.servant.ServantListFragment"
+        android:label="fragment_servant_list"
+        tools:layout="@layout/fragment_servant_list" />
+    <fragment
+        android:id="@+id/equipmentListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.equipment.EquipmentListFragment"
+        android:label="fragment_equipment_list"
+        tools:layout="@layout/fragment_equipment_list" />
+    <fragment
+        android:id="@+id/externalResourcesFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.other.ExternalResourcesFragment"
+        android:label="fragment_external_resources"
+        tools:layout="@layout/fragment_external_resources" />
 </navigation>
