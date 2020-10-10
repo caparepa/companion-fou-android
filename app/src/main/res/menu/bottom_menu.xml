@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/servantListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_dummy_servant"
+        android:title="Servants" />
+
+    <item
+        android:id="@+id/recipesFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_dummy_craft_essence"
+        android:title="CE" />
+
+    <item
+        android:id="@+id/foodLogFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_dummy_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/restaurantFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_dummy_material"
+        android:title="Material List" />
+
+    <item
+        android:id="@+id/programFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_dummy_external_resource"
+        android:title="External Resources" />
+
+</menu>

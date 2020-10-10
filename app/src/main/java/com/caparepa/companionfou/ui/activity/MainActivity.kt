@@ -27,20 +27,6 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        loadingDialog = LoadingDialog(this)
-
-        observeGeneralDataViewModel()
-
-        theButton.setOnClickListener {
-            try {
-                loadingDialog.show()
-                generalDataViewModel.fetchApiInfo()
-            } catch (e: Exception) {
-                Log.e("TATA", "nonono")
-                e.printStackTrace()
-            }
-        }
-
     }
 
     private fun observeGeneralDataViewModel() = generalDataViewModel.run {
