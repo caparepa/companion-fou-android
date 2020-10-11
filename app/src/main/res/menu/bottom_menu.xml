@@ -11,7 +11,7 @@
         android:id="@+id/equipmentListFragment"
         android:enabled="true"
         android:icon="@drawable/ic_dummy_craft_essence"
-        android:title="CE" />
+        android:title="Equipment" />
 
     <item
         android:id="@+id/accountHubFragment"
