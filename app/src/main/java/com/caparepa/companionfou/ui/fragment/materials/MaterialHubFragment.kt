@@ -1,11 +1,16 @@
 package com.caparepa.companionfou.ui.fragment.materials
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.utils.setOneOffClickListener
+import kotlinx.android.synthetic.main.fragment_material_hub.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +27,9 @@ class MaterialHubFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var intent: Intent
+    private lateinit var actionDetail: NavDirections
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,6 +44,15 @@ class MaterialHubFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_material_hub, container, false)
+    }
+
+    private fun setListeners() {
+        btnMaterialList.setOneOffClickListener {
+
+        }
+        btnMysticCodeList.setOneOffClickListener {
+
+        }
     }
 
     companion object {

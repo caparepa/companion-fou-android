@@ -13,10 +13,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.caparepa.companionfou.BuildConfig
+import com.caparepa.companionfou.utils.library.OnOneOffClickListener
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
@@ -159,6 +163,19 @@ fun Uri.getName(context: Context): String? {
     val fileName = returnCursor?.getString(nameIndex!!)
     returnCursor?.close()
     return fileName
+}
+
+fun View.setOneOffClickListener(action: () -> Unit) {
+    setOnClickListener(object : OnOneOffClickListener() {
+        override fun onSingleClick(v: View?) {
+            action.invoke()
+        }
+    })
+}
+
+fun delayAction(delay: Long, action: () -> Unit) = CoroutineScope(Dispatchers.Main).launch {
+    kotlinx.coroutines.delay(delay)
+    action.invoke()
 }
 
 /*fun <T> MutableLiveData<T>.toSingleEvent(): MutableLiveData<T> {
