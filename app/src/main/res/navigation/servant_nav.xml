@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/servant_nav"
-    app:startDestination="@id/unitDetailFragment">
+    app:startDestination="@id/unitSummaryFragment">
+    <fragment
+        android:id="@+id/unitSummaryFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.servant.UnitSummaryFragment"
+        android:label="fragment_servant_summary"
+        tools:layout="@layout/fragment_servant_summary" />
     <fragment
         android:id="@+id/unitDetailFragment"
         android:name="com.caparepa.companionfou.ui.fragment.servant.UnitDetailFragment"
@@ -14,9 +19,4 @@
         android:name="com.caparepa.companionfou.ui.fragment.servant.UnitStatsFragment"
         android:label="fragment_servant_stats"
         tools:layout="@layout/fragment_servant_stats" />
-    <fragment
-        android:id="@+id/unitSummaryFragment"
-        android:name="com.caparepa.companionfou.ui.fragment.servant.UnitSummaryFragment"
-        android:label="fragment_servant_summary"
-        tools:layout="@layout/fragment_servant_summary" />
 </navigation>
