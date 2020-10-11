@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.navigation.NavDirections
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.utils.setOneOffClickListener
@@ -27,8 +29,7 @@ class MaterialHubFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private lateinit var intent: Intent
-    private lateinit var actionDetail: NavDirections
+    private lateinit var navigation: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,12 +47,23 @@ class MaterialHubFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_material_hub, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navigation =
+            Navigation.findNavController(requireActivity(), R.id.home_nav_host_fragment)
+        setListeners()
+    }
+
     private fun setListeners() {
         btnMaterialList.setOneOffClickListener {
-
+            val actionDetail =
+                MaterialHubFragmentDirections.actionMaterialHubFragmentToMaterialListFragment()
+            navigation.navigate(actionDetail)
         }
         btnMysticCodeList.setOneOffClickListener {
-
+            val actionDetail =
+                MaterialHubFragmentDirections.actionMaterialHubFragmentToMysticCodeListFragment()
+            navigation.navigate(actionDetail)
         }
     }
 
