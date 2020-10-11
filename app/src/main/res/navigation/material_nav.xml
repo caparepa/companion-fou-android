@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/material_nav"
-    app:startDestination="@id/mysticCodeListFragment">
+    app:startDestination="@id/masterDetailFragment">
     <fragment
         android:id="@+id/mysticCodeListFragment"
         android:name="com.caparepa.companionfou.ui.fragment.materials.MysticCodeListFragment"
@@ -32,4 +32,14 @@
         android:name="com.caparepa.companionfou.ui.fragment.materials.CommandCodeDetailFragment"
         android:label="fragment_command_code_detail"
         tools:layout="@layout/fragment_command_code_detail" />
+    <fragment
+        android:id="@+id/materialListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.materials.MaterialListFragment"
+        android:label="fragment_material_list"
+        tools:layout="@layout/fragment_material_list" />
+    <fragment
+        android:id="@+id/masterDetailFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.materials.MasterDetailFragment"
+        android:label="fragment_master_detail"
+        tools:layout="@layout/fragment_master_detail" />
 </navigation>
