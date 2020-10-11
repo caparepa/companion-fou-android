@@ -143,4 +143,10 @@ dependencies {
     //loading
     implementation("com.github.ybq:Android-SpinKit:1.4.0")
 
+    //multiview adapter
+    implementation("dev.ahamed.mva2:adapter:2.0.0")
+    implementation("dev.ahamed.mva2:ext-databinding:2.0.0")  // DataBinding
+    implementation("dev.ahamed.mva2:ext-decorator:2.0.0")    // Decorators
+    implementation("dev.ahamed.mva2:ext-diffutil-rx:2.0.0")  // RxDiffUtil
+
 }
