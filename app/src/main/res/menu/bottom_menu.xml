@@ -8,7 +8,7 @@
         android:title="Servants" />
 
     <item
-        android:id="@+id/equipmentListFragment"
+        android:id="@+id/equipmentHubFragment"
         android:enabled="true"
         android:icon="@drawable/ic_dummy_craft_essence"
         android:title="Equipment" />
