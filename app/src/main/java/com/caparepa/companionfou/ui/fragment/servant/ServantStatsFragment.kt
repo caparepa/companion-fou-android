@@ -35,7 +35,7 @@ class UnitStatsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_unit_stats, container, false)
+        return inflater.inflate(R.layout.fragment_servant_stats, container, false)
     }
 
     companion object {

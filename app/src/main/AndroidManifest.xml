@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.UnitDetailActivity"></activity>
+        <activity android:name=".ui.activity.CraftEssenceDetailActivity"></activity>
+        <activity android:name=".ui.activity.ServantDetailActivity" />
         <activity android:name=".ui.activity.UserAccountActivity" />
         <activity android:name=".ui.activity.SplashActivity" />
         <activity android:name=".ui.activity.SettingsActivity" />

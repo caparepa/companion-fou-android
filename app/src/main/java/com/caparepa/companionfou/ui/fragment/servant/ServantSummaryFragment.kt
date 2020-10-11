@@ -35,7 +35,7 @@ class UnitSummaryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_unit_summary, container, false)
+        return inflater.inflate(R.layout.fragment_servant_summary, container, false)
     }
 
     companion object {

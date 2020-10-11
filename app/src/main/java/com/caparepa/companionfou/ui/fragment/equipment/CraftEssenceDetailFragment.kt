@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [EquipmentStatsFragment.newInstance] factory method to
+ * Use the [CraftEssenceDetailFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EquipmentStatsFragment : Fragment() {
+class CraftEssenceDetailFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class EquipmentStatsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_equipment_stats, container, false)
+        return inflater.inflate(R.layout.fragment_craft_essence_detail, container, false)
     }
 
     companion object {
@@ -45,12 +45,12 @@ class EquipmentStatsFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment EquipmentStatsFragment.
+         * @return A new instance of fragment EquipmentDetailFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            EquipmentStatsFragment().apply {
+            CraftEssenceDetailFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -21,9 +21,9 @@
         tools:layout="@layout/fragment_servant_list" />
     <fragment
         android:id="@+id/equipmentListFragment"
-        android:name="com.caparepa.companionfou.ui.fragment.equipment.EquipmentListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.equipment.CraftEssenceListFragment"
         android:label="fragment_equipment_list"
-        tools:layout="@layout/fragment_equipment_list" />
+        tools:layout="@layout/fragment_craft_essence_list" />
     <fragment
         android:id="@+id/externalResourcesFragment"
         android:name="com.caparepa.companionfou.ui.fragment.other.ExternalResourcesFragment"
