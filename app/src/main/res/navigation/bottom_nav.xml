@@ -8,17 +8,32 @@
         android:id="@+id/accountHubFragment"
         android:name="com.caparepa.companionfou.ui.fragment.home.AccountHubFragment"
         android:label="fragment_account_hub"
-        tools:layout="@layout/fragment_account_hub" />
+        tools:layout="@layout/fragment_account_hub" >
+        <action
+            android:id="@+id/action_accountHubFragment_to_accountListFragment"
+            app:destination="@id/accountListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/materialHubFragment"
         android:name="com.caparepa.companionfou.ui.fragment.materials.MaterialHubFragment"
         android:label="fragment_material_hub"
-        tools:layout="@layout/fragment_material_hub" />
+        tools:layout="@layout/fragment_material_hub" >
+        <action
+            android:id="@+id/action_materialHubFragment_to_materialListFragment"
+            app:destination="@id/materialListFragment" />
+        <action
+            android:id="@+id/action_materialHubFragment_to_mysticCodeListFragment"
+            app:destination="@id/mysticCodeListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/servantListFragment"
         android:name="com.caparepa.companionfou.ui.fragment.servant.ServantListFragment"
         android:label="fragment_servant_list"
-        tools:layout="@layout/fragment_servant_list" />
+        tools:layout="@layout/fragment_servant_list" >
+        <action
+            android:id="@+id/action_servantListFragment_to_servantDetailFragment"
+            app:destination="@id/servantDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/externalResourcesFragment"
         android:name="com.caparepa.companionfou.ui.fragment.other.ExternalResourcesFragment"
@@ -28,5 +43,120 @@
         android:id="@+id/equipmentHubFragment"
         android:name="com.caparepa.companionfou.ui.fragment.equipment.EquipmentHubFragment"
         android:label="fragment_equipment_hub"
-        tools:layout="@layout/fragment_equipment_hub" />
+        tools:layout="@layout/fragment_equipment_hub" >
+        <action
+            android:id="@+id/action_equipmentHubFragment_to_craftEssenceListFragment"
+            app:destination="@id/craftEssenceListFragment" />
+        <action
+            android:id="@+id/action_equipmentHubFragment_to_commandCodeListFragment"
+            app:destination="@id/commandCodeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servantDetailFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.servant.ServantDetailFragment"
+        android:label="fragment_servant_detail"
+        tools:layout="@layout/fragment_servant_detail" >
+        <action
+            android:id="@+id/action_servantDetailFragment_to_servantStatsFragment"
+            app:destination="@id/servantStatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servantStatsFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.servant.ServantStatsFragment"
+        android:label="fragment_servant_stats"
+        tools:layout="@layout/fragment_servant_stats" />
+    <fragment
+        android:id="@+id/craftEssenceListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.equipment.CraftEssenceListFragment"
+        android:label="fragment_craft_essence_list"
+        tools:layout="@layout/fragment_craft_essence_list" >
+        <action
+            android:id="@+id/action_craftEssenceListFragment2_to_craftEssenceDetailFragment"
+            app:destination="@id/craftEssenceDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/craftEssenceDetailFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.equipment.CraftEssenceDetailFragment"
+        android:label="fragment_craft_essence_detail"
+        tools:layout="@layout/fragment_craft_essence_detail" />
+    <fragment
+        android:id="@+id/commandCodeListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.equipment.CommandCodeListFragment"
+        android:label="fragment_command_code_list"
+        tools:layout="@layout/fragment_command_code_list" >
+        <action
+            android:id="@+id/action_commandCodeListFragment_to_commandCodeDetailFragment"
+            app:destination="@id/commandCodeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commandCodeDetailFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.equipment.CommandCodeDetailFragment"
+        android:label="fragment_command_code_detail"
+        tools:layout="@layout/fragment_command_code_detail" />
+    <fragment
+        android:id="@+id/materialListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.materials.MaterialListFragment"
+        android:label="fragment_material_list"
+        tools:layout="@layout/fragment_material_list" />
+    <fragment
+        android:id="@+id/mysticCodeListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.materials.MysticCodeListFragment"
+        android:label="fragment_mystic_code_list"
+        tools:layout="@layout/fragment_mystic_code_list" >
+        <action
+            android:id="@+id/action_mysticCodeListFragment2_to_mysticCodeDetailFragment"
+            app:destination="@id/mysticCodeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mysticCodeDetailFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.materials.MysticCodeDetailFragment"
+        android:label="fragment_mystic_code_detail"
+        tools:layout="@layout/fragment_mystic_code_detail" />
+    <fragment
+        android:id="@+id/accountListFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.home.AccountListFragment"
+        android:label="fragment_account_list"
+        tools:layout="@layout/fragment_account_list" >
+        <action
+            android:id="@+id/action_accountListFragment_to_accountDetailFragment"
+            app:destination="@id/accountDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountDetailFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.home.AccountDetailFragment"
+        android:label="fragment_account_detail"
+        tools:layout="@layout/fragment_account_detail" >
+        <action
+            android:id="@+id/action_accountDetailFragment_to_accountInventoryFragment"
+            app:destination="@id/accountInventoryFragment" />
+        <action
+            android:id="@+id/action_accountDetailFragment_to_accountPlannerFragment"
+            app:destination="@id/accountPlannerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountInventoryFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.home.AccountInventoryFragment"
+        android:label="fragment_account_inventory"
+        tools:layout="@layout/fragment_account_inventory" />
+    <fragment
+        android:id="@+id/accountPlannerFragment"
+        android:name="com.caparepa.companionfou.ui.fragment.home.AccountPlannerFragment"
+        android:label="fragment_account_planner"
+        tools:layout="@layout/fragment_account_planner" >
+        <action
+            android:id="@+id/action_accountPlannerFragment_to_servantListFragment"
+            app:destination="@id/servantListFragment" />
+        <action
+            android:id="@+id/action_accountPlannerFragment_to_materialListFragment"
+            app:destination="@id/materialListFragment" />
+        <action
+            android:id="@+id/action_accountPlannerFragment_to_mysticCodeListFragment"
+            app:destination="@id/mysticCodeListFragment" />
+        <action
+            android:id="@+id/action_accountPlannerFragment_to_craftEssenceListFragment"
+            app:destination="@id/craftEssenceListFragment" />
+        <action
+            android:id="@+id/action_accountPlannerFragment_to_commandCodeListFragment"
+            app:destination="@id/commandCodeListFragment" />
+    </fragment>
 </navigation>
