@@ -18,7 +18,7 @@ class CraftEssenceViewModel(
     private val craftEssenceRepository: CraftEssenceRepository
 ) : BaseViewModel(), KoinComponent {
 
-    val craftEssenceResponse = MutableLiveData<List<CraftEssenceItem>>()
+    val craftEssenceResponse = MutableLiveData<List<CraftEssenceItem>?>()
     val craftEssenceListResult = MutableLiveData<List<CraftEssenceEntity>>()
     val craftEssenceItemResult = MutableLiveData<CraftEssenceEntity>()
 

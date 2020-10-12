@@ -14,11 +14,11 @@ import org.koin.core.KoinComponent
 
 class MysticCodeViewModel(
     val context: Context,
-    val mysticCodeRepository: MysticCodeRepository
+    private val mysticCodeRepository: MysticCodeRepository
 ) :
     BaseViewModel(), KoinComponent {
 
-    val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>>()
+    val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>?>()
     val mysticCodeListResult = MutableLiveData<List<MysticCodeEntity>>()
     val mysticCodeResult = MutableLiveData<MysticCodeEntity>()
 
