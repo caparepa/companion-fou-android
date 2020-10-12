@@ -58,17 +58,17 @@ class LoadingFragment : Fragment(), KoinComponent {
         })
     }
 
-    private fun downloadGeneralData() {
+    private fun downloadGeneralData(server: String) {
         generalViewModel.getApiInfo()
-        generalViewModel.getAttributeRelation()
-        generalViewModel.getBuffActionList()
-        generalViewModel.getClassAttackRate()
-        generalViewModel.getClassRelation()
-        generalViewModel.getConstants()
-        generalViewModel.getFaceCard()
-        generalViewModel.getGameEnums()
-        generalViewModel.getTraitMapping()
-        generalViewModel.getUserLevel()
+        generalViewModel.getAttributeRelation(server)
+        generalViewModel.getBuffActionList(server)
+        generalViewModel.getClassAttackRate(server)
+        generalViewModel.getClassRelation(server)
+        generalViewModel.getConstants(server)
+        generalViewModel.getFaceCard(server)
+        generalViewModel.getGameEnums(server)
+        generalViewModel.getTraitMapping(server)
+        generalViewModel.getUserLevel(server)
     }
 
     private fun downloadNaData() {

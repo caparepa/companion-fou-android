@@ -17,7 +17,7 @@ class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) :
     }
 
     override suspend fun fetchCraftEssenceList(server: String): List<CraftEssenceEntity>? {
-        return craftEssenceDao.getCraftEssences()
+        return craftEssenceDao.getCraftEssences(server)
     }
 
     override suspend fun getCraftEssenceList(

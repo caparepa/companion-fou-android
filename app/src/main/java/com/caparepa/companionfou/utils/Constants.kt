@@ -2,6 +2,9 @@ package com.caparepa.companionfou.utils
 
 import android.util.Log
 
+//other
+const val DATE_FORMAT_ISO_8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+
 //VIEWMODEL CONSTANTS
 const val CURRENT_DATE = "20201012"
 const val CURRENT_REGION = "NA"

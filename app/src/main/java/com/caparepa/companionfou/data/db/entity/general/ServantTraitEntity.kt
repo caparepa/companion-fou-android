@@ -12,13 +12,13 @@ class ServantTraitEntity(
     @ColumnInfo(name = "server")
     val server: String? = null,
     @ColumnInfo(name = "trait_map_value")
-    val traitMapValue: String? = null
+    val trait_map_value: String? = null
 ) {
     @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
     var tableId: Long = 0
 
     fun getTraitMapValue(): Map<Int, String>? {
-        return this.traitMapValue?.toKotlinObject()
+        return this.trait_map_value?.toKotlinObject()
     }
 }

@@ -15,11 +15,11 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
     private val api = ApiClient.invoke()
 
     override suspend fun fetchMaterial(itemId: Long, server: String): MaterialEntity? {
-        return materialDao.getMaterial(itemId,)
+        return materialDao.getMaterial(itemId, server)
     }
 
     override suspend fun fetchMaterialList(server: String): List<MaterialEntity>? {
-        return materialDao.getMaterials()
+        return materialDao.getMaterials(server)
     }
 
     override suspend fun getMaterialList(currentDate: String, server: String): List<MaterialItem>? =
