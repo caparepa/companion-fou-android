@@ -18,6 +18,10 @@ abstract class PreferenceDelegate<T> : ReadWriteProperty<Any, T>, KoinComponent 
         var currentInfoHashNa by stringPreferenceDelegate(CURRENT_INFO_HASH_NA)
         private const val CURRENT_INFO_HASH_JP = "CURRENT_INFO_HASH_JP"
         var currentInfoHashJp by stringPreferenceDelegate(CURRENT_INFO_HASH_JP)
+        private const val READ_SPLASH_INFO = "READ_SPLASH_INFO"
+        var readSplashInfo by booleanPreferenceDelegate(READ_SPLASH_INFO)
+        private const val ALL_INFO_LOADED = "ALL_INFO_LOADED"
+        var allInfoLoaded by booleanPreferenceDelegate(ALL_INFO_LOADED)
     }
 
     protected val sharedPreferences: SharedPreferences by inject()

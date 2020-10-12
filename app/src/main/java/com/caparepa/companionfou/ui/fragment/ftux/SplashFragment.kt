@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.utils.Coroutines
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.allInfoLoaded
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.readSplashInfo
+import kotlinx.coroutines.delay
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +41,32 @@ class SplashFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Coroutines.globalIo {
+            validateDataStatus()
+        }
+    }
+
+    private suspend fun validateDataStatus() {
+        delay(3000)
+        if(allInfoLoaded) {
+            with(findNavController()){
+                navigate(SplashFragmentDirections.actionSplashFragmentToBottomNav())
+            }
+        } else {
+            if(readSplashInfo) {
+                with(findNavController()){
+                    navigate(SplashFragmentDirections.actionSplashFragmentToLoadingFragment())
+                }
+            }else{
+                with(findNavController()){
+                    navigate(SplashFragmentDirections.actionSplashFragmentToInfoFragment())
+                }
+            }
+        }
     }
 
     companion object {

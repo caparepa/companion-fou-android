@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.utils.setOneOffClickListener
+import kotlinx.android.synthetic.main.fragment_info.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +39,19 @@ class InfoFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_info, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setListeners()
+    }
+
+    private fun setListeners() {
+        btnGoToLoadInfo.setOneOffClickListener {
+            with(findNavController()) {
+                navigate(InfoFragmentDirections.actionInfoFragmentToLoadingFragment())
+            }
+        }
     }
 
     companion object {
