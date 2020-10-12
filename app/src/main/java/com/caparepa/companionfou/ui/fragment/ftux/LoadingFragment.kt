@@ -11,6 +11,7 @@ import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.*
 import com.caparepa.companionfou.utils.CURRENT_DATE
+import com.caparepa.companionfou.utils.Coroutines
 import com.caparepa.companionfou.utils.REGION_JP
 import com.caparepa.companionfou.utils.REGION_NA
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -78,30 +79,47 @@ class LoadingFragment : Fragment(), KoinComponent {
         generalViewModel.getUserLevel(server)
     }
 
-    private fun downloadNaData() {
-        commandCodeViewModel.getCommandCodes(REGION_NA)
-        craftEssenceViewModel.getCraftEssences(REGION_NA)
-        materialViewModel.getMaterials(REGION_NA)
-        mysticCodeViewModel.getMysticCodes(REGION_NA)
-        servantViewModel.getServants(REGION_NA)
+    private fun downloadGameData(server: String) {
+        commandCodeViewModel.getCommandCodes(server)
+        craftEssenceViewModel.getCraftEssences(server)
+        materialViewModel.getMaterials(server)
+        mysticCodeViewModel.getMysticCodes(server)
+        servantViewModel.getServants(server)
     }
 
-    private fun downloadJpData() {
-        commandCodeViewModel.getCommandCodes(REGION_JP)
-        craftEssenceViewModel.getCraftEssences(REGION_JP)
-        materialViewModel.getMaterials(REGION_JP)
-        mysticCodeViewModel.getMysticCodes(REGION_JP)
-        servantViewModel.getServants(REGION_JP)
-    }
-
-    private fun observeViewModel() {
+    private fun observeViewModels() {
         generalViewModel.run {
-            currentDateResult.observe(viewLifecycleOwner, Observer {
-                if(it != null && it != CURRENT_DATE) {
+            currentDateResult.observe(viewLifecycleOwner, Observer{
 
-                }
             })
-            apiInfoResult.observe(viewLifecycleOwner, Observer {
+            apiInfoResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            attributeRelationResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            classAttackRateResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            classRelationResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            faceCardResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            constantsResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            buffActionListResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            userLevelResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            allEnumsResult.observe(viewLifecycleOwner, Observer{
+
+            })
+            traitMappingResult.observe(viewLifecycleOwner, Observer{
 
             })
         }
