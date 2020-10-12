@@ -9,8 +9,11 @@ import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
+import com.caparepa.companionfou.data.model.other.LatestApiInfo
 
 interface GeneralDataRepository {
+
+    suspend fun getLatestInfo(): LatestApiInfo?
 
     suspend fun getApiInfo(currentDate: String): ApiInfo?
     suspend fun persistApiInfo(item: ApiInfo?)

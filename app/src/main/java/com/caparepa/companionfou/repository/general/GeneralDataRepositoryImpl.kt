@@ -10,6 +10,7 @@ import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
+import com.caparepa.companionfou.data.model.other.LatestApiInfo
 import com.caparepa.companionfou.network.api.ApiClient
 import com.caparepa.companionfou.utils.LOG_DEBUG
 import com.caparepa.companionfou.utils.logger
@@ -39,6 +40,16 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     private val userLevelDao: UserLevelDao by inject()
 
     //Function override
+
+    override suspend fun getLatestInfo(): LatestApiInfo? = withContext(Dispatchers.IO) {
+        try {
+            val response = api.getLatestApiInfo()
+            response.body()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
 
     override suspend fun getApiInfo(currentDate: String): ApiInfo? =
         withContext(Dispatchers.IO) {

@@ -13,6 +13,7 @@ import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 import com.caparepa.companionfou.data.model.nice.material.MaterialItem
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.data.model.nice.servant.ServantItem
+import com.caparepa.companionfou.data.model.other.LatestApiInfo
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -21,6 +22,8 @@ import retrofit2.http.Path
 interface ExportDataEndpoints {
 
     //Export endpoints
+    @GET("general/current_date")
+    suspend fun getLatestApiInfo(): Response<LatestApiInfo>
 
     @GET("{current_date}/info.json")
     suspend fun getApiInfo(
