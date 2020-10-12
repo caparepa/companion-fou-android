@@ -4,17 +4,21 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.nice.CraftEssenceEntity
+import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 import com.caparepa.companionfou.repository.nice.CraftEssenceRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
+import com.caparepa.companionfou.utils.CURRENT_DATE
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentDate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
 class CraftEssenceViewModel(
     val context: Context,
-    val craftEssenceRepository: CraftEssenceRepository
+    private val craftEssenceRepository: CraftEssenceRepository
 ) : BaseViewModel(), KoinComponent {
 
+    val craftEssenceResponse = MutableLiveData<List<CraftEssenceItem>>()
     val craftEssenceListResult = MutableLiveData<List<CraftEssenceEntity>>()
     val craftEssenceItemResult = MutableLiveData<CraftEssenceEntity>()
 
@@ -32,37 +36,55 @@ class CraftEssenceViewModel(
 
     fun fetchCraftEssenceById(id: Long, server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-
+            fetchCraftEssenceByIdAsync(id, server)
         }
     }
 
     private suspend fun getCraftEssencesAsync(server: String) {
         val result = kotlin.runCatching {
-
+            craftEssenceRepository.getCraftEssenceList(currentDate, server)
         }
         with(result){
-            onSuccess {  }
-            onFailure {  }
+            onSuccess {
+                it?.let {
+                    craftEssenceResponse.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
     private suspend fun fetchCraftEssencesAsync(server: String) {
         val result = kotlin.runCatching {
-
+            craftEssenceRepository.fetchCraftEssenceList(server)
         }
         with(result){
-            onSuccess {  }
-            onFailure {  }
+            onSuccess {
+                it?.let {
+                    craftEssenceListResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 
     private suspend fun fetchCraftEssenceByIdAsync(id: Long, server: String) {
         val result = kotlin.runCatching {
-
+            craftEssenceRepository.fetchCraftEssence(id, server)
         }
         with(result){
-            onSuccess {  }
-            onFailure {  }
+            onSuccess {
+                it?.let {
+                    craftEssenceItemResult.postValue(it)
+                }
+            }
+            onFailure {
+                onError.postValue(it.message)
+            }
         }
     }
 }

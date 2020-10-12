@@ -39,9 +39,6 @@ class LoadingFragment : Fragment(), KoinComponent {
     private val mysticCodeViewModel: MysticCodeViewModel by sharedViewModel()
     private val servantViewModel: ServantViewModel by sharedViewModel()
 
-    private var generalCountJP = 11
-    private var generalCountNA = 11
-
     private lateinit var loadingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {

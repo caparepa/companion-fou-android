@@ -25,6 +25,8 @@ abstract class PreferenceDelegate<T> : ReadWriteProperty<Any, T>, KoinComponent 
         var allInfoLoaded by booleanPreferenceDelegate(ALL_INFO_LOADED)
         private const val CURRENT_SELECTED_SERVER = "CURRENT_SELECTED_SERVER"
         var currentServer by stringPreferenceDelegate(CURRENT_SELECTED_SERVER, REGION_NA)
+        private const val CURRENT_DATE = "CURRENT_SELECTED_SERVER"
+        var currentDate by stringPreferenceDelegate(CURRENT_DATE, "20201012")
     }
 
     protected val sharedPreferences: SharedPreferences by inject()
