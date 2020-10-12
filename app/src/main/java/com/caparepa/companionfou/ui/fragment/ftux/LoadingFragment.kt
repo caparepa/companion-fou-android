@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
+import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.*
 import com.caparepa.companionfou.utils.CURRENT_DATE
@@ -32,6 +33,7 @@ class LoadingFragment : Fragment(), KoinComponent {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val downloadViewModel: DownloadViewModel by sharedViewModel()
     private val generalViewModel: GeneralDataViewModel by sharedViewModel()
     private val commandCodeViewModel: CommandCodeViewModel by sharedViewModel()
     private val craftEssenceViewModel: CraftEssenceViewModel by sharedViewModel()
@@ -60,6 +62,10 @@ class LoadingFragment : Fragment(), KoinComponent {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadingDialog = LoadingDialog(requireContext())
+    }
+
+    private fun observeDownloadViewModel() {
+
     }
 
     private fun downloadGeneralData(server: String) {

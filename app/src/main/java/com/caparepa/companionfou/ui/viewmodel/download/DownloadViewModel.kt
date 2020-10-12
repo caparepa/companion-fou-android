@@ -5,14 +5,17 @@ import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 
 class DownloadViewModel: BaseViewModel() {
 
-    val generalDataNaDownloadCount = MutableLiveData<Int>()
-    val gameDataNaDownloadCount = MutableLiveData<Int>()
-    val retryGeneralDataNaDownload = MutableLiveData<Boolean>()
-    val retryGameDataNaDownload = MutableLiveData<Boolean>()
+    val finishAndClose = MutableLiveData<Boolean>()
+    val finishAndNavigate = MutableLiveData<Boolean>()
 
-    val generalDataJpDownloadCount = MutableLiveData<Int>()
+    val gameDataNaDownloadCount = MutableLiveData<Int>()
+    val generalDataNaDownloadCount = MutableLiveData<Int>()
+    val retryGameDataNaDownload = MutableLiveData<Boolean>()
+    val retryGeneralDataNaDownload = MutableLiveData<Boolean>()
+
     val gameDataJpDownloadCount = MutableLiveData<Int>()
-    val retryGeneralDataJpDownload = MutableLiveData<Boolean>()
+    val generalDataJpDownloadCount = MutableLiveData<Int>()
     val retryGameDataJpDownload = MutableLiveData<Boolean>()
+    val retryGeneralDataJpDownload = MutableLiveData<Boolean>()
 
 }
