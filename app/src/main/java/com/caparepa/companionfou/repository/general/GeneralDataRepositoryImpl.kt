@@ -84,6 +84,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun persistAttributeRelation(server: String, item: AttributeRelation?) {
         item?.let {
             val entity = AttributeRelationEntity(
+                server,
                 it.human?.toJsonString(),
                 it.sky?.toJsonString(),
                 it.earth?.toJsonString(),
@@ -111,8 +112,32 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistClassAttackRate(server: String, item: ClassAttackRate?) {
         item?.let {
-            val entity = it.mapTo(ClassAttackRateEntity::class.java)
-            classAttackRateDao.upsert(entity!!)
+            val entity = ClassAttackRateEntity(
+                server,
+                it.saber,
+                it.archer,
+                it.lancer,
+                it.rider,
+                it.caster,
+                it.assassin,
+                it.berserker,
+                it.shielder,
+                it.ruler,
+                it.alterEgo,
+                it.avenger,
+                it.demonGodPillar,
+                it.grandCaster,
+                it.beastII,
+                it.beastI,
+                it.moonCancer,
+                it.beastIIIR,
+                it.foreigner,
+                it.beastIIIL,
+                it.beastUnknown,
+                it.unknown,
+                it.all
+            )
+            classAttackRateDao.upsert(entity)
         }
     }
 
@@ -135,6 +160,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun persistClassRelation(server: String, item: ClassRelationList?) {
         item?.let {
             val entity = ClassRelationEntity(
+                server,
                 it.saber?.toJsonString(),
                 it.archer?.toJsonString(),
                 it.lancer?.toJsonString(),
@@ -178,6 +204,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun persistFaceCard(server: String, item: FaceCardList?) {
         item?.let {
             val entity = FaceCardEntity(
+                server,
                 it.arts?.toJsonString(),
                 it.buster?.toJsonString(),
                 it.quick?.toJsonString(),
@@ -186,6 +213,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
                 it.weak?.toJsonString(),
                 it.strength?.toJsonString()
             )
+            faceCardDao.upsert(entity)
         }
     }
 
@@ -208,6 +236,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun persistBuffActionList(server: String, item: BuffActionList?) {
         item?.let {
             val entity = BuffActionListEntity(
+                server,
                 it.commandAtk?.toJsonString(),
                 it.commandDef?.toJsonString(),
                 it.atk?.toJsonString(),
@@ -312,7 +341,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistUserLevel(server: String, item: Map<Int, UserLevelDetail>?) {
         item?.let {
-            val entity = UserLevelEntity(item.toJsonString())
+            val entity = UserLevelEntity(server, item.toJsonString())
             userLevelDao.upsert(entity)
         }
     }
@@ -335,7 +364,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistTraitMapping(server: String, list: Map<Int, String>?) {
         list?.let {
-            val entity = ServantTraitEntity(it.toJsonString())
+            val entity = ServantTraitEntity(server, it.toJsonString())
             servantTraitsDao.upsert(entity)
         }
     }
@@ -359,6 +388,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun persistGameEnums(server: String, item: GameEnums?) {
         item?.let {
             val entity = GameEnumsEntity(
+                server,
                 it.niceSvtType?.toJsonString(),
                 it.niceSvtFlag?.toJsonString(),
                 it.niceSkillType?.toJsonString(),
