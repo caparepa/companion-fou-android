@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
@@ -98,6 +99,9 @@ class LoadingFragment : Fragment(), KoinComponent {
                 it?.let{
                     if(it.size == 2) {
                         requireActivity().toastLong("OK! NAVIGATE!")
+                        with(findNavController()) {
+                            navigate(LoadingFragmentDirections.actionLoadingFragmentToBottomNav())
+                        }
                     } else {
                         requireActivity().toastLong("ERROR! FACK!")
                     }
