@@ -11,8 +11,8 @@ interface ServantDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(servant: ServantEntity)
 
-    @Query("SELECT * FROM servant")
-    suspend fun getServants(): List<ServantEntity>
+    @Query("SELECT * FROM servant WHERE server = :server")
+    suspend fun getServants(server: String): List<ServantEntity>
 
     @Query("SELECT * FROM servant WHERE servant_id = :servantId AND server = :server")
     suspend fun getServantById(servantId: Long, server: String): ServantEntity

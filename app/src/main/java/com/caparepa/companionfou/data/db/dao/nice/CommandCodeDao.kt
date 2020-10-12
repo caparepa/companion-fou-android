@@ -11,8 +11,8 @@ interface CommandCodeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(commandCode: CommandCodeEntity)
 
-    @Query("SELECT * FROM command_code")
-    suspend fun getCommandCodes(): List<CommandCodeEntity>
+    @Query("SELECT * FROM command_code WHERE server = :server")
+    suspend fun getCommandCodes(server: String): List<CommandCodeEntity>
 
     @Query("SELECT * FROM command_code WHERE cc_id = :ccId AND server = :server")
     suspend fun getCommandCode(ccId: Long, server: String): CommandCodeEntity

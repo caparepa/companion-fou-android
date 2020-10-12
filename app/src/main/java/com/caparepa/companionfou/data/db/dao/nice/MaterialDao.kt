@@ -11,8 +11,8 @@ interface MaterialDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(material: MaterialEntity)
 
-    @Query("SELECT * FROM material")
-    suspend fun getMaterials(): List<MaterialEntity>
+    @Query("SELECT * FROM material WHERE server = :server")
+    suspend fun getMaterials(server: String): List<MaterialEntity>
 
     @Query("SELECT * FROM material WHERE item_id = :itemId AND server = :server")
     suspend fun getMaterial(itemId: Long, server: String): MaterialEntity

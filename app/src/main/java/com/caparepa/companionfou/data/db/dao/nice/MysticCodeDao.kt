@@ -12,8 +12,8 @@ interface MysticCodeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(code: MysticCodeEntity)
 
-    @Query("SELECT * FROM mystic_code")
-    suspend fun getMysticCodeList(): List<MysticCodeEntity>
+    @Query("SELECT * FROM mystic_code WHERE server = :server")
+    suspend fun getMysticCodeList(server: String): List<MysticCodeEntity>
 
     @Query("SELECT * FROM mystic_code WHERE mc_id = :mcId AND server = :server")
     suspend fun getMysticCode(mcId: Long, server: String): MysticCodeEntity
