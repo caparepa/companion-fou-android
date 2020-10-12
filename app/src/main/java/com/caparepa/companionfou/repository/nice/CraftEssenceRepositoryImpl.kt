@@ -12,17 +12,17 @@ class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) :
 
     private val api = ApiClient.invoke()
 
-    override suspend fun fetchCraftEssence(id: Long): CraftEssenceEntity? {
-        return craftEssenceDao.getCraftEssence(id, "")
+    override suspend fun fetchCraftEssence(ceId: Long, server: String): CraftEssenceEntity? {
+        return craftEssenceDao.getCraftEssence(ceId, "")
     }
 
-    override suspend fun fetchCraftEssenceList(): List<CraftEssenceEntity>? {
+    override suspend fun fetchCraftEssenceList(server: String): List<CraftEssenceEntity>? {
         return craftEssenceDao.getCraftEssences()
     }
 
     override suspend fun getCraftEssenceList(
         currentDate: String,
-        region: String
+        server: String
     ): List<CraftEssenceItem>? = withContext(Dispatchers.IO) {
         try {
             null
@@ -32,7 +32,7 @@ class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) :
         }
     }
 
-    override suspend fun persistCraftEssenceList(list: List<CraftEssenceItem>?) {
+    override suspend fun persistCraftEssenceList(server: String, list: List<CraftEssenceItem>?) {
         TODO("Not yet implemented")
     }
 }

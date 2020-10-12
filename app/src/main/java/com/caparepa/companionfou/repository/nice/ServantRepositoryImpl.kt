@@ -13,18 +13,18 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
 
     private val api = ApiClient.invoke()
 
-    override suspend fun fetchServant(id: Long): ServantEntity? {
-        return servantDao.getServantById(id,)
+    override suspend fun fetchServant(servantId: Long, server: String): ServantEntity? {
+        return servantDao.getServantById(servantId,server)
     }
 
-    override suspend fun fetchServantList(): List<ServantEntity>? {
-        return servantDao.getServants()
+    override suspend fun fetchServantList(server: String): List<ServantEntity>? {
+        return servantDao.getServants(server)
     }
 
-    override suspend fun getServantList(currentDate: String, region: String): List<ServantItem>? =
+    override suspend fun getServantList(currentDate: String, server: String): List<ServantItem>? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getServantsWithLore(currentDate, region)
+                val response = api.getServantsWithLore(currentDate, server)
                 val body = response.body()
                 body
             } catch (e: Exception) {
@@ -33,10 +33,11 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
             }
         }
 
-    override suspend fun persistServantList(list: List<ServantItem>?) {
+    override suspend fun persistServantList(server: String, list: List<ServantItem>?) {
         list?.let {
             it.forEach { item ->
                 val entity = ServantEntity(
+                    server,
                     item.id,
                     item.collectionNo,
                     item.name,

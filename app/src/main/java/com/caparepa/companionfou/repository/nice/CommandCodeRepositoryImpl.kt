@@ -14,17 +14,17 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
 
     val api = ApiClient.invoke()
 
-    override suspend fun fetchCommandCode(id: Long): CommandCodeEntity? {
-        return commandCodeDao.getCommandCode(id, "")
+    override suspend fun fetchCommandCode(ccId: Long, server: String): CommandCodeEntity? {
+        return commandCodeDao.getCommandCode(ccId, "")
     }
 
-    override suspend fun fetchCommandCodeList(): List<CommandCodeEntity>? {
-        return commandCodeDao.getCommandCodes()
+    override suspend fun fetchCommandCodeList(server: String): List<CommandCodeEntity>? {
+        return commandCodeDao.getCommandCodes(server)
     }
 
     override suspend fun getCommandCodeList(
         currentDate: String,
-        region: String
+        server: String
     ): List<CommandCodeItem>? = withContext(Dispatchers.IO) {
         try {
             null
@@ -34,10 +34,11 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
         }
     }
 
-    override suspend fun persistCommandCodeList(list: List<CommandCodeItem>?) {
+    override suspend fun persistCommandCodeList(server: String, list: List<CommandCodeItem>?) {
         list?.let {
             it.forEach { item ->
                 val entity = CommandCodeEntity(
+                    server,
                     item.id,
                     item.collectionNo,
                     item.name,

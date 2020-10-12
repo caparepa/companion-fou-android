@@ -14,15 +14,15 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
 
     private val api = ApiClient.invoke()
 
-    override suspend fun fetchMaterial(id: Long): MaterialEntity? {
-        return materialDao.getMaterial(id,)
+    override suspend fun fetchMaterial(itemId: Long, server: String): MaterialEntity? {
+        return materialDao.getMaterial(itemId,)
     }
 
-    override suspend fun fetchMaterialList(): List<MaterialEntity>? {
+    override suspend fun fetchMaterialList(server: String): List<MaterialEntity>? {
         return materialDao.getMaterials()
     }
 
-    override suspend fun getMaterialList(currentDate: String, region: String): List<MaterialItem>? =
+    override suspend fun getMaterialList(currentDate: String, server: String): List<MaterialItem>? =
         withContext(Dispatchers.IO) {
             try {
                 null
@@ -32,7 +32,7 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
             }
         }
 
-    override suspend fun persistMaterialList(list: List<MaterialItem>?) {
+    override suspend fun persistMaterialList(server: String, list: List<MaterialItem>?) {
         list?.let {
             it.forEach { item ->
                 val entity = item.mapTo(MaterialEntity::class.java)

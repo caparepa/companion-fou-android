@@ -4,8 +4,8 @@ import com.caparepa.companionfou.data.db.entity.nice.CraftEssenceEntity
 import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 
 interface CraftEssenceRepository {
-    suspend fun fetchCraftEssence(id: Long): CraftEssenceEntity?
-    suspend fun fetchCraftEssenceList(): List<CraftEssenceEntity>?
-    suspend fun getCraftEssenceList(currentDate: String, region: String): List<CraftEssenceItem>?
-    suspend fun persistCraftEssenceList(list: List<CraftEssenceItem>?)
+    suspend fun fetchCraftEssence(ceId: Long, server: String): CraftEssenceEntity?
+    suspend fun fetchCraftEssenceList(server: String): List<CraftEssenceEntity>?
+    suspend fun getCraftEssenceList(currentDate: String, server: String): List<CraftEssenceItem>?
+    suspend fun persistCraftEssenceList(server: String, list: List<CraftEssenceItem>?)
 }

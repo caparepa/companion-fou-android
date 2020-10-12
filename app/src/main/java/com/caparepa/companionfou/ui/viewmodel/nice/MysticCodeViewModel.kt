@@ -74,7 +74,7 @@ class MysticCodeViewModel(
 
     private suspend fun fetchMysticCodeAsync(id: Long) {
         val result = kotlin.runCatching {
-            mysticCodeRepository.fetchMysticCode(id)
+            mysticCodeRepository.fetchMysticCode(id,)
         }
         with(result) {
             onSuccess {
