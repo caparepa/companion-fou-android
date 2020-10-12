@@ -42,6 +42,7 @@ class LoadingFragment : Fragment(), KoinComponent {
     private val servantViewModel: ServantViewModel by sharedViewModel()
 
     private lateinit var loadingDialog: LoadingDialog
+    private var naDownloadPool: ArrayList<String> = arrayListOf("")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,14 +63,47 @@ class LoadingFragment : Fragment(), KoinComponent {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadingDialog = LoadingDialog(requireContext())
+        generalViewModel.getLatestApiInfo()
+        observeDownloadViewModel()
+        observeViewModels()
     }
 
     private fun observeDownloadViewModel() {
+        downloadViewModel.run {
+            finishAndClose.observe(viewLifecycleOwner, Observer{
 
+            })
+            finishAndNavigate.observe(viewLifecycleOwner, Observer{
+
+            })
+            gameDataNaDownloadCount.observe(viewLifecycleOwner, Observer{
+
+            })
+            generalDataNaDownloadCount.observe(viewLifecycleOwner, Observer{
+
+            })
+            retryGameDataNaDownload.observe(viewLifecycleOwner, Observer{
+
+            })
+            retryGeneralDataNaDownload.observe(viewLifecycleOwner, Observer{
+
+            })
+            gameDataJpDownloadCount.observe(viewLifecycleOwner, Observer{
+
+            })
+            generalDataJpDownloadCount.observe(viewLifecycleOwner, Observer{
+
+            })
+            retryGameDataJpDownload.observe(viewLifecycleOwner, Observer{
+
+            })
+            retryGeneralDataJpDownload.observe(viewLifecycleOwner, Observer{
+
+            })
+        }
     }
 
     private fun downloadGeneralData(server: String) {
-        generalViewModel.getLatestApiInfo()
         generalViewModel.getApiInfo()
         generalViewModel.getAttributeRelation(server)
         generalViewModel.getBuffActionList(server)
@@ -93,34 +127,57 @@ class LoadingFragment : Fragment(), KoinComponent {
     private fun observeViewModels() {
         generalViewModel.run {
             currentDateResult.observe(viewLifecycleOwner, Observer{
-
+                it?.let {
+                    downloadGeneralData(REGION_NA)
+                    downloadGameData(REGION_NA)
+                    downloadGeneralData(REGION_JP)
+                    downloadGameData(REGION_JP)
+                }
             })
             apiInfoResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             attributeRelationResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             classAttackRateResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             classRelationResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             faceCardResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             constantsResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             buffActionListResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             userLevelResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             allEnumsResult.observe(viewLifecycleOwner, Observer{
+                it?.let{
 
+                }
             })
             traitMappingResult.observe(viewLifecycleOwner, Observer{
 
