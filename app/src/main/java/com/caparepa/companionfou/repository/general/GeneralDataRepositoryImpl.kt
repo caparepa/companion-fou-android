@@ -94,7 +94,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchAttributeRelation(): AttributeRelationEntity? {
-        return attributeRelationDao.getAttributeRelationData()
+        return attributeRelationDao.getAttributeRelationData(REGION_NA)
     }
 
     override suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate? =
@@ -117,7 +117,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchClassAttackRate(): ClassAttackRateEntity? {
-        return classAttackRateDao.getClassAttackRateData()
+        return classAttackRateDao.getClassAttackRateData(REGION_NA)
     }
 
     override suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList? =
@@ -160,7 +160,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchClassRelation(): ClassRelationEntity? {
-        return classRelationDao.getClassAttackRateData()
+        return classRelationDao.getClassAttackRateData(REGION_NA)
     }
 
     override suspend fun getFaceCard(currentDate: String, region: String): FaceCardList? =
@@ -190,7 +190,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchFaceCard(): FaceCardEntity? {
-        return faceCardDao.getFaceCardData()
+        return faceCardDao.getFaceCardData(REGION_NA)
     }
 
     override suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList? =
@@ -292,7 +292,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchBuffActionList(): BuffActionListEntity? {
-        return buffActionListDao.getBuffActionListData()
+        return buffActionListDao.getBuffActionListData(REGION_NA)
     }
 
     override suspend fun getUserLevel(
@@ -318,7 +318,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchUserLevel(): UserLevelEntity? {
-        return userLevelDao.getUserLevelData()
+        return userLevelDao.getUserLevelData(REGION_NA)
     }
 
     override suspend fun getTraitMapping(currentDate: String, region: String): Map<Int, String>? =
@@ -341,7 +341,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchTraitMapping(): ServantTraitEntity? {
-        return servantTraitsDao.getAllTraitsData()
+        return servantTraitsDao.getAllTraitsData(REGION_NA)
     }
 
     override suspend fun getGameEnums(currentDate: String, region: String): GameEnums? =
@@ -388,7 +388,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun fetchGameEnums(): GameEnumsEntity? {
-        return gameEnumsDao.getGameEnumsData()
+        return gameEnumsDao.getGameEnumsData(REGION_NA)
     }
 
 }

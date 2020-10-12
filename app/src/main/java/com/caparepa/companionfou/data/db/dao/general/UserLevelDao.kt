@@ -11,6 +11,6 @@ interface UserLevelDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: UserLevelEntity)
 
-    @Query("SELECT * FROM user_level WHERE id = 0")
-    suspend fun getUserLevelData(): UserLevelEntity?
+    @Query("SELECT * FROM user_level WHERE server = :server")
+    suspend fun getUserLevelData(server: String): UserLevelEntity?
 }

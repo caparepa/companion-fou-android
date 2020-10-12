@@ -11,6 +11,6 @@ interface ClassRelationDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: ClassRelationEntity)
 
-    @Query("SELECT * FROM class_relation WHERE id = 0")
-    suspend fun getClassAttackRateData(): ClassRelationEntity?
+    @Query("SELECT * FROM class_relation WHERE server = :server")
+    suspend fun getClassAttackRateData(server: String): ClassRelationEntity?
 }

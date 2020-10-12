@@ -11,6 +11,6 @@ interface ServantTraitsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: ServantTraitEntity)
 
-    @Query("SELECT * FROM servant_traits WHERE id = 0")
-    suspend fun getAllTraitsData(): ServantTraitEntity?
+    @Query("SELECT * FROM servant_traits WHERE server = :server")
+    suspend fun getAllTraitsData(server: String): ServantTraitEntity?
 }
