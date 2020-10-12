@@ -21,6 +21,7 @@ class GeneralDataViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
+    val currentDateResult = MutableLiveData<String>()
     val apiInfoResult = MutableLiveData<ApiInfoEntity>()
     val attributeRelationResult = MutableLiveData<AttributeRelationEntity>()
     val classAttackRateResult = MutableLiveData<ClassAttackRateEntity>()
@@ -31,6 +32,35 @@ class GeneralDataViewModel(
     val userLevelResult = MutableLiveData<UserLevelEntity>()
     val allEnumsResult = MutableLiveData<GameEnumsEntity>()
     val traitMappingResult = MutableLiveData<ServantTraitEntity>()
+
+    /**
+     * Check this first
+     */
+    fun getLatestApiInfo() {
+        viewModelScope.launch(Dispatchers.Main) {
+            getLatestApiInfoAsync()
+        }
+    }
+
+    private suspend fun getLatestApiInfoAsync() {
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.getLatestInfo()
+        }
+        with(result) {
+            onSuccess {
+                loadingState.postValue(false)
+                it?.let {
+                    val currentDate = it.getFormattedCurrentDate()
+                    currentDateResult.postValue(currentDate)
+                }
+            }
+            onFailure {
+                loadingState.postValue(false)
+                onError.postValue(it.message)
+            }
+        }
+    }
 
     /**
      * Api Info
