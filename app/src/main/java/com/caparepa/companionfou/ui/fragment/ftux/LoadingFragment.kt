@@ -10,6 +10,7 @@ import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.*
+import com.caparepa.companionfou.utils.CURRENT_DATE
 import com.caparepa.companionfou.utils.REGION_JP
 import com.caparepa.companionfou.utils.REGION_NA
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -63,13 +64,6 @@ class LoadingFragment : Fragment(), KoinComponent {
         loadingDialog = LoadingDialog(requireContext())
     }
 
-    private fun observeGeneralDataViewModel() = generalViewModel.run {
-        apiInfoResult.observe(viewLifecycleOwner, Observer {
-
-        })
-    }
-
-
     private fun downloadGeneralData(server: String) {
         generalViewModel.getLatestApiInfo()
         generalViewModel.getApiInfo()
@@ -102,6 +96,28 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun observeViewModel() {
         generalViewModel.run {
+            currentDateResult.observe(viewLifecycleOwner, Observer {
+                if(it != null && it != CURRENT_DATE) {
+
+                }
+            })
+            apiInfoResult.observe(viewLifecycleOwner, Observer {
+
+            })
+        }
+        commandCodeViewModel.run {
+
+        }
+        craftEssenceViewModel.run {
+
+        }
+        materialViewModel.run {
+
+        }
+        mysticCodeViewModel.run {
+
+        }
+        servantViewModel.run {
 
         }
     }
