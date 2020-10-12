@@ -11,11 +11,11 @@ import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.repository.basic.BasicDataRepositoryImpl
 import com.caparepa.companionfou.repository.general.GeneralDataRepository
 import com.caparepa.companionfou.repository.general.GeneralDataRepositoryImpl
-import com.caparepa.companionfou.repository.nice.MysticCodeRepository
-import com.caparepa.companionfou.repository.nice.MysticCodeRepositoryImpl
+import com.caparepa.companionfou.repository.nice.*
 import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
-import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
+import com.caparepa.companionfou.ui.viewmodel.nice.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -27,8 +27,14 @@ val networkModule = module {
 
 val repositoryModule = module {
     factory<BasicDataRepository> { BasicDataRepositoryImpl() }
-    factory<MysticCodeRepository> { MysticCodeRepositoryImpl(get()) }
+
     factory<GeneralDataRepository> { GeneralDataRepositoryImpl() }
+    factory<CommandCodeRepository> { CommandCodeRepositoryImpl(get()) }
+    factory<CraftEssenceRepository> { CraftEssenceRepositoryImpl(get()) }
+    factory<MaterialRepository> { MaterialRepositoryImpl(get()) }
+    factory<MysticCodeRepository> { MysticCodeRepositoryImpl(get()) }
+    factory<ServantRepository> { ServantRepositoryImpl(get()) }
+
 }
 
 val localModule = module {
@@ -148,6 +154,13 @@ val databaseModule = module {
 
 val viewModelModule = module {
     viewModel { BasicDataViewModel(androidContext(), get()) }
-    viewModel { MysticCodeViewModel(androidContext(), get()) }
+
     viewModel { GeneralDataViewModel(androidContext(), get()) }
+    viewModel { CraftEssenceViewModel(androidContext(), get()) }
+    viewModel { CommandCodeViewModel(androidContext(), get()) }
+    viewModel { MaterialViewModel(androidContext(), get()) }
+    viewModel { MysticCodeViewModel(androidContext(), get()) }
+    viewModel { ServantViewModel(androidContext(), get()) }
+
+    viewModel { DownloadViewModel() }
 }
