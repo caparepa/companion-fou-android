@@ -104,15 +104,15 @@ class GeneralDataViewModel(
      * Attribute Relation
      */
 
-    fun fetchAttributeRelation() {
+    fun fetchAttributeRelation(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchAttributeRelationAsync()
+            fetchAttributeRelationAsync(server)
         }
     }
 
-    private suspend fun fetchAttributeRelationAsync() {
+    private suspend fun fetchAttributeRelationAsync(server: String) {
         val result = kotlin.runCatching {
-            generalDataRepository.fetchAttributeRelation()
+            generalDataRepository.fetchAttributeRelation(server)
         }
 
         with(result) {
@@ -152,15 +152,15 @@ class GeneralDataViewModel(
      * Class Attack Rate
      */
 
-    fun fetchClassAttackRate() {
+    fun fetchClassAttackRate(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchClassAttackRateAsync()
+            fetchClassAttackRateAsync(server)
         }
     }
 
-    private suspend fun fetchClassAttackRateAsync() {
+    private suspend fun fetchClassAttackRateAsync(server: String) {
         val result = kotlin.runCatching {
-            generalDataRepository.fetchClassAttackRate()
+            generalDataRepository.fetchClassAttackRate(server)
         }
 
         with(result) {
