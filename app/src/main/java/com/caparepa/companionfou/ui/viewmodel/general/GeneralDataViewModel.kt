@@ -9,6 +9,7 @@ import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.API_INFO
 import com.caparepa.companionfou.utils.CURRENT_DATE
 import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentServer
 import com.caparepa.companionfou.utils.logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -127,13 +128,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getAttributeRelation() {
+    fun getAttributeRelation(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getAttributeRelationAsync()
+            getAttributeRelationAsync(server)
         }
     }
 
-    private suspend fun getAttributeRelationAsync() {
+    private suspend fun getAttributeRelationAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -175,13 +176,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getClassAttackRate() {
+    fun getClassAttackRate(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getClassAttackRateAsync()
+            getClassAttackRateAsync(server)
         }
     }
 
-    private suspend fun getClassAttackRateAsync() {
+    private suspend fun getClassAttackRateAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -200,13 +201,13 @@ class GeneralDataViewModel(
      * Class Relation
      */
 
-    fun fetchClassRelation() {
+    fun fetchClassRelation(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchClassRelationAsync()
+            fetchClassRelationAsync(server)
         }
     }
 
-    private suspend fun fetchClassRelationAsync() {
+    private suspend fun fetchClassRelationAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -221,13 +222,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getClassRelation() {
+    fun getClassRelation(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getClassRelationAsync()
+            getClassRelationAsync(server)
         }
     }
 
-    private suspend fun getClassRelationAsync() {
+    private suspend fun getClassRelationAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -246,13 +247,13 @@ class GeneralDataViewModel(
      * Face Card
      */
 
-    fun fetchFaceCard() {
+    fun fetchFaceCard(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchFaceCardAsync()
+            fetchFaceCardAsync(server)
         }
     }
 
-    private suspend fun fetchFaceCardAsync() {
+    private suspend fun fetchFaceCardAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -267,13 +268,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getFaceCard() {
+    fun getFaceCard(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getFaceCardAsync()
+            getFaceCardAsync(server)
         }
     }
 
-    private suspend fun getFaceCardAsync() {
+    private suspend fun getFaceCardAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -292,13 +293,13 @@ class GeneralDataViewModel(
      * Game Constants
      */
 
-    fun fetchConstants() {
+    fun fetchConstants(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchConstantsAsync()
+            fetchConstantsAsync(server)
         }
     }
 
-    private suspend fun fetchConstantsAsync() {
+    private suspend fun fetchConstantsAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -313,13 +314,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getConstants() {
+    fun getConstants(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getConstantsAsync()
+            getConstantsAsync(server)
         }
     }
 
-    private suspend fun getConstantsAsync() {
+    private suspend fun getConstantsAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -338,13 +339,13 @@ class GeneralDataViewModel(
      * Buff Action List
      */
 
-    fun fetchBuffActionList() {
+    fun fetchBuffActionList(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchBuffActionListAsync()
+            fetchBuffActionListAsync(server)
         }
     }
 
-    private suspend fun fetchBuffActionListAsync() {
+    private suspend fun fetchBuffActionListAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -359,13 +360,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getBuffActionList() {
+    fun getBuffActionList(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getBuffActionListAsync()
+            getBuffActionListAsync(server)
         }
     }
 
-    private suspend fun getBuffActionListAsync() {
+    private suspend fun getBuffActionListAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -384,13 +385,13 @@ class GeneralDataViewModel(
      * User Level List
      */
 
-    fun fetchUserLevel() {
+    fun fetchUserLevel(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchUserLevelAsync()
+            fetchUserLevelAsync(server)
         }
     }
 
-    private suspend fun fetchUserLevelAsync() {
+    private suspend fun fetchUserLevelAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -405,13 +406,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getUserLevel() {
+    fun getUserLevel(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getUserLevelAsync()
+            getUserLevelAsync(server)
         }
     }
 
-    private suspend fun getUserLevelAsync() {
+    private suspend fun getUserLevelAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -430,13 +431,13 @@ class GeneralDataViewModel(
      * Game Enums
      */
 
-    fun fetchGameEnums() {
+    fun fetchGameEnums(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchGameEnumsAsync()
+            fetchGameEnumsAsync(server)
         }
     }
 
-    private suspend fun fetchGameEnumsAsync() {
+    private suspend fun fetchGameEnumsAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -451,13 +452,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getGameEnums() {
+    fun getGameEnums(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getGameEnumsAsync()
+            getGameEnumsAsync(server)
         }
     }
 
-    private suspend fun getGameEnumsAsync() {
+    private suspend fun getGameEnumsAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -476,13 +477,13 @@ class GeneralDataViewModel(
      * Trait Mapping
      */
 
-    fun fetchTraitMapping() {
+    fun fetchTraitMapping(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            fetchTraitMappingAsync()
+            fetchTraitMappingAsync(server)
         }
     }
 
-    private suspend fun fetchTraitMappingAsync() {
+    private suspend fun fetchTraitMappingAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {
@@ -497,13 +498,13 @@ class GeneralDataViewModel(
         }
     }
 
-    fun getTraitMapping() {
+    fun getTraitMapping(server: String) {
         viewModelScope.launch(Dispatchers.Main) {
-            getTraitMappingAsync()
+            getTraitMappingAsync(server)
         }
     }
 
-    private suspend fun getTraitMappingAsync() {
+    private suspend fun getTraitMappingAsync(server: String) {
         val result = kotlin.runCatching { }
 
         with(result) {

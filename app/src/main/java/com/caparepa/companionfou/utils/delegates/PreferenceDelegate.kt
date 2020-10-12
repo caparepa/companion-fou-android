@@ -2,6 +2,7 @@ package com.caparepa.companionfou.utils.delegates
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import com.caparepa.companionfou.utils.REGION_NA
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import kotlin.properties.ReadWriteProperty
@@ -22,6 +23,8 @@ abstract class PreferenceDelegate<T> : ReadWriteProperty<Any, T>, KoinComponent 
         var readSplashInfo by booleanPreferenceDelegate(READ_SPLASH_INFO)
         private const val ALL_INFO_LOADED = "ALL_INFO_LOADED"
         var allInfoLoaded by booleanPreferenceDelegate(ALL_INFO_LOADED)
+        private const val CURRENT_SELECTED_SERVER = "CURRENT_SELECTED_SERVER"
+        var currentServer by stringPreferenceDelegate(CURRENT_SELECTED_SERVER, REGION_NA)
     }
 
     protected val sharedPreferences: SharedPreferences by inject()
