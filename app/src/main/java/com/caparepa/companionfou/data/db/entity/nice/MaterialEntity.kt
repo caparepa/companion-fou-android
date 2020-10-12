@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,10 +8,20 @@ import androidx.room.PrimaryKey
     tableName = "material"
 )
 data class MaterialEntity(
-    @PrimaryKey
-    val id: Long? = null,
+    @ColumnInfo(name = "server")
+    val server: String? = null,
+    @ColumnInfo(name = "item_id")
+    val item_id: Long? = null,
+    @ColumnInfo(name = "name")
     val name: String? = null,
+    @ColumnInfo(name = "type")
     val type: String? = null,
+    @ColumnInfo(name = "icon")
     val icon: String? = null,
+    @ColumnInfo(name = "background")
     val background: String? = null
-)
+) {
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var table_id: Long = 0
+}

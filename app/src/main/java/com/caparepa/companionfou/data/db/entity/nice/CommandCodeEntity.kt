@@ -9,15 +9,13 @@ import com.caparepa.companionfou.data.model.common.SkillItem
 import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(
-    tableName = "command_code",
-    indices = [
-        Index(value = ["collection_no"], unique = true)
-    ]
+    tableName = "command_code"
 )
 data class CommandCodeEntity(
-    @PrimaryKey
-    @ColumnInfo(name = "id")
-    val id: Long? = null,
+    @ColumnInfo(name = "server")
+    val server: String? = null,
+    @ColumnInfo(name = "cc_id")
+    val cc_id: Long? = null,
     @ColumnInfo(name = "collection_no")
     val collectionNo: Long? = null,
     @ColumnInfo(name = "name")
@@ -31,6 +29,10 @@ data class CommandCodeEntity(
     @ColumnInfo(name = "comment")
     val comment: String? = null
 ) {
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var table_id: Long = 0
+
     fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }

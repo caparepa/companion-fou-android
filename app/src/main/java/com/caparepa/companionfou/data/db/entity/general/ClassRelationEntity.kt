@@ -54,7 +54,7 @@ data class ClassRelationEntity(
 ) {
     @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
-    var id: Long = 0
+    var table_id: Long = 0
 
     fun String.getClassRelationDetail(): ClassRelationDetail? {
         return this.toKotlinObject()

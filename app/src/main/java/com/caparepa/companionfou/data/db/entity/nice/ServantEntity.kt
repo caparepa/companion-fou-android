@@ -11,15 +11,13 @@ import com.caparepa.companionfou.data.model.nice.servant.*
 import com.caparepa.companionfou.utils.toKotlinObject
 
 @Entity(
-    tableName = "servant",
-    indices = [
-        Index(value = ["collection_no"], unique = true)
-    ]
+    tableName = "servant"
 )
 data class ServantEntity(
-    @PrimaryKey
-    @ColumnInfo(name ="id")
-    val id: Long? = null,
+    @ColumnInfo(name = "server")
+    val server: String? = null,
+    @ColumnInfo(name ="servant_id")
+    val servant_id: Long? = null,
     @ColumnInfo(name ="collection_no")
     val collectionNo: Long? = null,
     @ColumnInfo(name ="name")
@@ -101,6 +99,10 @@ data class ServantEntity(
     @ColumnInfo(name ="profile")
     val profile: String? = null
 ) {
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var table_id: Long = 0
+
     fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }

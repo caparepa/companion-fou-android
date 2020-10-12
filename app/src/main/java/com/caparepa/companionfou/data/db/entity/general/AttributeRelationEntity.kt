@@ -27,7 +27,7 @@ data class AttributeRelationEntity(
 ) {
     @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
-    var id: Long = 0
+    var table_id: Long = 0
 
     fun String.getRelationDetail(): RelationDetail {
         return this.toKotlinObject()

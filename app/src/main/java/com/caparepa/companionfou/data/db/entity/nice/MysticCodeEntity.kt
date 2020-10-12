@@ -11,9 +11,10 @@ import com.caparepa.companionfou.utils.toKotlinObject
     tableName = "mystic_code"
 )
 data class MysticCodeEntity(
-    @PrimaryKey
-    @ColumnInfo(name = "id")
-    val id: Long? = null,
+    @ColumnInfo(name = "server")
+    val server: String? = null,
+    @ColumnInfo(name = "mc_id")
+    val mc_id: Long? = null,
     @ColumnInfo(name = "name")
     val name: String? = null,
     @ColumnInfo(name = "detail")
@@ -27,6 +28,10 @@ data class MysticCodeEntity(
     @ColumnInfo(name = "exp_required")
     val expRequired: String? = null
 ) {
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var table_id: Long = 0
+
     fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }
