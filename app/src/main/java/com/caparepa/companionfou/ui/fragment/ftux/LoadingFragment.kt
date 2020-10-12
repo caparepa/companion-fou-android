@@ -11,10 +11,7 @@ import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.*
-import com.caparepa.companionfou.utils.CURRENT_DATE
-import com.caparepa.companionfou.utils.Coroutines
-import com.caparepa.companionfou.utils.REGION_JP
-import com.caparepa.companionfou.utils.REGION_NA
+import com.caparepa.companionfou.utils.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 
@@ -42,7 +39,10 @@ class LoadingFragment : Fragment(), KoinComponent {
     private val servantViewModel: ServantViewModel by sharedViewModel()
 
     private lateinit var loadingDialog: LoadingDialog
-    private var naDownloadPool: ArrayList<String> = arrayListOf("")
+    private var downloadPool: ArrayList<String> = arrayListOf()
+    private var okPool: ArrayList<Int> = arrayListOf()
+    private var downloadGeneralCount = 0 //19 in totl
+    private var downloadGameCount = 0 //10 in total
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,35 +70,38 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun observeDownloadViewModel() {
         downloadViewModel.run {
-            finishAndClose.observe(viewLifecycleOwner, Observer{
+            finishAndClose.observe(viewLifecycleOwner, Observer {
 
             })
-            finishAndNavigate.observe(viewLifecycleOwner, Observer{
+            finishAndNavigate.observe(viewLifecycleOwner, Observer {
 
             })
-            gameDataNaDownloadCount.observe(viewLifecycleOwner, Observer{
-
+            gameDataDownloadCount.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    if(it == downloadGeneralCount) {
+                        okPool.add(it)
+                        downloadPool.postValue(okPool)
+                    }
+                }
             })
-            generalDataNaDownloadCount.observe(viewLifecycleOwner, Observer{
-
+            generalDataDownloadCount.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    it?.let {
+                        if(it == downloadGameCount) {
+                            okPool.add(it)
+                            downloadPool.postValue(okPool)
+                        }
+                    }
+                }
             })
-            retryGameDataNaDownload.observe(viewLifecycleOwner, Observer{
-
-            })
-            retryGeneralDataNaDownload.observe(viewLifecycleOwner, Observer{
-
-            })
-            gameDataJpDownloadCount.observe(viewLifecycleOwner, Observer{
-
-            })
-            generalDataJpDownloadCount.observe(viewLifecycleOwner, Observer{
-
-            })
-            retryGameDataJpDownload.observe(viewLifecycleOwner, Observer{
-
-            })
-            retryGeneralDataJpDownload.observe(viewLifecycleOwner, Observer{
-
+            downloadPool.observe(viewLifecycleOwner, Observer{
+                it?.let{
+                    if(it.size == 2) {
+                        requireActivity().toastLong("OK! NAVIGATE!")
+                    } else {
+                        requireActivity().toastLong("ERROR! FACK!")
+                    }
+                }
             })
         }
     }
@@ -126,7 +129,7 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun observeViewModels() {
         generalViewModel.run {
-            currentDateResult.observe(viewLifecycleOwner, Observer{
+            currentDateResult.observe(viewLifecycleOwner, Observer {
                 it?.let {
                     downloadGeneralData(REGION_NA)
                     downloadGameData(REGION_NA)
@@ -134,69 +137,104 @@ class LoadingFragment : Fragment(), KoinComponent {
                     downloadGameData(REGION_JP)
                 }
             })
-            apiInfoResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            apiInfoResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("apiInfoResult")
+                    downloadGeneralCount++
                 }
             })
-            attributeRelationResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            attributeRelationResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("attributeRelationResult")
+                    downloadGeneralCount++
                 }
             })
-            classAttackRateResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            classAttackRateResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("classAttackRateResult")
+                    downloadGeneralCount++
                 }
             })
-            classRelationResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            classRelationResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("classRelationResult")
+                    downloadGeneralCount++
                 }
             })
-            faceCardResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            faceCardResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("faceCardResult")
+                    downloadGeneralCount++
                 }
             })
-            constantsResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            constantsResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("constantsResult")
+                    downloadGeneralCount++
                 }
             })
-            buffActionListResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            buffActionListResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("buffActionListResult")
+                    downloadGeneralCount++
                 }
             })
-            userLevelResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            userLevelResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("userLevelResult")
+                    downloadGeneralCount++
                 }
             })
-            allEnumsResult.observe(viewLifecycleOwner, Observer{
-                it?.let{
-
+            allEnumsResult.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("allEnumsResult")
+                    downloadGeneralCount++
                 }
             })
-            traitMappingResult.observe(viewLifecycleOwner, Observer{
-
+            traitMappingResult.observe(viewLifecycleOwner, Observer {
+                downloadPool.add("traitMappingResult")
+                downloadGeneralCount++
             })
         }
         commandCodeViewModel.run {
-
+            commandCodeListResponse.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("commandCodeListResponse")
+                    downloadGameCount++
+                }
+            })
         }
         craftEssenceViewModel.run {
-
+            craftEssenceResponse.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("craftEssenceResponse")
+                    downloadGameCount++
+                }
+            })
         }
         materialViewModel.run {
-
+            materialListResponse.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("materialListResponse")
+                    downloadGameCount++
+                }
+            })
         }
         mysticCodeViewModel.run {
-
+            mysticCodeListResponse.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("mysticCodeListResponse")
+                    downloadGameCount++
+                }
+            })
         }
         servantViewModel.run {
-
+            servantListResponse.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    downloadPool.add("servantListResponse")
+                    downloadGameCount++
+                }
+            })
         }
     }
 
