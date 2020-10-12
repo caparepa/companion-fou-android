@@ -16,35 +16,35 @@ interface GeneralDataRepository {
     suspend fun persistApiInfo(item: ApiInfo?)
     suspend fun fetchApiInfo(): ApiInfoEntity?
 
-    suspend fun getAttributeRelation(currentDate: String, region: String): AttributeRelation?
-    suspend fun persistAttributeRelation(item: AttributeRelation?)
-    suspend fun fetchAttributeRelation(): AttributeRelationEntity?
+    suspend fun getAttributeRelation(server: String, currentDate: String): AttributeRelation?
+    suspend fun persistAttributeRelation(server: String, item: AttributeRelation?)
+    suspend fun fetchAttributeRelation(server: String): AttributeRelationEntity?
 
-    suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate?
-    suspend fun persistClassAttackRate(item: ClassAttackRate?)
-    suspend fun fetchClassAttackRate(): ClassAttackRateEntity?
+    suspend fun getClassAttackRate(server: String, currentDate: String): ClassAttackRate?
+    suspend fun persistClassAttackRate(server: String, item: ClassAttackRate?)
+    suspend fun fetchClassAttackRate(server: String): ClassAttackRateEntity?
 
-    suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList?
-    suspend fun persistClassRelation(item: ClassRelationList?)
-    suspend fun fetchClassRelation(): ClassRelationEntity?
+    suspend fun getClassRelation(server: String, currentDate: String): ClassRelationList?
+    suspend fun persistClassRelation(server: String, item: ClassRelationList?)
+    suspend fun fetchClassRelation(server: String): ClassRelationEntity?
 
-    suspend fun getFaceCard(currentDate: String, region: String): FaceCardList?
-    suspend fun persistFaceCard(item: FaceCardList?)
-    suspend fun fetchFaceCard(): FaceCardEntity?
+    suspend fun getFaceCard(server: String, currentDate: String): FaceCardList?
+    suspend fun persistFaceCard(server: String, item: FaceCardList?)
+    suspend fun fetchFaceCard(server: String): FaceCardEntity?
 
-    suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList?
-    suspend fun persistBuffActionList(item: BuffActionList?)
-    suspend fun fetchBuffActionList(): BuffActionListEntity?
+    suspend fun getBuffActionList(server: String, currentDate: String): BuffActionList?
+    suspend fun persistBuffActionList(server: String, item: BuffActionList?)
+    suspend fun fetchBuffActionList(server: String): BuffActionListEntity?
 
-    suspend fun getUserLevel(currentDate: String, region: String): Map<Int, UserLevelDetail>?
-    suspend fun persistUserLevel(item: Map<Int, UserLevelDetail>?)
-    suspend fun fetchUserLevel(): UserLevelEntity?
+    suspend fun getUserLevel(server: String, currentDate: String): Map<Int, UserLevelDetail>?
+    suspend fun persistUserLevel(server: String, item: Map<Int, UserLevelDetail>?)
+    suspend fun fetchUserLevel(server: String): UserLevelEntity?
 
-    suspend fun getTraitMapping(currentDate: String, region: String): Map<Int, String>?
-    suspend fun persistTraitMapping(list: Map<Int, String>?)
-    suspend fun fetchTraitMapping(): ServantTraitEntity?
+    suspend fun getTraitMapping(server: String, currentDate: String): Map<Int, String>?
+    suspend fun persistTraitMapping(server: String, list: Map<Int, String>?)
+    suspend fun fetchTraitMapping(server: String): ServantTraitEntity?
 
-    suspend fun getGameEnums(currentDate: String, region: String): GameEnums?
-    suspend fun persistGameEnums(item: GameEnums?)
-    suspend fun fetchGameEnums(): GameEnumsEntity?
+    suspend fun getGameEnums(server: String, currentDate: String): GameEnums?
+    suspend fun persistGameEnums(server: String, item: GameEnums?)
+    suspend fun fetchGameEnums(server: String): GameEnumsEntity?
 }

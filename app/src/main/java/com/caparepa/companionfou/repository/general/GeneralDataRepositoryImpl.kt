@@ -68,12 +68,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     }
 
     override suspend fun getAttributeRelation(
-        currentDate: String,
-        region: String
+        server: String,
+        currentDate: String
     ): AttributeRelation? = withContext(Dispatchers.IO) {
         try {
             val response = api.getAttributeRelation(currentDate)
-            persistAttributeRelation(response.body())
+            persistAttributeRelation(server, response.body())
             response.body()
         } catch (e: Exception) {
             e.printStackTrace()
@@ -81,7 +81,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun persistAttributeRelation(item: AttributeRelation?) {
+    override suspend fun persistAttributeRelation(server: String, item: AttributeRelation?) {
         item?.let {
             val entity = AttributeRelationEntity(
                 it.human?.toJsonString(),
@@ -93,15 +93,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun fetchAttributeRelation(): AttributeRelationEntity? {
-        return attributeRelationDao.getAttributeRelationData(REGION_NA)
+    override suspend fun fetchAttributeRelation(server: String): AttributeRelationEntity? {
+        return attributeRelationDao.getAttributeRelationData(server)
     }
 
-    override suspend fun getClassAttackRate(currentDate: String, region: String): ClassAttackRate? =
+    override suspend fun getClassAttackRate(server: String, currentDate: String): ClassAttackRate? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getClassAttackRate(currentDate)
-                persistClassAttackRate(response.body())
+                persistClassAttackRate(server, response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -109,22 +109,22 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistClassAttackRate(item: ClassAttackRate?) {
+    override suspend fun persistClassAttackRate(server: String, item: ClassAttackRate?) {
         item?.let {
             val entity = it.mapTo(ClassAttackRateEntity::class.java)
             classAttackRateDao.upsert(entity!!)
         }
     }
 
-    override suspend fun fetchClassAttackRate(): ClassAttackRateEntity? {
-        return classAttackRateDao.getClassAttackRateData(REGION_NA)
+    override suspend fun fetchClassAttackRate(server: String): ClassAttackRateEntity? {
+        return classAttackRateDao.getClassAttackRateData(server)
     }
 
-    override suspend fun getClassRelation(currentDate: String, region: String): ClassRelationList? =
+    override suspend fun getClassRelation(server: String, currentDate: String): ClassRelationList? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getClassRelation(currentDate)
-                persistClassRelation(response.body())
+                persistClassRelation(server, response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -132,7 +132,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistClassRelation(item: ClassRelationList?) {
+    override suspend fun persistClassRelation(server: String, item: ClassRelationList?) {
         item?.let {
             val entity = ClassRelationEntity(
                 it.saber?.toJsonString(),
@@ -159,15 +159,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun fetchClassRelation(): ClassRelationEntity? {
-        return classRelationDao.getClassAttackRateData(REGION_NA)
+    override suspend fun fetchClassRelation(server: String): ClassRelationEntity? {
+        return classRelationDao.getClassAttackRateData(server)
     }
 
-    override suspend fun getFaceCard(currentDate: String, region: String): FaceCardList? =
+    override suspend fun getFaceCard(server: String, currentDate: String): FaceCardList? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getFaceCard(currentDate)
-                persistFaceCard(response.body())
+                persistFaceCard(server, response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -175,7 +175,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistFaceCard(item: FaceCardList?) {
+    override suspend fun persistFaceCard(server: String, item: FaceCardList?) {
         item?.let {
             val entity = FaceCardEntity(
                 it.arts?.toJsonString(),
@@ -189,15 +189,15 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun fetchFaceCard(): FaceCardEntity? {
-        return faceCardDao.getFaceCardData(REGION_NA)
+    override suspend fun fetchFaceCard(server: String): FaceCardEntity? {
+        return faceCardDao.getFaceCardData(server)
     }
 
-    override suspend fun getBuffActionList(currentDate: String, region: String): BuffActionList? =
+    override suspend fun getBuffActionList(server: String, currentDate: String): BuffActionList? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getBuffActionList(currentDate)
-                persistBuffActionList(response.body())
+                persistBuffActionList(server, response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -205,7 +205,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistBuffActionList(item: BuffActionList?) {
+    override suspend fun persistBuffActionList(server: String, item: BuffActionList?) {
         item?.let {
             val entity = BuffActionListEntity(
                 it.commandAtk?.toJsonString(),
@@ -291,18 +291,18 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun fetchBuffActionList(): BuffActionListEntity? {
-        return buffActionListDao.getBuffActionListData(REGION_NA)
+    override suspend fun fetchBuffActionList(server: String): BuffActionListEntity? {
+        return buffActionListDao.getBuffActionListData(server)
     }
 
     override suspend fun getUserLevel(
-        currentDate: String,
-        region: String
+        server: String,
+        currentDate: String
     ): Map<Int, UserLevelDetail>? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getUserLevel(currentDate)
-                persistUserLevel(response.body())
+                persistUserLevel(server, response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -310,22 +310,22 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistUserLevel(item: Map<Int, UserLevelDetail>?) {
+    override suspend fun persistUserLevel(server: String, item: Map<Int, UserLevelDetail>?) {
         item?.let {
             val entity = UserLevelEntity(item.toJsonString())
             userLevelDao.upsert(entity)
         }
     }
 
-    override suspend fun fetchUserLevel(): UserLevelEntity? {
-        return userLevelDao.getUserLevelData(REGION_NA)
+    override suspend fun fetchUserLevel(server: String): UserLevelEntity? {
+        return userLevelDao.getUserLevelData(server)
     }
 
-    override suspend fun getTraitMapping(currentDate: String, region: String): Map<Int, String>? =
+    override suspend fun getTraitMapping(server: String, currentDate: String): Map<Int, String>? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getTraitMapping(currentDate)
-                persistTraitMapping(response.body())
+                persistTraitMapping(server, response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -333,22 +333,22 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistTraitMapping(list: Map<Int, String>?) {
+    override suspend fun persistTraitMapping(server: String, list: Map<Int, String>?) {
         list?.let {
             val entity = ServantTraitEntity(it.toJsonString())
             servantTraitsDao.upsert(entity)
         }
     }
 
-    override suspend fun fetchTraitMapping(): ServantTraitEntity? {
-        return servantTraitsDao.getAllTraitsData(REGION_NA)
+    override suspend fun fetchTraitMapping(server: String): ServantTraitEntity? {
+        return servantTraitsDao.getAllTraitsData(server)
     }
 
-    override suspend fun getGameEnums(currentDate: String, region: String): GameEnums? =
+    override suspend fun getGameEnums(server: String, currentDate: String): GameEnums? =
         withContext(Dispatchers.IO) {
             try {
                 val response = api.getAllEnums(currentDate)
-                persistGameEnums(response.body())
+                persistGameEnums(server, response.body())
                 response.body()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -356,7 +356,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
             }
         }
 
-    override suspend fun persistGameEnums(item: GameEnums?) {
+    override suspend fun persistGameEnums(server: String, item: GameEnums?) {
         item?.let {
             val entity = GameEnumsEntity(
                 it.niceSvtType?.toJsonString(),
@@ -387,8 +387,8 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         }
     }
 
-    override suspend fun fetchGameEnums(): GameEnumsEntity? {
-        return gameEnumsDao.getGameEnumsData(REGION_NA)
+    override suspend fun fetchGameEnums(server: String): GameEnumsEntity? {
+        return gameEnumsDao.getGameEnumsData(server)
     }
 
 }
