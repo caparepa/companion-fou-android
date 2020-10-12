@@ -18,25 +18,25 @@ class CraftEssenceViewModel(
     val craftEssenceListResult = MutableLiveData<List<CraftEssenceEntity>>()
     val craftEssenceItemResult = MutableLiveData<CraftEssenceEntity>()
 
-    fun getCraftEssences()  {
+    fun getCraftEssences(server: String)  {
         viewModelScope.launch(Dispatchers.IO) {
-            getCraftEssencesAsync()
+            getCraftEssencesAsync(server)
         }
     }
 
-    fun fetchCraftEssences() {
+    fun fetchCraftEssences(server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchCraftEssencesAsync()
+            fetchCraftEssencesAsync(server)
         }
     }
 
-    fun fetchCraftEssenceById(id: Long) {
+    fun fetchCraftEssenceById(id: Long, server: String) {
         viewModelScope.launch(Dispatchers.IO) {
 
         }
     }
 
-    private suspend fun getCraftEssencesAsync() {
+    private suspend fun getCraftEssencesAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -46,7 +46,7 @@ class CraftEssenceViewModel(
         }
     }
 
-    private suspend fun fetchCraftEssencesAsync() {
+    private suspend fun fetchCraftEssencesAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -56,7 +56,7 @@ class CraftEssenceViewModel(
         }
     }
 
-    private suspend fun fetchCraftEssenceByIdAsync(id: Long) {
+    private suspend fun fetchCraftEssenceByIdAsync(id: Long, server: String) {
         val result = kotlin.runCatching {
 
         }

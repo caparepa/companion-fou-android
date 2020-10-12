@@ -16,25 +16,25 @@ class CommandCodeViewModel(val context: Context, val commandcodeRepository: Comm
     val commandCodeListResult = MutableLiveData<List<CommandCodeEntity>>()
     val commandCodeItemResult = MutableLiveData<CommandCodeEntity>()
 
-    fun getCommandCodes()  {
+    fun getCommandCodes(server: String)  {
         viewModelScope.launch(Dispatchers.IO) {
-            getCommandCodesAsync()
+            getCommandCodesAsync(server)
         }
     }
 
-    fun fetchCommandCodes() {
+    fun fetchCommandCodes(server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchCommandCodesAsync()
+            fetchCommandCodesAsync(server)
         }
     }
 
-    fun fetchCommandCodeById(id: Long) {
+    fun fetchCommandCodeById(id: Long, server: String) {
         viewModelScope.launch(Dispatchers.IO) {
 
         }
     }
 
-    private suspend fun getCommandCodesAsync() {
+    private suspend fun getCommandCodesAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -44,7 +44,7 @@ class CommandCodeViewModel(val context: Context, val commandcodeRepository: Comm
         }
     }
 
-    private suspend fun fetchCommandCodesAsync() {
+    private suspend fun fetchCommandCodesAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -54,7 +54,7 @@ class CommandCodeViewModel(val context: Context, val commandcodeRepository: Comm
         }
     }
 
-    private suspend fun fetchCommandCodeByIdAsync(id: Long) {
+    private suspend fun fetchCommandCodeByIdAsync(id: Long, server: String) {
         val result = kotlin.runCatching {
 
         }

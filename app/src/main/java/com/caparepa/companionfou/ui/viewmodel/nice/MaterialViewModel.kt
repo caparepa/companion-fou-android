@@ -16,25 +16,25 @@ class MaterialViewModel(val context: Context, val materialRepository: MaterialRe
     val materialListResult = MutableLiveData<List<MaterialEntity>>()
     val materialItemResult = MutableLiveData<MaterialEntity>()
 
-    fun getMaterials()  {
+    fun getMaterials(server: String)  {
         viewModelScope.launch(Dispatchers.IO) {
-            getMaterialsAsync()
+            getMaterialsAsync(server)
         }
     }
 
-    fun fetchMaterials() {
+    fun fetchMaterials(server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchMaterialsAsync()
+            fetchMaterialsAsync(server)
         }
     }
 
-    fun fetchMaterialById(id: Long) {
+    fun fetchMaterialById(id: Long, server: String) {
         viewModelScope.launch(Dispatchers.IO) {
 
         }
     }
 
-    private suspend fun getMaterialsAsync() {
+    private suspend fun getMaterialsAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -44,7 +44,7 @@ class MaterialViewModel(val context: Context, val materialRepository: MaterialRe
         }
     }
 
-    private suspend fun fetchMaterialsAsync() {
+    private suspend fun fetchMaterialsAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -54,7 +54,7 @@ class MaterialViewModel(val context: Context, val materialRepository: MaterialRe
         }
     }
 
-    private suspend fun fetchMaterialByIdAsync(id: Long) {
+    private suspend fun fetchMaterialByIdAsync(id: Long, server: String) {
         val result = kotlin.runCatching {
 
         }

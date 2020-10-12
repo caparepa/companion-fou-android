@@ -22,27 +22,27 @@ class MysticCodeViewModel(
     val mysticCodeListResult = MutableLiveData<List<MysticCodeEntity>>()
     val mysticCodeResult = MutableLiveData<MysticCodeEntity>()
 
-    fun getMysticCodes() {
+    fun getMysticCodes(server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            getMysticCodesAsync()
+            getMysticCodesAsync(server)
         }
     }
 
-    fun fetchMysticCodes() {
+    fun fetchMysticCodes(server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchMysticCodesAsync()
+            fetchMysticCodesAsync(server)
         }
     }
 
-    fun fetchMysticCode(id: Long) {
+    fun fetchMysticCode(id: Long, server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchMysticCodeAsync(id)
+            fetchMysticCodeAsync(id, server)
         }
     }
 
-    private suspend fun getMysticCodesAsync() {
+    private suspend fun getMysticCodesAsync(server: String) {
         val result = kotlin.runCatching {
-            mysticCodeRepository.getMysticCodeList("20200905", REGION_NA)
+            mysticCodeRepository.getMysticCodeList("20200905", server)
         }
         with(result) {
             onSuccess {
@@ -56,9 +56,9 @@ class MysticCodeViewModel(
         }
     }
 
-    private suspend fun fetchMysticCodesAsync() {
+    private suspend fun fetchMysticCodesAsync(server: String) {
         val result = kotlin.runCatching {
-            mysticCodeRepository.fetchMysticCodeList()
+            mysticCodeRepository.fetchMysticCodeList(server)
         }
         with(result) {
             onSuccess {
@@ -72,9 +72,9 @@ class MysticCodeViewModel(
         }
     }
 
-    private suspend fun fetchMysticCodeAsync(id: Long) {
+    private suspend fun fetchMysticCodeAsync(id: Long ,server: String) {
         val result = kotlin.runCatching {
-            mysticCodeRepository.fetchMysticCode(id,)
+            mysticCodeRepository.fetchMysticCode(id, server)
         }
         with(result) {
             onSuccess {

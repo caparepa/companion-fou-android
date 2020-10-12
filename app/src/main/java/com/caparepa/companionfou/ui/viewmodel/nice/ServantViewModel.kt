@@ -16,25 +16,25 @@ class ServantViewModel(val context: Context, val servantRepository: ServantRepos
     val servantListResult = MutableLiveData<List<ServantEntity>>()
     val servantItemResult = MutableLiveData<ServantEntity>()
 
-    fun getServants()  {
+    fun getServants(server: String)  {
         viewModelScope.launch(Dispatchers.IO) {
-            getServantsAsync()
+            getServantsAsync(server)
         }
     }
 
-    fun fetchServants() {
+    fun fetchServants(server: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            fetchServantsAsync()
+            fetchServantsAsync(server)
         }
     }
 
-    fun fetchServantById(id: Long) {
+    fun fetchServantById(id: Long, server: String) {
         viewModelScope.launch(Dispatchers.IO) {
 
         }
     }
 
-    private suspend fun getServantsAsync() {
+    private suspend fun getServantsAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -44,7 +44,7 @@ class ServantViewModel(val context: Context, val servantRepository: ServantRepos
         }
     }
 
-    private suspend fun fetchServantsAsync() {
+    private suspend fun fetchServantsAsync(server: String) {
         val result = kotlin.runCatching {
 
         }
@@ -54,7 +54,7 @@ class ServantViewModel(val context: Context, val servantRepository: ServantRepos
         }
     }
 
-    private suspend fun fetchServantByIdAsync(id: Long) {
+    private suspend fun fetchServantByIdAsync(id: Long, server: String) {
         val result = kotlin.runCatching {
 
         }
