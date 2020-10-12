@@ -9,6 +9,9 @@ import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
+import com.caparepa.companionfou.ui.viewmodel.nice.*
+import com.caparepa.companionfou.utils.REGION_JP
+import com.caparepa.companionfou.utils.REGION_NA
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 
@@ -28,6 +31,14 @@ class LoadingFragment : Fragment(), KoinComponent {
     private var param2: String? = null
 
     private val generalViewModel: GeneralDataViewModel by sharedViewModel()
+    private val commandCodeViewModel: CommandCodeViewModel by sharedViewModel()
+    private val craftEssenceViewModel: CraftEssenceViewModel by sharedViewModel()
+    private val materialViewModel: MaterialViewModel by sharedViewModel()
+    private val mysticCodeViewModel: MysticCodeViewModel by sharedViewModel()
+    private val servantViewModel: ServantViewModel by sharedViewModel()
+
+    private var generalCountJP = 11
+    private var generalCountNA = 11
 
     private lateinit var loadingDialog: LoadingDialog
 
@@ -58,7 +69,9 @@ class LoadingFragment : Fragment(), KoinComponent {
         })
     }
 
+
     private fun downloadGeneralData(server: String) {
+        generalViewModel.getLatestApiInfo()
         generalViewModel.getApiInfo()
         generalViewModel.getAttributeRelation(server)
         generalViewModel.getBuffActionList(server)
@@ -72,11 +85,19 @@ class LoadingFragment : Fragment(), KoinComponent {
     }
 
     private fun downloadNaData() {
-
+        commandCodeViewModel.getCommandCodes(REGION_NA)
+        craftEssenceViewModel.getCraftEssences(REGION_NA)
+        materialViewModel.getMaterials(REGION_NA)
+        mysticCodeViewModel.getMysticCodes(REGION_NA)
+        servantViewModel.getServants(REGION_NA)
     }
 
     private fun downloadJpData() {
-
+        commandCodeViewModel.getCommandCodes(REGION_JP)
+        craftEssenceViewModel.getCraftEssences(REGION_JP)
+        materialViewModel.getMaterials(REGION_JP)
+        mysticCodeViewModel.getMysticCodes(REGION_JP)
+        servantViewModel.getServants(REGION_JP)
     }
 
     private fun observeViewModel() {
