@@ -3,7 +3,7 @@ package com.caparepa.companionfou.utils
 import android.util.Log
 
 //VIEWMODEL CONSTANTS
-const val CURRENT_DATE = "20200905"
+const val CURRENT_DATE = "20201012"
 const val CURRENT_REGION = "NA"
 
 const val API_INFO = "API_INFO"
