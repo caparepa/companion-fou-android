@@ -30,7 +30,7 @@ data class FaceCardEntity(
 ) {
     @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
-    var table_id: Long = 0
+    var tableId: Long = 0
 
     fun String.getFaceCard(): Map<Int, FaceCardParams>? {
         return this.toKotlinObject()

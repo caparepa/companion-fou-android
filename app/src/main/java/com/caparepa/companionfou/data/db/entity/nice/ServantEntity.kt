@@ -101,7 +101,7 @@ data class ServantEntity(
 ) {
     @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
-    var table_id: Long = 0
+    var tableId: Long = 0
 
     fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()

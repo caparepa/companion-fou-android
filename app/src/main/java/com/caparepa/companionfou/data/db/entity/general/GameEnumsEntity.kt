@@ -65,7 +65,7 @@ data class GameEnumsEntity(
 ) {
     @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
-    var table_id: Long = 0
+    var tableId: Long = 0
 
     fun String.getEnumValue(): Map<Int, String>? {
         return this.toKotlinObject()
