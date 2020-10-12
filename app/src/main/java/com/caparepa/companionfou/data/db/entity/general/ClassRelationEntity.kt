@@ -11,6 +11,8 @@ import com.google.gson.annotations.SerializedName
     tableName = "class_relation"
 )
 data class ClassRelationEntity(
+    @ColumnInfo(name = "server")
+    val server: String? = null,
     @ColumnInfo(name = "saber")
     val saber: String? = null,
     @ColumnInfo(name = "archer")
@@ -50,8 +52,9 @@ data class ClassRelationEntity(
     @ColumnInfo(name = "beast_unknown")
     val beastUnknown: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = 0
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
 
     fun String.getClassRelationDetail(): ClassRelationDetail? {
         return this.toKotlinObject()

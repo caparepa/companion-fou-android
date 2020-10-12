@@ -11,6 +11,8 @@ import com.google.gson.annotations.SerializedName
     tableName = "face_card"
 )
 data class FaceCardEntity(
+    @ColumnInfo(name = "server")
+    val server: String? = null,
     @ColumnInfo(name = "arts")
     val arts: String? = null,
     @ColumnInfo(name = "buster")
@@ -26,8 +28,9 @@ data class FaceCardEntity(
     @ColumnInfo(name = "strength")
     val strength: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = 0
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
 
     fun String.getFaceCard(): Map<Int, FaceCardParams>? {
         return this.toKotlinObject()

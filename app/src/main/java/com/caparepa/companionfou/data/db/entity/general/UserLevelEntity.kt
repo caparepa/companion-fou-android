@@ -10,15 +10,18 @@ import com.caparepa.companionfou.utils.toKotlinObject
     tableName = "user_level"
 )
 data class UserLevelEntity(
+    @ColumnInfo(name = "server")
+    val server: String? = null,
     @ColumnInfo(name = "user_level_map")
-    val user_level_map: String? = null
+    val userLevelMap: String? = null
 
 )  {
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = 0
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
 
-    fun String.getUserLevelDetail(): Map<Int, UserLevelDetail>? {
-        return this.toKotlinObject()
+    fun getUserLevelDetail(): Map<Int, UserLevelDetail>? {
+        return this.userLevelMap?.toKotlinObject()
     }
 
 }

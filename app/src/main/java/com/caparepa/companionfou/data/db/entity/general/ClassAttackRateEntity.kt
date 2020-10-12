@@ -9,6 +9,8 @@ import com.google.gson.annotations.SerializedName
     tableName = "class_attack_rate"
 )
 data class ClassAttackRateEntity(
+    @ColumnInfo(name = "server")
+    val server: String? = null,
     @ColumnInfo(name ="saber")
     val saber: Int? = null,
     @ColumnInfo(name ="archer")
@@ -54,6 +56,7 @@ data class ClassAttackRateEntity(
     @ColumnInfo(name ="all")
     val all: Int? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = 0
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
 }

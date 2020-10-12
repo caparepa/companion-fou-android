@@ -11,6 +11,8 @@ import com.google.gson.annotations.SerializedName
     tableName = "game_enums"
 )
 data class GameEnumsEntity(
+    @ColumnInfo(name = "server")
+    val server: String? = null,
     /**
      * JsonElement is Map<Int, String>
      */
@@ -61,7 +63,8 @@ data class GameEnumsEntity(
     @ColumnInfo(name ="trait")
     val trait: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
     var id: Long = 0
 
     fun String.getEnumValue(): Map<Int, String>? {

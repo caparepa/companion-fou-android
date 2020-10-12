@@ -10,6 +10,8 @@ import com.caparepa.companionfou.utils.toKotlinObject
     tableName = "buff_action_list"
 )
 data class BuffActionListEntity(
+    @ColumnInfo(name = "server")
+    val server: String? = null,
     @ColumnInfo(name = "command_atk")
     val commandAtk: String? = null,
     @ColumnInfo(name = "command_def")
@@ -167,8 +169,9 @@ data class BuffActionListEntity(
     @ColumnInfo(name = "damage_event_point")
     val damageEventPoint: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = 0
+    @ColumnInfo(name = "table_id")
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
 
     fun String.getBuffActionParams(): BuffActionParams? {
         return this.toKotlinObject()

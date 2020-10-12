@@ -9,13 +9,16 @@ import com.caparepa.companionfou.utils.toKotlinObject
     tableName = "servant_traits"
 )
 class ServantTraitEntity(
+    @ColumnInfo(name = "server")
+    val server: String? = null,
     @ColumnInfo(name = "trait_map_value")
-    val trait_map_value: String? = null
+    val traitMapValue: String? = null
 ) {
+    @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
-    var id: Long? = 0
+    var id: Long = 0
 
     fun getTraitMapValue(): Map<Int, String>? {
-        return this.trait_map_value?.toKotlinObject()
+        return this.traitMapValue?.toKotlinObject()
     }
 }
