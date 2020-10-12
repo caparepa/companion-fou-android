@@ -22,6 +22,8 @@ import com.caparepa.companionfou.utils.toJsonString
 
 class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
+    private val TAG = "GeneralDataRepositoryImpl"
+
     //Api
     private val api = ApiClient.invoke()
 
@@ -41,12 +43,10 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getApiInfo(currentDate: String): ApiInfo? =
         withContext(Dispatchers.IO) {
             try {
-                logger(LOG_DEBUG, "TAGTAG", "JALANDO DATA!")
                 val response = api.getApiInfo(currentDate)
                 persistApiInfo(response.body())
                 response.body()
             } catch (e: Exception) {
-                logger(LOG_DEBUG, "TAGTAG", "NO JALO DATA!")
                 e.printStackTrace()
                 null
             }
@@ -54,7 +54,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistApiInfo(item: ApiInfo?) {
         item?.let {
-            logger(LOG_DEBUG, "TAGTAG", "METIENDO DATA!")
+            logger(LOG_DEBUG, TAG, "METIENDO DATA!")
             val entity = ApiInfoEntity(
                 it.na?.toJsonString(),
                 it.jp?.toJsonString()
