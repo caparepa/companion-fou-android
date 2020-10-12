@@ -23,7 +23,6 @@ import org.koin.core.inject
 
 class MainActivity : AppCompatActivity(), KoinComponent {
 
-    private lateinit var loadingDialog: LoadingDialog
     private lateinit var navController: NavController
     var fragment: String = ""
 

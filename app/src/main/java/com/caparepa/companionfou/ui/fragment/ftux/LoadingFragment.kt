@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.ui.dialog.LoadingDialog
+import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.core.KoinComponent
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,10 +22,14 @@ private const val ARG_PARAM2 = "param2"
  * Use the [LoadingFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoadingFragment : Fragment() {
+class LoadingFragment : Fragment(), KoinComponent {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private val generalViewModel: GeneralDataViewModel by sharedViewModel()
+
+    private lateinit var loadingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +46,45 @@ class LoadingFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_loading, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadingDialog = LoadingDialog(requireContext())
+    }
+
+    private fun observeGeneralDataViewModel() = generalViewModel.run {
+        apiInfoResult.observe(viewLifecycleOwner, Observer {
+
+        })
+    }
+
+    private fun downloadGeneralData() {
+        generalViewModel.getApiInfo()
+        generalViewModel.getAttributeRelation()
+        generalViewModel.getBuffActionList()
+        generalViewModel.getClassAttackRate()
+        generalViewModel.getClassRelation()
+        generalViewModel.getConstants()
+        generalViewModel.getFaceCard()
+        generalViewModel.getGameEnums()
+        generalViewModel.getTraitMapping()
+        generalViewModel.getUserLevel()
+    }
+
+    private fun downloadNaData() {
+
+    }
+
+    private fun downloadJpData() {
+
+    }
+
+    private fun observeViewModel() {
+        generalViewModel.run {
+
+        }
+    }
+
 
     companion object {
         /**
