@@ -14,6 +14,6 @@ interface MaterialDao {
     @Query("SELECT * FROM material")
     suspend fun getMaterials(): List<MaterialEntity>
 
-    @Query("SELECT * FROM material WHERE id = :id")
-    suspend fun getMaterialById(id: Long): MaterialEntity
+    @Query("SELECT * FROM material WHERE item_id = :itemId AND server = :server")
+    suspend fun getMaterial(itemId: Long, server: String): MaterialEntity
 }

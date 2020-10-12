@@ -14,6 +14,6 @@ interface CommandCodeDao {
     @Query("SELECT * FROM command_code")
     suspend fun getCommandCodes(): List<CommandCodeEntity>
 
-    @Query("SELECT * FROM command_code WHERE id = :id")
-    suspend fun getCommandCodeById(id: Long): CommandCodeEntity
+    @Query("SELECT * FROM command_code WHERE cc_id = :ccId AND server = :server")
+    suspend fun getCommandCode(ccId: Long, server: String): CommandCodeEntity
 }

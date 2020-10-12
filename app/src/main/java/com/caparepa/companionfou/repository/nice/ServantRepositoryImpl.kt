@@ -14,7 +14,7 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
     private val api = ApiClient.invoke()
 
     override suspend fun fetchServant(id: Long): ServantEntity? {
-        return servantDao.getServantById(id)
+        return servantDao.getServantById(id,)
     }
 
     override suspend fun fetchServantList(): List<ServantEntity>? {

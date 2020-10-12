@@ -15,7 +15,7 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
     private val api = ApiClient.invoke()
 
     override suspend fun fetchMysticCode(id: Long): MysticCodeEntity? {
-        return mysticCodeDao.getMysticCodeById(id)
+        return mysticCodeDao.getMysticCode(id,)
     }
 
     //TODO: beware of pagination!!!

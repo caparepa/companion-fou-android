@@ -14,6 +14,6 @@ interface CraftEssenceDao {
     @Query("SELECT * FROM craft_essence")
     suspend fun getCraftEssences(): List<CraftEssenceEntity>
 
-    @Query("SELECT * FROM craft_essence WHERE id = :id")
-    suspend fun getCraftEssenceById(id: Long): CraftEssenceEntity
+    @Query("SELECT * FROM craft_essence WHERE ce_id = :ceId AND server = :server")
+    suspend fun getCraftEssence(ceId: Long, server: String): CraftEssenceEntity
 }

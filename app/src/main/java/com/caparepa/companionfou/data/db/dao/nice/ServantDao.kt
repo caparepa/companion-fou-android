@@ -14,25 +14,26 @@ interface ServantDao {
     @Query("SELECT * FROM servant")
     suspend fun getServants(): List<ServantEntity>
 
-    @Query("SELECT * FROM servant WHERE id = :id")
-    suspend fun getServantById(id: Long): ServantEntity
+    @Query("SELECT * FROM servant WHERE servant_id = :servantId AND server = :server")
+    suspend fun getServantById(servantId: Long, server: String): ServantEntity
 
-    @Query("SELECT * FROM servant WHERE collection_no = :collectionNo")
-    suspend fun getServantByCollectionNo(collectionNo: Long): ServantEntity
+    @Query("SELECT * FROM servant WHERE collection_no = :collectionNo AND server = :server")
+    suspend fun getServantByCollectionNo(collectionNo: Long, server: String): ServantEntity
 
-    @Query("SELECT * FROM servant WHERE class_name = :className")
-    suspend fun getServantByClass(className: String): List<ServantEntity>
+    @Query("SELECT * FROM servant WHERE class_name = :className AND server = :server")
+    suspend fun getServantByClass(className: String, server: String): List<ServantEntity>
 
-    @Query("SELECT * FROM servant WHERE rarity = :rarity")
-    suspend fun getServantByRarity(rarity: Int): List<ServantEntity>
+    @Query("SELECT * FROM servant WHERE rarity = :rarity AND server = :server")
+    suspend fun getServantByRarity(rarity: Int, server: String): List<ServantEntity>
 
-    @Query("SELECT * FROM servant WHERE type = :servantType")
-    suspend fun getServantByType(servantType: String): List<ServantEntity>
+    @Query("SELECT * FROM servant WHERE type = :servantType AND server = :server")
+    suspend fun getServantByType(servantType: String, server: String): List<ServantEntity>
 
-    @Query("SELECT * FROM servant WHERE class_name = :className OR rarity = :rarity OR type = :servantType")
+    @Query("SELECT * FROM servant WHERE class_name = :className OR rarity = :rarity OR type = :servantType AND server = :server")
     suspend fun getServantByFilter(
         className: String,
         rarity: Int,
-        servantType: String
+        servantType: String,
+        server: String
     ): List<ServantEntity>
 }

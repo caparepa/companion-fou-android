@@ -13,7 +13,7 @@ class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) :
     private val api = ApiClient.invoke()
 
     override suspend fun fetchCraftEssence(id: Long): CraftEssenceEntity? {
-        return craftEssenceDao.getCraftEssenceById(id)
+        return craftEssenceDao.getCraftEssence(id, "")
     }
 
     override suspend fun fetchCraftEssenceList(): List<CraftEssenceEntity>? {

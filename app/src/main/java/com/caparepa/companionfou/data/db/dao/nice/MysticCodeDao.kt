@@ -15,10 +15,10 @@ interface MysticCodeDao {
     @Query("SELECT * FROM mystic_code")
     suspend fun getMysticCodeList(): List<MysticCodeEntity>
 
-    @Query("SELECT * FROM mystic_code WHERE id = :id")
-    suspend fun getMysticCodeById(id: Long): MysticCodeEntity
+    @Query("SELECT * FROM mystic_code WHERE mc_id = :mcId AND server = :server")
+    suspend fun getMysticCode(mcId: Long, server: String): MysticCodeEntity
 
-    @Query("SELECT * FROM mystic_code WHERE name LIKE :nameQuery")
-    suspend fun getMysticCodeByName(nameQuery: String): List<MysticCodeEntity>
+    @Query("SELECT * FROM mystic_code WHERE name LIKE :nameQuery AND server = :server")
+    suspend fun getMysticCodeByName(nameQuery: String, server: String): List<MysticCodeEntity>
 
 }
