@@ -4,15 +4,6 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.general.*
-import com.caparepa.companionfou.data.model.general.attackrate.ClassAttackRate
-import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
-import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
-import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
-import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
-import com.caparepa.companionfou.data.model.general.other.ApiInfo
-import com.caparepa.companionfou.data.model.general.other.GameConstants
-import com.caparepa.companionfou.data.model.general.other.GameEnums
-import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import com.caparepa.companionfou.repository.general.GeneralDataRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.*
@@ -42,16 +33,16 @@ class GeneralDataViewModel(
     val allEnumsResult = MutableLiveData<GameEnumsEntity>()
     val traitMappingResult = MutableLiveData<ServantTraitEntity>()
 
-    val apiInfoResponse = MutableLiveData<ApiInfo>()
-    val attributeRelationResponse = MutableLiveData<AttributeRelation>()
-    val classAttackRateResponse = MutableLiveData<ClassAttackRate>()
-    val classRelationResponse = MutableLiveData<ClassRelationList>()
-    val faceCardResponse = MutableLiveData<FaceCardList>()
-    val constantsResponse = MutableLiveData<GameConstants>()
-    val buffActionListResponse = MutableLiveData<BuffActionList>()
-    val userLevelResponse = MutableLiveData<UserLevelList>()
-    val allEnumsResponse = MutableLiveData<GameEnums>()
-    val traitMappingResponse = MutableLiveData<Map<Int, String>?>()
+    val apiInfoResponseOk = MutableLiveData<Boolean>()
+    val attributeRelationResponseOk = MutableLiveData<Boolean>()
+    val classAttackRateResponseOk = MutableLiveData<Boolean>()
+    val classRelationResponseOk = MutableLiveData<Boolean>()
+    val faceCardResponseOk = MutableLiveData<Boolean>()
+    val constantsResponseOk = MutableLiveData<Boolean>()
+    val buffActionListResponseOk = MutableLiveData<Boolean>()
+    val userLevelResponseOk = MutableLiveData<Boolean>()
+    val allEnumsResponseOk = MutableLiveData<Boolean>()
+    val traitMappingResponseOk = MutableLiveData<Boolean>()
 
     /**
      * Check this first
@@ -109,12 +100,9 @@ class GeneralDataViewModel(
         with(result) {
             onSuccess {
                 loadingState.postValue(false)
-                logger(LOG_DEBUG, TAG, "fetchApiInfoAsync -> $it")
-                logger(LOG_DEBUG, TAG, "fetchApiInfoAsync -> Hay data!")
                 apiInfoResult.postValue(it)
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "fetchApiInfoAsync -> No hay data! Error!")
                 onError.postValue(it.message)
             }
         }
@@ -133,15 +121,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getApiInfoAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getApiInfoAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_API_INFO)
+                    apiInfoResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getApiInfoAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_API_INFO)
+                apiInfoResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -189,15 +174,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_ATTRIBUTE_RELATION)
+                    attributeRelationResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_ATTRIBUTE_RELATION)
+                attributeRelationResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -245,15 +227,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_CLASS_ATTACK_RATE)
+                    classAttackRateResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_CLASS_ATTACK_RATE)
+                classAttackRateResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -301,15 +280,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getClassRelationAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getClassRelationAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_CLASS_RELATION)
+                    classRelationResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getClassRelationAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_CLASS_RELATION)
+                classRelationResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -357,15 +333,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getFaceCardAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getFaceCardAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_FACE_CARD)
+                    faceCardResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getFaceCardAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_FACE_CARD)
+                faceCardResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -413,15 +386,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getConstantsAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getConstantsAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_GAME_CONSTANTS)
+                    constantsResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getConstantsAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_GAME_CONSTANTS)
+                constantsResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -469,15 +439,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_BUFF_ACTION_LIST)
+                    buffActionListResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_BUFF_ACTION_LIST)
+                buffActionListResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -525,15 +492,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getUserLevelAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getUserLevelAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_USER_LEVEL)
+                    userLevelResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getUserLevelAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_USER_LEVEL)
+                userLevelResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -581,15 +545,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_ALL_ENUMS)
+                    allEnumsResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_ALL_ENUMS)
+                allEnumsResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }
@@ -637,15 +598,12 @@ class GeneralDataViewModel(
 
         with(result) {
             onSuccess {
-                logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> $it")
                 it?.let {
-                    logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> API DATA!")
-                    onGetSuccess.postValue(OGS_TRAIT_MAPPING)
+                    traitMappingResponseOk.postValue(true)
                 }
             }
             onFailure {
-                logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> NO API DATA! Error!")
-                onGetError.postValue(OGS_TRAIT_MAPPING)
+                traitMappingResponseOk.postValue(false)
                 onError.postValue(it.message)
             }
         }

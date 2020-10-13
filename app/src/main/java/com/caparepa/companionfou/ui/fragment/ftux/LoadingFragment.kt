@@ -139,22 +139,6 @@ class LoadingFragment : Fragment(), KoinComponent {
                     downloadGameData(REGION_JP)
                 }
             })
-            onGetSuccess.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvSuccessValue.text = it
-                    downloadOkPool.add(it)
-                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
-                }
-            })
-            onGetError.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvErrorValue.text = it
-                    downloadErrorPool.add(it)
-                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
-                }
-            })
             onError.observe(viewLifecycleOwner, Observer {
                 it?.let {
                     tvErrorValue.text = it
@@ -162,91 +146,32 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
         }
         commandCodeViewModel.run {
-            onGetSuccess.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    tvSuccessValue.text = it
-                    downloadOkPool.add(it)
-                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
-                }
+            onError.observe(viewLifecycleOwner, Observer{
+
             })
-            onGetError.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    tvErrorValue.text = it
-                    downloadErrorPool.add(it)
-                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
-                }
-            })
+
         }
         craftEssenceViewModel.run {
-            onGetSuccess.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvSuccessValue.text = it
-                    downloadOkPool.add(it)
-                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
-                }
+            onError.observe(viewLifecycleOwner, Observer{
+
             })
-            onGetError.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvErrorValue.text = it
-                    downloadErrorPool.add(it)
-                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
-                }
-            })
+
         }
         materialViewModel.run {
-            onGetSuccess.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvSuccessValue.text = it
-                    downloadOkPool.add(it)
-                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
-                }
+            onError.observe(viewLifecycleOwner, Observer{
+
             })
-            onGetError.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvErrorValue.text = it
-                    downloadErrorPool.add(it)
-                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
-                }
-            })
+
         }
         mysticCodeViewModel.run {
-            onGetSuccess.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvSuccessValue.text = it
-                    downloadOkPool.add(it)
-                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
-                }
+            onError.observe(viewLifecycleOwner, Observer{
+
             })
-            onGetError.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvErrorValue.text = it
-                    downloadErrorPool.add(it)
-                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
-                }
-            })
+
         }
         servantViewModel.run {
-            onGetSuccess.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvSuccessValue.text = it
-                    downloadOkPool.add(it)
-                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
-                }
-            })
-            onGetError.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvErrorValue.text = it
-                    downloadErrorPool.add(it)
-                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
-                }
+            onError.observe(viewLifecycleOwner, Observer{
+
             })
         }
     }
