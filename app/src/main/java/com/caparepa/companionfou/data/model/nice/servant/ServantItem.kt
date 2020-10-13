@@ -3,6 +3,7 @@ package com.caparepa.companionfou.data.model.nice.servant
 import com.caparepa.companionfou.data.model.common.ExtraAssets
 import com.caparepa.companionfou.data.model.common.SkillItem
 import com.google.gson.JsonArray
+import com.google.gson.JsonElement
 
 import com.google.gson.annotations.SerializedName
 
@@ -25,7 +26,7 @@ data class ServantItem(
     val lvMax: Int? = null,
     /** ExtraAssets? **/
     @SerializedName("extraAssets")
-    val extraAssets: String? = null,
+    val extraAssets: JsonElement? = null,
     @SerializedName("gender")
     val gender: String? = null,
     @SerializedName("attribute")
@@ -44,7 +45,7 @@ data class ServantItem(
     val cards: JsonArray? = null,
     /** HitsDistribution? **/
     @SerializedName("hitsDistribution")
-    val hitsDistribution: String? = null,
+    val hitsDistribution: JsonElement? = null,
     @SerializedName("atkBase")
     val atkBase: Int? = null,
     @SerializedName("atkMax")
@@ -68,16 +69,16 @@ data class ServantItem(
     val bondEquip: Int? = null,
     /** SkillMaterials? **/
     @SerializedName("ascensionMaterials")
-    val ascensionMaterials: String? = null,
+    val ascensionMaterials: JsonElement? = null,
     /** SkillMaterials? **/
     @SerializedName("skillMaterials")
-    val skillMaterials: String? = null,
+    val skillMaterials: JsonElement? = null,
     /** SkillMaterials? **/
     @SerializedName("costumeMaterials")
-    val costumeMaterials: String? = null,
+    val costumeMaterials: JsonElement? = null,
     /** Script? **/
     @SerializedName("script")
-    val script: String? = null,
+    val script: JsonElement? = null,
     /** List<SkillItem?>? **/
     @SerializedName("skills")
     val skills: JsonArray? = null,
@@ -89,5 +90,5 @@ data class ServantItem(
     val noblePhantasms: JsonArray? = null,
     /** ServantProfile? **/
     @SerializedName("profile")
-    val profile: String? = null
+    val profile: JsonElement? = null
 )

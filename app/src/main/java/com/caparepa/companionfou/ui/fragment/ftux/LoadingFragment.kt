@@ -70,28 +70,17 @@ class LoadingFragment : Fragment(), KoinComponent {
         observeViewModels()
     }
 
-    private fun setDownloadLabels(
-        nowLoading: String,
-        finishedLoading: String,
-        okPool: String,
-        errorPool: String
-    ) {
-        tvSuccessValue.text = nowLoading
-        tvErrorValue.text = finishedLoading
-        tvOkPoolValue.text = okPool
-        tvErrorPoolValue.text = errorPool
-    }
-
     private fun observeDownloadViewModel() {
         downloadViewModel.run {
             dataDownloadOkPool.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
-                    tvOkPoolValue.text = "${it.size} OK"
+                    val size = "${it.size}"
+                    tvOkPoolValue.text = "$size OK"
                     if (it.size >= 29)
-                        requireActivity().toastLong("ALL OK!!!")
+                        requireActivity().toastLong("$size ALL OK!!!")
                     else
-                        requireActivity().toastLong("NOT ALL OK!!!")
+                        requireActivity().toastLong("$size NOT ALL OK!!!")
                 }
             })
             dataDownloadErrorPool.observe(viewLifecycleOwner, Observer {
@@ -107,23 +96,23 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun downloadGeneralData(server: String) {
         generalViewModel.getApiInfo()
-//        generalViewModel.getAttributeRelation(server)
-//        generalViewModel.getBuffActionList(server)
-//        generalViewModel.getClassAttackRate(server)
-//        generalViewModel.getClassRelation(server)
-//        generalViewModel.getConstants(server)
-//        generalViewModel.getFaceCard(server)
-//        generalViewModel.getGameEnums(server)
-//        generalViewModel.getTraitMapping(server)
-//        generalViewModel.getUserLevel(server)
+        generalViewModel.getAttributeRelation(server)
+        generalViewModel.getBuffActionList(server)
+        generalViewModel.getClassAttackRate(server)
+        generalViewModel.getClassRelation(server)
+        generalViewModel.getConstants(server)
+        generalViewModel.getFaceCard(server)
+        generalViewModel.getGameEnums(server)
+        generalViewModel.getTraitMapping(server)
+        generalViewModel.getUserLevel(server)
     }
 
     private fun downloadGameData(server: String) {
         commandCodeViewModel.getCommandCodes(server)
-//        craftEssenceViewModel.getCraftEssences(server)
-//        materialViewModel.getMaterials(server)
-//        mysticCodeViewModel.getMysticCodes(server)
-//        servantViewModel.getServants(server)
+        craftEssenceViewModel.getCraftEssences(server)
+        materialViewModel.getMaterials(server)
+        mysticCodeViewModel.getMysticCodes(server)
+        servantViewModel.getServants(server)
     }
 
     private fun observeViewModels() {

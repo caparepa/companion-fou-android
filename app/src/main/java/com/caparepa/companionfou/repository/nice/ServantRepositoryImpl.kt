@@ -52,7 +52,7 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
                     item.rarity,
                     item.cost,
                     item.lvMax,
-                    item.extraAssets,
+                    item.extraAssets.toString(),
                     item.gender,
                     item.attribute,
                     item.traits?.toJsonString(),
@@ -60,7 +60,7 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
                     item.starGen,
                     item.instantDeathChance,
                     item.cards?.toJsonString(),
-                    item.hitsDistribution,
+                    item.hitsDistribution.toString(),
                     item.atkBase,
                     item.atkMax,
                     item.hpBase,
@@ -70,14 +70,14 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
                     item.hpGrowth?.toJsonString(),
                     item.bondGrowth?.toJsonString(),
                     item.bondEquip,
-                    item.ascensionMaterials,
-                    item.skillMaterials,
-                    item.costumeMaterials,
-                    item.script,
+                    item.ascensionMaterials.toString(),
+                    item.skillMaterials.toString(),
+                    item.costumeMaterials.toString(),
+                    item.script.toString(),
                     item.skills?.toJsonString(),
                     item.classPassive?.toJsonString(),
                     item.noblePhantasms?.toJsonString(),
-                    item.profile
+                    item.profile.toString()
                 )
                 servantDao.upsert(entity)
             }
