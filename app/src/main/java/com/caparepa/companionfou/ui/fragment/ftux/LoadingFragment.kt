@@ -107,23 +107,23 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun downloadGeneralData(server: String) {
         generalViewModel.getApiInfo()
-        generalViewModel.getAttributeRelation(server)
-        generalViewModel.getBuffActionList(server)
-        generalViewModel.getClassAttackRate(server)
-        generalViewModel.getClassRelation(server)
-        generalViewModel.getConstants(server)
-        generalViewModel.getFaceCard(server)
-        generalViewModel.getGameEnums(server)
-        generalViewModel.getTraitMapping(server)
-        generalViewModel.getUserLevel(server)
+//        generalViewModel.getAttributeRelation(server)
+//        generalViewModel.getBuffActionList(server)
+//        generalViewModel.getClassAttackRate(server)
+//        generalViewModel.getClassRelation(server)
+//        generalViewModel.getConstants(server)
+//        generalViewModel.getFaceCard(server)
+//        generalViewModel.getGameEnums(server)
+//        generalViewModel.getTraitMapping(server)
+//        generalViewModel.getUserLevel(server)
     }
 
     private fun downloadGameData(server: String) {
         commandCodeViewModel.getCommandCodes(server)
-        craftEssenceViewModel.getCraftEssences(server)
-        materialViewModel.getMaterials(server)
-        mysticCodeViewModel.getMysticCodes(server)
-        servantViewModel.getServants(server)
+//        craftEssenceViewModel.getCraftEssences(server)
+//        materialViewModel.getMaterials(server)
+//        mysticCodeViewModel.getMysticCodes(server)
+//        servantViewModel.getServants(server)
     }
 
     private fun observeViewModels() {

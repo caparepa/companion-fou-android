@@ -54,7 +54,7 @@ class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) :
                     item.rarity,
                     item.cost,
                     item.lvMax,
-                    item.extraAssets,
+                    item.extraAssets.toString(),
                     item.atkBase,
                     item.atkMax,
                     item.hpBase,
