@@ -267,7 +267,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun fetchClassRelationAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.fetchClassRelation(server)
+        }
 
         with(result) {
             onSuccess {
@@ -323,7 +326,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun fetchFaceCardAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.fetchFaceCard(server)
+        }
 
         with(result) {
             onSuccess {
@@ -379,7 +385,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun fetchConstantsAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.fetchGameConstants(server)
+        }
 
         with(result) {
             onSuccess {
@@ -435,7 +444,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun fetchBuffActionListAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.fetchBuffActionList(server)
+        }
 
         with(result) {
             onSuccess {
@@ -491,7 +503,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun fetchUserLevelAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.fetchUserLevel(server)
+        }
 
         with(result) {
             onSuccess {
@@ -547,7 +562,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun fetchGameEnumsAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.fetchGameEnums(server)
+        }
 
         with(result) {
             onSuccess {
