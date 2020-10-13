@@ -12,6 +12,7 @@ import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.*
 import com.caparepa.companionfou.utils.*
+import kotlinx.android.synthetic.main.fragment_loading.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 
@@ -39,8 +40,10 @@ class LoadingFragment : Fragment(), KoinComponent {
     private val servantViewModel: ServantViewModel by sharedViewModel()
 
     private lateinit var loadingDialog: LoadingDialog
-    private var downloadOkPool: ArrayList<String> = arrayListOf() //there should be 20 elements here at the end
-    private var downloadErrorPool: ArrayList<String> = arrayListOf() //there should be 10 elements here at the end
+    private var downloadOkPool: ArrayList<String> =
+        arrayListOf() //there should be 20 elements here at the end
+    private var downloadErrorPool: ArrayList<String> =
+        arrayListOf() //there should be 10 elements here at the end
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,12 +70,25 @@ class LoadingFragment : Fragment(), KoinComponent {
         observeViewModels()
     }
 
+    private fun setDownloadLabels(
+        nowLoading: String,
+        finishedLoading: String,
+        okPool: String,
+        errorPool: String
+    ) {
+        tvSuccessValue.text = nowLoading
+        tvErrorValue.text = finishedLoading
+        tvOkPoolValue.text = okPool
+        tvErrorPoolValue.text = errorPool
+    }
+
     private fun observeDownloadViewModel() {
         downloadViewModel.run {
             dataDownloadOkPool.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
-                    if(it.size >= 29)
+                    tvOkPoolValue.text = "${it.size} OK"
+                    if (it.size >= 29)
                         requireActivity().toastLong("ALL OK!!!")
                     else
                         requireActivity().toastLong("NOT ALL OK!!!")
@@ -81,22 +97,11 @@ class LoadingFragment : Fragment(), KoinComponent {
             dataDownloadErrorPool.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
-                    if(it.size > 0)
+                    tvErrorPoolValue.text = "${it.size} ERROR"
+                    if (it.size > 0)
                         requireActivity().toastLong("ERROR!!!")
                 }
             })
-            /*downloadPool.observe(viewLifecycleOwner, Observer{
-                it?.let{
-                    if(it.size == 2) {
-                        requireActivity().toastLong("OK! NAVIGATE!")
-                        with(findNavController()) {
-                            navigate(LoadingFragmentDirections.actionLoadingFragmentToBottomNav())
-                        }
-                    } else {
-                        requireActivity().toastLong("ERROR! FACK!")
-                    }
-                }
-            })*/
         }
     }
 
@@ -143,6 +148,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvSuccessValue.text = it
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
@@ -150,20 +156,28 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetError.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvErrorValue.text = it
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
+                }
+            })
+            onError.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    tvErrorValue.text = it
                 }
             })
         }
         commandCodeViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
+                    tvSuccessValue.text = it
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
                 it?.let {
+                    tvErrorValue.text = it
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
@@ -173,6 +187,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvSuccessValue.text = it
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
@@ -180,6 +195,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetError.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvErrorValue.text = it
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
@@ -189,6 +205,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvSuccessValue.text = it
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
@@ -196,6 +213,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetError.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvErrorValue.text = it
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
@@ -205,6 +223,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvSuccessValue.text = it
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
@@ -212,6 +231,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetError.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvErrorValue.text = it
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
@@ -221,6 +241,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvSuccessValue.text = it
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
@@ -228,6 +249,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             onGetError.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
+                    tvErrorValue.text = it
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
