@@ -4,6 +4,15 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.general.*
+import com.caparepa.companionfou.data.model.general.attackrate.ClassAttackRate
+import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
+import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
+import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
+import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
+import com.caparepa.companionfou.data.model.general.other.ApiInfo
+import com.caparepa.companionfou.data.model.general.other.GameConstants
+import com.caparepa.companionfou.data.model.general.other.GameEnums
+import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import com.caparepa.companionfou.repository.general.GeneralDataRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.*
@@ -32,6 +41,17 @@ class GeneralDataViewModel(
     val userLevelResult = MutableLiveData<UserLevelEntity>()
     val allEnumsResult = MutableLiveData<GameEnumsEntity>()
     val traitMappingResult = MutableLiveData<ServantTraitEntity>()
+
+    val apiInfoResponse = MutableLiveData<ApiInfo>()
+    val attributeRelationResponse = MutableLiveData<AttributeRelation>()
+    val classAttackRateResponse = MutableLiveData<ClassAttackRate>()
+    val classRelationResponse = MutableLiveData<ClassRelationList>()
+    val faceCardResponse = MutableLiveData<FaceCardList>()
+    val constantsResponse = MutableLiveData<GameConstants>()
+    val buffActionListResponse = MutableLiveData<BuffActionList>()
+    val userLevelResponse = MutableLiveData<UserLevelList>()
+    val allEnumsResponse = MutableLiveData<GameEnums>()
+    val traitMappingResponse = MutableLiveData<Map<Int, String>?>()
 
     /**
      * Check this first

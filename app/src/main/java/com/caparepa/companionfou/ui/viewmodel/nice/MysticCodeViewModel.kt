@@ -19,6 +19,7 @@ class MysticCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
+    val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>>()
     val mysticCodeListResult = MutableLiveData<List<MysticCodeEntity>>()
     val mysticCodeResult = MutableLiveData<MysticCodeEntity>()
 

@@ -16,6 +16,7 @@ import org.koin.core.KoinComponent
 class MaterialViewModel(val context: Context, private val materialRepository: MaterialRepository) :
     BaseViewModel(), KoinComponent {
 
+    val materialListResponse = MutableLiveData<List<MaterialItem>>()
     val materialListResult = MutableLiveData<List<MaterialEntity>>()
     val materialItemResult = MutableLiveData<MaterialEntity>()
 

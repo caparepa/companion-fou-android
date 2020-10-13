@@ -16,6 +16,7 @@ import org.koin.core.KoinComponent
 class ServantViewModel(val context: Context, private val servantRepository: ServantRepository) :
     BaseViewModel(), KoinComponent {
 
+    val servantListResponse = MutableLiveData<List<ServantItem>>()
     val servantListResult = MutableLiveData<List<ServantEntity>>()
     val servantItemResult = MutableLiveData<ServantEntity>()
 
