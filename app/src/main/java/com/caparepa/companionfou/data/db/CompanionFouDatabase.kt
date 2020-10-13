@@ -56,6 +56,7 @@ abstract class CompanionFouDatabase : RoomDatabase() {
     abstract fun getFaceCardDao(): FaceCardDao
     abstract fun getGameEnumsDao(): GameEnumsDao
     abstract fun getUserLevelDao(): UserLevelDao
+    abstract fun getUserConstantsDao(): GameConstantsDao
 
     //nice
     abstract fun getCommandCodeDao(): CommandCodeDao

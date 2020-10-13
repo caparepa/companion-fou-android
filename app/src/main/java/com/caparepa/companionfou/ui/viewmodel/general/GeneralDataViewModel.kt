@@ -388,7 +388,9 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getConstantsAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.getGameConstants(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -441,7 +443,9 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getBuffActionListAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.getBuffActionList(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -494,7 +498,9 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getUserLevelAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.getUserLevel(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -547,7 +553,9 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getGameEnumsAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.getGameEnums(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -579,7 +587,9 @@ class GeneralDataViewModel(
     }
 
     private suspend fun fetchTraitMappingAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.getTraitMapping(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -600,7 +610,9 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getTraitMappingAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            generalDataRepository.getTraitMapping(server, currentDate)
+        }
 
         with(result) {
             onSuccess {

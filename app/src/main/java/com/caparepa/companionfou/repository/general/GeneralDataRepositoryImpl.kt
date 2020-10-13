@@ -8,6 +8,7 @@ import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
 import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
+import com.caparepa.companionfou.data.model.general.other.GameConstants
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
 import com.caparepa.companionfou.data.model.other.LatestApiInfo
@@ -38,6 +39,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     private val faceCardDao: FaceCardDao by inject()
     private val gameEnumsDao: GameEnumsDao by inject()
     private val userLevelDao: UserLevelDao by inject()
+    private val gameConstantsDao: GameConstantsDao by inject()
 
     //Function override
 
@@ -430,6 +432,129 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun fetchGameEnums(server: String): GameEnumsEntity? {
         return gameEnumsDao.getGameEnumsData(server)
+    }
+
+    override suspend fun getGameConstants(server: String, currentDate: String): GameConstants? =
+        withContext(Dispatchers.IO) {
+            try {
+                val response = api.getConstants(currentDate)
+                persistGameConstants(server, response.body())
+                response.body()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
+        }
+
+    override suspend fun persistGameConstants(server: String, item: GameConstants?) {
+        item?.let {
+            val entity = GameConstantsEntity(
+                server,
+                it.attackRate,
+                it.attackRateRandomMax,
+                it.attackRateRandomMin,
+                it.backsideClassImageId,
+                it.backsideSvtEquipImageId,
+                it.backsideSvtImageId,
+                it.battleEffectIdAvoidance,
+                it.battleEffectIdAvoidancePierce,
+                it.battleEffectIdInvincible,
+                it.battleEffectIdInvinciblePierce,
+                it.battleItemDispColumn,
+                it.bpExpression,
+                it.chainbonusArtsRate,
+                it.chainbonusBusterRate,
+                it.chainbonusQuick,
+                it.commandArts,
+                it.commandBuster,
+                it.commandCardPrmUpMax,
+                it.commandCodeDetachingItemId,
+                it.commandQuick,
+                it.criticalAttackRate,
+                it.criticalIndividuality,
+                it.criticalRatePerStar,
+                it.criticalStarRate,
+                it.criticalTdPointRate,
+                it.deckMax,
+                it.enemyAttackRateArts,
+                it.enemyAttackRateBuster,
+                it.enemyAttackRateQuick,
+                it.enemyMaxBattleCount,
+                it.extraAttackRateGrand,
+                it.extraAttackRateSingle,
+                it.extraCriticalRate,
+                it.followerListExpireAt,
+                it.followerRefreshResetTime,
+                it.followFriendPoint,
+                it.friendNum,
+                it.fullTdPoint,
+                it.heroineChangecardvoice,
+                it.hydeSvtId,
+                it.jekyllSvtId,
+                it.largeSuccessMultExp,
+                it.largeSuccessRate,
+                it.mashuChangeQuestId,
+                it.mashuChangeWarId,
+                it.mashuSvtId1,
+                it.mashuSvtId2,
+                it.maxBlackListNum,
+                it.maxCommandSpell,
+                it.maxDropFactor,
+                it.maxEventPoint,
+                it.maxExpFactor,
+                it.maxFriendpoint,
+                it.maxFriendpointBoostItemDailyReceive,
+                it.maxFriendpointBoostItemUse,
+                it.maxFriendshipRank,
+                it.maxFriendCode,
+                it.maxFriendHistoryNum,
+                it.maxFriendShipUpRatio,
+                it.maxMana,
+                it.maxNearPresentOffsetNum,
+                it.maxPresentBoxHistoryNum,
+                it.maxPresentBoxNum,
+                it.maxPresentReceiveNum,
+                it.maxQp,
+                it.maxQpDropUpRatio,
+                it.maxQpFactor,
+                it.maxRarePri,
+                it.maxRp,
+                it.maxStone,
+                it.maxUserCommandCode,
+                it.maxUserEquipExpUpRatio,
+                it.maxUserItem,
+                it.maxUserLv,
+                it.maxUserSvt,
+                it.maxUserSvtEquip,
+                it.maxUserSvtEquipStorage,
+                it.maxUserSvtStorage,
+                it.menuChange,
+                it.overKillNpRate,
+                it.overKillStarAdd,
+                it.overKillStarRate,
+                it.starRateMax,
+                it.statusUpAdjustAtk,
+                it.statusUpAdjustHp,
+                it.statusUpBuff,
+                it.superSuccessMultExp,
+                it.superSuccessRate,
+                it.supportDeckMax,
+                it.swimsuitMeltSvtId,
+                it.tamamocatStunBuffId,
+                it.tamamocatTreasureDeviceId1,
+                it.tamamocatTreasureDeviceId2,
+                it.temporaryIgnoreSleepModeForTreasureDeviceSvtId1,
+                it.temporaryIgnoreSleepModeForTreasureDeviceSvtId2,
+                it.treasuredeviceIdMashu3,
+                it.userAct,
+                it.userCost
+            )
+            gameConstantsDao.upsert(entity)
+        }
+    }
+
+    override suspend fun fetchGameConstants(server: String): GameConstantsEntity? {
+        return gameConstantsDao.getGameConstantsData(server)
     }
 
 }

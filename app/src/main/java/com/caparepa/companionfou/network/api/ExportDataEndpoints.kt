@@ -6,6 +6,7 @@ import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
 import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
+import com.caparepa.companionfou.data.model.general.other.GameConstants
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
 import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
@@ -58,7 +59,7 @@ interface ExportDataEndpoints {
     @GET("{current_date}/{region}/general/NiceConstants.json")
     suspend fun getConstants(
         @Path(value = "current_date", encoded = true) currentDate: String
-    ): Response<ResponseBody>
+    ): Response<GameConstants>
 
     //Buff Action Info
     @GET("{current_date}/{region}/general/NiceBuffList.ActionList.json.json")

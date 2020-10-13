@@ -7,6 +7,7 @@ import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
 import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
 import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
 import com.caparepa.companionfou.data.model.general.other.ApiInfo
+import com.caparepa.companionfou.data.model.general.other.GameConstants
 import com.caparepa.companionfou.data.model.general.other.GameEnums
 import com.caparepa.companionfou.data.model.general.userlevel.UserLevelDetail
 import com.caparepa.companionfou.data.model.other.LatestApiInfo
@@ -50,4 +51,8 @@ interface GeneralDataRepository {
     suspend fun getGameEnums(server: String, currentDate: String): GameEnums?
     suspend fun persistGameEnums(server: String, item: GameEnums?)
     suspend fun fetchGameEnums(server: String): GameEnumsEntity?
+
+    suspend fun getGameConstants(server: String, currentDate: String): GameConstants?
+    suspend fun persistGameConstants(server: String, item: GameConstants?)
+    suspend fun fetchGameConstants(server: String): GameConstantsEntity?
 }

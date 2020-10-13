@@ -103,6 +103,10 @@ val databaseModule = module {
         return database.getUserLevelDao()
     }
 
+    fun provideGameConstantsDao(database: CompanionFouDatabase): GameConstantsDao {
+        return database.getUserConstantsDao()
+    }
+
     //general
     fun provideCommandCodeDao(database: CompanionFouDatabase): CommandCodeDao {
         return database.getCommandCodeDao()
@@ -143,6 +147,7 @@ val databaseModule = module {
     single { provideFaceCardDao(get()) }
     single { provideGameEnumsDao(get()) }
     single { provideUserLevelDao(get()) }
+    single { provideGameConstantsDao(get()) }
 
     //nice
     single { provideCommandCodeDao(get()) }
