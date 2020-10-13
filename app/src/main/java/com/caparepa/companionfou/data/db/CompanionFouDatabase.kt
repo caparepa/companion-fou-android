@@ -28,6 +28,7 @@ import com.caparepa.companionfou.data.db.entity.nice.*
         GameEnumsEntity::class,
         ServantTraitEntity::class,
         UserLevelEntity::class,
+        GameConstantsEntity::class,
         CommandCodeEntity::class,
         CraftEssenceEntity::class,
         MaterialEntity::class,

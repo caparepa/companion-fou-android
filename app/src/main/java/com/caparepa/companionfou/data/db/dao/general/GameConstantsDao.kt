@@ -12,7 +12,7 @@ interface GameConstantsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: GameConstantsEntity)
 
-    @Query("SELECT * FROM game_enums WHERE server = :server")
+    @Query("SELECT * FROM game_constants WHERE server = :server")
     suspend fun getGameConstantsData(server: String): GameConstantsEntity?
 
 }
