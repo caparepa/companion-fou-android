@@ -124,7 +124,12 @@ class LoadingFragment : Fragment(), KoinComponent {
     private fun observeViewModels() {
         generalViewModel.run {
             loadingState.observe(viewLifecycleOwner, Observer {
-
+                if (it) {
+                    loadingDialog.setCanceledOnTouchOutside(false)
+                    loadingDialog.show()
+                } else {
+                    loadingDialog.dismiss()
+                }
             })
             currentDateResult.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
