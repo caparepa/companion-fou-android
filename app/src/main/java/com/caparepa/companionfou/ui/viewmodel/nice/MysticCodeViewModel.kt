@@ -4,11 +4,9 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
-import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.OGS_MYSTIC_CODE
-import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
@@ -19,7 +17,7 @@ class MysticCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
-    val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>>()
+    val mysticCodeListResponseOk = MutableLiveData<Boolean>()
     val mysticCodeListResult = MutableLiveData<List<MysticCodeEntity>>()
     val mysticCodeResult = MutableLiveData<MysticCodeEntity>()
 
@@ -48,12 +46,12 @@ class MysticCodeViewModel(
         with(result) {
             onSuccess {
                 it?.let {
-                    onGetSuccess.postValue(OGS_MYSTIC_CODE)
+                    mysticCodeListResponseOk.postValue(true)
                 }
             }
             onFailure {
-                onGetError.postValue(OGS_MYSTIC_CODE)
                 onError.postValue(it.message)
+                mysticCodeListResponseOk.postValue(false)
             }
         }
     }

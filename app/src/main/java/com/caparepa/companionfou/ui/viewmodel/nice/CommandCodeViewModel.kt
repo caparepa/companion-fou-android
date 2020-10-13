@@ -19,7 +19,7 @@ class CommandCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
-    val commandCodeListResponse = MutableLiveData<List<CommandCodeItem>>()
+    val commandCodeListResponseOk = MutableLiveData<Boolean>()
     val commandCodeListResult = MutableLiveData<List<CommandCodeEntity>>()
     val commandCodeItemResult = MutableLiveData<CommandCodeEntity>()
 
@@ -48,12 +48,12 @@ class CommandCodeViewModel(
         with(result) {
             onSuccess {
                 it?.let {
-                    onGetSuccess.postValue(OGS_COMMAND_CODE)
+                    commandCodeListResponseOk.postValue(true)
                 }
             }
             onFailure {
-                onGetError.postValue(OGS_COMMAND_CODE)
                 onError.postValue(it.message)
+                commandCodeListResponseOk.postValue(true)
             }
         }
     }

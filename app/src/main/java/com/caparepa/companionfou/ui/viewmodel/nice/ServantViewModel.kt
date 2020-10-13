@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
-import com.caparepa.companionfou.data.model.nice.servant.ServantItem
 import com.caparepa.companionfou.repository.nice.ServantRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.OGS_SERVANT
@@ -16,7 +15,7 @@ import org.koin.core.KoinComponent
 class ServantViewModel(val context: Context, private val servantRepository: ServantRepository) :
     BaseViewModel(), KoinComponent {
 
-    val servantListResponse = MutableLiveData<List<ServantItem>>()
+    val servantListResponseOk = MutableLiveData<Boolean>()
     val servantListResult = MutableLiveData<List<ServantEntity>>()
     val servantItemResult = MutableLiveData<ServantEntity>()
 
@@ -45,12 +44,12 @@ class ServantViewModel(val context: Context, private val servantRepository: Serv
         with(result) {
             onSuccess {
                 it?.let {
-                    onGetSuccess.postValue(OGS_SERVANT)
+                    servantListResponseOk.postValue(true)
                 }
             }
             onFailure {
-                onGetError.postValue(OGS_SERVANT)
                 onError.postValue(it.message)
+                servantListResponseOk.postValue(false)
             }
         }
     }

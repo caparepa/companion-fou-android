@@ -16,7 +16,7 @@ import org.koin.core.KoinComponent
 class MaterialViewModel(val context: Context, private val materialRepository: MaterialRepository) :
     BaseViewModel(), KoinComponent {
 
-    val materialListResponse = MutableLiveData<List<MaterialItem>>()
+    val materialListResponseOk = MutableLiveData<Boolean>()
     val materialListResult = MutableLiveData<List<MaterialEntity>>()
     val materialItemResult = MutableLiveData<MaterialEntity>()
 
@@ -45,12 +45,12 @@ class MaterialViewModel(val context: Context, private val materialRepository: Ma
         with(result) {
             onSuccess {
                 it?.let {
-                    onGetSuccess.postValue(OGS_MATERIAL)
+                    materialListResponseOk.postValue(true)
                 }
             }
             onFailure {
-                onGetError.postValue(OGS_MATERIAL)
                 onError.postValue(it.message)
+                materialListResponseOk.postValue(false)
             }
         }
     }

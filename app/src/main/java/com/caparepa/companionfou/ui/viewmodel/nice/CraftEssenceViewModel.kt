@@ -19,7 +19,7 @@ class CraftEssenceViewModel(
     private val craftEssenceRepository: CraftEssenceRepository
 ) : BaseViewModel(), KoinComponent {
 
-    val craftEssenceListResponse = MutableLiveData<List<CraftEssenceItem>>()
+    val craftEssenceListResponseOk = MutableLiveData<Boolean>()
     val craftEssenceListResult = MutableLiveData<List<CraftEssenceEntity>>()
     val craftEssenceItemResult = MutableLiveData<CraftEssenceEntity>()
 
@@ -48,12 +48,12 @@ class CraftEssenceViewModel(
         with(result){
             onSuccess {
                 it?.let {
-                    onGetSuccess.postValue(OGS_CRAFT_ESSENCE)
+                    craftEssenceListResponseOk.postValue(true)
                 }
             }
             onFailure {
-                onGetError.postValue(OGS_CRAFT_ESSENCE)
                 onError.postValue(it.message)
+                craftEssenceListResponseOk.postValue(false)
             }
         }
     }
