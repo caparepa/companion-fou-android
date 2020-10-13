@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
@@ -76,17 +75,17 @@ class LoadingFragment : Fragment(), KoinComponent {
             finishAndNavigate.observe(viewLifecycleOwner, Observer {
 
             })
-            gameDataDownloadCount.observe(viewLifecycleOwner, Observer {
+            dataDownloadOkPool.observe(viewLifecycleOwner, Observer {
                 it?.let {
 
                 }
             })
-            generalDataDownloadCount.observe(viewLifecycleOwner, Observer {
+            dataDownloadErrorPool.observe(viewLifecycleOwner, Observer {
                 it?.let {
 
                 }
             })
-            downloadPool.observe(viewLifecycleOwner, Observer{
+            /*downloadPool.observe(viewLifecycleOwner, Observer{
                 it?.let{
                     if(it.size == 2) {
                         requireActivity().toastLong("OK! NAVIGATE!")
@@ -97,7 +96,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                         requireActivity().toastLong("ERROR! FACK!")
                     }
                 }
-            })
+            })*/
         }
     }
 
@@ -134,72 +133,84 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadOkPool.add(it)
+                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadErrorPool.add(it)
+                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
             })
         }
         commandCodeViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadOkPool.add(it)
+                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadErrorPool.add(it)
+                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
             })
         }
         craftEssenceViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadOkPool.add(it)
+                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadErrorPool.add(it)
+                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
             })
         }
         materialViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadOkPool.add(it)
+                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadErrorPool.add(it)
+                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
             })
         }
         mysticCodeViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadOkPool.add(it)
+                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadErrorPool.add(it)
+                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
             })
         }
         servantViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadOkPool.add(it)
+                    downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
                 it?.let {
-
+                    downloadErrorPool.add(it)
+                    downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
                 }
             })
         }
