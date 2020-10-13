@@ -7,6 +7,7 @@ import com.caparepa.companionfou.data.db.entity.nice.CommandCodeEntity
 import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
 import com.caparepa.companionfou.repository.nice.CommandCodeRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
+import com.caparepa.companionfou.utils.OGS_COMMAND_CODE
 import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentDate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,7 +19,6 @@ class CommandCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
-    val commandCodeListResponse = MutableLiveData<List<CommandCodeItem>?>()
     val commandCodeListResult = MutableLiveData<List<CommandCodeEntity>>()
     val commandCodeItemResult = MutableLiveData<CommandCodeEntity>()
 
@@ -47,10 +47,11 @@ class CommandCodeViewModel(
         with(result) {
             onSuccess {
                 it?.let {
-                    commandCodeListResponse.postValue(it)
+                    onGetSuccess.postValue(OGS_COMMAND_CODE)
                 }
             }
             onFailure {
+                onGetError.postValue(OGS_COMMAND_CODE)
                 onError.postValue(it.message)
             }
         }

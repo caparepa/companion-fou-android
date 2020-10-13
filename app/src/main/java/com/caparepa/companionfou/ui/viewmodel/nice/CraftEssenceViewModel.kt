@@ -8,6 +8,7 @@ import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 import com.caparepa.companionfou.repository.nice.CraftEssenceRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.CURRENT_DATE
+import com.caparepa.companionfou.utils.OGS_CRAFT_ESSENCE
 import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentDate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,7 +19,6 @@ class CraftEssenceViewModel(
     private val craftEssenceRepository: CraftEssenceRepository
 ) : BaseViewModel(), KoinComponent {
 
-    val craftEssenceResponse = MutableLiveData<List<CraftEssenceItem>?>()
     val craftEssenceListResult = MutableLiveData<List<CraftEssenceEntity>>()
     val craftEssenceItemResult = MutableLiveData<CraftEssenceEntity>()
 
@@ -47,10 +47,11 @@ class CraftEssenceViewModel(
         with(result){
             onSuccess {
                 it?.let {
-                    craftEssenceResponse.postValue(it)
+                    onGetSuccess.postValue(OGS_CRAFT_ESSENCE)
                 }
             }
             onFailure {
+                onGetError.postValue(OGS_CRAFT_ESSENCE)
                 onError.postValue(it.message)
             }
         }

@@ -116,16 +116,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getApiInfoAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getApiInfoAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_API_INFO)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getApiInfoAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_API_INFO)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getApiInfoAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_API_INFO)
                 onError.postValue(it.message)
             }
         }
@@ -176,16 +174,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_ATTRIBUTE_RELATION)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_ATTRIBUTE_RELATION)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_ATTRIBUTE_RELATION)
                 onError.postValue(it.message)
             }
         }
@@ -236,16 +232,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_CLASS_ATTACK_RATE)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_CLASS_ATTACK_RATE)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_CLASS_ATTACK_RATE)
                 onError.postValue(it.message)
             }
         }
@@ -296,16 +290,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getClassRelationAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getClassRelationAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_CLASS_RELATION)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getClassRelationAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_CLASS_RELATION)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getClassRelationAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_CLASS_RELATION)
                 onError.postValue(it.message)
             }
         }
@@ -356,16 +348,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getFaceCardAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getFaceCardAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_FACE_CARD)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getFaceCardAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_FACE_CARD)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getFaceCardAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_FACE_CARD)
                 onError.postValue(it.message)
             }
         }
@@ -416,16 +406,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getConstantsAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getConstantsAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_GAME_CONSTANTS)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getConstantsAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_GAME_CONSTANTS)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getConstantsAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_GAME_CONSTANTS)
                 onError.postValue(it.message)
             }
         }
@@ -476,16 +464,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_BUFF_ACTION_LIST)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_BUFF_ACTION_LIST)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_BUFF_ACTION_LIST)
                 onError.postValue(it.message)
             }
         }
@@ -536,16 +522,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getUserLevelAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getUserLevelAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_USER_LEVEL)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getUserLevelAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_USER_LEVEL)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getUserLevelAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_USER_LEVEL)
                 onError.postValue(it.message)
             }
         }
@@ -596,16 +580,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_ALL_ENUMS)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_ALL_ENUMS)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_ALL_ENUMS)
                 onError.postValue(it.message)
             }
         }
@@ -656,16 +638,14 @@ class GeneralDataViewModel(
             onSuccess {
                 loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> $it")
-                if (it != null) {
+                it?.let {
                     logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> API DATA!")
                     onGetSuccess.postValue(OGS_TRAIT_MAPPING)
-                } else {
-                    logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> NO API DATA!")
-                    onGetError.postValue(OGS_TRAIT_MAPPING)
                 }
             }
             onFailure {
                 logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> NO API DATA! Error!")
+                onGetError.postValue(OGS_TRAIT_MAPPING)
                 onError.postValue(it.message)
             }
         }

@@ -7,6 +7,7 @@ import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
+import com.caparepa.companionfou.utils.OGS_MYSTIC_CODE
 import com.caparepa.companionfou.utils.REGION_NA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,7 +19,6 @@ class MysticCodeViewModel(
 ) :
     BaseViewModel(), KoinComponent {
 
-    val mysticCodeListResponse = MutableLiveData<List<MysticCodeItem>?>()
     val mysticCodeListResult = MutableLiveData<List<MysticCodeEntity>>()
     val mysticCodeResult = MutableLiveData<MysticCodeEntity>()
 
@@ -47,10 +47,11 @@ class MysticCodeViewModel(
         with(result) {
             onSuccess {
                 it?.let {
-                    mysticCodeListResponse.postValue(it)
+                    onGetSuccess.postValue(OGS_MYSTIC_CODE)
                 }
             }
             onFailure {
+                onGetError.postValue(OGS_MYSTIC_CODE)
                 onError.postValue(it.message)
             }
         }
