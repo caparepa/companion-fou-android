@@ -69,20 +69,20 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun observeDownloadViewModel() {
         downloadViewModel.run {
-            finishAndClose.observe(viewLifecycleOwner, Observer {
-
-            })
-            finishAndNavigate.observe(viewLifecycleOwner, Observer {
-
-            })
             dataDownloadOkPool.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
-
+                    if(it.size >= 29)
+                        requireActivity().toastLong("ALL OK!!!")
+                    else
+                        requireActivity().toastLong("NOT ALL OK!!!")
                 }
             })
             dataDownloadErrorPool.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
-
+                    if(it.size > 0)
+                        requireActivity().toastLong("ERROR!!!")
                 }
             })
             /*downloadPool.observe(viewLifecycleOwner, Observer{
@@ -123,7 +123,11 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun observeViewModels() {
         generalViewModel.run {
+            loadingState.observe(viewLifecycleOwner, Observer {
+
+            })
             currentDateResult.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadGeneralData(REGION_NA)
                     downloadGameData(REGION_NA)
@@ -132,12 +136,14 @@ class LoadingFragment : Fragment(), KoinComponent {
                 }
             })
             onGetSuccess.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
@@ -160,12 +166,14 @@ class LoadingFragment : Fragment(), KoinComponent {
         }
         craftEssenceViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
@@ -174,12 +182,14 @@ class LoadingFragment : Fragment(), KoinComponent {
         }
         materialViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
@@ -188,12 +198,14 @@ class LoadingFragment : Fragment(), KoinComponent {
         }
         mysticCodeViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
@@ -202,12 +214,14 @@ class LoadingFragment : Fragment(), KoinComponent {
         }
         servantViewModel.run {
             onGetSuccess.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadOkPool.add(it)
                     downloadViewModel.dataDownloadOkPool.postValue(downloadOkPool)
                 }
             })
             onGetError.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 it?.let {
                     downloadErrorPool.add(it)
                     downloadViewModel.dataDownloadErrorPool.postValue(downloadErrorPool)
