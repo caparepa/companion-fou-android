@@ -1,25 +1,13 @@
 package com.caparepa.companionfou.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.ui.dialog.LoadingDialog
-import com.caparepa.companionfou.ui.viewmodel.basic.BasicDataViewModel
-import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
-import com.caparepa.companionfou.ui.viewmodel.nice.MysticCodeViewModel
-import com.caparepa.companionfou.utils.API_INFO
-import com.caparepa.companionfou.utils.LOG_DEBUG
-import com.caparepa.companionfou.utils.logger
-import com.caparepa.companionfou.utils.toastLong
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.core.KoinComponent
-import org.koin.core.inject
 
 class MainActivity : AppCompatActivity(), KoinComponent {
 

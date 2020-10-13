@@ -141,63 +141,11 @@ class LoadingFragment : Fragment(), KoinComponent {
                     downloadGameData(REGION_JP)
                 }
             })
-            apiInfoResult.observe(viewLifecycleOwner, Observer {
+            onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    downloadPool.add("apiInfoResult")
-                    downloadGeneralCount++
+                    if(it.containsValue(true))
+                        downloadGeneralCount++
                 }
-            })
-            attributeRelationResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("attributeRelationResult")
-                    downloadGeneralCount++
-                }
-            })
-            classAttackRateResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("classAttackRateResult")
-                    downloadGeneralCount++
-                }
-            })
-            classRelationResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("classRelationResult")
-                    downloadGeneralCount++
-                }
-            })
-            faceCardResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("faceCardResult")
-                    downloadGeneralCount++
-                }
-            })
-            constantsResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("constantsResult")
-                    downloadGeneralCount++
-                }
-            })
-            buffActionListResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("buffActionListResult")
-                    downloadGeneralCount++
-                }
-            })
-            userLevelResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("userLevelResult")
-                    downloadGeneralCount++
-                }
-            })
-            allEnumsResult.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    downloadPool.add("allEnumsResult")
-                    downloadGeneralCount++
-                }
-            })
-            traitMappingResult.observe(viewLifecycleOwner, Observer {
-                downloadPool.add("traitMappingResult")
-                downloadGeneralCount++
             })
         }
         commandCodeViewModel.run {

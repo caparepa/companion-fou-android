@@ -4,19 +4,10 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.caparepa.companionfou.data.db.entity.general.*
-import com.caparepa.companionfou.data.model.general.attackrate.ClassAttackRate
-import com.caparepa.companionfou.data.model.general.attribute.AttributeRelation
-import com.caparepa.companionfou.data.model.general.buffaction.BuffActionList
-import com.caparepa.companionfou.data.model.general.classrelation.ClassRelationList
-import com.caparepa.companionfou.data.model.general.facecards.FaceCardList
-import com.caparepa.companionfou.data.model.general.other.ApiInfo
-import com.caparepa.companionfou.data.model.general.other.GameEnums
-import com.caparepa.companionfou.data.model.general.userlevel.UserLevelList
 import com.caparepa.companionfou.repository.general.GeneralDataRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.*
 import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentDate
-import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentServer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
@@ -127,10 +118,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getApiInfoAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getApiInfoAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(API_INFO to true))
+                    onGetSuccess.postValue(mapOf(OGS_API_INFO to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getApiInfoAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(API_INFO to false))
+                    onGetSuccess.postValue(mapOf(OGS_API_INFO to false))
                 }
             }
             onFailure {
@@ -187,10 +178,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(ATTRIBUTE_RELATION to true))
+                    onGetSuccess.postValue(mapOf(OGS_ATTRIBUTE_RELATION to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(ATTRIBUTE_RELATION to false))
+                    onGetSuccess.postValue(mapOf(OGS_ATTRIBUTE_RELATION to false))
                 }
             }
             onFailure {
@@ -247,10 +238,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(CLASS_ATTACK_RATE to true))
+                    onGetSuccess.postValue(mapOf(OGS_CLASS_ATTACK_RATE to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(CLASS_ATTACK_RATE to false))
+                    onGetSuccess.postValue(mapOf(OGS_CLASS_ATTACK_RATE to false))
                 }
             }
             onFailure {
@@ -307,10 +298,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getClassRelationAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getClassRelationAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(CLASS_RELATION to true))
+                    onGetSuccess.postValue(mapOf(OGS_CLASS_RELATION to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getClassRelationAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(CLASS_RELATION to false))
+                    onGetSuccess.postValue(mapOf(OGS_CLASS_RELATION to false))
                 }
             }
             onFailure {
@@ -367,10 +358,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getFaceCardAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getFaceCardAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(FACE_CARD to true))
+                    onGetSuccess.postValue(mapOf(OGS_FACE_CARD to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getFaceCardAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(FACE_CARD to false))
+                    onGetSuccess.postValue(mapOf(OGS_FACE_CARD to false))
                 }
             }
             onFailure {
@@ -427,10 +418,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getConstantsAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getConstantsAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(GAME_CONSTANTS to true))
+                    onGetSuccess.postValue(mapOf(OGS_GAME_CONSTANTS to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getConstantsAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(GAME_CONSTANTS to false))
+                    onGetSuccess.postValue(mapOf(OGS_GAME_CONSTANTS to false))
                 }
             }
             onFailure {
@@ -487,10 +478,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(BUFF_ACTION_LIST to true))
+                    onGetSuccess.postValue(mapOf(OGS_BUFF_ACTION_LIST to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(BUFF_ACTION_LIST to false))
+                    onGetSuccess.postValue(mapOf(OGS_BUFF_ACTION_LIST to false))
                 }
             }
             onFailure {
@@ -547,10 +538,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getUserLevelAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getUserLevelAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(USER_LEVEL to true))
+                    onGetSuccess.postValue(mapOf(OGS_USER_LEVEL to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getUserLevelAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(USER_LEVEL to false))
+                    onGetSuccess.postValue(mapOf(OGS_USER_LEVEL to false))
                 }
             }
             onFailure {
@@ -607,10 +598,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(ALL_ENUMS to true))
+                    onGetSuccess.postValue(mapOf(OGS_ALL_ENUMS to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(ALL_ENUMS to false))
+                    onGetSuccess.postValue(mapOf(OGS_ALL_ENUMS to false))
                 }
             }
             onFailure {
@@ -667,10 +658,10 @@ class GeneralDataViewModel(
                 logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> $it")
                 if (it != null) {
                     logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> API DATA!")
-                    onGetSuccess.postValue(mapOf(TRAIT_MAPPING to true))
+                    onGetSuccess.postValue(mapOf(OGS_TRAIT_MAPPING to true))
                 } else {
                     logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> NO API DATA!")
-                    onGetSuccess.postValue(mapOf(TRAIT_MAPPING to false))
+                    onGetSuccess.postValue(mapOf(OGS_TRAIT_MAPPING to false))
                 }
             }
             onFailure {
