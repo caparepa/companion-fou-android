@@ -143,8 +143,12 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    if(it.containsValue(true))
-                        downloadGeneralCount++
+
+                }
+            })
+            onGetError.observe(viewLifecycleOwner, Observer {
+                it?.let {
+
                 }
             })
         }
