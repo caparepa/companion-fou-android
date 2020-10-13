@@ -77,18 +77,23 @@ class LoadingFragment : Fragment(), KoinComponent {
                 it?.let {
                     val size = "${it.size}"
                     tvOkPoolValue.text = "$size OK"
-                    if (it.size >= 29)
+                    if (it.size >= 29){
+                        loadingState.postValue(false)
                         requireActivity().toastLong("$size ALL OK!!!")
-                    else
+                    }
+                    else {
                         requireActivity().toastLong("$size NOT ALL OK!!!")
+                    }
                 }
             })
             dataDownloadErrorPool.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
                     tvErrorPoolValue.text = "${it.size} ERROR"
-                    if (it.size > 0)
+                    if (it.size > 0) {
+                        loadingState.postValue(false)
                         requireActivity().toastLong("ERROR!!!")
+                    }
                 }
             })
         }

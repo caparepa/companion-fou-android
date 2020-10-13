@@ -108,13 +108,11 @@ class GeneralDataViewModel(
 
     private suspend fun getApiInfoAsync(currentDate: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getApiInfo(currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getApiInfoAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getApiInfoAsync -> API DATA!")
@@ -166,13 +164,11 @@ class GeneralDataViewModel(
 
     private suspend fun getAttributeRelationAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getAttributeRelation(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getAttributeRelationAsync -> API DATA!")
@@ -224,13 +220,11 @@ class GeneralDataViewModel(
 
     private suspend fun getClassAttackRateAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getClassAttackRate(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getClassAttackRateAsync -> API DATA!")
@@ -282,13 +276,11 @@ class GeneralDataViewModel(
 
     private suspend fun getClassRelationAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getClassRelation(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getClassRelationAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getClassRelationAsync -> API DATA!")
@@ -340,13 +332,11 @@ class GeneralDataViewModel(
 
     private suspend fun getFaceCardAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getFaceCard(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getFaceCardAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getFaceCardAsync -> API DATA!")
@@ -398,13 +388,11 @@ class GeneralDataViewModel(
 
     private suspend fun getConstantsAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getGameConstants(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getConstantsAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getConstantsAsync -> API DATA!")
@@ -456,13 +444,11 @@ class GeneralDataViewModel(
 
     private suspend fun getBuffActionListAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getBuffActionList(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getBuffActionListAsync -> API DATA!")
@@ -514,13 +500,11 @@ class GeneralDataViewModel(
 
     private suspend fun getUserLevelAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getUserLevel(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getUserLevelAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getUserLevelAsync -> API DATA!")
@@ -572,13 +556,11 @@ class GeneralDataViewModel(
 
     private suspend fun getGameEnumsAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getGameEnums(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getGameEnumsAsync -> API DATA!")
@@ -630,13 +612,11 @@ class GeneralDataViewModel(
 
     private suspend fun getTraitMappingAsync(server: String) {
         val result = kotlin.runCatching {
-            loadingState.postValue(true)
             generalDataRepository.getTraitMapping(server, currentDate)
         }
 
         with(result) {
             onSuccess {
-                loadingState.postValue(false)
                 logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> $it")
                 it?.let {
                     logger(LOG_DEBUG, TAG, "getTraitMappingAsync -> API DATA!")
