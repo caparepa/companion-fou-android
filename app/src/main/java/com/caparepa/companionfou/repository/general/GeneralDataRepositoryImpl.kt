@@ -24,10 +24,10 @@ import com.caparepa.companionfou.utils.toJsonString
 
 class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
-    private val TAG = "GeneralDataRepositoryImpl"
-
     //Api
     private val api = ApiClient.invoke()
+
+    private val TAG = "Log@GeneralDataRepositoryImpl"
 
     //DAOs
     private val servantTraitsDao: ServantTraitsDao by inject()

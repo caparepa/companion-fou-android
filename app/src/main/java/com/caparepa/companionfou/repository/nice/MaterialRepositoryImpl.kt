@@ -14,6 +14,8 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
 
     private val api = ApiClient.invoke()
 
+    private val TAG = "Log@MaterialRepositoryImpl"
+
     override suspend fun fetchMaterial(itemId: Long, server: String): MaterialEntity? {
         return materialDao.getMaterial(itemId, server)
     }
@@ -25,7 +27,10 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
     override suspend fun getMaterialList(currentDate: String, server: String): List<MaterialItem>? =
         withContext(Dispatchers.IO) {
             try {
-                null
+                val response = api.getMaterials(currentDate, server)
+                val body = response.body()
+                persistMaterialList(server, body)
+                body
             } catch (e: Exception) {
                 e.printStackTrace()
                 null

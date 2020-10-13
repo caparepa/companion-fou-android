@@ -14,6 +14,8 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
 
     private val api = ApiClient.invoke()
 
+    private val TAG = "Log@MysticCodeRepositoryImpl"
+
     override suspend fun fetchMysticCode(mcId: Long, server: String): MysticCodeEntity? {
         return mysticCodeDao.getMysticCode(mcId, server)
     }

@@ -14,6 +14,8 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
 
     val api = ApiClient.invoke()
 
+    private val TAG = "Log@CommandCodeRepositoryImpl"
+
     override suspend fun fetchCommandCode(ccId: Long, server: String): CommandCodeEntity? {
         return commandCodeDao.getCommandCode(ccId, "")
     }
@@ -27,7 +29,10 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
         server: String
     ): List<CommandCodeItem>? = withContext(Dispatchers.IO) {
         try {
-            null
+            val response = api.getCommandCodes(currentDate, server)
+            val body = response.body()
+            persistCommandCodeList(server, body)
+            body
         } catch (e: Exception) {
             e.printStackTrace()
             null

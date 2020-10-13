@@ -13,6 +13,8 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
 
     private val api = ApiClient.invoke()
 
+    private val TAG = "Log@ServantRepositoryImpl"
+
     override suspend fun fetchServant(servantId: Long, server: String): ServantEntity? {
         return servantDao.getServantById(servantId,server)
     }
