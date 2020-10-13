@@ -4,6 +4,8 @@ import com.caparepa.companionfou.data.db.dao.nice.CraftEssenceDao
 import com.caparepa.companionfou.data.db.entity.nice.CraftEssenceEntity
 import com.caparepa.companionfou.data.model.nice.craftessence.CraftEssenceItem
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
@@ -28,11 +30,13 @@ class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) :
         server: String
     ): List<CraftEssenceItem>? = withContext(Dispatchers.IO) {
         try {
+            logger(LOG_DEBUG, TAG, "getCraftEssenceList OK")
             val response = api.getCraftEssencesWithLore(currentDate, server)
             val body = response.body()
             persistCraftEssenceList(server, body)
             body
         } catch (e: Exception) {
+            logger(LOG_DEBUG, TAG, "getCraftEssenceList ERROR")
             e.printStackTrace()
             null
         }

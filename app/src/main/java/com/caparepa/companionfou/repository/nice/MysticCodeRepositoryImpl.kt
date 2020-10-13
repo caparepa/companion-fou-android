@@ -4,6 +4,8 @@ import com.caparepa.companionfou.data.db.dao.nice.MysticCodeDao
 import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 import com.caparepa.companionfou.data.model.nice.mysticcode.MysticCodeItem
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.logger
 import com.caparepa.companionfou.utils.toJsonString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,11 +32,13 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
         server: String
     ): List<MysticCodeItem>? = withContext(Dispatchers.IO) {
         try {
+            logger(LOG_DEBUG, TAG, "getMysticCodeList OK")
             val response = api.getMysticCodes(currentDate, server)
             val body = response.body()
             persistMysticCodeList(server, body)
             body
         } catch (e: Exception) {
+            logger(LOG_DEBUG, TAG, "getMysticCodeList ERROR")
             e.printStackTrace()
             null
         }

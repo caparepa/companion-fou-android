@@ -67,7 +67,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
 
     override suspend fun persistApiInfo(item: ApiInfo?) {
         item?.let {
-            logger(LOG_DEBUG, TAG, "METIENDO DATA!")
+            logger(LOG_DEBUG, TAG, "persistApiInfo")
             val entity = ApiInfoEntity(
                 it.na?.toJsonString(),
                 it.jp?.toJsonString()
@@ -85,10 +85,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         currentDate: String
     ): AttributeRelation? = withContext(Dispatchers.IO) {
         try {
+            logger(LOG_DEBUG, TAG, "getAttributeRelation OK")
             val response = api.getAttributeRelation(currentDate, server)
             persistAttributeRelation(server, response.body())
             response.body()
         } catch (e: Exception) {
+            logger(LOG_DEBUG, TAG, "getAttributeRelation ERROR")
             e.printStackTrace()
             null
         }
@@ -114,10 +116,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getClassAttackRate(server: String, currentDate: String): ClassAttackRate? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getClassAttackRate OK")
                 val response = api.getClassAttackRate(currentDate, server)
                 persistClassAttackRate(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getClassAttackRate ERROR")
                 e.printStackTrace()
                 null
             }
@@ -161,10 +165,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getClassRelation(server: String, currentDate: String): ClassRelationList? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getClassRelation OK")
                 val response = api.getClassRelation(currentDate, server)
                 persistClassRelation(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getClassRelation ERROR")
                 e.printStackTrace()
                 null
             }
@@ -205,10 +211,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getFaceCard(server: String, currentDate: String): FaceCardList? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getFaceCard OK")
                 val response = api.getFaceCard(currentDate, server)
                 persistFaceCard(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getFaceCard ERROR")
                 e.printStackTrace()
                 null
             }
@@ -237,10 +245,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getBuffActionList(server: String, currentDate: String): BuffActionList? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getBuffActionList OK")
                 val response = api.getBuffActionList(currentDate, server)
                 persistBuffActionList(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getBuffActionList ERROR")
                 e.printStackTrace()
                 null
             }
@@ -343,10 +353,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     ): Map<Int, UserLevelDetail>? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getUserLevel OK")
                 val response = api.getUserLevel(currentDate, server)
                 persistUserLevel(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getUserLevel ERROR")
                 e.printStackTrace()
                 null
             }
@@ -366,10 +378,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getTraitMapping(server: String, currentDate: String): Map<Int, String>? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getTraitMapping OK")
                 val response = api.getTraitMapping(currentDate, server)
                 persistTraitMapping(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getTraitMapping ERROR")
                 e.printStackTrace()
                 null
             }
@@ -389,10 +403,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getGameEnums(server: String, currentDate: String): GameEnums? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getGameEnums OK")
                 val response = api.getAllEnums(currentDate, server)
                 persistGameEnums(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getGameEnums ERROR")
                 e.printStackTrace()
                 null
             }
@@ -437,10 +453,12 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getGameConstants(server: String, currentDate: String): GameConstants? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getGameConstants OK")
                 val response = api.getConstants(currentDate, server)
                 persistGameConstants(server, response.body())
                 response.body()
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getGameConstants ERROR")
                 e.printStackTrace()
                 null
             }

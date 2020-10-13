@@ -4,6 +4,8 @@ import com.caparepa.companionfou.data.db.dao.nice.CommandCodeDao
 import com.caparepa.companionfou.data.db.entity.nice.CommandCodeEntity
 import com.caparepa.companionfou.data.model.nice.commandcode.CommandCodeItem
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.logger
 import com.caparepa.companionfou.utils.toJsonString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -29,11 +31,13 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
         server: String
     ): List<CommandCodeItem>? = withContext(Dispatchers.IO) {
         try {
+            logger(LOG_DEBUG, TAG, "getCommandCodeList OK")
             val response = api.getCommandCodes(currentDate, server)
             val body = response.body()
             persistCommandCodeList(server, body)
             body
         } catch (e: Exception) {
+            logger(LOG_DEBUG, TAG, "getCommandCodeList ERROR")
             e.printStackTrace()
             null
         }

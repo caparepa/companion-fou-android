@@ -4,6 +4,8 @@ import com.caparepa.companionfou.data.db.dao.nice.ServantDao
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
 import com.caparepa.companionfou.data.model.nice.servant.ServantItem
 import com.caparepa.companionfou.network.api.ApiClient
+import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.logger
 import com.caparepa.companionfou.utils.toJsonString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -26,10 +28,12 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
     override suspend fun getServantList(currentDate: String, server: String): List<ServantItem>? =
         withContext(Dispatchers.IO) {
             try {
+                logger(LOG_DEBUG, TAG, "getServantList OK")
                 val response = api.getServantsWithLore(currentDate, server)
                 val body = response.body()
                 body
             } catch (e: Exception) {
+                logger(LOG_DEBUG, TAG, "getServantList ERROR")
                 e.printStackTrace()
                 null
             }
