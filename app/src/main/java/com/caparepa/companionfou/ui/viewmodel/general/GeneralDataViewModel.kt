@@ -150,6 +150,7 @@ class GeneralDataViewModel(
 
     private suspend fun fetchAttributeRelationAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.fetchAttributeRelation(server)
         }
 
@@ -173,6 +174,7 @@ class GeneralDataViewModel(
 
     private suspend fun getAttributeRelationAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.getAttributeRelation(server, currentDate)
         }
 
@@ -207,6 +209,7 @@ class GeneralDataViewModel(
 
     private suspend fun fetchClassAttackRateAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.fetchClassAttackRate(server)
         }
 
@@ -229,7 +232,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getClassAttackRateAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.getClassAttackRate(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -282,7 +288,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getClassRelationAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.getClassRelation(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -335,7 +344,10 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getFaceCardAsync(server: String) {
-        val result = kotlin.runCatching { }
+        val result = kotlin.runCatching {
+            loadingState.postValue(true)
+            generalDataRepository.getFaceCard(server, currentDate)
+        }
 
         with(result) {
             onSuccess {
@@ -389,6 +401,7 @@ class GeneralDataViewModel(
 
     private suspend fun getConstantsAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.getGameConstants(server, currentDate)
         }
 
@@ -444,6 +457,7 @@ class GeneralDataViewModel(
 
     private suspend fun getBuffActionListAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.getBuffActionList(server, currentDate)
         }
 
@@ -499,6 +513,7 @@ class GeneralDataViewModel(
 
     private suspend fun getUserLevelAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.getUserLevel(server, currentDate)
         }
 
@@ -554,6 +569,7 @@ class GeneralDataViewModel(
 
     private suspend fun getGameEnumsAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.getGameEnums(server, currentDate)
         }
 
@@ -588,7 +604,8 @@ class GeneralDataViewModel(
 
     private suspend fun fetchTraitMappingAsync(server: String) {
         val result = kotlin.runCatching {
-            generalDataRepository.getTraitMapping(server, currentDate)
+            loadingState.postValue(true)
+            generalDataRepository.fetchTraitMapping(server)
         }
 
         with(result) {
@@ -611,6 +628,7 @@ class GeneralDataViewModel(
 
     private suspend fun getTraitMappingAsync(server: String) {
         val result = kotlin.runCatching {
+            loadingState.postValue(true)
             generalDataRepository.getTraitMapping(server, currentDate)
         }
 
