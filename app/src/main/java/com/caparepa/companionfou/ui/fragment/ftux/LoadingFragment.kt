@@ -40,10 +40,9 @@ class LoadingFragment : Fragment(), KoinComponent {
     private val servantViewModel: ServantViewModel by sharedViewModel()
 
     private lateinit var loadingDialog: LoadingDialog
-    private var downloadPool: ArrayList<String> = arrayListOf()
-    private var okPool: ArrayList<Int> = arrayListOf()
-    private var downloadGeneralCount = 0 //19 in totl
-    private var downloadGameCount = 0 //10 in total
+    private var downloadOkPool: ArrayList<String> = arrayListOf() //there should be 20 elements here at the end
+    private var downloadErrorPool: ArrayList<String> = arrayListOf() //there should be 10 elements here at the end
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,20 +78,12 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             gameDataDownloadCount.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    if(it == downloadGeneralCount) {
-                        okPool.add(it)
-                        downloadPool.postValue(okPool)
-                    }
+
                 }
             })
             generalDataDownloadCount.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    it?.let {
-                        if(it == downloadGameCount) {
-                            okPool.add(it)
-                            downloadPool.postValue(okPool)
-                        }
-                    }
+
                 }
             })
             downloadPool.observe(viewLifecycleOwner, Observer{
@@ -153,42 +144,62 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
         }
         commandCodeViewModel.run {
-            commandCodeListResponse.observe(viewLifecycleOwner, Observer {
+            onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    downloadPool.add("commandCodeListResponse")
-                    downloadGameCount++
+
+                }
+            })
+            onGetError.observe(viewLifecycleOwner, Observer {
+                it?.let {
+
                 }
             })
         }
         craftEssenceViewModel.run {
-            craftEssenceResponse.observe(viewLifecycleOwner, Observer {
+            onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    downloadPool.add("craftEssenceResponse")
-                    downloadGameCount++
+
+                }
+            })
+            onGetError.observe(viewLifecycleOwner, Observer {
+                it?.let {
+
                 }
             })
         }
         materialViewModel.run {
-            materialListResponse.observe(viewLifecycleOwner, Observer {
+            onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    downloadPool.add("materialListResponse")
-                    downloadGameCount++
+
+                }
+            })
+            onGetError.observe(viewLifecycleOwner, Observer {
+                it?.let {
+
                 }
             })
         }
         mysticCodeViewModel.run {
-            mysticCodeListResponse.observe(viewLifecycleOwner, Observer {
+            onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    downloadPool.add("mysticCodeListResponse")
-                    downloadGameCount++
+
+                }
+            })
+            onGetError.observe(viewLifecycleOwner, Observer {
+                it?.let {
+
                 }
             })
         }
         servantViewModel.run {
-            servantListResponse.observe(viewLifecycleOwner, Observer {
+            onGetSuccess.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    downloadPool.add("servantListResponse")
-                    downloadGameCount++
+
+                }
+            })
+            onGetError.observe(viewLifecycleOwner, Observer {
+                it?.let {
+
                 }
             })
         }
