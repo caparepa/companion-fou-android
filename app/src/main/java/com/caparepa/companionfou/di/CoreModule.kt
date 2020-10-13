@@ -5,7 +5,7 @@ import org.koin.core.context.loadKoinModules
 
 object CoreModule {
     private val modules =
-        listOf(networkModule, repositoryModule, localModule, databaseModule, viewModelModule)
+        listOf(networkModule, repositoryModule, localModule, databaseModule, viewModelModule, dataModule)
 
     fun init() = loadKoinModules(modules)
 }

@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.di.modules
 
+import android.content.Context
 import com.caparepa.companionfou.data.db.CompanionFouDatabase
 import com.caparepa.companionfou.data.db.dao.basic.*
 import com.caparepa.companionfou.data.db.dao.general.*
@@ -39,6 +40,10 @@ val repositoryModule = module {
 
 val localModule = module {
     //Shared preferences here!
+}
+val dataModule = module {
+    //todo change prefs name
+    single { androidContext().getSharedPreferences("Prefs", Context.MODE_PRIVATE) }
 }
 
 val databaseModule = module {

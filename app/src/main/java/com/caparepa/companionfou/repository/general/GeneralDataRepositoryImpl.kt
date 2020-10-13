@@ -85,7 +85,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
         currentDate: String
     ): AttributeRelation? = withContext(Dispatchers.IO) {
         try {
-            val response = api.getAttributeRelation(currentDate)
+            val response = api.getAttributeRelation(currentDate, server)
             persistAttributeRelation(server, response.body())
             response.body()
         } catch (e: Exception) {
@@ -114,7 +114,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getClassAttackRate(server: String, currentDate: String): ClassAttackRate? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getClassAttackRate(currentDate)
+                val response = api.getClassAttackRate(currentDate, server)
                 persistClassAttackRate(server, response.body())
                 response.body()
             } catch (e: Exception) {
@@ -161,7 +161,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getClassRelation(server: String, currentDate: String): ClassRelationList? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getClassRelation(currentDate)
+                val response = api.getClassRelation(currentDate, server)
                 persistClassRelation(server, response.body())
                 response.body()
             } catch (e: Exception) {
@@ -205,7 +205,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getFaceCard(server: String, currentDate: String): FaceCardList? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getFaceCard(currentDate)
+                val response = api.getFaceCard(currentDate, server)
                 persistFaceCard(server, response.body())
                 response.body()
             } catch (e: Exception) {
@@ -237,7 +237,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getBuffActionList(server: String, currentDate: String): BuffActionList? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getBuffActionList(currentDate)
+                val response = api.getBuffActionList(currentDate, server)
                 persistBuffActionList(server, response.body())
                 response.body()
             } catch (e: Exception) {
@@ -343,7 +343,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     ): Map<Int, UserLevelDetail>? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getUserLevel(currentDate)
+                val response = api.getUserLevel(currentDate, server)
                 persistUserLevel(server, response.body())
                 response.body()
             } catch (e: Exception) {
@@ -366,7 +366,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getTraitMapping(server: String, currentDate: String): Map<Int, String>? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getTraitMapping(currentDate)
+                val response = api.getTraitMapping(currentDate, server)
                 persistTraitMapping(server, response.body())
                 response.body()
             } catch (e: Exception) {
@@ -389,7 +389,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getGameEnums(server: String, currentDate: String): GameEnums? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getAllEnums(currentDate)
+                val response = api.getAllEnums(currentDate, server)
                 persistGameEnums(server, response.body())
                 response.body()
             } catch (e: Exception) {
@@ -437,7 +437,7 @@ class GeneralDataRepositoryImpl : GeneralDataRepository, KoinComponent {
     override suspend fun getGameConstants(server: String, currentDate: String): GameConstants? =
         withContext(Dispatchers.IO) {
             try {
-                val response = api.getConstants(currentDate)
+                val response = api.getConstants(currentDate, server)
                 persistGameConstants(server, response.body())
                 response.body()
             } catch (e: Exception) {

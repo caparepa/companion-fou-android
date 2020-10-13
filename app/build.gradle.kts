@@ -37,7 +37,7 @@ android {
     buildTypes {
         getByName("debug") {
             val baseUrl = findProperty("BASE_NGROK_URL")
-            buildConfigField("String", "BASE_URL", "\"http://$baseUrl/storage/files/data/\"")
+            buildConfigField("String", "BASE_URL", "\"http://$baseUrl/\"")
             applicationIdSuffix = ".debug"
         }
 

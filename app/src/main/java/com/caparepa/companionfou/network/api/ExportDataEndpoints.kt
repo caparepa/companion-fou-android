@@ -23,157 +23,166 @@ import retrofit2.http.Path
 interface ExportDataEndpoints {
 
     //Export endpoints
-    @GET("general/current_date")
+    @GET("api/general/current_date")
     suspend fun getLatestApiInfo(): Response<LatestApiInfo>
 
-    @GET("{current_date}/info.json")
+    @GET("storage/files/data/{current_date}/info.json")
     suspend fun getApiInfo(
         @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<ApiInfo>
 
     //Attribute Affinity
-    @GET("{current_date}/{region}/general/NiceAttributeRelation.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceAttributeRelation.json")
     suspend fun getAttributeRelation(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<AttributeRelation>
 
     //Attack Rate
-    @GET("{current_date}/{region}/general/NiceClassAttackRate.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceClassAttackRate.json")
     suspend fun getClassAttackRate(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<ClassAttackRate>
 
     //Class Affinity
-    @GET("{current_date}/{region}/general/NiceClassRelation.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceClassRelation.json")
     suspend fun getClassRelation(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<ClassRelationList>
 
     //Card Details
-    @GET("{current_date}/{region}/general/NiceCard.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceCard.json")
     suspend fun getFaceCard(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<FaceCardList>
 
     //Constants
-    @GET("{current_date}/{region}/general/NiceConstants.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceConstants.json")
     suspend fun getConstants(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<GameConstants>
 
     //Buff Action Info
-    @GET("{current_date}/{region}/general/NiceBuffList.ActionList.json.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceBuffList.ActionList.json.json")
     suspend fun getBuffActionList(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<BuffActionList>
 
     //Master Level info
-    @GET("{current_date}/{region}/general/NiceUserLevel.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceUserLevel.json")
     suspend fun getUserLevel(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<Map<Int, UserLevelDetail>>
 
     //All enums
-    @GET("{current_date}/{region}/general/nice_enums.json")
+    @GET("storage/files/data/{current_date}/{server}/general/nice_enums.json")
     suspend fun getAllEnums(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<GameEnums>
 
     //Trait mapping
     //TODO: the response is a Map<Int, String>?
-    @GET("{current_date}/{region}/general/nice_trait.json")
+    @GET("storage/files/data/{current_date}/{server}/general/nice_trait.json")
     suspend fun getTraitMapping(
-        @Path(value = "current_date", encoded = true) currentDate: String
+        @Path(value = "current_date", encoded = true) currentDate: String,
+        @Path(value = "server", encoded = true) server: String
     ): Response<Map<Int, String>?>
 
     //Region endpoints
 
     //Get servants
-    @GET("{current_date}/{region}/nice/nice_servant.json")
+    @GET("storage/files/data/{current_date}/{server}/nice/nice_servant.json")
     suspend fun getServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<List<ServantItem>?>
 
     //Get servants with lore
-    @GET("{current_date}/{region}/nice/nice_servant_lore.json")
+    @GET("storage/files/data/{current_date}/{server}/nice/nice_servant_lore.json")
     suspend fun getServantsWithLore(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<List<ServantItem>?>
 
     //Get Craft Essences
-    @GET("{current_date}/{region}/nice/nice_equip.json")
+    @GET("storage/files/data/{current_date}/{server}/nice/nice_equip.json")
     suspend fun getCraftEssences(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<List<CraftEssenceItem>?>
 
     //Get Craft Essences with lore
-    @GET("{current_date}/{region}/nice/nice_equip_lore.json")
+    @GET("storage/files/data/{current_date}/{server}/nice/nice_equip_lore.json")
     suspend fun getCraftEssencesWithLore(
         @Path(
             value = "current_date",
             encoded = true
-        ) currentDate: String, @Path(value = "region", encoded = true) region: String
+        ) currentDate: String, @Path(value = "server", encoded = true) server: String
     ): Response<List<CraftEssenceItem>?>
 
     //Get Command Codes
-    @GET("{current_date}/{region}/nice/nice_command_code.json")
+    @GET("storage/files/data/{current_date}/{server}/nice/nice_command_code.json")
     suspend fun getCommandCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<List<CommandCodeItem>?>
 
     //Get Materials (items, ascension, etc)
-    @GET("{current_date}/{region}/nice/nice_item.json")
+    @GET("storage/files/data/{current_date}/{server}/nice/nice_item.json")
     suspend fun getMaterials(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<List<MaterialItem>?>
 
     //Get Mystic Codes
-    @GET("{current_date}/{region}/nice/nice_mystic_code.json")
+    @GET("storage/files/data/{current_date}/{server}/nice/nice_mystic_code.json")
     suspend fun getMysticCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<List<MysticCodeItem>?>
 
     //Basic data for indexing
     //Get servants
-    @GET("{current_date}/{region}/basic/basic_servant.json")
+    @GET("storage/files/data/{current_date}/{server}/basic/basic_servant.json")
     suspend fun getBasicServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<ResponseBody>?
 
     //Get servants
-    @GET("{current_date}/{region}/basic/basic_servant_lang_en.json")
+    @GET("storage/files/data/{current_date}/{server}/basic/basic_servant_lang_en.json")
     suspend fun getBasicServantsEnglishName(
         @Path(
             value = "current_date",
             encoded = true
-        ) currentDate: String, @Path(value = "region", encoded = true) region: String
+        ) currentDate: String, @Path(value = "server", encoded = true) server: String
     ): Response<ResponseBody>
 
     //Get Craft Essences
-    @GET("{current_date}/{region}/basic/basic_equip.json")
+    @GET("storage/files/data/{current_date}/{server}/basic/basic_equip.json")
     suspend fun getBasicCraftEssences(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<ResponseBody>
 
-    @GET("{current_date}/{region}/basic/basic_command_code.json")
+    @GET("storage/files/data/{current_date}/{server}/basic/basic_command_code.json")
     suspend fun getBasicCommandCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<ResponseBody>
 
     //Get Mystic Codes
-    @GET("{current_date}/{region}/basic/basic_mystic_code.json")
+    @GET("storage/files/data/{current_date}/{server}/basic/basic_mystic_code.json")
     suspend fun getBasicMysticCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
-        @Path(value = "region", encoded = true) region: String
+        @Path(value = "server", encoded = true) server: String
     ): Response<ResponseBody>
 
 }
