@@ -76,9 +76,6 @@ class LoadingFragment : Fragment(), KoinComponent {
         }
     }
 
-    private fun downloadGameData(server: String) {
-    }
-
     private fun observeViewModels() {
         generalViewModel.run {
             loadingState.observe(viewLifecycleOwner, Observer {
