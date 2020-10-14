@@ -118,118 +118,138 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             onError.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    tvErrorValue.text = it
+                    requireActivity().toastLong(it)
                 }
             })
-            apiInfoResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            apiInfoResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_apiInfoResponseOk.text = "apiInfoResponseOk $it"
                 } else {
-
+                    tv_apiInfoResponseOk.text = "apiInfoResponseOk $it NOK"
                 }
             })
-            attributeRelationResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            attributeRelationResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_attributeRelationResponseOk.text = "attributeRelationResponseOk $it"
                 } else {
-
+                    tv_attributeRelationResponseOk.text = "attributeRelationResponseOk $it NOK"
                 }
             })
-            classAttackRateResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            classAttackRateResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_classAttackRateResponseOk.text = "classAttackRateResponseOk $it"
                 } else {
-
+                    tv_classAttackRateResponseOk.text = "classAttackRateResponseOk $it NOK"
                 }
             })
-            classRelationResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            classRelationResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_classRelationResponseOk.text = "classRelationResponseOk $it"
                 } else {
-
+                    tv_classRelationResponseOk.text = "classRelationResponseOk $it NOK"
                 }
             })
-            faceCardResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            faceCardResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_faceCardResponseOk.text = "faceCardResponseOk $it"
                 } else {
-
+                    tv_faceCardResponseOk.text = "faceCardResponseOk $it NOK"
                 }
             })
-            constantsResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            constantsResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_constantsResponseOk.text = "constantsResponseOk $it"
                 } else {
-
+                    tv_constantsResponseOk.text = "constantsResponseOk $it NOK"
                 }
             })
-            buffActionListResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            buffActionListResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_buffActionListResponseOk.text = "buffActionListResponseOk $it"
                 } else {
-
+                    tv_buffActionListResponseOk.text = "buffActionListResponseOk $it NOK"
                 }
             })
-            userLevelResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            userLevelResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_userLevelResponseOk.text = "userLevelResponseOk $it"
                 } else {
-
+                    tv_userLevelResponseOk.text = "userLevelResponseOk $it NOK"
                 }
             })
-            allEnumsResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            allEnumsResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_allEnumsResponseOk.text = "allEnumsResponseOk $it"
                 } else {
-
+                    tv_allEnumsResponseOk.text = "allEnumsResponseOk $it NOK"
                 }
             })
-            traitMappingResponseOk.observe(viewLifecycleOwner, Observer{
-                if(it) {
-
+            traitMappingResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_traitMappingResponseOk.text = "traitMappingResponseOk $it"
                 } else {
-
+                    tv_traitMappingResponseOk.text = "traitMappingResponseOk $it NOK"
                 }
             })
         }
         commandCodeViewModel.run {
-            onError.observe(viewLifecycleOwner, Observer{
-
+            onError.observe(viewLifecycleOwner, Observer {
+                requireActivity().toastLong(it)
             })
-            commandCodeListResponseOk.observe(viewLifecycleOwner, Observer{
-
+            commandCodeListResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_commandCodeListResponseOk.text = "commandCodeListResponseOk $it"
+                } else {
+                    tv_commandCodeListResponseOk.text = "commandCodeListResponseOk $it NOK"
+                }
             })
         }
         craftEssenceViewModel.run {
-            onError.observe(viewLifecycleOwner, Observer{
-
+            onError.observe(viewLifecycleOwner, Observer {
+                requireActivity().toastLong(it)
             })
-            craftEssenceListResponseOk.observe(viewLifecycleOwner, Observer{
-
+            craftEssenceListResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_craftEssenceListResponseOk.text = "craftEssenceListResponseOk $it"
+                } else {
+                    tv_craftEssenceListResponseOk.text = "craftEssenceListResponseOk $it NOK"
+                }
             })
         }
         materialViewModel.run {
-            onError.observe(viewLifecycleOwner, Observer{
-
+            onError.observe(viewLifecycleOwner, Observer {
+                requireActivity().toastLong(it)
             })
-            materialListResponseOk.observe(viewLifecycleOwner, Observer{
-
+            materialListResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_materialListResponseOk.text = "materialListResponseOk $it"
+                } else {
+                    tv_materialListResponseOk.text = "materialListResponseOk $it NOK"
+                }
             })
         }
         mysticCodeViewModel.run {
-            onError.observe(viewLifecycleOwner, Observer{
-
+            onError.observe(viewLifecycleOwner, Observer {
+                requireActivity().toastLong(it)
             })
-            mysticCodeListResponseOk.observe(viewLifecycleOwner, Observer{
-
+            mysticCodeListResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_mysticCodeListResponseOk.text = "mysticCodeListResponseOk $it"
+                } else {
+                    tv_mysticCodeListResponseOk.text = "mysticCodeListResponseOk $it NOK"
+                }
             })
         }
         servantViewModel.run {
-            onError.observe(viewLifecycleOwner, Observer{
-
+            onError.observe(viewLifecycleOwner, Observer {
+                requireActivity().toastLong(it)
             })
-            servantListResponseOk.observe(viewLifecycleOwner, Observer{
-
+            servantListResponseOk.observe(viewLifecycleOwner, Observer {
+                if (it) {
+                    tv_servantListResponseOk.text = "servantListResponseOk $it"
+                } else {
+                    tv_servantListResponseOk.text = "servantListResponseOk $it NOK"
+                }
             })
         }
     }

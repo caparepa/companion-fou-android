@@ -1,8 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.caparepa.companionfou.ui.fragment.ftux.LoadingFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,70 +14,147 @@
             android:id="@+id/tvPlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="MATERIAL HUB! HERE GOES A VIEWPAGER!" />
-
-        <TextView
-            android:id="@+id/tvSuccessLoadingLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SUCCESS:"
             android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="MATERIAL HUB! HERE GOES A VIEWPAGER!"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPlaceholder"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvSuccessValue"
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="N/A"
             android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSuccessLoadingLabel"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPlaceholder">
 
-        <TextView
-            android:id="@+id/tvErrorLoadingLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ERROR:"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSuccessValue"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPlaceholder">
 
-        <TextView
-            android:id="@+id/tvErrorValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="N/A"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvErrorLoadingLabel"/>
+                <TextView
+                    android:id="@+id/tv_apiInfoResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="apiInfoResponseOk" />
 
-        <TextView
-            android:id="@+id/tvOkPoolValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="N/A"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvErrorValue"/>
+                <TextView
+                    android:id="@+id/tv_attributeRelationResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="attributeRelationResponseOk" />
 
-        <TextView
-            android:id="@+id/tvErrorPoolValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="N/A"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvOkPoolValue"/>
+                <TextView
+                    android:id="@+id/tv_classAttackRateResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="classAttackRateResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_classRelationResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="classRelationResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_faceCardResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="faceCardResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_constantsResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="constantsResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_buffActionListResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="buffActionListResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_userLevelResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="userLevelResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_allEnumsResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="allEnumsResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_traitMappingResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="traitMappingResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_commandCodeListResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="commandCodeListResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_craftEssenceListResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="craftEssenceListResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_materialListResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="materialListResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_mysticCodeListResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="mysticCodeListResponseOk" />
+
+                <TextView
+                    android:id="@+id/tv_servantListResponseOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="servantListResponseOk" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="text" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="text" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
