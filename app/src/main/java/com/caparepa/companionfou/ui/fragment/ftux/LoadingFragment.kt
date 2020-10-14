@@ -72,30 +72,7 @@ class LoadingFragment : Fragment(), KoinComponent {
 
     private fun observeDownloadViewModel() {
         downloadViewModel.run {
-            dataDownloadOkPool.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    val size = "${it.size}"
-                    tvOkPoolValue.text = "$size OK"
-                    if (it.size >= 29){
-                        loadingState.postValue(false)
-                        requireActivity().toastLong("$size ALL OK!!!")
-                    }
-                    else {
-                        requireActivity().toastLong("$size NOT ALL OK!!!")
-                    }
-                }
-            })
-            dataDownloadErrorPool.observe(viewLifecycleOwner, Observer {
-                loadingDialog.dismiss()
-                it?.let {
-                    tvErrorPoolValue.text = "${it.size} ERROR"
-                    if (it.size > 0) {
-                        loadingState.postValue(false)
-                        requireActivity().toastLong("ERROR!!!")
-                    }
-                }
-            })
+
         }
     }
 
@@ -144,33 +121,114 @@ class LoadingFragment : Fragment(), KoinComponent {
                     tvErrorValue.text = it
                 }
             })
+            apiInfoResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            attributeRelationResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            classAttackRateResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            classRelationResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            faceCardResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            constantsResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            buffActionListResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            userLevelResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            allEnumsResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
+            traitMappingResponseOk.observe(viewLifecycleOwner, Observer{
+                if(it) {
+
+                } else {
+
+                }
+            })
         }
         commandCodeViewModel.run {
             onError.observe(viewLifecycleOwner, Observer{
 
             })
+            commandCodeListResponseOk.observe(viewLifecycleOwner, Observer{
 
+            })
         }
         craftEssenceViewModel.run {
             onError.observe(viewLifecycleOwner, Observer{
 
             })
+            craftEssenceListResponseOk.observe(viewLifecycleOwner, Observer{
 
+            })
         }
         materialViewModel.run {
             onError.observe(viewLifecycleOwner, Observer{
 
             })
+            materialListResponseOk.observe(viewLifecycleOwner, Observer{
 
+            })
         }
         mysticCodeViewModel.run {
             onError.observe(viewLifecycleOwner, Observer{
 
             })
+            mysticCodeListResponseOk.observe(viewLifecycleOwner, Observer{
 
+            })
         }
         servantViewModel.run {
             onError.observe(viewLifecycleOwner, Observer{
+
+            })
+            servantListResponseOk.observe(viewLifecycleOwner, Observer{
 
             })
         }
