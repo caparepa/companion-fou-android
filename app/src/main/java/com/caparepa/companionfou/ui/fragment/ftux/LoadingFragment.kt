@@ -13,6 +13,7 @@ import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.*
 import com.caparepa.companionfou.utils.*
 import kotlinx.android.synthetic.main.fragment_loading.*
+import kotlinx.coroutines.delay
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 
@@ -89,10 +90,6 @@ class LoadingFragment : Fragment(), KoinComponent {
             currentDateResult.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 it?.let {
-//                    downloadGeneralData(REGION_NA)
-//                    downloadGameData(REGION_NA)
-//                    downloadGeneralData(REGION_JP)
-//                    downloadGameData(REGION_JP)
                     generalViewModel.getApiInfo()
                 }
             })

@@ -60,14 +60,14 @@ interface ExportDataEndpoints {
     ): Response<FaceCardList>
 
     //Constants
-    @GET("storage/files/data/{current_date}/{server}/general/NiceConstants.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceConstant.json")
     suspend fun getConstants(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "server", encoded = true) server: String
     ): Response<GameConstants>
 
     //Buff Action Info
-    @GET("storage/files/data/{current_date}/{server}/general/NiceBuffList.ActionList.json.json")
+    @GET("storage/files/data/{current_date}/{server}/general/NiceBuffList.ActionList.json")
     suspend fun getBuffActionList(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "server", encoded = true) server: String
