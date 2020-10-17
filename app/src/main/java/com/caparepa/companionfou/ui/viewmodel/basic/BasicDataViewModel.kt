@@ -7,6 +7,7 @@ import com.caparepa.companionfou.data.model.basic.BasicServantItem
 import com.caparepa.companionfou.repository.basic.BasicDataRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.REGION_NA
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentDate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
@@ -24,7 +25,7 @@ class BasicDataViewModel(val context: Context, val basicDataRepository: BasicDat
 
     private suspend fun getBasicServantListAsync() {
         val result = kotlin.runCatching {
-            basicDataRepository.getBasicServants("20200905", REGION_NA)
+            basicDataRepository.getBasicServants(currentDate, REGION_NA)
         }
 
         with(result) {

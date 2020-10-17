@@ -115,6 +115,7 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getApiInfoAsync(currentDate: String) {
+        loadingState.postValue(true)
         val result = kotlin.runCatching {
             generalDataRepository.getApiInfo(currentDate)
         }
@@ -168,6 +169,7 @@ class GeneralDataViewModel(
     }
 
     private suspend fun getAttributeRelationAsync(server: String) {
+        loadingState.postValue(true)
         val result = kotlin.runCatching {
             generalDataRepository.getAttributeRelation(server, currentDate)
         }

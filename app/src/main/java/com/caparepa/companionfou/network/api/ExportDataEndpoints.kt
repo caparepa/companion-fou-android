@@ -19,6 +19,7 @@ import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Streaming
 
 interface ExportDataEndpoints {
 
@@ -26,12 +27,14 @@ interface ExportDataEndpoints {
     @GET("api/general/current_date")
     suspend fun getLatestApiInfo(): Response<LatestApiInfo>
 
+    @Streaming
     @GET("storage/files/data/{current_date}/info.json")
     suspend fun getApiInfo(
         @Path(value = "current_date", encoded = true) currentDate: String
     ): Response<ApiInfo>
 
     //Attribute Affinity
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/NiceAttributeRelation.json")
     suspend fun getAttributeRelation(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -39,6 +42,7 @@ interface ExportDataEndpoints {
     ): Response<AttributeRelation>
 
     //Attack Rate
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/NiceClassAttackRate.json")
     suspend fun getClassAttackRate(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -46,6 +50,7 @@ interface ExportDataEndpoints {
     ): Response<ClassAttackRate>
 
     //Class Affinity
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/NiceClassRelation.json")
     suspend fun getClassRelation(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -53,6 +58,7 @@ interface ExportDataEndpoints {
     ): Response<ClassRelationList>
 
     //Card Details
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/NiceCard.json")
     suspend fun getFaceCard(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -60,6 +66,7 @@ interface ExportDataEndpoints {
     ): Response<FaceCardList>
 
     //Constants
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/NiceConstant.json")
     suspend fun getConstants(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -67,6 +74,7 @@ interface ExportDataEndpoints {
     ): Response<GameConstants>
 
     //Buff Action Info
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/NiceBuffList.ActionList.json")
     suspend fun getBuffActionList(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -74,6 +82,7 @@ interface ExportDataEndpoints {
     ): Response<BuffActionList>
 
     //Master Level info
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/NiceUserLevel.json")
     suspend fun getUserLevel(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -81,6 +90,7 @@ interface ExportDataEndpoints {
     ): Response<Map<Int, UserLevelDetail>>
 
     //All enums
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/nice_enums.json")
     suspend fun getAllEnums(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -89,6 +99,7 @@ interface ExportDataEndpoints {
 
     //Trait mapping
     //TODO: the response is a Map<Int, String>?
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/general/nice_trait.json")
     suspend fun getTraitMapping(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -98,6 +109,7 @@ interface ExportDataEndpoints {
     //Region endpoints
 
     //Get servants
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/nice/nice_servant.json")
     suspend fun getServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -105,6 +117,7 @@ interface ExportDataEndpoints {
     ): Response<List<ServantItem>?>
 
     //Get servants with lore
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/nice/nice_servant_lore.json")
     suspend fun getServantsWithLore(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -112,6 +125,7 @@ interface ExportDataEndpoints {
     ): Response<List<ServantItem>?>
 
     //Get Craft Essences
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/nice/nice_equip.json")
     suspend fun getCraftEssences(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -119,6 +133,7 @@ interface ExportDataEndpoints {
     ): Response<List<CraftEssenceItem>?>
 
     //Get Craft Essences with lore
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/nice/nice_equip_lore.json")
     suspend fun getCraftEssencesWithLore(
         @Path(
@@ -128,6 +143,7 @@ interface ExportDataEndpoints {
     ): Response<List<CraftEssenceItem>?>
 
     //Get Command Codes
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/nice/nice_command_code.json")
     suspend fun getCommandCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -135,6 +151,7 @@ interface ExportDataEndpoints {
     ): Response<List<CommandCodeItem>?>
 
     //Get Materials (items, ascension, etc)
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/nice/nice_item.json")
     suspend fun getMaterials(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -142,6 +159,7 @@ interface ExportDataEndpoints {
     ): Response<List<MaterialItem>?>
 
     //Get Mystic Codes
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/nice/nice_mystic_code.json")
     suspend fun getMysticCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -150,6 +168,7 @@ interface ExportDataEndpoints {
 
     //Basic data for indexing
     //Get servants
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/basic/basic_servant.json")
     suspend fun getBasicServants(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -157,6 +176,7 @@ interface ExportDataEndpoints {
     ): Response<ResponseBody>?
 
     //Get servants
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/basic/basic_servant_lang_en.json")
     suspend fun getBasicServantsEnglishName(
         @Path(
@@ -166,12 +186,14 @@ interface ExportDataEndpoints {
     ): Response<ResponseBody>
 
     //Get Craft Essences
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/basic/basic_equip.json")
     suspend fun getBasicCraftEssences(
         @Path(value = "current_date", encoded = true) currentDate: String,
         @Path(value = "server", encoded = true) server: String
     ): Response<ResponseBody>
 
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/basic/basic_command_code.json")
     suspend fun getBasicCommandCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,
@@ -179,6 +201,7 @@ interface ExportDataEndpoints {
     ): Response<ResponseBody>
 
     //Get Mystic Codes
+    @Streaming
     @GET("storage/files/data/{current_date}/{server}/basic/basic_mystic_code.json")
     suspend fun getBasicMysticCodes(
         @Path(value = "current_date", encoded = true) currentDate: String,

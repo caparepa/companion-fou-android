@@ -26,12 +26,12 @@
             android:layout_height="80dp"
             android:layout_marginTop="16dp"
             android:text="NA"
-            app:layout_constraintEnd_toStartOf="@id/btnDonwloadJP"
+            app:layout_constraintEnd_toStartOf="@id/btnDownloadJP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPlaceholder" />
 
         <Button
-            android:id="@+id/btnDonwloadJP"
+            android:id="@+id/btnDownloadJP"
             android:layout_width="180dp"
             android:layout_height="80dp"
             android:layout_marginTop="16dp"
@@ -48,7 +48,7 @@
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnDonwloadJP">
+            app:layout_constraintTop_toBottomOf="@id/btnDownloadJP">
 
             <LinearLayout
                 android:layout_width="match_parent"

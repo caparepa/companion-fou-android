@@ -7,6 +7,7 @@ import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 import com.caparepa.companionfou.repository.nice.MysticCodeRepository
 import com.caparepa.companionfou.ui.viewmodel.BaseViewModel
 import com.caparepa.companionfou.utils.OGS_MYSTIC_CODE
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.currentDate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
@@ -41,7 +42,7 @@ class MysticCodeViewModel(
 
     private suspend fun getMysticCodesAsync(server: String) {
         val result = kotlin.runCatching {
-            mysticCodeRepository.getMysticCodeList("20200905", server)
+            mysticCodeRepository.getMysticCodeList(currentDate, server)
         }
         with(result) {
             onSuccess {

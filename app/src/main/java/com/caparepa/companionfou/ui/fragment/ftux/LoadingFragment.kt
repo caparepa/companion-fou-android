@@ -45,7 +45,7 @@ class LoadingFragment : Fragment(), KoinComponent {
         arrayListOf() //there should be 20 elements here at the end
     private var downloadErrorPool: ArrayList<String> =
         arrayListOf() //there should be 10 elements here at the end
-
+    private var selectedRegion: String = REGION_NA
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,6 +67,9 @@ class LoadingFragment : Fragment(), KoinComponent {
         super.onViewCreated(view, savedInstanceState)
         loadingDialog = LoadingDialog(requireContext())
         generalViewModel.getLatestApiInfo()
+        btnDownloadNA.isClickable = false
+        btnDownloadJP.isClickable = false
+        setUpListeners()
         observeDownloadViewModel()
         observeViewModels()
     }
@@ -74,6 +77,19 @@ class LoadingFragment : Fragment(), KoinComponent {
     private fun observeDownloadViewModel() {
         downloadViewModel.run {
 
+        }
+    }
+
+    private fun setUpListeners() {
+        btnDownloadNA.setOneOffClickListener {
+            selectedRegion = REGION_NA
+            activity?.toastLong("DOWNLOADING NA DATA!")
+            generalViewModel.getAttributeRelation(selectedRegion)
+        }
+        btnDownloadJP.setOneOffClickListener {
+            selectedRegion = REGION_JP
+            activity?.toastLong("DOWNLOADING JP DATA!")
+            generalViewModel.getAttributeRelation(selectedRegion)
         }
     }
 
@@ -99,13 +115,20 @@ class LoadingFragment : Fragment(), KoinComponent {
                 }
             })
             apiInfoResponseOk.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 if (it) {
                     tv_apiInfoResponseOk.text = "apiInfoResponseOk $it"
                 } else {
                     tv_apiInfoResponseOk.text = "apiInfoResponseOk $it NOK"
                 }
-                generalViewModel.getAttributeRelation(REGION_NA)
-                generalViewModel.getAttributeRelation(REGION_JP)
+                when (selectedRegion) {
+                    REGION_NA -> {
+                        btnDownloadNA.isClickable = true
+                    }
+                    REGION_JP -> {
+                        btnDownloadJP.isClickable = true
+                    }
+                }
             })
             attributeRelationResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -113,8 +136,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_attributeRelationResponseOk.text = "attributeRelationResponseOk $it NOK"
                 }
-                generalViewModel.getBuffActionList(REGION_NA)
-                generalViewModel.getBuffActionList(REGION_JP)
+                generalViewModel.getBuffActionList(selectedRegion)
             })
             buffActionListResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -122,8 +144,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_buffActionListResponseOk.text = "buffActionListResponseOk $it NOK"
                 }
-                generalViewModel.getClassAttackRate(REGION_NA)
-                generalViewModel.getClassAttackRate(REGION_JP)
+                generalViewModel.getClassAttackRate(selectedRegion)
             })
             classAttackRateResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -131,8 +152,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_classAttackRateResponseOk.text = "classAttackRateResponseOk $it NOK"
                 }
-                generalViewModel.getClassRelation(REGION_NA)
-                generalViewModel.getClassRelation(REGION_JP)
+                generalViewModel.getClassRelation(selectedRegion)
             })
             classRelationResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -140,8 +160,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_classRelationResponseOk.text = "classRelationResponseOk $it NOK"
                 }
-                generalViewModel.getConstants(REGION_NA)
-                generalViewModel.getConstants(REGION_JP)
+                generalViewModel.getConstants(selectedRegion)
             })
             constantsResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -149,8 +168,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_constantsResponseOk.text = "constantsResponseOk $it NOK"
                 }
-                generalViewModel.getFaceCard(REGION_NA)
-                generalViewModel.getFaceCard(REGION_JP)
+                generalViewModel.getFaceCard(selectedRegion)
             })
             faceCardResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -158,8 +176,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_faceCardResponseOk.text = "faceCardResponseOk $it NOK"
                 }
-                generalViewModel.getGameEnums(REGION_NA)
-                generalViewModel.getGameEnums(REGION_JP)
+                generalViewModel.getGameEnums(selectedRegion)
             })
             allEnumsResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -167,8 +184,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_allEnumsResponseOk.text = "allEnumsResponseOk $it NOK"
                 }
-                generalViewModel.getTraitMapping(REGION_NA)
-                generalViewModel.getTraitMapping(REGION_JP)
+                generalViewModel.getTraitMapping(selectedRegion)
             })
             traitMappingResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -176,8 +192,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_traitMappingResponseOk.text = "traitMappingResponseOk $it NOK"
                 }
-                generalViewModel.getUserLevel(REGION_NA)
-                generalViewModel.getUserLevel(REGION_JP)
+                generalViewModel.getUserLevel(selectedRegion)
             })
             userLevelResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
@@ -185,8 +200,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_userLevelResponseOk.text = "userLevelResponseOk $it NOK"
                 }
-                commandCodeViewModel.getCommandCodes(REGION_NA)
-                commandCodeViewModel.getCommandCodes(REGION_JP)
+                commandCodeViewModel.getCommandCodes(selectedRegion)
             })
         }
         commandCodeViewModel.run {
@@ -199,8 +213,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_commandCodeListResponseOk.text = "commandCodeListResponseOk $it NOK"
                 }
-                craftEssenceViewModel.getCraftEssences(REGION_NA)
-                craftEssenceViewModel.getCraftEssences(REGION_JP)
+                craftEssenceViewModel.getCraftEssences(selectedRegion)
             })
         }
         craftEssenceViewModel.run {
@@ -213,8 +226,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_craftEssenceListResponseOk.text = "craftEssenceListResponseOk $it NOK"
                 }
-                materialViewModel.getMaterials(REGION_NA)
-                materialViewModel.getMaterials(REGION_JP)
+                materialViewModel.getMaterials(selectedRegion)
             })
         }
         materialViewModel.run {
@@ -227,8 +239,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_materialListResponseOk.text = "materialListResponseOk $it NOK"
                 }
-                mysticCodeViewModel.getMysticCodes(REGION_NA)
-                mysticCodeViewModel.getMysticCodes(REGION_JP)
+                mysticCodeViewModel.getMysticCodes(selectedRegion)
             })
         }
         mysticCodeViewModel.run {
@@ -241,8 +252,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 } else {
                     tv_mysticCodeListResponseOk.text = "mysticCodeListResponseOk $it NOK"
                 }
-                servantViewModel.getServants(REGION_NA)
-                servantViewModel.getServants(REGION_JP)
+                servantViewModel.getServants(selectedRegion)
             })
         }
         servantViewModel.run {
@@ -250,6 +260,7 @@ class LoadingFragment : Fragment(), KoinComponent {
                 requireActivity().toastLong(it)
             })
             servantListResponseOk.observe(viewLifecycleOwner, Observer {
+                loadingDialog.dismiss()
                 if (it) {
                     tv_servantListResponseOk.text = "servantListResponseOk $it"
                 } else {
