@@ -44,9 +44,9 @@ class CraftEssenceRepositoryImpl(private val craftEssenceDao: CraftEssenceDao) :
 
     override suspend fun persistCraftEssenceList(server: String, list: List<CraftEssenceItem>?) {
         list?.let {
+            var i = 1
+            val size = it.size
             it.forEach { item ->
-                var i = 0
-                val size = it.size
                 val entity = CraftEssenceEntity(
                     server,
                     item.id,

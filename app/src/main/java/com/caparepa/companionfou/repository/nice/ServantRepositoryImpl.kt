@@ -41,7 +41,7 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
 
     override suspend fun persistServantList(server: String, list: List<ServantItem>?) {
         list?.let {
-            var i = 0
+            var i = 1
             val size = it.size
             it.forEach { item ->
                 val entity = ServantEntity(

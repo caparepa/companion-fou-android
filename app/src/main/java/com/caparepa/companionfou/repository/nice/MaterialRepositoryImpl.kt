@@ -43,7 +43,7 @@ class MaterialRepositoryImpl(private val materialDao: MaterialDao) : MaterialRep
 
     override suspend fun persistMaterialList(server: String, list: List<MaterialItem>?) {
         list?.let {
-            var i = 0
+            var i = 1
             val size = it.size
             it.forEach { item ->
                 val entity = MaterialEntity(
