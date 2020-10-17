@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
@@ -90,6 +91,11 @@ class LoadingFragment : Fragment(), KoinComponent {
             selectedRegion = REGION_JP
             activity?.toastLong("DOWNLOADING JP DATA!")
             generalViewModel.getAttributeRelation(selectedRegion)
+        }
+        btnContinue.setOneOffClickListener {
+            findNavController().apply {
+                navigate(LoadingFragmentDirections.actionLoadingFragmentToBottomNav())
+            }
         }
     }
 
