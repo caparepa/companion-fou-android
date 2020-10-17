@@ -20,13 +20,35 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/btnDownloadNA"
+            android:layout_width="180dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:text="NA"
+            app:layout_constraintEnd_toStartOf="@id/btnDonwloadJP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPlaceholder" />
+
+        <Button
+            android:id="@+id/btnDonwloadJP"
+            android:layout_width="180dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:text="JP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnDownloadNA"
+            app:layout_constraintTop_toBottomOf="@id/tvPlaceholder" />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPlaceholder">
+            app:layout_constraintTop_toBottomOf="@id/btnDonwloadJP">
 
             <LinearLayout
                 android:layout_width="match_parent"
