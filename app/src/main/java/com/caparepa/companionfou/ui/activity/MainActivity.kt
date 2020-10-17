@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         navController =
             Navigation.findNavController(this@MainActivity, R.id.home_nav_host_fragment)
         bottom_navigation?.inflateMenu(R.menu.bottom_menu)
-        this.let { it ->
+        this.let { _ ->
             bottom_navigation?.setupWithNavController(navController)
             bottom_navigation?.setOnNavigationItemReselectedListener {
                 // Do nothing to ignore the reselection

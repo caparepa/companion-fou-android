@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.ui.fragment.ftux
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.ui.activity.MainActivity
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
@@ -93,9 +95,9 @@ class LoadingFragment : Fragment(), KoinComponent {
             generalViewModel.getAttributeRelation(selectedRegion)
         }
         btnContinue.setOneOffClickListener {
-            findNavController().apply {
-                navigate(LoadingFragmentDirections.actionLoadingFragmentToBottomNav())
-            }
+            val intent = Intent(requireActivity(), MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 
