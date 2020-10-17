@@ -45,6 +45,8 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
 
     override suspend fun persistCommandCodeList(server: String, list: List<CommandCodeItem>?) {
         list?.let {
+            var i = 0
+            val size = it.size
             it.forEach { item ->
                 val entity = CommandCodeEntity(
                     server,
@@ -56,6 +58,7 @@ class CommandCodeRepositoryImpl(private val commandCodeDao: CommandCodeDao) : Co
                     item.skills?.toJsonString(),
                     item.comment
                 )
+                logger(LOG_DEBUG, TAG, "persistCommandCodeList $server / $size / ${i++}")
                 commandCodeDao.upsert(entity)
             }
         }

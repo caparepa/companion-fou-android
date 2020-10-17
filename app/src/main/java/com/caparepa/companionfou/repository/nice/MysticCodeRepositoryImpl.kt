@@ -46,6 +46,8 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
 
     override suspend fun persistMysticCodeList(server: String, list: List<MysticCodeItem>?) {
         list?.let {
+            var i = 0
+            val size = it.size
             it.forEach { item ->
                 val entry = MysticCodeEntity (
                     server,
@@ -57,6 +59,7 @@ class MysticCodeRepositoryImpl(private val mysticCodeDao: MysticCodeDao) : Mysti
                     item.skills?.toJsonString(),
                     item.expRequired?.toJsonString()
                 )
+                logger(LOG_DEBUG, TAG, "persistMysticCodeList $server / $size / ${i++}")
                 mysticCodeDao.upsert(entry)
             }
         }

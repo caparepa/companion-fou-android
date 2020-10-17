@@ -41,6 +41,8 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
 
     override suspend fun persistServantList(server: String, list: List<ServantItem>?) {
         list?.let {
+            var i = 0
+            val size = it.size
             it.forEach { item ->
                 val entity = ServantEntity(
                     server,
@@ -79,6 +81,7 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
                     item.noblePhantasms?.toJsonString(),
                     item.profile.toString()
                 )
+                logger(LOG_DEBUG, TAG, "persistServantList $server / $size / ${i++}")
                 servantDao.upsert(entity)
             }
         }

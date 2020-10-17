@@ -117,9 +117,9 @@ class LoadingFragment : Fragment(), KoinComponent {
             apiInfoResponseOk.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 if (it) {
-                    tv_apiInfoResponseOk.text = "apiInfoResponseOk $it"
+                    tv_apiInfoResponseOk.text = "apiInfoResponseOk $it $selectedRegion"
                 } else {
-                    tv_apiInfoResponseOk.text = "apiInfoResponseOk $it NOK"
+                    tv_apiInfoResponseOk.text = "apiInfoResponseOk $it NOK $selectedRegion"
                 }
                 when (selectedRegion) {
                     REGION_NA -> {
@@ -132,73 +132,73 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             attributeRelationResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_attributeRelationResponseOk.text = "attributeRelationResponseOk $it"
+                    tv_attributeRelationResponseOk.text = "attributeRelationResponseOk $it $selectedRegion"
                 } else {
-                    tv_attributeRelationResponseOk.text = "attributeRelationResponseOk $it NOK"
+                    tv_attributeRelationResponseOk.text = "attributeRelationResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getBuffActionList(selectedRegion)
             })
             buffActionListResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_buffActionListResponseOk.text = "buffActionListResponseOk $it"
+                    tv_buffActionListResponseOk.text = "buffActionListResponseOk $it $selectedRegion"
                 } else {
-                    tv_buffActionListResponseOk.text = "buffActionListResponseOk $it NOK"
+                    tv_buffActionListResponseOk.text = "buffActionListResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getClassAttackRate(selectedRegion)
             })
             classAttackRateResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_classAttackRateResponseOk.text = "classAttackRateResponseOk $it"
+                    tv_classAttackRateResponseOk.text = "classAttackRateResponseOk $it $selectedRegion"
                 } else {
-                    tv_classAttackRateResponseOk.text = "classAttackRateResponseOk $it NOK"
+                    tv_classAttackRateResponseOk.text = "classAttackRateResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getClassRelation(selectedRegion)
             })
             classRelationResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_classRelationResponseOk.text = "classRelationResponseOk $it"
+                    tv_classRelationResponseOk.text = "classRelationResponseOk $it $selectedRegion"
                 } else {
-                    tv_classRelationResponseOk.text = "classRelationResponseOk $it NOK"
+                    tv_classRelationResponseOk.text = "classRelationResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getConstants(selectedRegion)
             })
             constantsResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_constantsResponseOk.text = "constantsResponseOk $it"
+                    tv_constantsResponseOk.text = "constantsResponseOk $it $selectedRegion"
                 } else {
-                    tv_constantsResponseOk.text = "constantsResponseOk $it NOK"
+                    tv_constantsResponseOk.text = "constantsResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getFaceCard(selectedRegion)
             })
             faceCardResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_faceCardResponseOk.text = "faceCardResponseOk $it"
+                    tv_faceCardResponseOk.text = "faceCardResponseOk $it $selectedRegion"
                 } else {
-                    tv_faceCardResponseOk.text = "faceCardResponseOk $it NOK"
+                    tv_faceCardResponseOk.text = "faceCardResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getGameEnums(selectedRegion)
             })
             allEnumsResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_allEnumsResponseOk.text = "allEnumsResponseOk $it"
+                    tv_allEnumsResponseOk.text = "allEnumsResponseOk $it $selectedRegion"
                 } else {
-                    tv_allEnumsResponseOk.text = "allEnumsResponseOk $it NOK"
+                    tv_allEnumsResponseOk.text = "allEnumsResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getTraitMapping(selectedRegion)
             })
             traitMappingResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_traitMappingResponseOk.text = "traitMappingResponseOk $it"
+                    tv_traitMappingResponseOk.text = "traitMappingResponseOk $it $selectedRegion"
                 } else {
-                    tv_traitMappingResponseOk.text = "traitMappingResponseOk $it NOK"
+                    tv_traitMappingResponseOk.text = "traitMappingResponseOk $it NOK $selectedRegion"
                 }
                 generalViewModel.getUserLevel(selectedRegion)
             })
             userLevelResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_userLevelResponseOk.text = "userLevelResponseOk $it"
+                    tv_userLevelResponseOk.text = "userLevelResponseOk $it $selectedRegion"
                 } else {
-                    tv_userLevelResponseOk.text = "userLevelResponseOk $it NOK"
+                    tv_userLevelResponseOk.text = "userLevelResponseOk $it NOK $selectedRegion"
                 }
                 commandCodeViewModel.getCommandCodes(selectedRegion)
             })
@@ -209,9 +209,9 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             commandCodeListResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_commandCodeListResponseOk.text = "commandCodeListResponseOk $it"
+                    tv_commandCodeListResponseOk.text = "commandCodeListResponseOk $it $selectedRegion"
                 } else {
-                    tv_commandCodeListResponseOk.text = "commandCodeListResponseOk $it NOK"
+                    tv_commandCodeListResponseOk.text = "commandCodeListResponseOk $it NOK $selectedRegion"
                 }
                 craftEssenceViewModel.getCraftEssences(selectedRegion)
             })
@@ -222,9 +222,9 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             craftEssenceListResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_craftEssenceListResponseOk.text = "craftEssenceListResponseOk $it"
+                    tv_craftEssenceListResponseOk.text = "craftEssenceListResponseOk $it $selectedRegion"
                 } else {
-                    tv_craftEssenceListResponseOk.text = "craftEssenceListResponseOk $it NOK"
+                    tv_craftEssenceListResponseOk.text = "craftEssenceListResponseOk $it NOK $selectedRegion"
                 }
                 materialViewModel.getMaterials(selectedRegion)
             })
@@ -235,9 +235,9 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             materialListResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_materialListResponseOk.text = "materialListResponseOk $it"
+                    tv_materialListResponseOk.text = "materialListResponseOk $it $selectedRegion"
                 } else {
-                    tv_materialListResponseOk.text = "materialListResponseOk $it NOK"
+                    tv_materialListResponseOk.text = "materialListResponseOk $it NOK $selectedRegion"
                 }
                 mysticCodeViewModel.getMysticCodes(selectedRegion)
             })
@@ -248,9 +248,9 @@ class LoadingFragment : Fragment(), KoinComponent {
             })
             mysticCodeListResponseOk.observe(viewLifecycleOwner, Observer {
                 if (it) {
-                    tv_mysticCodeListResponseOk.text = "mysticCodeListResponseOk $it"
+                    tv_mysticCodeListResponseOk.text = "mysticCodeListResponseOk $it $selectedRegion"
                 } else {
-                    tv_mysticCodeListResponseOk.text = "mysticCodeListResponseOk $it NOK"
+                    tv_mysticCodeListResponseOk.text = "mysticCodeListResponseOk $it NOK $selectedRegion"
                 }
                 servantViewModel.getServants(selectedRegion)
             })
@@ -262,9 +262,9 @@ class LoadingFragment : Fragment(), KoinComponent {
             servantListResponseOk.observe(viewLifecycleOwner, Observer {
                 loadingDialog.dismiss()
                 if (it) {
-                    tv_servantListResponseOk.text = "servantListResponseOk $it"
+                    tv_servantListResponseOk.text = "servantListResponseOk $it $selectedRegion"
                 } else {
-                    tv_servantListResponseOk.text = "servantListResponseOk $it NOK"
+                    tv_servantListResponseOk.text = "servantListResponseOk $it NOK $selectedRegion"
                 }
                 requireActivity().toastLong("YAAAAY! PEACE, PEACE!")
             })
