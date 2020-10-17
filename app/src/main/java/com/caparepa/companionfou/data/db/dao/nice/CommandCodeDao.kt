@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.nice.CommandCodeEntity
 
 @Dao
 interface CommandCodeDao {
+
+    @Query("DELETE FROM command_code")
+    suspend fun deleteCommandCodeTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(commandCode: CommandCodeEntity)
 

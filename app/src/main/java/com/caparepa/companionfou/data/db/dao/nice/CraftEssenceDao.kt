@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.nice.CraftEssenceEntity
 
 @Dao
 interface CraftEssenceDao {
+
+    @Query("DELETE FROM craft_essence")
+    suspend fun deleteCraftEssenceTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(craftEssence: CraftEssenceEntity)
 

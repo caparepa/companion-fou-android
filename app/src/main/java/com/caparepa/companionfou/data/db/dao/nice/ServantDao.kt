@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
 
 @Dao
 interface ServantDao {
+
+    @Query("DELETE FROM servant")
+    suspend fun deleteServantTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(servant: ServantEntity)
 

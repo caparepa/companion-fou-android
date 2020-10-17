@@ -9,6 +9,9 @@ import com.caparepa.companionfou.data.db.entity.nice.MysticCodeEntity
 @Dao
 interface MysticCodeDao {
 
+    @Query("DELETE FROM mystic_code")
+    suspend fun deleteMysticCodeTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(code: MysticCodeEntity)
 

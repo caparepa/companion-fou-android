@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.general.ClassAttackRateEntity
 
 @Dao
 interface ClassAttackRateDao {
+
+    @Query("DELETE FROM class_attack_rate")
+    suspend fun deleteClassAttackRateTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: ClassAttackRateEntity)
 

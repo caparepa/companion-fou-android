@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.general.AttributeRelationEntity
 
 @Dao
 interface AttributeRelationDao {
+
+    @Query("DELETE FROM attribute_relation")
+    suspend fun deleteAttributeRelationTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: AttributeRelationEntity)
 

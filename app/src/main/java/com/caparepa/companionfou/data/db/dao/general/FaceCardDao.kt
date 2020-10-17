@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.general.FaceCardEntity
 
 @Dao
 interface FaceCardDao {
+
+    @Query("DELETE FROM face_card")
+    suspend fun deleteFaceCardTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: FaceCardEntity)
 

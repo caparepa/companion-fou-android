@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.nice.MaterialEntity
 
 @Dao
 interface MaterialDao {
+
+    @Query("DELETE FROM material")
+    suspend fun deleteMaterialTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(material: MaterialEntity)
 

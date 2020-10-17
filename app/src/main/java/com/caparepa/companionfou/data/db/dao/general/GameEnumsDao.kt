@@ -9,6 +9,9 @@ import com.caparepa.companionfou.data.db.entity.general.GameEnumsEntity
 @Dao
 interface GameEnumsDao {
 
+    @Query("DELETE FROM game_enums")
+    suspend fun deleteGameEnumsTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: GameEnumsEntity)
 

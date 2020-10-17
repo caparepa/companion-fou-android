@@ -9,6 +9,9 @@ import com.caparepa.companionfou.data.db.entity.general.GameConstantsEntity
 @Dao
 interface GameConstantsDao {
 
+    @Query("DELETE FROM game_constants")
+    suspend fun deleteGameConstantsTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: GameConstantsEntity)
 

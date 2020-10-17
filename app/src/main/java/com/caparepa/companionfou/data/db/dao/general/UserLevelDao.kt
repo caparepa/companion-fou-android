@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.general.UserLevelEntity
 
 @Dao
 interface UserLevelDao {
+
+    @Query("DELETE FROM user_level")
+    suspend fun deleteUserLevelTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: UserLevelEntity)
 

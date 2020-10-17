@@ -8,6 +8,10 @@ import com.caparepa.companionfou.data.db.entity.general.BuffActionListEntity
 
 @Dao
 interface BuffActionListDao {
+
+    @Query("DELETE FROM buff_action_list")
+    suspend fun deleteBuffActionListTable()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(item: BuffActionListEntity)
 
