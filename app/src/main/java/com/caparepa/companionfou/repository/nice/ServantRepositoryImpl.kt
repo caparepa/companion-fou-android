@@ -31,6 +31,7 @@ class ServantRepositoryImpl(private val servantDao: ServantDao) : ServantReposit
                 logger(LOG_DEBUG, TAG, "getServantList OK")
                 val response = api.getServantsWithLore(currentDate, server)
                 val body = response.body()
+                persistServantList(server, body)
                 body
             } catch (e: Exception) {
                 logger(LOG_DEBUG, TAG, "getServantList ERROR")
