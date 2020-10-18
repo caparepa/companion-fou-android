@@ -8,7 +8,7 @@
         android:id="@+id/ivServantGraphBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/listframes2_bg"
+        android:src="@drawable/listframes0_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
 
     <ImageView
         android:id="@+id/ivRarity"
-        android:layout_width="wrap_content"
+        android:layout_width="32dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
         android:src="@drawable/star3"
