@@ -94,6 +94,9 @@ dependencies {
     //viewpager2
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.google.android.material:material:1.3.0-alpha03")
+
+    //paging
+    implementation("androidx.paging:paging-runtime:2.1.2")
 }
 
 dependencies {
