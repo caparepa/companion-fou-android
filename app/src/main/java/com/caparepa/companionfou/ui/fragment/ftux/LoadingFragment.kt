@@ -15,6 +15,7 @@ import com.caparepa.companionfou.ui.viewmodel.download.DownloadViewModel
 import com.caparepa.companionfou.ui.viewmodel.general.GeneralDataViewModel
 import com.caparepa.companionfou.ui.viewmodel.nice.*
 import com.caparepa.companionfou.utils.*
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.allInfoLoaded
 import kotlinx.android.synthetic.main.fragment_loading.*
 import kotlinx.coroutines.delay
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -95,6 +96,7 @@ class LoadingFragment : Fragment(), KoinComponent {
             generalViewModel.getAttributeRelation(selectedRegion)
         }
         btnContinue.setOneOffClickListener {
+            allInfoLoaded = true
             val intent = Intent(requireActivity(), MainActivity::class.java)
             startActivity(intent)
             requireActivity().finish()

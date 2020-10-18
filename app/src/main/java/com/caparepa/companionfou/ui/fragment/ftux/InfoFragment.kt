@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.readSplashInfo
 import com.caparepa.companionfou.utils.setOneOffClickListener
 import kotlinx.android.synthetic.main.fragment_info.*
 
@@ -48,6 +49,7 @@ class InfoFragment : Fragment() {
 
     private fun setListeners() {
         btnGoToLoadInfo.setOneOffClickListener {
+            readSplashInfo = true
             with(findNavController()) {
                 navigate(InfoFragmentDirections.actionInfoFragmentToLoadingFragment())
             }

@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.ui.fragment.ftux
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.ui.activity.MainActivity
 import com.caparepa.companionfou.utils.Coroutines
 import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.allInfoLoaded
 import com.caparepa.companionfou.utils.delegates.PreferenceDelegate.Companion.readSplashInfo
@@ -53,9 +55,9 @@ class SplashFragment : Fragment() {
     private suspend fun validateDataStatus() {
         delay(3000)
         if(allInfoLoaded) {
-            with(findNavController()){
-                navigate(SplashFragmentDirections.actionSplashFragmentToBottomNav())
-            }
+            val intent = Intent(requireActivity(), MainActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
         } else {
             if(readSplashInfo) {
                 with(findNavController()){
