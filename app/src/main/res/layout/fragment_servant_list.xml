@@ -1,11 +1,20 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="?attr/actionBarSize"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
     android:gravity="top"
+    android:overScrollMode="always"
+    android:animateLayoutChanges="true"
     tools:context="com.caparepa.companionfou.ui.fragment.servant.ServantListFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:overScrollMode="always"
+        tools:context="com.caparepa.companionfou.ui.fragment.servant.ServantListFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <TextView
@@ -36,7 +45,7 @@
             app:layout_constraintStart_toEndOf="@id/btnServantsNa"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-        <androidx.core.widget.NestedScrollView
+        <!--<androidx.core.widget.NestedScrollView
             android:id="@+id/svServantList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,18 +58,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnServantsNa"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent">-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvServantList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintVertical_bias="0"
-                app:layout_constrainedHeight="true"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
-        </androidx.core.widget.NestedScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvServantList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="always"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnServantsNa"
+            app:layout_constraintVertical_bias="0" />
+        <!--</androidx.core.widget.NestedScrollView>-->
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

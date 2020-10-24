@@ -107,7 +107,7 @@ class ServantListFragment : Fragment(), KoinComponent {
     }
 
     private var onItemClick: (ServantEntity) -> Unit = { servant ->
-        requireActivity().toastLong("Servant clicked! -> ${servant.name}")
+        requireActivity().toastLong("Servant clicked! -> ${servant.name} ${servant.servant_id} ${servant.collectionNo}")
     }
 
     companion object {
