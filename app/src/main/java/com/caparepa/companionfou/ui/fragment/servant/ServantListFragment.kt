@@ -68,7 +68,6 @@ class ServantListFragment : Fragment(), KoinComponent {
         super.onViewCreated(view, savedInstanceState)
 
         loadingDialog = LoadingDialog(requireContext())
-        servantViewModel.fetchServants(currentServer)
         observeViewModel()
         setUpListeners()
     }

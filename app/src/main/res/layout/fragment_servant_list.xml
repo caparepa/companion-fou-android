@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="top"
+    android:overScrollMode="never"
     tools:context="com.caparepa.companionfou.ui.fragment.servant.ServantListFragment">
 
         <!-- TODO: Update blank fragment layout -->
@@ -36,7 +37,7 @@
             app:layout_constraintStart_toEndOf="@id/btnServantsNa"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/svServantList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +57,7 @@
                 app:layout_constraintVertical_bias="0"
                 app:layout_constrainedHeight="true"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

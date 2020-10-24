@@ -34,7 +34,7 @@ class ServantGridAdapter(
             val servantRarity = context.getRarityDrawable(servantItem.rarity!!)
             val servantClass =
                 context.getClassDrawable(servantItem.className!!, servantItem.rarity!!)
-            val servantGraph = servantItem.getExtraAssetsObj()?.faces?.ascension?.get(1)
+            val servantGraph = servantItem.getExtraAssetsObj()?.faces?.ascension?.get(1) ?: ""
             val servantName = servantItem.name
 
             tvServantName.text = servantName ?: servantItem.className.getPrettyClassName()
