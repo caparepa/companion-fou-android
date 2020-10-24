@@ -18,9 +18,9 @@
         android:id="@+id/ivClassIcon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/class_shielder_2"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:src="@drawable/class_shielder_2" />
 
     <ImageView
         android:id="@+id/ivRarity"
