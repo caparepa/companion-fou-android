@@ -18,7 +18,7 @@
         android:id="@+id/ivClassIcon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/class_shielder_2" />
 
@@ -27,7 +27,7 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:scaleType="fitCenter"
         android:src="@drawable/star5" />
