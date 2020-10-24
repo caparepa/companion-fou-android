@@ -2,14 +2,14 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="120dp"
-    android:layout_height="120dp"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
     android:layout_margin="4dp">
 
     <ImageView
         android:id="@+id/ivServantGraphBackground"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/listframe_bg_blank"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,15 +19,15 @@
 
     <ImageView
         android:id="@+id/ivClassIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/class_shielder_2" />
 
     <ImageView
         android:id="@+id/ivRarityIcon"
-        android:layout_width="50dp"
+        android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
         android:layout_marginTop="8dp"
@@ -44,8 +44,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
         android:ellipsize="end"
+        android:maxLines="1"
+        android:lines="1"
         android:text="Shielder"
+        android:textSize="12sp"
         android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+        android:textColor="#000000" />
 
 </FrameLayout>
