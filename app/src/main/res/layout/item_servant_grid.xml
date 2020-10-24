@@ -8,19 +8,7 @@
         android:id="@+id/ivServantGraphBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/listframes0_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivServantGraphOverlay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="fitXY"
-        android:src="@drawable/class_shielder_2"
+        android:src="@drawable/listframe_bg_blank"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,9 +19,18 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
-        android:src="@drawable/star5"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
         android:scaleType="fitCenter"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="13dp"/>
+        android:src="@drawable/star5" />
+
+    <TextView
+        android:id="@+id/txtServantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="5dp"
+        android:text="Shielder"
+        android:textColor="#FFFFFF" />
 
 </FrameLayout>

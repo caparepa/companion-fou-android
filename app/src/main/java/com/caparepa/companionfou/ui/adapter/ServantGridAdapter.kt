@@ -13,6 +13,9 @@ class ServantGridAdapter(
 ) : RecyclerView.Adapter<ServantGridAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+
+
         fun bind() {
 
         }
