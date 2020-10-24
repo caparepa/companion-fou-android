@@ -55,6 +55,7 @@ class ServantViewModel(val context: Context, private val servantRepository: Serv
     }
 
     private suspend fun fetchServantsAsync(server: String) {
+        loadingState.postValue(true)
         val result = kotlin.runCatching {
             servantRepository.fetchServantList(server)
         }
@@ -71,6 +72,7 @@ class ServantViewModel(val context: Context, private val servantRepository: Serv
     }
 
     private suspend fun fetchServantByIdAsync(id: Long, server: String) {
+        loadingState.postValue(true)
         val result = kotlin.runCatching {
             servantRepository.fetchServant(id, server)
         }

@@ -43,7 +43,7 @@ class ServantGridAdapter(
             ivClassIcon.setImageDrawable(servantClass)
 
             flContainer.setOneOffClickListener {
-                context.toastLong("CLICKED!")
+                onClick.invoke(servantItem)
             }
         }
     }
