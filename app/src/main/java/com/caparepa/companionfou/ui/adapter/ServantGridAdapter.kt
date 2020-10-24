@@ -4,16 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
-import com.caparepa.companionfou.utils.getClassDrawable
-import com.caparepa.companionfou.utils.getPrettyClassName
-import com.caparepa.companionfou.utils.getRarityDrawable
-import com.caparepa.companionfou.utils.loadImage
+import com.caparepa.companionfou.utils.*
 
 class ServantGridAdapter(
     private val context: Context,
@@ -23,6 +21,7 @@ class ServantGridAdapter(
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        val flContainer: FrameLayout = itemView as FrameLayout
         val ivServantGraph = itemView.findViewById<ImageView>(R.id.ivServantGraphBackground)
         val ivClassIcon = itemView.findViewById<ImageView>(R.id.ivClassIcon)
         val ivRarityIcon = itemView.findViewById<ImageView>(R.id.ivRarityIcon)
@@ -43,6 +42,9 @@ class ServantGridAdapter(
             ivRarityIcon.setImageDrawable(servantRarity)
             ivClassIcon.setImageDrawable(servantClass)
 
+            flContainer.setOneOffClickListener {
+                context.toastLong("CLICKED!")
+            }
         }
     }
 
