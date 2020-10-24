@@ -8,11 +8,11 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 import com.caparepa.companionfou.BuildConfig
+import com.caparepa.companionfou.R
 import com.caparepa.companionfou.utils.library.OnOneOffClickListener
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -52,7 +52,7 @@ fun <T> String.objectFromJson(classOfT: Class<T>): Any? {
     return gson.fromJson<Any>(this, classOfT as Class<*>)
 }
 
-inline fun <reified T: Any> String.toKotlinObject() : T {
+inline fun <reified T : Any> String.toKotlinObject(): T {
     val gson = Gson()
     return gson.fromJson(this, T::class.java)
 }
@@ -62,16 +62,15 @@ inline fun <reified T> parseArray(json: String, typeToken: Type): T {
     return gson.fromJson<T>(json, typeToken)
 }
 
-inline fun <reified T: Any> JsonObject.toKotlinObject(): T {
+inline fun <reified T : Any> JsonObject.toKotlinObject(): T {
     val gson = Gson()
     return gson.fromJson(this, T::class.java)
 }
 
-inline fun <reified T: Any> JsonArray.toKotlinObject(): T {
+inline fun <reified T : Any> JsonArray.toKotlinObject(): T {
     val gson = Gson()
     return gson.fromJson(this, T::class.java)
 }
-
 
 
 /**
@@ -125,7 +124,6 @@ fun logger(mode: Int, tag: String, message: String, t: Throwable? = null) {
         }
     }
 }
-
 
 
 fun View.makeInvisible() {
@@ -338,3 +336,169 @@ fun getDateTimeDiff(unit: ChronoUnit, now: LocalDateTime?, date: LocalDateTime?)
     return unit.between(now, date)
 }
 
+/**
+ *
+ **/
+fun Context.getClassDrawable(className: String, rarity: Int): Drawable? {
+    return when (className) {
+        CLASS_SABER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_saber_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_saber_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_saber_1)
+            }
+        }
+        CLASS_ARCHER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_archer_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_archer_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_archer_1)
+            }
+        }
+        CLASS_LANCER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_lancer_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_lancer_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_lancer_1)
+            }
+        }
+        CLASS_RIDER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_rider_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_rider_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_rider_1)
+            }
+        }
+        CLASS_CASTER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_caster_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_caster_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_caster_1)
+            }
+        }
+        CLASS_ASSASSIN -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_assassin_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_assassin_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_assassin_1)
+            }
+        }
+        CLASS_BERSERKER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_berserker_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_berserker_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_berserker_1)
+            }
+        }
+        CLASS_SHIELDER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_shielder_2)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_shielder_3)
+            }
+        }
+        CLASS_RULER -> {
+            ContextCompat.getDrawable(this, R.drawable.class_ruler_3)
+        }
+        CLASS_ALTER_EGO -> {
+            ContextCompat.getDrawable(this, R.drawable.class_alter_ego_3)
+        }
+        CLASS_AVENGER -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_avenger_2)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_avenger_3)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_avenger_0)
+            }
+        }
+        CLASS_DEMON_GOD_PILLAR -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_unknown)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_unknown)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_unknown)
+            }
+        }
+        CLASS_BEAST_II -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            }
+        }
+        CLASS_BEAST_I -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            }
+        }
+        CLASS_MOON_CANCER -> {
+            ContextCompat.getDrawable(this, R.drawable.class_moon_cancer_3)
+        }
+        CLASS_BEAST_III_R -> {
+            if (rarity == 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            } else if (rarity > 3) {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.class_beast)
+            }
+        }
+        CLASS_FOREIGNER -> {
+            ContextCompat.getDrawable(this, R.drawable.class_foreigner_3)
+        }
+        CLASS_BEAST_III_L -> {
+            ContextCompat.getDrawable(this, R.drawable.class_beast)
+        }
+        CLASS_BEAST_UNKNOWN -> {
+            ContextCompat.getDrawable(this, R.drawable.class_unknown)
+        }
+        else -> {
+            ContextCompat.getDrawable(this, R.drawable.class_unknown)
+        }
+    }
+}
+
+fun Context.getRarityDrawable(rarity: Int): Drawable? {
+    return when (rarity) {
+        1 -> {
+            ContextCompat.getDrawable(this, R.drawable.star1)
+        }
+        2 -> {
+            ContextCompat.getDrawable(this, R.drawable.star2)
+        }
+        3 -> {
+            ContextCompat.getDrawable(this, R.drawable.star3)
+        }
+        4 -> {
+            ContextCompat.getDrawable(this, R.drawable.star4)
+        }
+        5 -> {
+            ContextCompat.getDrawable(this, R.drawable.star5)
+        }
+        else -> {
+            ContextCompat.getDrawable(this, R.drawable.star0)
+        }
+    }
+}

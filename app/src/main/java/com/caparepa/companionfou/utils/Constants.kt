@@ -41,3 +41,24 @@ const val LOG_INFO = Log.INFO
 const val LOG_VERBOSE = Log.VERBOSE
 const val LOG_WARN = Log.WARN
 const val LOG_WTF = 0 // arbitrary number, might change
+
+//Game related
+const val CLASS_SABER ="saber"
+const val CLASS_ARCHER ="archer"
+const val CLASS_LANCER ="lancer"
+const val CLASS_RIDER ="rider"
+const val CLASS_CASTER ="caster"
+const val CLASS_ASSASSIN ="assassin"
+const val CLASS_BERSERKER ="berserker"
+const val CLASS_SHIELDER ="shielder"
+const val CLASS_RULER ="ruler"
+const val CLASS_ALTER_EGO ="alterEgo"
+const val CLASS_AVENGER ="avenger"
+const val CLASS_DEMON_GOD_PILLAR ="demonGodPillar"
+const val CLASS_BEAST_II ="beastII"
+const val CLASS_BEAST_I ="beastI"
+const val CLASS_MOON_CANCER ="moonCancer"
+const val CLASS_BEAST_III_R ="beastIIIR"
+const val CLASS_FOREIGNER ="foreigner"
+const val CLASS_BEAST_III_L ="beastIIIL"
+const val CLASS_BEAST_UNKNOWN ="beastUnknown"
