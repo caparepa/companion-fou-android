@@ -502,3 +502,28 @@ fun Context.getRarityDrawable(rarity: Int): Drawable? {
         }
     }
 }
+
+fun String.getPrettyClassName(): String {
+    return when (this) {
+        CLASS_SABER -> { "Saber" }
+        CLASS_ARCHER -> { "Archer" }
+        CLASS_LANCER -> { "Lancer" }
+        CLASS_RIDER -> { "Rider" }
+        CLASS_CASTER -> { "Caster" }
+        CLASS_ASSASSIN -> { "Assassin" }
+        CLASS_BERSERKER -> { "Berserker" }
+        CLASS_SHIELDER -> { "Shielder" }
+        CLASS_RULER -> { "Ruler" }
+        CLASS_ALTER_EGO -> { "Alter Ego" }
+        CLASS_AVENGER -> { "Avenger" }
+        CLASS_DEMON_GOD_PILLAR -> { "Demon God Pillar" }
+        CLASS_BEAST_II -> { "Beast II" }
+        CLASS_BEAST_I -> { "Beast I" }
+        CLASS_MOON_CANCER -> { "Moon Cancer" }
+        CLASS_BEAST_III_R -> { "Beast III R" }
+        CLASS_FOREIGNER -> { "Foreigner" }
+        CLASS_BEAST_III_L -> { "Beast III L" }
+        CLASS_BEAST_UNKNOWN -> { "Beast Unknown" }
+        else -> { "Unknown" }
+    }
+}

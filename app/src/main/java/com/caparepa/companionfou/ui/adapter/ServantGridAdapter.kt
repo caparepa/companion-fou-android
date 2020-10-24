@@ -6,9 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
+import com.caparepa.companionfou.utils.getClassDrawable
+import com.caparepa.companionfou.utils.getPrettyClassName
+import com.caparepa.companionfou.utils.getRarityDrawable
+import com.caparepa.companionfou.utils.loadImage
 
 class ServantGridAdapter(
     private val context: Context,
@@ -18,12 +23,25 @@ class ServantGridAdapter(
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val servantGraph = itemView.findViewById<ImageView>(R.id.ivServantGraphBackground)
-        val classIcon = itemView.findViewById<ImageView>(R.id.ivClassIcon)
-        val rarityIcon = itemView.findViewById<ImageView>(R.id.ivRarityIcon)
-        val servantName = itemView.findViewById<TextView>(R.id.tvServantName)
+        val ivServantGraph = itemView.findViewById<ImageView>(R.id.ivServantGraphBackground)
+        val ivClassIcon = itemView.findViewById<ImageView>(R.id.ivClassIcon)
+        val ivRarityIcon = itemView.findViewById<ImageView>(R.id.ivRarityIcon)
+        val tvServantName = itemView.findViewById<TextView>(R.id.tvServantName)
 
         fun bind(servantItem: ServantEntity, onClick: (ServantEntity) -> Unit) {
+
+            val unknownServantDrawable =
+                ContextCompat.getDrawable(context, R.drawable.listframe_bg_blank)
+            val servantRarity = context.getRarityDrawable(servantItem.rarity!!)
+            val servantClass =
+                context.getClassDrawable(servantItem.className!!, servantItem.rarity!!)
+            val servantGraph = servantItem.getExtraAssetsObj()?.faces?.ascension?.get(1)
+            val servantName = servantItem.name
+
+            tvServantName.text = servantName ?: servantItem.className.getPrettyClassName()
+            ivServantGraph.loadImage(context, servantGraph!!, unknownServantDrawable!!)
+            ivRarityIcon.setImageDrawable(servantRarity)
+            ivClassIcon.setImageDrawable(servantClass)
 
         }
     }
