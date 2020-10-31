@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.ui.dialog.LoadingDialog
+import com.caparepa.companionfou.ui.viewmodel.nice.ServantViewModel
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,10 +21,14 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Servant DetailFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ServantDetailFragment : Fragment() {
+class ServantDetailFragment : Fragment(), KoinComponent {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private lateinit var loadingDialog: LoadingDialog
+
+    private val servantViewModel: ServantViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +44,10 @@ class ServantDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_servant_detail, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     companion object {
