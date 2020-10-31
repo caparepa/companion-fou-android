@@ -91,11 +91,5 @@ data class ServantItem(
     /** ServantProfile? **/
     @SerializedName("profile")
     val profile: JsonElement? = null
-) {
-
-    fun JsonArray.getFlattenedArray() {
-
-    }
-
-}
+)
 

@@ -28,9 +28,12 @@ data class ExtraAssets(
     val masterFigure: Map<String, String>? = null
 ) {
 
-    fun Map<Int, String>.getUrlList(): List<String> {
-        val urlMap = this.toMutableMap()
-        return urlMap.entries.map { it.value }
+    fun getUrlList(assetMap: Map<Int, String?>?): List<String>? {
+        val urlMap = assetMap?.toMutableMap()
+        urlMap?.let {
+            return urlMap.entries.map { it.value!! }
+        }
+        return null
     }
 
 }
