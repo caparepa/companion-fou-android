@@ -26,4 +26,11 @@ data class ExtraAssets(
     val masterFace: Map<String, String>? = null,
     @SerializedName("masterFigure")
     val masterFigure: Map<String, String>? = null
-)
+) {
+
+    fun Map<Int, String>.getUrlList(): List<String> {
+        val urlMap = this.toMutableMap()
+        return urlMap.entries.map { it.value }
+    }
+
+}
