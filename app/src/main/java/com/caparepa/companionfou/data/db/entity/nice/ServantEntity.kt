@@ -103,43 +103,59 @@ data class ServantEntity(
     @PrimaryKey(autoGenerate = true)
     var tableId: Long = 0
 
+    /**
+     * Extra Assets
+     */
     fun getExtraAssetsObj(): ExtraAssets? {
         return this.extraAssets?.toKotlinObject()
     }
 
+    /**
+     * Traits
+     */
     fun getTraitsObj(): List<TraitItem>? {
         return this.traits?.toKotlinObject()
     }
 
-    fun getFaceCardsObj(): List<String>? {
+    fun getTraitsList(): List<String?>? {
+        return getTraitsObj()?.map { it.name }
+    }
+
+    /**
+     * Face Cards
+     */
+    fun getFaceCardsList(): List<String>? {
         return this.cards?.toKotlinObject()
     }
 
+    /**
+     * Hits Distribution
+     */
     fun getHitsDistributionObj(): HitsDistribution? {
         return this.hitsDistribution?.toKotlinObject()
     }
 
-    fun getAtkGrowthObj(): List<Int>? {
+    fun getAtkGrowthList(): List<Int>? {
         return this.atkGrowth?.toKotlinObject()
     }
 
-    fun getHpGrowthObj(): List<Int>? {
+    fun getHpGrowthList(): List<Int>? {
         return this.hpGrowth?.toKotlinObject()
     }
 
-    fun getBondGrowthObj(): List<Int>? {
+    fun getBondGrowthList(): List<Int>? {
         return this.bondGrowth?.toKotlinObject()
     }
 
-    fun getAscensionMaterialsObj(): Materials? {
+    fun getAscensionMaterialsObj(): Map<Int, Materials>? {
         return this.ascensionMaterials?.toKotlinObject()
     }
 
-    fun getSkillMaterialsObj(): Materials? {
+    fun getSkillMaterialsObj(): Map<Int, Materials>? {
         return this.skillMaterials?.toKotlinObject()
     }
 
-    fun getCostumeMaterialsObj(): Materials? {
+    fun getCostumeMaterialsObj(): Map<Int, Materials>? {
         return this.costumeMaterials?.toKotlinObject()
     }
 
@@ -147,6 +163,9 @@ data class ServantEntity(
         return this.script?.toKotlinObject()
     }
 
+    /**
+     * 
+     */
     fun getSkillsObj(): List<SkillItem>? {
         return this.skills?.toKotlinObject()
     }
