@@ -29,11 +29,7 @@
         android:id="@+id/servantListFragment"
         android:name="com.caparepa.companionfou.ui.fragment.servant.ServantListFragment"
         android:label="fragment_servant_list"
-        tools:layout="@layout/fragment_servant_list" >
-        <action
-            android:id="@+id/action_servantListFragment_to_servantDetailFragment"
-            app:destination="@id/servantDetailFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_servant_list" />
     <fragment
         android:id="@+id/externalResourcesFragment"
         android:name="com.caparepa.companionfou.ui.fragment.other.ExternalResourcesFragment"
@@ -51,28 +47,6 @@
             android:id="@+id/action_equipmentHubFragment_to_commandCodeListFragment"
             app:destination="@id/commandCodeListFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/servantDetailFragment"
-        android:name="com.caparepa.companionfou.ui.fragment.servant.ServantDetailFragment"
-        android:label="fragment_servant_detail"
-        tools:layout="@layout/fragment_servant_detail" >
-        <action
-            android:id="@+id/action_servantDetailFragment_to_servantStatsFragment"
-            app:destination="@id/servantStatsFragment" />
-        <argument
-            android:name="server"
-            app:argType="string"
-            android:defaultValue="na" />
-        <argument
-            android:name="collectionNo"
-            app:argType="string"
-            android:defaultValue="0" />
-    </fragment>
-    <fragment
-        android:id="@+id/servantStatsFragment"
-        android:name="com.caparepa.companionfou.ui.fragment.servant.ServantStatsFragment"
-        android:label="fragment_servant_stats"
-        tools:layout="@layout/fragment_servant_stats" />
     <fragment
         android:id="@+id/craftEssenceListFragment"
         android:name="com.caparepa.companionfou.ui.fragment.equipment.CraftEssenceListFragment"

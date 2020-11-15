@@ -122,8 +122,6 @@ class ServantListFragment : Fragment(), KoinComponent {
         requireActivity().toastLong("Servant clicked! -> ${servant.name} ${servant.servant_id} ${servant.collectionNo}")
         val collectionNo = servant.collectionNo
         val server = selectedRegion
-        val actionDetails = ServantListFragmentDirections.actionServantListFragmentToServantDetailFragment(server = server!!, collectionNo = collectionNo.toString())
-        navigation.navigate(actionDetails)
     }
 
     companion object {
