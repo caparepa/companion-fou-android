@@ -164,12 +164,15 @@ data class ServantEntity(
     }
 
     /**
-     * 
+     * Skill Item
      */
     fun getSkillsObj(): List<SkillItem>? {
         return this.skills?.toKotlinObject()
     }
 
+    /**
+     * Class Passive Item
+     */
     fun getClassPassivesObj(): List<ClassPassiveItem>? {
         return this.classPassive?.toKotlinObject()
     }

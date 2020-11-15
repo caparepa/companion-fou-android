@@ -59,6 +59,14 @@
         <action
             android:id="@+id/action_servantDetailFragment_to_servantStatsFragment"
             app:destination="@id/servantStatsFragment" />
+        <argument
+            android:name="server"
+            app:argType="string"
+            android:defaultValue="na" />
+        <argument
+            android:name="collectionNo"
+            app:argType="string"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/servantStatsFragment"

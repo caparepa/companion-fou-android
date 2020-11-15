@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.GridLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
@@ -48,6 +50,12 @@ class ServantListFragment : Fragment(), KoinComponent {
     //adapter
     private var servantAdapter: ServantGridAdapter? = null
 
+    //navigation
+    private lateinit var navigation: NavController
+
+    //server
+    private var selectedRegion: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -68,15 +76,19 @@ class ServantListFragment : Fragment(), KoinComponent {
         super.onViewCreated(view, savedInstanceState)
 
         loadingDialog = LoadingDialog(requireContext())
+        navigation =
+            Navigation.findNavController(requireActivity(), R.id.home_nav_host_fragment)
         observeViewModel()
         setUpListeners()
     }
 
     private fun setUpListeners() {
         btnServantsNa.setOneOffClickListener {
+            selectedRegion = REGION_NA
             servantViewModel.fetchServants(REGION_NA)
         }
-        btnServantsJp.setOnClickListener {
+        btnServantsJp.setOneOffClickListener {
+            selectedRegion = REGION_JP
             servantViewModel.fetchServants(REGION_JP)
         }
     }
@@ -108,6 +120,10 @@ class ServantListFragment : Fragment(), KoinComponent {
 
     private var onItemClick: (ServantEntity) -> Unit = { servant ->
         requireActivity().toastLong("Servant clicked! -> ${servant.name} ${servant.servant_id} ${servant.collectionNo}")
+        val collectionNo = servant.collectionNo
+        val server = selectedRegion
+        val actionDetails = ServantListFragmentDirections.actionServantListFragmentToServantDetailFragment(server = server!!, collectionNo = collectionNo.toString())
+        navigation.navigate(actionDetails)
     }
 
     companion object {

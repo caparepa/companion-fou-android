@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.nice.ServantViewModel
+import com.caparepa.companionfou.utils.toastLong
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
@@ -30,6 +32,8 @@ class ServantDetailFragment : Fragment(), KoinComponent {
 
     private val servantViewModel: ServantViewModel by inject()
 
+    val args:  ServantDetailFragmentArgs by navArgs()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -48,6 +52,9 @@ class ServantDetailFragment : Fragment(), KoinComponent {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val server = args.server
+        val collectionNo = args.collectionNo
+        requireActivity().toastLong("server $server collectionNo $collectionNo")
     }
 
     companion object {
