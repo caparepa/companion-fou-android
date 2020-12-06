@@ -23,7 +23,7 @@ class ServantDetailActivity : AppCompatActivity() {
         navController =
             Navigation.findNavController(this@ServantDetailActivity, R.id.servant_nav_host_fragment)
         bottom_navigation?.inflateMenu(R.menu.bottom_servant_menu)
-        this.let { _ ->
+        this@ServantDetailActivity.let { _ ->
             bottom_navigation?.setupWithNavController(navController)
             bottom_navigation?.setOnNavigationItemReselectedListener {
                 // Do nothing to ignore the reselection
