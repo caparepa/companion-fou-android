@@ -14,6 +14,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
+import com.caparepa.companionfou.ui.activity.ServantDetailActivity
 import com.caparepa.companionfou.ui.adapter.ServantGridAdapter
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.nice.ServantViewModel
@@ -120,8 +121,10 @@ class ServantListFragment : Fragment(), KoinComponent {
 
     private var onItemClick: (ServantEntity) -> Unit = { servant ->
         requireActivity().toastLong("Servant clicked! -> ${servant.name} ${servant.servant_id} ${servant.collectionNo}")
-        val collectionNo = servant.collectionNo
-        val server = selectedRegion
+        val intent = Intent(requireActivity(), ServantDetailActivity::class.java)
+        intent.putExtra("SERVANT_COLLECTION_NO", servant.collectionNo)
+        intent.putExtra("SERVER", servant.server)
+        startActivity(intent)
     }
 
     companion object {
