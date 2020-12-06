@@ -16,6 +16,7 @@ class ServantDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_servant_detail)
+        initBottomNavigationView()
     }
 
     private fun initBottomNavigationView() {
