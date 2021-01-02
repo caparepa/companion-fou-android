@@ -14,7 +14,7 @@
         android:title="Skills" />
 
     <item
-        android:id="@+id/servantsProfileFragment"
+        android:id="@+id/servantProfileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_dummy_external_resource"
         android:title="Profile" />
