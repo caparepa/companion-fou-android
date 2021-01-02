@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.caparepa.companionfou.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_servant_detail.*
 
 class ServantDetailActivity : AppCompatActivity() {
 
@@ -22,10 +23,10 @@ class ServantDetailActivity : AppCompatActivity() {
     private fun initBottomNavigationView() {
         navController =
             Navigation.findNavController(this@ServantDetailActivity, R.id.servant_nav_host_fragment)
-        bottom_navigation?.inflateMenu(R.menu.bottom_servant_menu)
-        this@ServantDetailActivity.let { _ ->
-            bottom_navigation?.setupWithNavController(navController)
-            bottom_navigation?.setOnNavigationItemReselectedListener {
+        bottom_servant_navigation?.inflateMenu(R.menu.bottom_servant_menu)
+        this.let { _ ->
+            bottom_servant_navigation?.setupWithNavController(navController)
+            bottom_servant_navigation?.setOnNavigationItemReselectedListener {
                 // Do nothing to ignore the reselection
             }
             navController.addOnDestinationChangedListener { _, destination, _ ->
