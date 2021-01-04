@@ -6,20 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.nice.ServantViewModel
-import com.caparepa.companionfou.utils.REGION_SERVER
-import com.caparepa.companionfou.utils.SERVANT_ID
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
-import org.koin.core.inject
 
 class ServantSkillsFragment : Fragment(), KoinComponent {
     // TODO: Rename and change types of parameters
     private var servantId: Long? = null
     private var server: String? = null
+
+    val args: ServantSkillsFragmentArgs by navArgs()
 
     private lateinit var loadingDialog: LoadingDialog
 
@@ -28,10 +28,6 @@ class ServantSkillsFragment : Fragment(), KoinComponent {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            servantId = it.getLong(SERVANT_ID)
-            server = it.getString(REGION_SERVER)
-        }
     }
 
     override fun onCreateView(
@@ -44,12 +40,14 @@ class ServantSkillsFragment : Fragment(), KoinComponent {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        servantId = args.servantId
+        server = args.regionServer
         observe()
         loadServantData()
     }
 
     private fun loadServantData() {
-        servantViewModel.fetchServantById(servantId!!, server!!)
+        //servantViewModel.fetchServantById(servantId!!, server!!)
     }
 
     private fun observe() {
@@ -58,25 +56,5 @@ class ServantSkillsFragment : Fragment(), KoinComponent {
 
             })
         }
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment UnitStatsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: Long, param2: String) =
-            ServantSkillsFragment().apply {
-                arguments = Bundle().apply {
-                    putLong(SERVANT_ID, param1)
-                    putString(REGION_SERVER, param2)
-                }
-            }
     }
 }

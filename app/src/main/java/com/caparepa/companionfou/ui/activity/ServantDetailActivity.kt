@@ -3,13 +3,14 @@ package com.caparepa.companionfou.ui.activity
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavArgument
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.caparepa.companionfou.R
 import com.caparepa.companionfou.utils.LOG_DEBUG
-import com.caparepa.companionfou.utils.REGION_SERVER
-import com.caparepa.companionfou.utils.SERVANT_ID
+import com.caparepa.companionfou.utils.REGION
+import com.caparepa.companionfou.utils.SERVANTID
 import com.caparepa.companionfou.utils.logger
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_servant_detail.*
@@ -36,18 +37,33 @@ class ServantDetailActivity : AppCompatActivity() {
 
     @SuppressLint("RestrictedApi")
     private fun initBottomNavigationView() {
+
+        //attach the graph to the controller
         navController =
             Navigation.findNavController(this@ServantDetailActivity, R.id.servant_nav_host_fragment)
+
+        //initial navigation
+        val graph = navController.graph
+        val args = setNavigationArgs()
+        navController.setGraph(graph, args)
+
         bottom_servant_navigation?.inflateMenu(R.menu.bottom_servant_menu)
         this.let { _ ->
+            //setup navcontroller
             bottom_servant_navigation?.setupWithNavController(navController)
+            //for reselect
             bottom_servant_navigation?.setOnNavigationItemReselectedListener {
                 // Do nothing to ignore the reselection
             }
+            //for navigaction
+            bottom_servant_navigation?.setOnNavigationItemSelectedListener { item ->
+                val fragmentId = item.itemId
+                val args = setNavigationArgs()
+                navController.navigate(fragmentId, args)
+                true
+            }
+            //kapuskicapubul
             navController.addOnDestinationChangedListener { controller, destination, arguments ->
-                logger(LOG_DEBUG, "TAGA", destination.displayName)
-                arguments?.putLong(SERVANT_ID, servantId!!)
-                arguments?.putString(REGION_SERVER, server!!)
             }
         }
         //TODO: DO SHENANIGANS HERE FOR NAVIGATION!!!
@@ -56,6 +72,13 @@ class ServantDetailActivity : AppCompatActivity() {
             "programs" -> Navigation.findNavController(requireActivity(),R.id.home_nav_host_fragment).navigate(R.id.programFragment)
             else -> {}
         }*/
+    }
+
+    private fun setNavigationArgs(): Bundle {
+        val args = Bundle()
+        args.putLong(SERVANTID, servantId!!)
+        args.putSerializable(REGION, server!!)
+        return args
     }
 
 }

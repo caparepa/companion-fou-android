@@ -6,9 +6,9 @@ import android.util.Log
 const val DATE_FORMAT_ISO_8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'"
 
 //Fragment constants
-const val SERVANT_ID = "SERVANT_ID"
-const val COLLECTION_NO = "COLLECTION_NO"
-const val REGION_SERVER = "REGION_SERVER"
+const val SERVANTID = "servantId"
+const val COLLECTIONNO = "collectionNo"
+const val REGION = "regionServer"
 
 //VIEWMODEL CONSTANTS
 const val CURRENT_DATE = "20201012"

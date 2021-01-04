@@ -11,11 +11,11 @@
         android:label="fragment_servant_summary"
         tools:layout="@layout/fragment_servant_summary">
         <argument
-            android:name="SERVANT_ID"
+            android:name="servantId"
             app:argType="long"
             android:defaultValue="0L" />
         <argument
-            android:name="REGION_SERVER"
+            android:name="regionServer"
             app:argType="string" />
     </fragment>
     <fragment
@@ -24,11 +24,11 @@
         android:label="fragment_servant_skills"
         tools:layout="@layout/fragment_servant_skills">
         <argument
-            android:name="SERVANT_ID"
+            android:name="servantId"
             app:argType="long"
             android:defaultValue="0L" />
         <argument
-            android:name="REGION_SERVER"
+            android:name="regionServer"
             app:argType="string" />
     </fragment>
     <fragment
@@ -37,11 +37,11 @@
         android:label="fragment_servant_profile"
         tools:layout="@layout/fragment_servant_profile">
         <argument
-            android:name="SERVANT_ID"
+            android:name="servantId"
             app:argType="long"
             android:defaultValue="0L" />
         <argument
-            android:name="REGION_SERVER"
+            android:name="regionServer"
             app:argType="string" />
     </fragment>
     <fragment
@@ -50,11 +50,11 @@
         android:label="fragment_servant_assets"
         tools:layout="@layout/fragment_servant_assets">
         <argument
-            android:name="SERVANT_ID"
+            android:name="servantId"
             app:argType="long"
             android:defaultValue="0L" />
         <argument
-            android:name="REGION_SERVER"
+            android:name="regionServer"
             app:argType="string" />
     </fragment>
 </navigation>
