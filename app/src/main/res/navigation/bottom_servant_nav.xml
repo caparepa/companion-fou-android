@@ -11,8 +11,12 @@
         android:label="fragment_servant_summary"
         tools:layout="@layout/fragment_servant_summary">
         <argument
-            android:name="servant"
-            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+            android:name="SERVANT_ID"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="REGION_SERVER"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/servantSkillsFragment"
@@ -20,8 +24,12 @@
         android:label="fragment_servant_skills"
         tools:layout="@layout/fragment_servant_skills">
         <argument
-            android:name="servant"
-            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+            android:name="SERVANT_ID"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="REGION_SERVER"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/servantProfileFragment"
@@ -29,8 +37,12 @@
         android:label="fragment_servant_profile"
         tools:layout="@layout/fragment_servant_profile">
         <argument
-            android:name="servant"
-            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+            android:name="SERVANT_ID"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="REGION_SERVER"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/servantAssetsFragment"
@@ -38,7 +50,11 @@
         android:label="fragment_servant_assets"
         tools:layout="@layout/fragment_servant_assets">
         <argument
-            android:name="servant"
-            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+            android:name="SERVANT_ID"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="REGION_SERVER"
+            app:argType="string" />
     </fragment>
 </navigation>

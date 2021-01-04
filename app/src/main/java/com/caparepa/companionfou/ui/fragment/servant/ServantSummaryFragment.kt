@@ -5,36 +5,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.caparepa.companionfou.R
+import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.nice.ServantViewModel
+import com.caparepa.companionfou.utils.SERVANT_ID
+import com.caparepa.companionfou.utils.REGION_SERVER
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Servant DetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ServantSummaryFragment : Fragment(), KoinComponent {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var servantId: Long? = null
+    private var server: String? = null
 
     private lateinit var loadingDialog: LoadingDialog
 
-    private val servantViewModel: ServantViewModel by inject()
+    private val servantViewModel: ServantViewModel by sharedViewModel()
+    private lateinit var servant: ServantEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            servantId = it.getLong(SERVANT_ID)
+            server = it.getString(REGION_SERVER)
         }
     }
 
@@ -48,6 +44,20 @@ class ServantSummaryFragment : Fragment(), KoinComponent {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observe()
+        loadServantData()
+    }
+
+    private fun loadServantData() {
+        servantViewModel.fetchServantById(servantId!!, server!!)
+    }
+
+    private fun observe() {
+        servantViewModel.run {
+            servantItemResult.observe(viewLifecycleOwner, Observer {
+
+            })
+        }
     }
 
     companion object {
@@ -61,11 +71,11 @@ class ServantSummaryFragment : Fragment(), KoinComponent {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(param1: Long, param2: String) =
             ServantSummaryFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putLong(SERVANT_ID, param1)
+                    putString(REGION_SERVER, param2)
                 }
             }
     }

@@ -3,20 +3,16 @@ package com.caparepa.companionfou.ui.activity
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.caparepa.companionfou.R
-import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
-import com.caparepa.companionfou.ui.dialog.LoadingDialog
-import com.caparepa.companionfou.ui.viewmodel.nice.ServantViewModel
 import com.caparepa.companionfou.utils.LOG_DEBUG
+import com.caparepa.companionfou.utils.REGION_SERVER
+import com.caparepa.companionfou.utils.SERVANT_ID
 import com.caparepa.companionfou.utils.logger
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_servant_detail.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.KoinComponent
 
 class ServantDetailActivity : AppCompatActivity() {
 
@@ -50,8 +46,8 @@ class ServantDetailActivity : AppCompatActivity() {
             }
             navController.addOnDestinationChangedListener { controller, destination, arguments ->
                 logger(LOG_DEBUG, "TAGA", destination.displayName)
-                arguments?.putLong("COLLECTION_NO", servantId!!)
-                arguments?.putString("SERVER", server!!)
+                arguments?.putLong(SERVANT_ID, servantId!!)
+                arguments?.putString(REGION_SERVER, server!!)
             }
         }
         //TODO: DO SHENANIGANS HERE FOR NAVIGATION!!!
