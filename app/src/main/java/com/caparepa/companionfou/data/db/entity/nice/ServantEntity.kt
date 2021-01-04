@@ -1,5 +1,6 @@
 package com.caparepa.companionfou.data.db.entity.nice
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
@@ -9,7 +10,9 @@ import com.caparepa.companionfou.data.model.common.ScriptObj
 import com.caparepa.companionfou.data.model.common.SkillItem
 import com.caparepa.companionfou.data.model.nice.servant.*
 import com.caparepa.companionfou.utils.toKotlinObject
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 @Entity(
     tableName = "servant"
 )
@@ -98,7 +101,7 @@ data class ServantEntity(
     /** ServantProfile? **/
     @ColumnInfo(name ="profile")
     val profile: String? = null
-) {
+): Parcelable {
     @ColumnInfo(name = "table_id")
     @PrimaryKey(autoGenerate = true)
     var tableId: Long = 0

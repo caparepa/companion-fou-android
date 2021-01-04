@@ -9,20 +9,36 @@
         android:id="@+id/servantSummaryFragment"
         android:name="com.caparepa.companionfou.ui.fragment.servant.ServantSummaryFragment"
         android:label="fragment_servant_summary"
-        tools:layout="@layout/fragment_servant_summary" />
+        tools:layout="@layout/fragment_servant_summary">
+        <argument
+            android:name="servant"
+            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+    </fragment>
     <fragment
         android:id="@+id/servantSkillsFragment"
         android:name="com.caparepa.companionfou.ui.fragment.servant.ServantSkillsFragment"
         android:label="fragment_servant_skills"
-        tools:layout="@layout/fragment_servant_skills" />
+        tools:layout="@layout/fragment_servant_skills">
+        <argument
+            android:name="servant"
+            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+    </fragment>
     <fragment
         android:id="@+id/servantProfileFragment"
         android:name="com.caparepa.companionfou.ui.fragment.servant.ServantProfileFragment"
         android:label="fragment_servant_profile"
-        tools:layout="@layout/fragment_servant_profile" />
+        tools:layout="@layout/fragment_servant_profile">
+        <argument
+            android:name="servant"
+            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+    </fragment>
     <fragment
         android:id="@+id/servantAssetsFragment"
         android:name="com.caparepa.companionfou.ui.fragment.servant.ServantAssetsFragment"
         android:label="fragment_servant_assets"
-        tools:layout="@layout/fragment_servant_assets" />
+        tools:layout="@layout/fragment_servant_assets">
+        <argument
+            android:name="servant"
+            app:argType="com.caparepa.companionfou.data.db.entity.nice.ServantEntity" />
+    </fragment>
 </navigation>
