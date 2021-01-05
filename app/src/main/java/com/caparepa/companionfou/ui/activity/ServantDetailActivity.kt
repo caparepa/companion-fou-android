@@ -44,8 +44,8 @@ class ServantDetailActivity : AppCompatActivity() {
 
         //initial navigation
         val graph = navController.graph
-        val args = setNavigationArgs()
-        navController.setGraph(graph, args)
+        val bundleArgs = setNavigationArgs()
+        navController.setGraph(graph, bundleArgs)
 
         bottom_servant_navigation?.inflateMenu(R.menu.bottom_servant_menu)
         this.let { _ ->
@@ -58,8 +58,7 @@ class ServantDetailActivity : AppCompatActivity() {
             //for navigaction
             bottom_servant_navigation?.setOnNavigationItemSelectedListener { item ->
                 val fragmentId = item.itemId
-                val args = setNavigationArgs()
-                navController.navigate(fragmentId, args)
+                navController.navigate(fragmentId, bundleArgs)
                 true
             }
             //kapuskicapubul
@@ -79,6 +78,10 @@ class ServantDetailActivity : AppCompatActivity() {
         args.putLong(SERVANTID, servantId!!)
         args.putSerializable(REGION, server!!)
         return args
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 
 }
