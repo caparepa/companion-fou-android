@@ -40,9 +40,9 @@
                 <ImageView
                     android:id="@+id/ivServantGraphic"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                     android:layout_centerInParent="true"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerInside"
                     android:visibility="visible"
                     app:layout_constraintDimensionRatio="360:63"
                     tools:ignore="ContentDescription" />
