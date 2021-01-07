@@ -121,7 +121,7 @@ class ServantListFragment : Fragment(), KoinComponent {
 
     private var onItemClick: (ServantEntity) -> Unit = { servant ->
         val intent = Intent(requireActivity(), ServantDetailActivity::class.java)
-        intent.putExtra("SERVANT_COLLECTION_NO", servant.collectionNo)
+        intent.putExtra("SERVANT_COLLECTION_NO", servant.servant_id)
         intent.putExtra("SERVER", servant.server)
         startActivity(intent)
     }

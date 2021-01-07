@@ -150,12 +150,14 @@ fun copyStream(input: InputStream, output: OutputStream, bufferSize: Int): Long 
 }
 
 fun ImageView.loadImage(context: Context, imageUrl: String, errorDrawable: Drawable) {
-    justTry {
+    try {
         Glide.with(context)
             .load(imageUrl)
             .error(errorDrawable)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(this)
+    } catch(e: Exception) {
+        e.printStackTrace()
     }
 }
 
