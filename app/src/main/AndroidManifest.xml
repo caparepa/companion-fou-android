@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.ServantDetailActivity"></activity>
+        <activity android:name=".ui.activity.ServantDetailActivity"
+            android:theme="@style/CustomToolbarTheme"/>
         <activity
             android:name=".ui.activity.SplashActivity"
             android:screenOrientation="portrait">
