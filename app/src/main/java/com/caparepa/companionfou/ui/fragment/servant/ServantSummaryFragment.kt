@@ -58,7 +58,7 @@ class ServantSummaryFragment : Fragment(), KoinComponent {
         servantViewModel.run {
             servantItemResult.observe(viewLifecycleOwner, Observer {
                 it?.let {
-                    requireActivity().toastLong("SERVANT! ${it.name}")
+                    requireActivity().toastLong("SERVANT SUMMARY ${it.name}")
                     loadServantGraphs(it)
                 }
             })

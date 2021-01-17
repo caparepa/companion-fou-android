@@ -11,6 +11,7 @@ import com.caparepa.companionfou.R
 import com.caparepa.companionfou.data.db.entity.nice.ServantEntity
 import com.caparepa.companionfou.ui.dialog.LoadingDialog
 import com.caparepa.companionfou.ui.viewmodel.nice.ServantViewModel
+import com.caparepa.companionfou.utils.toastLong
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 
@@ -53,7 +54,9 @@ class ServantProfileFragment : Fragment(), KoinComponent {
     private fun observe() {
         servantViewModel.run {
             servantItemResult.observe(viewLifecycleOwner, Observer {
-
+                it?.let {
+                    requireActivity().toastLong("SERVANT PROFILE ${it.name}")
+                }
             })
         }
     }
