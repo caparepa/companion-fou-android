@@ -69,6 +69,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/llServantGraphicContainer">
 
+                <TextView
+                    android:id="@+id/tvServantIdLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Name:" />
+
+                <TextView
+                    android:id="@+id/tvServantIdValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvCollectionLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Name:" />
+
+                <TextView
+                    android:id="@+id/tvCollectionValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -81,6 +109,80 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/llFirstRow">
 
+                <TextView
+                    android:id="@+id/tvServantClassLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Class:" />
+
+                <TextView
+                    android:id="@+id/tvServantClassValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvServantAttributeLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Attribute:" />
+
+                <TextView
+                    android:id="@+id/tvServantAttributeValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llThirdRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llSecondRow">
+
+                <TextView
+                    android:id="@+id/tvServantRarityLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Rarity:" />
+
+                <LinearLayout
+                    android:id="@+id/tvServantRarityValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:text="">
+
+                    <ImageView
+                        android:id="@+id/ivRarityIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/star5" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvServantCostLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Cost:" />
+
+                <TextView
+                    android:id="@+id/tvServantCostValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
