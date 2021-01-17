@@ -41,14 +41,7 @@ class ServantProfileFragment : Fragment(), KoinComponent {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        servantId = args.servantId
-        server = args.regionServer
         observe()
-        loadServantData()
-    }
-
-    private fun loadServantData() {
-        //servantViewModel.fetchServantById(servantId!!, server!!)
     }
 
     private fun observe() {
