@@ -74,4 +74,12 @@ class ServantSummaryFragment : Fragment(), KoinComponent {
             ivServantGraphic.loadImage(requireActivity(), ascension?.get(1)!!, unknownServantDrawable!!)
         }
     }
+
+    private fun setUpData(servant: ServantEntity?) {
+        servant?.let {
+            tvServantIdValue.text = it.servant_id.toString()
+            tvServantCostValue.text = it.collectionNo.toString()
+
+        }
+    }
 }

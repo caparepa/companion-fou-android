@@ -17,7 +17,7 @@
             android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:id="@+id/llServantGraphicContainer"
+                android:id="@+id/rlServantGraphicContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -59,6 +59,16 @@
 
             </RelativeLayout>
 
+            <View
+                android:id="@+id/vSeparator1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rlServantGraphicContainer" />
+
             <LinearLayout
                 android:id="@+id/llFirstRow"
                 android:layout_width="match_parent"
@@ -67,14 +77,14 @@
                 android:weightSum="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/llServantGraphicContainer">
+                app:layout_constraintTop_toBottomOf="@id/vSeparator1">
 
                 <TextView
                     android:id="@+id/tvServantIdLabel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Name:" />
+                    android:text="Id:" />
 
                 <TextView
                     android:id="@+id/tvServantIdValue"
@@ -88,7 +98,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Name:" />
+                    android:text="Collection:" />
 
                 <TextView
                     android:id="@+id/tvCollectionValue"
